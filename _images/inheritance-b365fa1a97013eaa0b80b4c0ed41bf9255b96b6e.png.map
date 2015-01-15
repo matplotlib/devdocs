@@ -1,0 +1,48 @@
+<map id="inheritance0ca9968ee0" name="inheritance0ca9968ee0">
+<area shape="rect" id="node1" href="#matplotlib.mathtext.Accent" title="The font metrics need to be dealt with differently for accents," alt="" coords="392,371,453,395"/>
+<area shape="rect" id="node2" href="#matplotlib.mathtext.Char" title="Represents a single character. &#160;Unlike TeX, the font information" alt="" coords="202,414,264,438"/>
+<area shape="rect" id="node4" href="#matplotlib.mathtext.AutoHeightChar" title=":class:`AutoHeightChar` will create a character as close to the" alt="" coords="656,328,760,352"/>
+<area shape="rect" id="node5" href="#matplotlib.mathtext.Hlist" title="A horizontal list of boxes." alt="" coords="545,414,607,438"/>
+<area shape="rect" id="node7" href="#matplotlib.mathtext.AutoWidthChar" title=":class:`AutoWidthChar` will create a character as close to the" alt="" coords="658,371,758,395"/>
+<area shape="rect" id="node26" href="#matplotlib.mathtext.HCentered" title="A convenience class to create an :class:`Hlist` whose contents are" alt="" coords="669,414,746,438"/>
+<area shape="rect" id="node73" href="#matplotlib.mathtext.SubSuperCluster" title=":class:`SubSuperCluster` is a sort of hack to get around that fact" alt="" coords="652,457,763,481"/>
+<area shape="rect" id="node77" href="#matplotlib.mathtext.VCentered" title="A convenience class to create a :class:`Vlist` whose contents are" alt="" coords="669,500,746,524"/>
+<area shape="rect" id="node9" href="#matplotlib.mathtext.BakomaFonts" title="Use the Bakoma TrueType fonts for rendering." alt="" coords="376,241,469,265"/>
+<area shape="rect" id="node10" href="#matplotlib.mathtext.TruetypeFonts" title="A generic base class for all font setups that use Truetype fonts" alt="" coords="186,263,279,287"/>
+<area shape="rect" id="node69" href="#matplotlib.mathtext.UnicodeFonts" title="An abstract base class for handling Unicode fonts." alt="" coords="376,285,469,308"/>
+<area shape="rect" id="node12" href="#matplotlib.mathtext.Box" title="Represents any node with a physical location." alt="" coords="202,500,264,524"/>
+<area shape="rect" id="node28" href="#matplotlib.mathtext.Hbox" title="A box with only width (zero height and depth)." alt="" coords="392,414,453,438"/>
+<area shape="rect" id="node30" href="#matplotlib.mathtext.List" title="A list of nodes (either horizontal or vertical)." alt="" coords="392,457,453,481"/>
+<area shape="rect" id="node33" href="#matplotlib.mathtext.Rule" title="A :class:`Rule` node stands for a solid black rectangle; it has" alt="" coords="392,500,453,524"/>
+<area shape="rect" id="node79" href="#matplotlib.mathtext.Vbox" title="A box with only height (zero width)." alt="" coords="392,544,453,567"/>
+<area shape="rect" id="node13" href="#matplotlib.mathtext.Node" title="A node in the TeX box model" alt="" coords="32,587,93,611"/>
+<area shape="rect" id="node17" href="#matplotlib.mathtext.Glue" title="Most of the information in this object is stored in the underlying" alt="" coords="202,673,264,697"/>
+<area shape="rect" id="node35" href="#matplotlib.mathtext.Kern" title="A :class:`Kern` node has a width field to specify a (normally" alt="" coords="202,716,264,740"/>
+<area shape="rect" id="node16" href="#matplotlib.mathtext.Fil" title="Fil" alt="" coords="392,587,453,611"/>
+<area shape="rect" id="node19" href="#matplotlib.mathtext.Fill" title="Fill" alt="" coords="392,630,453,654"/>
+<area shape="rect" id="node21" href="#matplotlib.mathtext.Filll" title="Filll" alt="" coords="392,673,453,697"/>
+<area shape="rect" id="node55" href="#matplotlib.mathtext.NegFil" title="NegFil" alt="" coords="392,716,453,740"/>
+<area shape="rect" id="node57" href="#matplotlib.mathtext.NegFill" title="NegFill" alt="" coords="392,759,453,783"/>
+<area shape="rect" id="node59" href="#matplotlib.mathtext.NegFilll" title="NegFilll" alt="" coords="392,803,453,827"/>
+<area shape="rect" id="node64" href="#matplotlib.mathtext.SsGlue" title="SsGlue" alt="" coords="392,846,453,870"/>
+<area shape="rect" id="node23" href="#matplotlib.mathtext.Fonts" title="An abstract base class for a system of fonts to use for mathtext." alt="" coords="32,296,93,320"/>
+<area shape="rect" id="node66" href="#matplotlib.mathtext.StandardPsFonts" title="Use the standard postscript fonts for rendering to backend_ps" alt="" coords="177,306,289,330"/>
+<area shape="rect" id="node25" href="#matplotlib.mathtext.GlueSpec" title="See :class:`Glue`." alt="" coords="27,241,98,265"/>
+<area shape="rect" id="node81" href="#matplotlib.mathtext.Vlist" title="A vertical list of boxes." alt="" coords="545,457,607,481"/>
+<area shape="rect" id="node32" href="#matplotlib.mathtext.Hrule" title="Convenience class to create a horizontal rule." alt="" coords="545,500,607,524"/>
+<area shape="rect" id="node83" href="#matplotlib.mathtext.Vrule" title="Convenience class to create a vertical rule." alt="" coords="545,544,607,567"/>
+<area shape="rect" id="node38" href="#matplotlib.mathtext.MathTextParser" title="MathTextParser" alt="" coords="12,198,112,222"/>
+<area shape="rect" id="node39" href="#matplotlib.mathtext.MathTextWarning" title="MathTextWarning" alt="" coords="8,155,117,179"/>
+<area shape="rect" id="node40" href="#matplotlib.mathtext.MathtextBackend" title="The base class for the mathtext backend&#45;specific code. &#160;The" alt="" coords="6,112,119,136"/>
+<area shape="rect" id="node41" href="#matplotlib.mathtext.MathtextBackendAgg" title="Render glyphs and rectangles to an FTImage buffer, which is later" alt="" coords="166,4,300,28"/>
+<area shape="rect" id="node45" href="#matplotlib.mathtext.MathtextBackendCairo" title="Store information to write a mathtext rendering to the Cairo" alt="" coords="162,47,303,71"/>
+<area shape="rect" id="node47" href="#matplotlib.mathtext.MathtextBackendPath" title="Store information to write a mathtext rendering to the text path" alt="" coords="164,90,302,114"/>
+<area shape="rect" id="node49" href="#matplotlib.mathtext.MathtextBackendPdf" title="Store information to write a mathtext rendering to the PDF" alt="" coords="167,133,299,157"/>
+<area shape="rect" id="node51" href="#matplotlib.mathtext.MathtextBackendPs" title="Store information to write a mathtext rendering to the PostScript" alt="" coords="169,177,297,201"/>
+<area shape="rect" id="node53" href="#matplotlib.mathtext.MathtextBackendSvg" title="Store information to write a mathtext rendering to the SVG" alt="" coords="166,220,300,244"/>
+<area shape="rect" id="node43" href="#matplotlib.mathtext.MathtextBackendBitmap" title="MathtextBackendBitmap" alt="" coords="347,4,499,28"/>
+<area shape="rect" id="node61" href="#matplotlib.mathtext.Parser" title="This is the pyparsing&#45;based parser for math expressions. &#160;It" alt="" coords="32,69,93,93"/>
+<area shape="rect" id="node63" href="#matplotlib.mathtext.Ship" title="Once the boxes have been set up, this sends them to output. &#160;Since" alt="" coords="32,26,93,49"/>
+<area shape="rect" id="node68" href="#matplotlib.mathtext.StixFonts" title="A font handling class for the STIX fonts." alt="" coords="542,285,610,308"/>
+<area shape="rect" id="node71" href="#matplotlib.mathtext.StixSansFonts" title="A font handling class for the STIX fonts (that uses sans&#45;serif" alt="" coords="660,285,756,308"/>
+</map>

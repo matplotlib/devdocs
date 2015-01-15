@@ -1,0 +1,50 @@
+<map id="inheritance78d69db02b" name="inheritance78d69db02b">
+<area shape="rect" id="node1" href="#matplotlib.artist.Artist" title="Abstract base class for someone who renders into a" alt="" coords="41,453,116,476"/>
+<area shape="rect" id="node5" href="image_api.html#matplotlib.image.FigureImage" title="image.FigureImage" alt="" coords="223,372,339,394"/>
+<area shape="rect" id="node10" href="image_api.html#matplotlib.image.PcolorImage" title="Make a pcolor&#45;style plot with an irregular rectangular grid." alt="" coords="223,331,339,353"/>
+<area shape="rect" id="node13" href="lines_api.html#matplotlib.lines.Line2D" title="A line &#45; the line can have both a solid linestyle connecting all" alt="" coords="241,453,321,476"/>
+<area shape="rect" id="node17" href="offsetbox_api.html#matplotlib.offsetbox.OffsetBox" title="The OffsetBox is a simple container artist. The child artist are meant" alt="" coords="222,494,340,517"/>
+<area shape="rect" id="node21" href="offsetbox_api.html#matplotlib.offsetbox.AnnotationBbox" title="Annotation&#45;like class, but with offsetbox instead of Text." alt="" coords="205,535,356,558"/>
+<area shape="rect" id="node49" href="patches_api.html#matplotlib.patches.Patch" title="A patch is a 2D artist with a face color and an edge color." alt="" coords="236,862,326,885"/>
+<area shape="rect" id="node83" href="text_api.html#matplotlib.text.Text" title="Handle storing and drawing of text in window or data coordinates." alt="" coords="251,413,311,435"/>
+<area shape="rect" id="node2" href="cm_api.html#matplotlib.cm.ScalarMappable" title="This is a mixin class to support scalar data to RGBA mapping." alt="" coords="19,351,138,374"/>
+<area shape="rect" id="node3" href="image_api.html#matplotlib.image.AxesImage" title="image.AxesImage" alt="" coords="24,290,133,312"/>
+<area shape="rect" id="node8" href="image_api.html#matplotlib.image.NonUniformImage" title="image.NonUniformImage" alt="" coords="208,290,354,312"/>
+<area shape="rect" id="node4" href="image_api.html#matplotlib.image.BboxImage" title="The Image class whose size is determined by the given bbox." alt="" coords="23,249,134,272"/>
+<area shape="rect" id="node15" href="lines_api.html#matplotlib.lines.VertexSelector" title="Manage the callbacks to maintain a list of selected vertices for" alt="" coords="18,208,139,231"/>
+<area shape="rect" id="node16" href="offsetbox_api.html#matplotlib.offsetbox.AnchoredOffsetbox" title="An offset box placed according to the legend location" alt="" coords="410,515,575,537"/>
+<area shape="rect" id="node19" href="offsetbox_api.html#matplotlib.offsetbox.AnchoredText" title="AnchoredOffsetbox with Text." alt="" coords="621,515,758,537"/>
+<area shape="rect" id="node23" href="offsetbox_api.html#matplotlib.offsetbox.AuxTransformBox" title="Offset Box with the aux_transform . Its children will be" alt="" coords="414,556,571,578"/>
+<area shape="rect" id="node30" href="offsetbox_api.html#matplotlib.offsetbox.DrawingArea" title="The DrawingArea can contain any Artist as a child. The DrawingArea" alt="" coords="426,596,559,619"/>
+<area shape="rect" id="node33" href="offsetbox_api.html#matplotlib.offsetbox.PackerBase" title="offsetbox.PackerBase" alt="" coords="429,637,556,660"/>
+<area shape="rect" id="node36" href="offsetbox_api.html#matplotlib.offsetbox.OffsetImage" title="offsetbox.OffsetImage" alt="" coords="427,392,558,415"/>
+<area shape="rect" id="node39" href="offsetbox_api.html#matplotlib.offsetbox.PaddedBox" title="offsetbox.PaddedBox" alt="" coords="430,433,555,456"/>
+<area shape="rect" id="node41" href="offsetbox_api.html#matplotlib.offsetbox.TextArea" title="The TextArea is contains a single Text instance. The text is" alt="" coords="437,474,549,496"/>
+<area shape="rect" id="node25" href="offsetbox_api.html#matplotlib.offsetbox.DraggableAnnotation" title="offsetbox.DraggableAnnotation" alt="" coords="191,147,370,169"/>
+<area shape="rect" id="node26" href="offsetbox_api.html#matplotlib.offsetbox.DraggableBase" title="helper code for a draggable artist (legend, offsetbox)" alt="" coords="5,167,152,190"/>
+<area shape="rect" id="node28" href="offsetbox_api.html#matplotlib.offsetbox.DraggableOffsetBox" title="offsetbox.DraggableOffsetBox" alt="" coords="195,188,367,210"/>
+<area shape="rect" id="node32" href="offsetbox_api.html#matplotlib.offsetbox.HPacker" title="The HPacker has its children packed horizontally. It automatically" alt="" coords="635,596,744,619"/>
+<area shape="rect" id="node43" href="offsetbox_api.html#matplotlib.offsetbox.VPacker" title="The VPacker has its children packed vertically. It automatically" alt="" coords="635,637,744,660"/>
+<area shape="rect" id="node45" href="patches_api.html#matplotlib.patches.Arc" title="An elliptical arc. &#160;Because it performs various optimizations, it" alt="" coords="650,985,729,1007"/>
+<area shape="rect" id="node46" href="patches_api.html#matplotlib.patches.Ellipse" title="A scale&#45;free ellipse." alt="" coords="445,964,540,987"/>
+<area shape="rect" id="node53" href="patches_api.html#matplotlib.patches.Circle" title="A circle patch." alt="" coords="644,944,735,966"/>
+<area shape="rect" id="node48" href="patches_api.html#matplotlib.patches.Arrow" title="An arrow patch." alt="" coords="447,1005,538,1028"/>
+<area shape="rect" id="node56" href="patches_api.html#matplotlib.patches.RegularPolygon" title="A regular polygon patch." alt="" coords="423,1046,563,1069"/>
+<area shape="rect" id="node59" href="patches_api.html#matplotlib.patches.FancyArrowPatch" title="A fancy arrow patch. It draws an arrow using the :class:ArrowStyle." alt="" coords="418,1087,567,1110"/>
+<area shape="rect" id="node64" href="patches_api.html#matplotlib.patches.Polygon" title="A general polygon patch." alt="" coords="442,678,543,701"/>
+<area shape="rect" id="node67" href="patches_api.html#matplotlib.patches.FancyBboxPatch" title="Draw a fancy box around a rectangle with lower left at *xy*=(*x*," alt="" coords="421,719,565,742"/>
+<area shape="rect" id="node70" href="patches_api.html#matplotlib.patches.PathPatch" title="A general polycurve path patch." alt="" coords="437,760,549,783"/>
+<area shape="rect" id="node73" href="patches_api.html#matplotlib.patches.Rectangle" title="Draw a rectangle with lower left at *xy* = (*x*, *y*) with" alt="" coords="437,801,549,823"/>
+<area shape="rect" id="node76" href="patches_api.html#matplotlib.patches.Shadow" title="patches.Shadow" alt="" coords="442,842,543,864"/>
+<area shape="rect" id="node78" href="patches_api.html#matplotlib.patches.Wedge" title="Wedge shaped patch." alt="" coords="445,883,540,905"/>
+<area shape="rect" id="node80" href="patches_api.html#matplotlib.patches.YAArrow" title="Yet another arrow class." alt="" coords="441,923,544,946"/>
+<area shape="rect" id="node51" href="patches_api.html#matplotlib.patches.ArrowStyle" title=":class:`ArrowStyle` is a container class which defines several" alt="" coords="20,126,137,149"/>
+<area shape="rect" id="node52" href="patches_api.html#matplotlib.patches.BoxStyle" title=":class:`BoxStyle` is a container class which defines several" alt="" coords="25,86,132,108"/>
+<area shape="rect" id="node55" href="patches_api.html#matplotlib.patches.CirclePolygon" title="A polygon&#45;approximation of a circle patch." alt="" coords="624,1046,755,1069"/>
+<area shape="rect" id="node58" href="patches_api.html#matplotlib.patches.ConnectionPatch" title="A :class:`~matplotlib.patches.ConnectionPatch` class is to make" alt="" coords="615,1087,764,1110"/>
+<area shape="rect" id="node61" href="patches_api.html#matplotlib.patches.ConnectionStyle" title=":class:`ConnectionStyle` is a container class which defines" alt="" coords="5,45,152,67"/>
+<area shape="rect" id="node63" href="patches_api.html#matplotlib.patches.FancyArrow" title="Like Arrow, but lets you set head width and head height independently." alt="" coords="629,678,750,701"/>
+<area shape="rect" id="node82" href="text_api.html#matplotlib.text.Annotation" title="A :class:`~matplotlib.text.Text` class to make annotating things" alt="" coords="444,351,541,374"/>
+<area shape="rect" id="node87" href="text_api.html#matplotlib.text.TextWithDash" title="This is basically a :class:`~matplotlib.text.Text` with a dash" alt="" coords="438,310,547,333"/>
+<area shape="rect" id="node85" href="text_api.html#matplotlib.text.OffsetFrom" title="text.OffsetFrom" alt="" coords="30,4,127,26"/>
+</map>

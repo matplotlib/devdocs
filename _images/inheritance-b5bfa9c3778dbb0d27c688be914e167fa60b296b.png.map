@@ -1,0 +1,18 @@
+<map id="inheritance829eaf436e" name="inheritance829eaf436e">
+<area shape="rect" id="node1" href="artist_api.html#matplotlib.artist.Artist" title="Abstract base class for someone who renders into a" alt="" coords="55,188,125,209"/>
+<area shape="rect" id="node10" href="#matplotlib.collections.Collection" title="Base class for Collections. &#160;Must be subclassed to be usable." alt="" coords="249,202,365,223"/>
+<area shape="rect" id="node2" href="cm_api.html#matplotlib.cm.ScalarMappable" title="This is a mixin class to support scalar data to RGBA mapping." alt="" coords="35,226,145,247"/>
+<area shape="rect" id="node3" href="#matplotlib.collections.AsteriskPolygonCollection" title="Draw a collection of regular asterisks with *numsides* points." alt="" coords="211,117,403,138"/>
+<area shape="rect" id="node4" href="#matplotlib.collections.RegularPolyCollection" title="Draw a collection of regular polygons with *numsides*." alt="" coords="5,131,175,152"/>
+<area shape="rect" id="node24" href="#matplotlib.collections.StarPolygonCollection" title="Draw a collection of regular stars with *numsides* points." alt="" coords="220,155,394,176"/>
+<area shape="rect" id="node6" href="#matplotlib.collections.BrokenBarHCollection" title="A collection of horizontal bars spanning *yrange* with a sequence of" alt="" coords="220,79,394,100"/>
+<area shape="rect" id="node7" href="#matplotlib.collections.PolyCollection" title="collections.PolyCollection" alt="" coords="22,79,158,100"/>
+<area shape="rect" id="node9" href="#matplotlib.collections.CircleCollection" title="A collection of circles, drawn using splines." alt="" coords="19,41,161,62"/>
+<area shape="rect" id="node13" href="#matplotlib.collections.EllipseCollection" title="A collection of ellipses, drawn using splines." alt="" coords="439,126,584,147"/>
+<area shape="rect" id="node16" href="#matplotlib.collections.LineCollection" title="All parameters must be sequences or scalars; if scalars, they will" alt="" coords="444,164,579,185"/>
+<area shape="rect" id="node19" href="#matplotlib.collections.PatchCollection" title="A generic collection of patches." alt="" coords="441,202,582,223"/>
+<area shape="rect" id="node22" href="#matplotlib.collections.QuadMesh" title="Class for the efficient drawing of a quadrilateral mesh." alt="" coords="452,240,572,261"/>
+<area shape="rect" id="node26" href="#matplotlib.collections.TriMesh" title="Class for the efficient drawing of a triangular mesh using" alt="" coords="460,278,564,299"/>
+<area shape="rect" id="node15" href="#matplotlib.collections.EventCollection" title="A collection of discrete events." alt="" coords="621,164,763,185"/>
+<area shape="rect" id="node21" href="#matplotlib.collections.PathCollection" title="This is the most basic :class:`Collection` subclass." alt="" coords="22,3,158,24"/>
+</map>
