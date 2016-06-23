@@ -7,7 +7,6 @@ user_interfaces example code: embedding_in_tk2.py
 
 ::
 
-    #!/usr/bin/env python
     import matplotlib
     matplotlib.use('TkAgg')
     

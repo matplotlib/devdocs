@@ -10,7 +10,7 @@ pylab_examples example code: stackplot_demo.py
 ::
 
     import numpy as np
-    from matplotlib import pyplot as plt
+    import matplotlib.pyplot as plt
     
     
     def fnx():

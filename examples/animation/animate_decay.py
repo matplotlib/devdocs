@@ -7,13 +7,20 @@ def data_gen(t=0):
     cnt = 0
     while cnt < 1000:
         cnt += 1
-        t += 0.05
+        t += 0.1
         yield t, np.sin(2*np.pi*t) * np.exp(-t/10.)
+
+
+def init():
+    ax.set_ylim(-1.1, 1.1)
+    ax.set_xlim(0, 10)
+    del xdata[:]
+    del ydata[:]
+    line.set_data(xdata, ydata)
+    return line,
 
 fig, ax = plt.subplots()
 line, = ax.plot([], [], lw=2)
-ax.set_ylim(-1.1, 1.1)
-ax.set_xlim(0, 5)
 ax.grid()
 xdata, ydata = [], []
 
@@ -32,6 +39,6 @@ def run(data):
 
     return line,
 
-ani = animation.FuncAnimation(fig, run, data_gen, blit=True, interval=10,
-                              repeat=False)
+ani = animation.FuncAnimation(fig, run, data_gen, blit=False, interval=10,
+                              repeat=False, init_func=init)
 plt.show()

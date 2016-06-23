@@ -12,6 +12,7 @@ text_labels_and_annotations Examples
 .. toctree::
     :maxdepth: 1
 
+    autowrap_demo <autowrap_demo.rst>
     rainbow_text <rainbow_text.rst>
     text_demo_fontdict <text_demo_fontdict.rst>
     unicode_demo <unicode_demo.rst>

@@ -1,11 +1,29 @@
+2015-11-16 Levels passed to contour(f) and tricontour(f) must be in increasing
+           order.
+
+2015-10-21 Added get_ticks_direction()
+
+2015-02-27 Added the rcParam 'image.composite_image' to permit users 
+		   to decide whether they want the vector graphics backends to combine 
+		   all images within a set of axes into a single composite image.  
+		   (If images do not get combined, users can open vector graphics files 
+		   in Adobe Illustrator or Inkscape and edit each image individually.)  
+
+2015-02-19 Rewrite of C++ code that calculates contours to add support for
+           corner masking.  This is controlled by the 'corner_mask' keyword
+           in plotting commands 'contour' and 'contourf'. - IMT
+
+2015-01-23 Text bounding boxes are now computed with advance width rather than
+           ink area.  This may result in slightly different placement of text.
+
 2014-10-27 Allowed selection of the backend using the `MPLBACKEND` environment
            variable. Added documentation on backend selection methods.
 
 2014-09-27 Overhauled `colors.LightSource`.  Added `LightSource.hillshade` to
-	   allow the independent generation of illumination maps. Added new
-	   types of blending for creating more visually appealing shaded relief
-	   plots (e.g.  `blend_mode="overlay"`, etc, in addition to the legacy
-	   "hsv" mode).
+           allow the independent generation of illumination maps. Added new
+           types of blending for creating more visually appealing shaded relief
+           plots (e.g.  `blend_mode="overlay"`, etc, in addition to the legacy
+           "hsv" mode).
 
 2014-06-10 Added Colorbar.remove()
 
@@ -61,7 +79,7 @@
            of a generator at line 263.
 
 2014-04-02 Added `clipon=False` to patch creation of wedges and shadows
-	   in `pie`.
+           in `pie`.
 
 2014-02-25 In backend_qt4agg changed from using update -> repaint under
            windows.  See comment in source near `self._priv_update` for

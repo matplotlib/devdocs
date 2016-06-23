@@ -1,0 +1,24 @@
+<map id="inheritancedbde0cb62f" name="inheritancedbde0cb62f">
+<area shape="rect" id="node1" href="#matplotlib.transforms.Affine2D" target="_top" title="A mutable 2D affine transformation." alt="" coords="534,3,584,22"/>
+<area shape="rect" id="node2" href="#matplotlib.transforms.Affine2DBase" target="_top" title="The base class of all 2D affine transformations." alt="" coords="405,122,476,141"/>
+<area shape="rect" id="node13" href="#matplotlib.transforms.BboxTransform" target="_top" title=":class:`BboxTransform` linearly transforms points from one" alt="" coords="520,37,598,56"/>
+<area shape="rect" id="node15" href="#matplotlib.transforms.BboxTransformFrom" target="_top" title=":class:`BboxTransformFrom` linearly transforms points from a given" alt="" coords="509,71,609,90"/>
+<area shape="rect" id="node17" href="#matplotlib.transforms.BboxTransformTo" target="_top" title=":class:`BboxTransformTo` is a transformation that linearly" alt="" coords="515,105,603,124"/>
+<area shape="rect" id="node21" href="#matplotlib.transforms.BlendedAffine2D" target="_top" title="A &quot;blended&quot; transform uses one transform for the *x*&#45;direction, and" alt="" coords="516,139,602,158"/>
+<area shape="rect" id="node25" href="#matplotlib.transforms.CompositeAffine2D" target="_top" title="A composite transform formed by applying transform *a* then transform *b*." alt="" coords="511,173,607,192"/>
+<area shape="rect" id="node29" href="#matplotlib.transforms.IdentityTransform" target="_top" title="A special class that does on thing, the identity transform, in a" alt="" coords="515,207,603,225"/>
+<area shape="rect" id="node32" href="#matplotlib.transforms.ScaledTranslation" target="_top" title="A transformation that translates by *xt* and *yt*, after *xt* and *yt*" alt="" coords="514,241,604,259"/>
+<area shape="rect" id="node4" href="#matplotlib.transforms.AffineBase" target="_top" title="The base class of all affine transformations of any number of" alt="" coords="273,122,334,141"/>
+<area shape="rect" id="node6" href="#matplotlib.transforms.Transform" target="_top" title="The base class of all :class:`TransformNode` instances that" alt="" coords="131,190,188,209"/>
+<area shape="rect" id="node23" href="#matplotlib.transforms.BlendedGenericTransform" target="_top" title="A &quot;blended&quot; transform uses one transform for the *x*&#45;direction, and" alt="" coords="241,156,366,175"/>
+<area shape="rect" id="node27" href="#matplotlib.transforms.CompositeGenericTransform" target="_top" title="A composite transform formed by applying transform *a* then" alt="" coords="236,190,371,209"/>
+<area shape="rect" id="node35" href="#matplotlib.transforms.TransformWrapper" target="_top" title="A helper class that holds a single child transform and acts" alt="" coords="258,224,349,242"/>
+<area shape="rect" id="node8" href="#matplotlib.transforms.Bbox" target="_top" title="A mutable bounding box." alt="" coords="280,258,328,276"/>
+<area shape="rect" id="node9" href="#matplotlib.transforms.BboxBase" target="_top" title="This is the base class of all bounding boxes, and provides" alt="" coords="131,266,188,284"/>
+<area shape="rect" id="node37" href="#matplotlib.transforms.TransformedBbox" target="_top" title="A :class:`Bbox` that is automatically transformed by a given" alt="" coords="259,292,348,310"/>
+<area shape="rect" id="node11" href="#matplotlib.transforms.TransformNode" target="_top" title=":class:`TransformNode` is the base class for anything that" alt="" coords="4,266,83,284"/>
+<area shape="rect" id="node40" href="#matplotlib.transforms.TransformedPath" target="_top" title="A :class:`TransformedPath` caches a non&#45;affine transformed copy of" alt="" coords="117,317,203,335"/>
+<area shape="rect" id="node19" title=":class:`BboxTransformTo` is a transformation that linearly" alt="" coords="641,105,764,124"/>
+<area shape="rect" id="node31" href="../api/path_api.html#matplotlib.path.Path" target="_top" title=":class:`Path` represents a series of possibly disconnected," alt="" coords="20,232,68,250"/>
+<area shape="rect" id="node39" title="A :class:`TransformedPatchPath` caches a non&#45;affine transformed copy of" alt="" coords="249,326,358,344"/>
+</map>

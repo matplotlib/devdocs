@@ -9,7 +9,6 @@ pylab_examples example code: fill_between_demo.py
 
 ::
 
-    #!/usr/bin/env python
     import matplotlib.pyplot as plt
     import numpy as np
     

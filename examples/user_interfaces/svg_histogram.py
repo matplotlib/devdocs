@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-#-*- encoding:utf-8 -*-
-
 """
 Demonstrate how to create an interactive histogram, in which bars
 are hidden or shown by cliking on legend markers.
@@ -27,7 +24,7 @@ a PatchCollection, or be assigned a class="hist_##" attribute.
 CSS could also be used more extensively to replace repetitive markup
 troughout the generated SVG.
 
-__author__="david.huard@gmail.com"
+Author: david.huard@gmail.com
 
 """
 
@@ -35,7 +32,7 @@ __author__="david.huard@gmail.com"
 import numpy as np
 import matplotlib.pyplot as plt
 import xml.etree.ElementTree as ET
-from StringIO import StringIO
+from io import BytesIO
 import json
 
 plt.rcParams['svg.embed_char_paths'] = 'none'
@@ -76,7 +73,7 @@ for i, t in enumerate(leg.get_texts()):
     t.set_gid('leg_text_%d' % i)
 
 # Save SVG in a fake file object.
-f = StringIO()
+f = BytesIO()
 plt.savefig(f, format="svg")
 
 # Create XML tree from the SVG file.

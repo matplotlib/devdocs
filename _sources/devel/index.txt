@@ -21,3 +21,5 @@ The Matplotlib Developers' Guide
    release_guide.rst
    transformations.rst
    add_new_projection.rst
+   color_changes
+   MEP/index

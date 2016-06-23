@@ -7,8 +7,6 @@ user_interfaces example code: interactive2.py
 
 ::
 
-    #!/usr/bin/env python
-    
     from __future__ import print_function
     
     #  GTK Interactive Console

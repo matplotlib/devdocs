@@ -1,11 +1,10 @@
-#!/usr/bin/env python
 """
 You can precisely layout text in data or axes (0,1) coordinates.  This
 example shows you some of the alignment and rotation specifications to
 layout text
 """
 
-from pylab import *
+import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.patches import Rectangle
 
@@ -14,8 +13,8 @@ left, width = .25, .5
 bottom, height = .25, .5
 right = left + width
 top = bottom + height
-ax = gca()
-p = Rectangle((left, bottom), width, height,
+ax = plt.gca()
+p = plt.Rectangle((left, bottom), width, height,
               fill=False,
               )
 p.set_transform(ax.transAxes)
@@ -77,6 +76,6 @@ ax.text(left, top, 'rotated\nwith newlines',
         rotation=45,
         transform=ax.transAxes)
 
-axis('off')
+plt.axis('off')
 
-show()
+plt.show()

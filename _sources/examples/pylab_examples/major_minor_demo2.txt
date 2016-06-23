@@ -9,7 +9,6 @@ pylab_examples example code: major_minor_demo2.py
 
 ::
 
-    #!/usr/bin/env python
     """
     Automatic tick selection for major and minor ticks.
     

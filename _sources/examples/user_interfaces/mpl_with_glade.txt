@@ -7,8 +7,6 @@ user_interfaces example code: mpl_with_glade.py
 
 ::
 
-    #!/usr/bin/env python
-    
     from __future__ import print_function
     import matplotlib
     matplotlib.use('GTK')

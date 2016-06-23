@@ -13,7 +13,7 @@ pylab_examples example code: tricontour_smooth_user.py
     Demonstrates high-resolution tricontouring on user-defined triangular grids
     with matplotlib.tri.UniformTriRefiner
     """
-    from matplotlib.tri import Triangulation, UniformTriRefiner
+    import matplotlib.tri as tri
     import matplotlib.pyplot as plt
     import matplotlib.cm as cm
     import numpy as np
@@ -54,7 +54,7 @@ pylab_examples example code: tricontour_smooth_user.py
     # Now create the Triangulation.
     # (Creating a Triangulation without specifying the triangles results in the
     # Delaunay triangulation of the points.)
-    triang = Triangulation(x, y)
+    triang = tri.Triangulation(x, y)
     
     # Mask off unwanted triangles.
     xmid = x[triang.triangles].mean(axis=1)
@@ -65,7 +65,7 @@ pylab_examples example code: tricontour_smooth_user.py
     #-----------------------------------------------------------------------------
     # Refine data
     #-----------------------------------------------------------------------------
-    refiner = UniformTriRefiner(triang)
+    refiner = tri.UniformTriRefiner(triang)
     tri_refi, z_test_refi = refiner.refine_field(z, subdiv=3)
     
     #-----------------------------------------------------------------------------

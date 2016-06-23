@@ -1,0 +1,20 @@
+.. _axisartist-examples-index:
+
+##############################################
+axisartist Examples
+##############################################
+
+.. htmlonly::
+
+    :Release: |version|
+    :Date: |today|
+
+.. toctree::
+    :maxdepth: 1
+
+    demo_axisline_style <demo_axisline_style.rst>
+    demo_curvelinear_grid <demo_curvelinear_grid.rst>
+    demo_curvelinear_grid2 <demo_curvelinear_grid2.rst>
+    demo_floating_axes <demo_floating_axes.rst>
+    demo_floating_axis <demo_floating_axis.rst>
+    demo_parasite_axes2 <demo_parasite_axes2.rst>

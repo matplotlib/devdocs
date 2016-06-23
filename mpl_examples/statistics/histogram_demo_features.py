@@ -22,12 +22,12 @@ x = mu + sigma * np.random.randn(10000)
 
 num_bins = 50
 # the histogram of the data
-n, bins, patches = plt.hist(x, num_bins, normed=1, facecolor='green', alpha=0.5)
+n, bins, patches = plt.hist(x, num_bins, normed=1)
 # add a 'best fit' line
 y = mlab.normpdf(bins, mu, sigma)
-plt.plot(bins, y, 'r--')
+plt.plot(bins, y, '--')
 plt.xlabel('Smarts')
-plt.ylabel('Probability')
+plt.ylabel('Probability density')
 plt.title(r'Histogram of IQ: $\mu=100$, $\sigma=15$')
 
 # Tweak spacing to prevent clipping of ylabel

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Typesetting With XeLaTeX/LuaLaTeX &mdash; Matplotlib 1.5.dev1 documentation</title>
+    <title>Typesetting With XeLaTeX/LuaLaTeX &mdash; Matplotlib 2.0.0b1.post1110+gf8ea2c5 documentation</title>
     
     <link rel="stylesheet" href="../_static/mpl.css"
 type="text/css" />
@@ -16,7 +16,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.5.dev1',
+        VERSION:     '2.0.0b1.post1110+gf8ea2c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,20 +26,19 @@ type="text/css" />
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 1.5.dev1 documentation"
+          title="Search within Matplotlib 2.0.0b1.post1110+gf8ea2c5 documentation"
           href="../_static/opensearch.xml"/>
-    <link rel="top" title="Matplotlib 1.5.dev1 documentation" href="../index.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Matplotlib 2.0.0b1.post1110+gf8ea2c5 documentation" href="../index.html" />
     <link rel="up" title="Working with text" href="index_text.html" />
     <link rel="next" title="Text rendering With LaTeX" href="usetex.html" />
     <link rel="prev" title="Writing mathematical expressions" href="mathtext.html" /> 
-<link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
 
   </head>
   <body>
 
 
-
-<link rel="shortcut icon" href="/_static/favicon.ico">
 
 <!-- The "Fork me on github" ribbon -->
 <img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
@@ -48,7 +47,7 @@ type="text/css" />
 </map>
 
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../index.html"><img src="../_static/logo2.png" border="0" alt="matplotlib"/></a>
+<a href="../index.html"><img src="../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 </div>
 
 
@@ -84,6 +83,16 @@ type="text/css" />
   
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+<a href="http://depsy.org/package/python/matplotlib">
+  <img src="http://depsy.org/api/package/pypi/matplotlib/badge.svg">
+</a>
+
+<br/>
+
+Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
+  <img src="https://travis-ci.org/matplotlib/matplotlib.svg?branch=master"/>
+</a>
+<br/>
   <h3><a href="../contents.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Typesetting With XeLaTeX/LuaLaTeX</a><ul>
@@ -94,29 +103,36 @@ type="text/css" />
 </ul>
 </li>
 </ul>
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mathtext.html"
-                        title="previous chapter">Writing mathematical expressions</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="usetex.html"
-                        title="next chapter">Text rendering With LaTeX</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/users/pgf.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../contents.html">Documentation overview</a><ul>
+  <li><a href="index.html">User&#8217;s Guide</a><ul>
+  <li><a href="beginner.html">Beginner&#8217;s Guide</a><ul>
+  <li><a href="index_text.html">Working with text</a><ul>
+      <li>Previous: <a href="mathtext.html" title="previous chapter">Writing mathematical expressions</a></li>
+      <li>Next: <a href="usetex.html" title="next chapter">Text rendering With LaTeX</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/users/pgf.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -129,20 +145,20 @@ type="text/css" />
             
   <div class="section" id="typesetting-with-xelatex-lualatex">
 <span id="pgf-tutorial"></span><h1>Typesetting With XeLaTeX/LuaLaTeX<a class="headerlink" href="#typesetting-with-xelatex-lualatex" title="Permalink to this headline">¶</a></h1>
-<p>Using the <tt class="docutils literal"><span class="pre">pgf</span></tt> backend, matplotlib can export figures as pgf drawing commands
+<p>Using the <code class="docutils literal"><span class="pre">pgf</span></code> backend, matplotlib can export figures as pgf drawing commands
 that can be processed with pdflatex, xelatex or lualatex. XeLaTeX and LuaLaTeX
 have full unicode support and can use any font that is installed in the operating
 system, making use of advanced typographic features of OpenType, AAT and
-Graphite. Pgf pictures created by <tt class="docutils literal"><span class="pre">plt.savefig('figure.pgf')</span></tt> can be
+Graphite. Pgf pictures created by <code class="docutils literal"><span class="pre">plt.savefig('figure.pgf')</span></code> can be
 embedded as raw commands in LaTeX documents. Figures can also be directly
-compiled and saved to PDF with <tt class="docutils literal"><span class="pre">plt.savefig('figure.pdf')</span></tt> by either
+compiled and saved to PDF with <code class="docutils literal"><span class="pre">plt.savefig('figure.pdf')</span></code> by either
 switching to the backend</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">&#39;pgf&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;pgf&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or registering it for handling pdf output</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">matplotlib.backends.backend_pgf</span> <span class="kn">import</span> <span class="n">FigureCanvasPgf</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">backend_bases</span><span class="o">.</span><span class="n">register_backend</span><span class="p">(</span><span class="s">&#39;pdf&#39;</span><span class="p">,</span> <span class="n">FigureCanvasPgf</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.backends.backend_pgf</span> <span class="kn">import</span> <span class="n">FigureCanvasPgf</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">backend_bases</span><span class="o">.</span><span class="n">register_backend</span><span class="p">(</span><span class="s1">&#39;pdf&#39;</span><span class="p">,</span> <span class="n">FigureCanvasPgf</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The second method allows you to keep using regular interactive backends and to
@@ -151,7 +167,7 @@ save xelatex, lualatex or pdflatex compiled PDF files from the graphical user in
 the TikZ/PGF packages (such as <a class="reference external" href="http://www.tug.org/texlive/">TeXLive</a>), preferably with XeLaTeX or LuaLaTeX
 installed. If either pdftocairo or ghostscript is present on your system,
 figures can optionally be saved to PNG images as well. The executables
-for all applications must be located on your <span class="target" id="index-0"></span><a class="reference internal" href="../faq/environment_variables_faq.html#envvar-PATH"><tt class="xref std std-envvar docutils literal"><span class="pre">PATH</span></tt></a>.</p>
+for all applications must be located on your <span class="target" id="index-0"></span><a class="reference internal" href="../faq/environment_variables_faq.html#envvar-PATH"><code class="xref std std-envvar docutils literal"><span class="pre">PATH</span></code></a>.</p>
 <p>Rc parameters that control the behavior of the pgf backend:</p>
 <blockquote>
 <div><table border="1" class="docutils">
@@ -180,7 +196,7 @@ for all applications must be located on your <span class="target" id="index-0"><
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>TeX defines a set of special characters, such as:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># $ % &amp; ~ _ ^ \ { }</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># $ % &amp; ~ _ ^ \ { }</span>
 </pre></div>
 </div>
 <p class="last">Generally, these characters must be escaped correctly. For convenience,
@@ -192,33 +208,34 @@ environments.</p>
 <p>The fonts used for obtaining the size of text elements or when compiling
 figures to PDF are usually defined in the matplotlib rc parameters. You can
 also use the LaTeX default Computer Modern fonts by clearing the lists for
-<tt class="docutils literal"><span class="pre">font.serif</span></tt>, <tt class="docutils literal"><span class="pre">font.sans-serif</span></tt> or <tt class="docutils literal"><span class="pre">font.monospace</span></tt>. Please note that
+<code class="docutils literal"><span class="pre">font.serif</span></code>, <code class="docutils literal"><span class="pre">font.sans-serif</span></code> or <code class="docutils literal"><span class="pre">font.monospace</span></code>. Please note that
 the glyph coverage of these fonts is very limited. If you want to keep the
 Computer Modern font face but require extended unicode support, consider
 installing the <a class="reference external" href="http://sourceforge.net/projects/cm-unicode/">Computer Modern Unicode</a>
 fonts <em>CMU Serif</em>, <em>CMU Sans Serif</em>, etc.</p>
-<p>When saving to <tt class="docutils literal"><span class="pre">.pgf</span></tt>, the font configuration matplotlib used for the
+<p>When saving to <code class="docutils literal"><span class="pre">.pgf</span></code>, the font configuration matplotlib used for the
 layout of the figure is included in the header of the text file.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
-<span class="n">mpl</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">&quot;pgf&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;pgf&quot;</span><span class="p">)</span>
 <span class="n">pgf_with_rc_fonts</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">&quot;font.family&quot;</span><span class="p">:</span> <span class="s">&quot;serif&quot;</span><span class="p">,</span>
-    <span class="s">&quot;font.serif&quot;</span><span class="p">:</span> <span class="p">[],</span>                   <span class="c"># use latex default serif font</span>
-    <span class="s">&quot;font.sans-serif&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;DejaVu Sans&quot;</span><span class="p">],</span> <span class="c"># use a specific sans-serif font</span>
+    <span class="s2">&quot;font.family&quot;</span><span class="p">:</span> <span class="s2">&quot;serif&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;font.serif&quot;</span><span class="p">:</span> <span class="p">[],</span>                   <span class="c1"># use latex default serif font</span>
+    <span class="s2">&quot;font.sans-serif&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">],</span> <span class="c1"># use a specific sans-serif font</span>
 <span class="p">}</span>
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">pgf_with_rc_fonts</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="s">&quot;serif&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="s">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">&quot;monospace&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="s">&quot;sans-serif&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">&quot;sans-serif&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="s">&quot;comic sans&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">&quot;Comic Sans MS&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">u&quot;µ is not $</span><span class="se">\\</span><span class="s">mu$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="s2">&quot;serif&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="s2">&quot;sans-serif&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;sans-serif&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="s2">&quot;comic sans&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;Comic Sans MS&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">u&quot;µ is not $</span><span class="se">\\</span><span class="s2">mu$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+
 </pre></div>
 </div>
 <img alt="../_images/pgf_fonts.png" src="../_images/pgf_fonts.png" />
@@ -226,71 +243,73 @@ layout of the figure is included in the header of the text file.</p>
 <div class="section" id="custom-preamble">
 <span id="pgf-preamble"></span><h2>Custom preamble<a class="headerlink" href="#custom-preamble" title="Permalink to this headline">¶</a></h2>
 <p>Full customization is possible by adding your own commands to the preamble.
-Use the <tt class="docutils literal"><span class="pre">pgf.preamble</span></tt> parameter if you want to configure the math fonts,
-using <tt class="docutils literal"><span class="pre">unicode-math</span></tt> for example, or for loading additional packages. Also,
+Use the <code class="docutils literal"><span class="pre">pgf.preamble</span></code> parameter if you want to configure the math fonts,
+using <code class="docutils literal"><span class="pre">unicode-math</span></code> for example, or for loading additional packages. Also,
 if you want to do the font configuration yourself instead of using the fonts
-specified in the rc parameters, make sure to disable <tt class="docutils literal"><span class="pre">pgf.rcfonts</span></tt>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+specified in the rc parameters, make sure to disable <code class="docutils literal"><span class="pre">pgf.rcfonts</span></code>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
                         <span class="n">unicode_literals</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">six</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
-<span class="n">mpl</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">&quot;pgf&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;pgf&quot;</span><span class="p">)</span>
 <span class="n">pgf_with_custom_preamble</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">&quot;font.family&quot;</span><span class="p">:</span> <span class="s">&quot;serif&quot;</span><span class="p">,</span> <span class="c"># use serif/main font for text elements</span>
-    <span class="s">&quot;text.usetex&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>    <span class="c"># use inline math for ticks</span>
-    <span class="s">&quot;pgf.rcfonts&quot;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>   <span class="c"># don&#39;t setup fonts from rc parameters</span>
-    <span class="s">&quot;pgf.preamble&quot;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="s">&quot;</span><span class="se">\\</span><span class="s">usepackage{units}&quot;</span><span class="p">,</span>         <span class="c"># load additional packages</span>
-         <span class="s">&quot;</span><span class="se">\\</span><span class="s">usepackage{metalogo}&quot;</span><span class="p">,</span>
-         <span class="s">&quot;</span><span class="se">\\</span><span class="s">usepackage{unicode-math}&quot;</span><span class="p">,</span>  <span class="c"># unicode math setup</span>
-         <span class="s">r&quot;\setmathfont{xits-math.otf}&quot;</span><span class="p">,</span>
-         <span class="s">r&quot;\setmainfont{DejaVu Serif}&quot;</span><span class="p">,</span> <span class="c"># serif font via preamble</span>
+    <span class="s2">&quot;font.family&quot;</span><span class="p">:</span> <span class="s2">&quot;serif&quot;</span><span class="p">,</span> <span class="c1"># use serif/main font for text elements</span>
+    <span class="s2">&quot;text.usetex&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>    <span class="c1"># use inline math for ticks</span>
+    <span class="s2">&quot;pgf.rcfonts&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>   <span class="c1"># don&#39;t setup fonts from rc parameters</span>
+    <span class="s2">&quot;pgf.preamble&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">usepackage</span><span class="si">{units}</span><span class="s2">&quot;</span><span class="p">,</span>         <span class="c1"># load additional packages</span>
+         <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">usepackage</span><span class="si">{metalogo}</span><span class="s2">&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">usepackage{unicode-math}&quot;</span><span class="p">,</span>  <span class="c1"># unicode math setup</span>
+         <span class="s2">r&quot;\setmathfont{xits-math.otf}&quot;</span><span class="p">,</span>
+         <span class="s2">r&quot;\setmainfont{DejaVu Serif}&quot;</span><span class="p">,</span> <span class="c1"># serif font via preamble</span>
          <span class="p">]</span>
 <span class="p">}</span>
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">pgf_with_custom_preamble</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;unicode text: я, ψ, €, ü, </span><span class="se">\\</span><span class="s">unitfrac[10]{°}{µm}&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">XeLaTeX&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s">&quot;unicode math: $λ=∑_i^∞ μ_i^2$&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;unicode text: я, ψ, €, ü, </span><span class="se">\\</span><span class="s2">unitfrac[10]{°}</span><span class="si">{µm}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">XeLaTeX&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;unicode math: $λ=∑_i^∞ μ_i^2$&quot;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+
 </pre></div>
 </div>
 <img alt="../_images/pgf_preamble.png" src="../_images/pgf_preamble.png" />
 </div>
 <div class="section" id="choosing-the-tex-system">
 <span id="pgf-texsystem"></span><h2>Choosing the TeX system<a class="headerlink" href="#choosing-the-tex-system" title="Permalink to this headline">¶</a></h2>
-<p>The TeX system to be used by matplotlib is chosen by the <tt class="docutils literal"><span class="pre">pgf.texsystem</span></tt>
-parameter. Possible values are <tt class="docutils literal"><span class="pre">'xelatex'</span></tt> (default), <tt class="docutils literal"><span class="pre">'lualatex'</span></tt> and
-<tt class="docutils literal"><span class="pre">'pdflatex'</span></tt>. Please note that when selecting pdflatex the fonts and
+<p>The TeX system to be used by matplotlib is chosen by the <code class="docutils literal"><span class="pre">pgf.texsystem</span></code>
+parameter. Possible values are <code class="docutils literal"><span class="pre">'xelatex'</span></code> (default), <code class="docutils literal"><span class="pre">'lualatex'</span></code> and
+<code class="docutils literal"><span class="pre">'pdflatex'</span></code>. Please note that when selecting pdflatex the fonts and
 unicode handling must be configured in the preamble.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
-<span class="n">mpl</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">&quot;pgf&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;pgf&quot;</span><span class="p">)</span>
 <span class="n">pgf_with_pdflatex</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">&quot;pgf.texsystem&quot;</span><span class="p">:</span> <span class="s">&quot;pdflatex&quot;</span><span class="p">,</span>
-    <span class="s">&quot;pgf.preamble&quot;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="s">r&quot;\usepackage[utf8x]{inputenc}&quot;</span><span class="p">,</span>
-         <span class="s">r&quot;\usepackage[T1]{fontenc}&quot;</span><span class="p">,</span>
-         <span class="s">r&quot;\usepackage{cmbright}&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pgf.texsystem&quot;</span><span class="p">:</span> <span class="s2">&quot;pdflatex&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pgf.preamble&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="s2">r&quot;\usepackage[utf8x]</span><span class="si">{inputenc}</span><span class="s2">&quot;</span><span class="p">,</span>
+         <span class="s2">r&quot;\usepackage[T1]</span><span class="si">{fontenc}</span><span class="s2">&quot;</span><span class="p">,</span>
+         <span class="s2">r&quot;\usepackage</span><span class="si">{cmbright}</span><span class="s2">&quot;</span><span class="p">,</span>
          <span class="p">]</span>
 <span class="p">}</span>
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">pgf_with_pdflatex</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="s">&quot;serif&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">&quot;serif&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="s">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">&quot;monospace&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="s">&quot;sans-serif&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">&quot;sans-serif&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">u&quot;µ is not $</span><span class="se">\\</span><span class="s">mu$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="s2">&quot;serif&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;serif&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="s2">&quot;monospace&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="s2">&quot;sans-serif&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;sans-serif&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">u&quot;µ is not $</span><span class="se">\\</span><span class="s2">mu$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+
 </pre></div>
 </div>
 <img alt="../_images/pgf_texsystem.png" src="../_images/pgf_texsystem.png" />
@@ -301,10 +320,10 @@ unicode handling must be configured in the preamble.</p>
 <li>Please note that the TeX packages found in some Linux distributions and
 MiKTeX installations are dramatically outdated. Make sure to update your
 package catalog and upgrade or install a recent TeX distribution.</li>
-<li>On Windows, the <span class="target" id="index-1"></span><a class="reference internal" href="../faq/environment_variables_faq.html#envvar-PATH"><tt class="xref std std-envvar docutils literal"><span class="pre">PATH</span></tt></a> environment variable may need to be modified
+<li>On Windows, the <span class="target" id="index-1"></span><a class="reference internal" href="../faq/environment_variables_faq.html#envvar-PATH"><code class="xref std std-envvar docutils literal"><span class="pre">PATH</span></code></a> environment variable may need to be modified
 to include the directories containing the latex, dvipng and ghostscript
-executables. See <a class="reference internal" href="../faq/environment_variables_faq.html#environment-variables"><em>Environment Variables</em></a> and
-<a class="reference internal" href="../faq/environment_variables_faq.html#setting-windows-environment-variables"><em>Setting environment variables in windows</em></a> for details.</li>
+executables. See <a class="reference internal" href="../faq/environment_variables_faq.html#environment-variables"><span class="std std-ref">Environment Variables</span></a> and
+<a class="reference internal" href="../faq/environment_variables_faq.html#setting-windows-environment-variables"><span class="std std-ref">Setting environment variables in windows</span></a> for details.</li>
 <li>A limitation on Windows causes the backend to keep file handles that have
 been opened by your application open. As a result, it may not be possible
 to delete the corresponding files until the application closes (see
@@ -315,22 +334,31 @@ ghostscript is used for the pdf to png conversion.</li>
 <li>Make sure what you are trying to do is possible in a LaTeX document,
 that your LaTeX syntax is valid and that you are using raw strings
 if necessary to avoid unintended escape sequences.</li>
-<li>The <tt class="docutils literal"><span class="pre">pgf.preamble</span></tt> rc setting provides lots of flexibility, and lots of
+<li>The <code class="docutils literal"><span class="pre">pgf.preamble</span></code> rc setting provides lots of flexibility, and lots of
 ways to cause problems. When experiencing problems, try to minimalize or
 disable the custom preamble.</li>
-<li>Configuring an <tt class="docutils literal"><span class="pre">unicode-math</span></tt> environment can be a bit tricky. The
+<li>Configuring an <code class="docutils literal"><span class="pre">unicode-math</span></code> environment can be a bit tricky. The
 TeXLive distribution for example provides a set of math fonts which are
 usually not installed system-wide. XeTeX, unlike LuaLatex, cannot find
 these fonts by their name, which is why you might have to specify
-<tt class="docutils literal"><span class="pre">\setmathfont{xits-math.otf}</span></tt> instead of <tt class="docutils literal"><span class="pre">\setmathfont{XITS</span> <span class="pre">Math}</span></tt> or
+<code class="docutils literal"><span class="pre">\setmathfont{xits-math.otf}</span></code> instead of <code class="docutils literal"><span class="pre">\setmathfont{XITS</span> <span class="pre">Math}</span></code> or
 alternatively make the fonts available to your OS. See this
 <a class="reference external" href="http://tex.stackexchange.com/questions/43642">tex.stackexchange.com question</a>
 for more details.</li>
 <li>If the font configuration used by matplotlib differs from the font setting
 in yout LaTeX document, the alignment of text elements in imported figures
-may be off. Check the header of your <tt class="docutils literal"><span class="pre">.pgf</span></tt> file if you are unsure about
+may be off. Check the header of your <code class="docutils literal"><span class="pre">.pgf</span></code> file if you are unsure about
 the fonts matplotlib used for the layout.</li>
-<li>If you still need help, please see <a class="reference internal" href="../faq/troubleshooting_faq.html#reporting-problems"><em>Getting help</em></a></li>
+<li>Vector images and hence <code class="docutils literal"><span class="pre">.pgf</span></code> files can become bloated if there are a lot
+of objects in the graph. This can be the case for image processing or very
+big scatter graphs.  In an extreme case this can cause TeX to run out of
+memory: &#8220;TeX capacity exceeded, sorry&#8221;  You can configure latex to increase
+the amount of memory available to generate the <code class="docutils literal"><span class="pre">.pdf</span></code> image as discussed on
+<a class="reference external" href="http://tex.stackexchange.com/questions/7953">tex.stackexchange.com</a>.
+Another way would be to &#8220;rasterize&#8221; parts of the graph causing problems
+using either the <code class="docutils literal"><span class="pre">rasterized=True</span></code> keyword, or <code class="docutils literal"><span class="pre">.set_rasterized(True)</span></code> as per
+<a class="reference external" href="http://matplotlib.org/examples/misc/rasterization_demo.html">this example</a>.</li>
+<li>If you still need help, please see <a class="reference internal" href="../faq/troubleshooting_faq.html#reporting-problems"><span class="std std-ref">Getting help</span></a></li>
 </ul>
 </div>
 </div>
@@ -344,9 +372,9 @@ the fonts matplotlib used for the layout.</li>
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the matplotlib development team; 2012 - 2014 The matplotlib development team.
-      Last updated on Jan 15, 2015.
+      Last updated on Jun 23, 2016.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
     </div>
 
 <script>
@@ -360,4 +388,153 @@ href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
 
 </script>
 </body>
+<footer>
+  <!--Flipcause Integration v3.0// Flipcause Integration Instructions:
+Install the following code block once in the website Header (after <head> tag) -->
+
+<style>
+
+.fc-black_overlay{
+display:none; position: fixed; z-index:1000001; top: 0%;left: 0%;width: 100%;height: 100%;
+background-color: black; filter: alpha(opacity=50); cursor:pointer; opacity:0.5;
+}
+
+.fc-white_content {
+opacity:1; display:none; margin-top: -320px; margin-left: -485px; width:970px; height:640px;
+position:fixed; top:50%; left:50%; border: none;z-index:1000002;overflow: auto;
+}
+
+.fc-main-box{
+opacity:1; display:none; margin:15px auto 0 auto; width:930px; position:relative; z-index:1000003;
+}
+
+.fc-widget_close{
+opacity:1; content:url(http://i1338.photobucket.com/albums/o691/WeCause/X_zpse4a7e538.png);
+position:absolute; z-index=1000004; right:-16px; top:-16px; display:block; cursor:pointer;
+}
+
+.floating_button{
+display: block; margin-top: 0px; margin-left: 0px; width:auto ; height: auto;
+position:fixed; z-index:999999; overflow: auto;
+}
+
+@keyframes backfadesin {
+   from { opacity:0; }
+   to {opacity:.5;}
+}
+
+@-moz-keyframes backfadesin {
+    from { opacity:0; }
+    to {opacity:.5;}
+}
+
+@-webkit-keyframes backfadesin {
+    from { opacity:0; }
+    to {opacity:.5;}
+}
+
+@-o-keyframes backfadesin {
+    from { opacity:0; }
+    to {opacity:.5;}
+}
+
+
+@-ms-keyframes backfadesin {
+    from { opacity:0; }
+    to {opacity:.5;}
+}
+
+@keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; transform: translateY(20px);}
+   100% {opacity: 1; transform: translateY(0);}
+}
+
+@-moz-keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; -moz-transform: translateY(20px);}
+   100% {opacity: 1; -moz-transform: translateY(0);}
+}
+
+@-webkit-keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; -webkit-transform: translateY(20px);}
+   100% {opacity: 1; -webkit-transform: translateY(0);}
+}
+
+@-o-keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; -o-transform: translateY(20px);}
+   100% {opacity: 1; -o-transform: translateY(0);}
+}
+
+@-ms-keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; -ms-transform: translateY(20px);}
+   100% {opacity: 1; -ms-transform: translateY(0);}
+}
+
+</style>
+
+<script>
+
+function open_window(cause_id) {
+var  protocol=String(document.location.protocol);
+var new_url;
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+new_url="https://www.flipcause.com/widget/"+cause_id
+window.open(new_url);
+}
+
+else {
+document.getElementById("fc-fade").style.display = "block";
+document.getElementById("fc-fade").style.webkitAnimation = "backfadesin 1s";
+document.getElementById("fc-fade").style.animation = "backfadesin 1s";
+document.getElementById("fc-fade").style.mozAnimation = "backfadesin 1s";
+document.getElementById("fc-light").style.display = "block";
+document.getElementById("fc-light").style.webkitAnimation = "fadesin 1.5s";
+document.getElementById("fc-light").style.animation = "fadesin 1.5s";
+document.getElementById("fc-light").style.mozAnimation = "fadesin 1.5s";
+document.getElementById("fc-main").style.display = "block";
+document.getElementById("fc-main").style.webkitAnimation = "fadesin 1.5s";
+document.getElementById("fc-main").style.animation = "fadesin 1.5s";
+document.getElementById("fc-main").style.mozAnimation = "fadesin 1.5s";
+document.getElementById("fc-close").style.display = "block";
+document.getElementById("fc-close").style.webkitAnimation = "fadesin 1.5s";
+document.getElementById("fc-close").style.animation = "fadesin 1.5s";
+document.getElementById("fc-close").style.mozAnimation = "fadesin 1.5s";
+document.getElementById("fc-myFrame").style.display = "block";
+document.getElementById("fc-myFrame").style.webkitAnimation = "fadesin 1.5s";
+document.getElementById("fc-myFrame").style.animation = "fadesin 1.5s";
+document.getElementById("fc-myFrame").style.mozAnimation = "fadesin 1.5s";
+document.getElementById("fc-myFrame").src="https://www.flipcause.com/widget/"+cause_id;
+}
+}
+
+
+function close_window() {
+document.getElementById("fc-fade").style.display="none";
+document.getElementById("fc-light").style.display="none";
+document.getElementById("fc-main").style.display="none";
+document.getElementById("fc-close").style.display="none";
+document.getElementById("fc-myFrame").style.display="none";
+}
+
+</script>
+
+<div id="fc-fade" class="fc-black_overlay" onclick="close_window()"></div>
+<div id="fc-light" class="fc-white_content">
+<div id="fc-main" class="fc-main-box">
+<div id="fc-close" class="fc-widget_close" onclick="close_window()">
+</div><iframe id="fc-myFrame" iframe height="580" width="925" style="border: 0;
+border-radius:5px 5px 5px 5px; box-shadow:0 0 8px rgba(0, 0, 0, 0.5);" scrolling="no" src=""></iframe></div>
+</div>
+
+<!--END Flipcause Main Integration Code-->
+</footer>
 </html>

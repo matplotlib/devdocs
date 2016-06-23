@@ -7,8 +7,6 @@ misc example code: ftface_props.py
 
 ::
 
-    #!/usr/bin/env python
-    
     from __future__ import print_function
     """
     This is a demo script to show you how to use all the properties of an
@@ -21,7 +19,7 @@ misc example code: ftface_props.py
     
     
     #fname = '/usr/local/share/matplotlib/VeraIt.ttf'
-    fname = matplotlib.get_data_path() + '/fonts/ttf/VeraIt.ttf'
+    fname = matplotlib.get_data_path() + '/fonts/ttf/DejaVuSans-Oblique.ttf'
     #fname = '/usr/local/share/matplotlib/cmr10.ttf'
     
     font = ft.FT2Font(fname)
@@ -72,7 +70,6 @@ misc example code: ftface_props.py
     
     print(dir(font))
     
-    cmap = font.get_charmap()
     print(font.get_kerning)
     
 

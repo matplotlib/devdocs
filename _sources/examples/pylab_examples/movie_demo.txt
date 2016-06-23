@@ -7,7 +7,6 @@ pylab_examples example code: movie_demo.py
 
 ::
 
-    #!/usr/bin/env python
     # -*- noplot -*-
     
     from __future__ import print_function

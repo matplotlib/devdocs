@@ -1,21 +1,19 @@
-import matplotlib.pyplot as plt
 import numpy as np
+from cycler import cycler
+cmap = cycler('cmap', ['viridis', 'magma','plasma', 'inferno'])
+x_mode = cycler('x', [1, 2])
+y_mode = cycler('y', x_mode)
 
-x = y = np.linspace(0., 2*np.pi, 100)
-X, Y = np.meshgrid(x, y)
-Z = np.cos(X) * np.sin(0.5*Y)
+cy = (x_mode * y_mode) + cmap
 
-clevs = [-.75, -.5, -.25, 0., .25, .5, .75]
-cmap = plt.cm.get_cmap(name='jet', lut=8)
+def demo(ax, x, y, cmap):
+    X, Y = np.ogrid[0:2*np.pi:200j, 0:2*np.pi:200j]
+    data = np.sin(X*x) * np.cos(Y*y)
+    ax.imshow(data, interpolation='none', cmap=cmap)
+    ax.set_title(cmap)
 
-ax1 = plt.subplot(211)
-cs1 = plt.contourf(x, y, Z, clevs, cmap=cmap, extend='both')
-cb1 = plt.colorbar(orientation='horizontal', extendfrac=None)
-cb1.set_label('Default length colorbar extensions')
+fig, axes = plt.subplots(2, 2)
+for ax, sty in zip(axes.ravel(), cy):
+    demo(ax, **sty)
 
-ax2 = plt.subplot(212)
-cs2 = plt.contourf(x, y, Z, clevs, cmap=cmap, extend='both')
-cb2 = plt.colorbar(orientation='horizontal', extendfrac='auto')
-cb2.set_label('Custom length colorbar extensions')
-
-plt.show()
+fig.tight_layout()

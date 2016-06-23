@@ -18,7 +18,7 @@ misc example code: font_indexing.py
     
     
     #fname = '/usr/share/fonts/sfd/FreeSans.ttf'
-    fname = matplotlib.get_data_path() + '/fonts/ttf/Vera.ttf'
+    fname = matplotlib.get_data_path() + '/fonts/ttf/DejaVuSans.ttf'
     font = FT2Font(fname)
     font.set_charmap(0)
     

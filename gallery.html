@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Thumbnail gallery &mdash; Matplotlib 1.5.dev1 documentation</title>
+    <title>Thumbnail gallery &mdash; Matplotlib 2.0.0b1.post1110+gf8ea2c5 documentation</title>
     
     <link rel="stylesheet" href="_static/mpl.css"
 type="text/css" />
@@ -16,7 +16,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.5.dev1',
+        VERSION:     '2.0.0b1.post1110+gf8ea2c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,17 +26,16 @@ type="text/css" />
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 1.5.dev1 documentation"
+          title="Search within Matplotlib 2.0.0b1.post1110+gf8ea2c5 documentation"
           href="_static/opensearch.xml"/>
-    <link rel="top" title="Matplotlib 1.5.dev1 documentation" href="index.html" /> 
-<link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Matplotlib 2.0.0b1.post1110+gf8ea2c5 documentation" href="index.html" /> 
+
 
   </head>
   <body>
 
 
-
-<link rel="shortcut icon" href="/_static/favicon.ico">
 
 <!-- The "Fork me on github" ribbon -->
 <img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
@@ -45,7 +44,7 @@ type="text/css" />
 </map>
 
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="index.html"><img src="_static/logo2.png" border="0" alt="matplotlib"/></a>
+<a href="index.html"><img src="_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 </div>
 
 
@@ -72,17 +71,30 @@ type="text/css" />
   
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-<div id="searchbox" style="display: none">
+<a href="http://depsy.org/package/python/matplotlib">
+  <img src="http://depsy.org/api/package/pypi/matplotlib/badge.svg">
+</a>
+
+<br/>
+
+Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
+  <img src="https://travis-ci.org/matplotlib/matplotlib.svg?branch=master"/>
+</a>
+<br/><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -107,6 +119,7 @@ type="text/css" />
 <li><a class="reference internal" href="#color">Color</a></li>
 <li><a class="reference internal" href="#text_labels_and_annotations">Text, labels, and annotations</a></li>
 <li><a class="reference internal" href="#ticks_and_spines">Ticks and spines</a></li>
+<li><a class="reference internal" href="#scales">Axis scales</a></li>
 <li><a class="reference internal" href="#subplots_axes_and_figures">Subplots, axes, and figures</a></li>
 <li><a class="reference internal" href="#style_sheets">Style sheets</a></li>
 <li><a class="reference internal" href="#specialty_plots">Specialty plots</a></li>
@@ -114,7 +127,8 @@ type="text/css" />
 <li><a class="reference internal" href="#api">API</a></li>
 <li><a class="reference internal" href="#pylab_examples">pylab examples</a></li>
 <li><a class="reference internal" href="#mplot3d">mplot3d toolkit</a></li>
-<li><a class="reference internal" href="#axes_grid">axes_grid toolkit</a></li>
+<li><a class="reference internal" href="#axes_grid1">axes_grid1 toolkit</a></li>
+<li><a class="reference internal" href="#axisartist">axisartist toolkit</a></li>
 <li><a class="reference internal" href="#widgets">widgets</a></li>
     </ul>
 </li>
@@ -239,6 +253,11 @@ type="text/css" />
 </figure>
 
 <figure>
+  <a href="examples/statistics/errorbars_and_boxes.html"><img src="plot_directive/mpl_examples/statistics/thumbnails/errorbars_and_boxes.png" border="0" alt="errorbars_and_boxes"/></a><br>
+  <figcaption><a href="examples/statistics/errorbars_and_boxes.html">errorbars_and_boxes</a></figcaption>
+</figure>
+
+<figure>
   <a href="examples/statistics/histogram_demo_cumulative.html"><img src="plot_directive/mpl_examples/statistics/thumbnails/histogram_demo_cumulative.png" border="0" alt="histogram_demo_cumulative"/></a><br>
   <figcaption><a href="examples/statistics/histogram_demo_cumulative.html">histogram_demo_cumulative</a></figcaption>
 </figure>
@@ -273,6 +292,11 @@ type="text/css" />
 <h4>
     Images, contours, and fields<a class="headerlink" href="#images_contours_and_fields" title="Permalink to this headline">¶</a>
 </h4>
+<figure>
+  <a href="examples/images_contours_and_fields/contourf_log.html"><img src="plot_directive/mpl_examples/images_contours_and_fields/thumbnails/contourf_log.png" border="0" alt="contourf_log"/></a><br>
+  <figcaption><a href="examples/images_contours_and_fields/contourf_log.html">contourf_log</a></figcaption>
+</figure>
+
 <figure>
   <a href="examples/images_contours_and_fields/image_demo.html"><img src="plot_directive/mpl_examples/images_contours_and_fields/thumbnails/image_demo.png" border="0" alt="image_demo"/></a><br>
   <figcaption><a href="examples/images_contours_and_fields/image_demo.html">image_demo</a></figcaption>
@@ -316,6 +340,11 @@ type="text/css" />
 <figure>
   <a href="examples/images_contours_and_fields/streamplot_demo_masking.html"><img src="plot_directive/mpl_examples/images_contours_and_fields/thumbnails/streamplot_demo_masking.png" border="0" alt="streamplot_demo_masking"/></a><br>
   <figcaption><a href="examples/images_contours_and_fields/streamplot_demo_masking.html">streamplot_demo_masking</a></figcaption>
+</figure>
+
+<figure>
+  <a href="examples/images_contours_and_fields/streamplot_demo_start_points.html"><img src="plot_directive/mpl_examples/images_contours_and_fields/thumbnails/streamplot_demo_start_points.png" border="0" alt="streamplot_demo_start_points"/></a><br>
+  <figcaption><a href="examples/images_contours_and_fields/streamplot_demo_start_points.html">streamplot_demo_start_points</a></figcaption>
 </figure>
 
 </div>
@@ -379,6 +408,11 @@ type="text/css" />
 </figure>
 
 <figure>
+  <a href="examples/color/colormaps_reference.html"><img src="plot_directive/mpl_examples/color/thumbnails/colormaps_reference_05.png" border="0" alt="colormaps_reference"/></a><br>
+  <figcaption><a href="examples/color/colormaps_reference.html">colormaps_reference</a></figcaption>
+</figure>
+
+<figure>
   <a href="examples/color/named_colors.html"><img src="plot_directive/mpl_examples/color/thumbnails/named_colors.png" border="0" alt="named_colors"/></a><br>
   <figcaption><a href="examples/color/named_colors.html">named_colors</a></figcaption>
 </figure>
@@ -388,6 +422,11 @@ type="text/css" />
 <h4>
     Text, labels, and annotations<a class="headerlink" href="#text_labels_and_annotations" title="Permalink to this headline">¶</a>
 </h4>
+<figure>
+  <a href="examples/text_labels_and_annotations/autowrap_demo.html"><img src="plot_directive/mpl_examples/text_labels_and_annotations/thumbnails/autowrap_demo.png" border="0" alt="autowrap_demo"/></a><br>
+  <figcaption><a href="examples/text_labels_and_annotations/autowrap_demo.html">autowrap_demo</a></figcaption>
+</figure>
+
 <figure>
   <a href="examples/text_labels_and_annotations/rainbow_text.html"><img src="plot_directive/mpl_examples/text_labels_and_annotations/thumbnails/rainbow_text.png" border="0" alt="rainbow_text"/></a><br>
   <figcaption><a href="examples/text_labels_and_annotations/rainbow_text.html">rainbow_text</a></figcaption>
@@ -424,8 +463,23 @@ type="text/css" />
 </figure>
 
 <figure>
+  <a href="examples/ticks_and_spines/tick_labels_from_values.html"><img src="plot_directive/mpl_examples/ticks_and_spines/thumbnails/tick_labels_from_values.png" border="0" alt="tick_labels_from_values"/></a><br>
+  <figcaption><a href="examples/ticks_and_spines/tick_labels_from_values.html">tick_labels_from_values</a></figcaption>
+</figure>
+
+<figure>
   <a href="examples/ticks_and_spines/ticklabels_demo_rotation.html"><img src="plot_directive/mpl_examples/ticks_and_spines/thumbnails/ticklabels_demo_rotation.png" border="0" alt="ticklabels_demo_rotation"/></a><br>
   <figcaption><a href="examples/ticks_and_spines/ticklabels_demo_rotation.html">ticklabels_demo_rotation</a></figcaption>
+</figure>
+
+</div>
+<div class="section" id="scales">
+<h4>
+    Axis scales<a class="headerlink" href="#scales" title="Permalink to this headline">¶</a>
+</h4>
+<figure>
+  <a href="examples/scales/scales.html"><img src="plot_directive/mpl_examples/scales/thumbnails/scales.png" border="0" alt="scales"/></a><br>
+  <figcaption><a href="examples/scales/scales.html">scales</a></figcaption>
 </figure>
 
 </div>
@@ -509,6 +563,11 @@ type="text/css" />
     Showcase<a class="headerlink" href="#showcase" title="Permalink to this headline">¶</a>
 </h4>
 <figure>
+  <a href="examples/showcase/bachelors_degrees_by_gender.html"><img src="plot_directive/mpl_examples/showcase/thumbnails/bachelors_degrees_by_gender.png" border="0" alt="bachelors_degrees_by_gender"/></a><br>
+  <figcaption><a href="examples/showcase/bachelors_degrees_by_gender.html">bachelors_degrees_by_gender</a></figcaption>
+</figure>
+
+<figure>
   <a href="examples/showcase/integral_demo.html"><img src="plot_directive/mpl_examples/showcase/thumbnails/integral_demo.png" border="0" alt="integral_demo"/></a><br>
   <figcaption><a href="examples/showcase/integral_demo.html">integral_demo</a></figcaption>
 </figure>
@@ -579,7 +638,7 @@ type="text/css" />
 </figure>
 
 <figure>
-  <a href="examples/api/demo_affine_image.html"><img src="plot_directive/mpl_examples/api/thumbnails/demo_affine_image_00_00.png" border="0" alt="demo_affine_image"/></a><br>
+  <a href="examples/api/demo_affine_image.html"><img src="plot_directive/mpl_examples/api/thumbnails/demo_affine_image.png" border="0" alt="demo_affine_image"/></a><br>
   <figcaption><a href="examples/api/demo_affine_image.html">demo_affine_image</a></figcaption>
 </figure>
 
@@ -591,6 +650,16 @@ type="text/css" />
 <figure>
   <a href="examples/api/engineering_formatter.html"><img src="plot_directive/mpl_examples/api/thumbnails/engineering_formatter.png" border="0" alt="engineering_formatter"/></a><br>
   <figcaption><a href="examples/api/engineering_formatter.html">engineering_formatter</a></figcaption>
+</figure>
+
+<figure>
+  <a href="examples/api/filled_step.html"><img src="plot_directive/mpl_examples/api/thumbnails/filled_step_00.png" border="0" alt="filled_step"/></a><br>
+  <figcaption><a href="examples/api/filled_step.html">filled_step</a></figcaption>
+</figure>
+
+<figure>
+  <a href="examples/api/filled_step.html"><img src="plot_directive/mpl_examples/api/thumbnails/filled_step_01.png" border="0" alt="filled_step"/></a><br>
+  <figcaption><a href="examples/api/filled_step.html">filled_step</a></figcaption>
 </figure>
 
 <figure>
@@ -721,6 +790,11 @@ type="text/css" />
 <figure>
   <a href="examples/pylab_examples/accented_text.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/accented_text.png" border="0" alt="accented_text"/></a><br>
   <figcaption><a href="examples/pylab_examples/accented_text.html">accented_text</a></figcaption>
+</figure>
+
+<figure>
+  <a href="examples/pylab_examples/agg_buffer.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/agg_buffer.png" border="0" alt="agg_buffer"/></a><br>
+  <figcaption><a href="examples/pylab_examples/agg_buffer.html">agg_buffer</a></figcaption>
 </figure>
 
 <figure>
@@ -904,11 +978,6 @@ type="text/css" />
 </figure>
 
 <figure>
-  <a href="examples/pylab_examples/break.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/break.png" border="0" alt="break"/></a><br>
-  <figcaption><a href="examples/pylab_examples/break.html">break</a></figcaption>
-</figure>
-
-<figure>
   <a href="examples/pylab_examples/broken_axis.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/broken_axis.png" border="0" alt="broken_axis"/></a><br>
   <figcaption><a href="examples/pylab_examples/broken_axis.html">broken_axis</a></figcaption>
 </figure>
@@ -921,11 +990,6 @@ type="text/css" />
 <figure>
   <a href="examples/pylab_examples/centered_ticklabels.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/centered_ticklabels.png" border="0" alt="centered_ticklabels"/></a><br>
   <figcaption><a href="examples/pylab_examples/centered_ticklabels.html">centered_ticklabels</a></figcaption>
-</figure>
-
-<figure>
-  <a href="examples/pylab_examples/clippedline.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/clippedline.png" border="0" alt="clippedline"/></a><br>
-  <figcaption><a href="examples/pylab_examples/clippedline.html">clippedline</a></figcaption>
 </figure>
 
 <figure>
@@ -951,6 +1015,11 @@ type="text/css" />
 <figure>
   <a href="examples/pylab_examples/colorbar_tick_labelling_demo.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/colorbar_tick_labelling_demo_01.png" border="0" alt="colorbar_tick_labelling_demo"/></a><br>
   <figcaption><a href="examples/pylab_examples/colorbar_tick_labelling_demo.html">colorbar_tick_labelling_demo</a></figcaption>
+</figure>
+
+<figure>
+  <a href="examples/pylab_examples/contour_corner_mask.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/contour_corner_mask.png" border="0" alt="contour_corner_mask"/></a><br>
+  <figcaption><a href="examples/pylab_examples/contour_corner_mask.html">contour_corner_mask</a></figcaption>
 </figure>
 
 <figure>
@@ -1026,11 +1095,6 @@ type="text/css" />
 <figure>
   <a href="examples/pylab_examples/contourf_hatching.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/contourf_hatching_01.png" border="0" alt="contourf_hatching"/></a><br>
   <figcaption><a href="examples/pylab_examples/contourf_hatching.html">contourf_hatching</a></figcaption>
-</figure>
-
-<figure>
-  <a href="examples/pylab_examples/contourf_log.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/contourf_log.png" border="0" alt="contourf_log"/></a><br>
-  <figcaption><a href="examples/pylab_examples/contourf_log.html">contourf_log</a></figcaption>
 </figure>
 
 <figure>
@@ -1314,7 +1378,22 @@ type="text/css" />
 </figure>
 
 <figure>
-  <a href="examples/pylab_examples/geo_demo.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/geo_demo.png" border="0" alt="geo_demo"/></a><br>
+  <a href="examples/pylab_examples/geo_demo.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/geo_demo_00.png" border="0" alt="geo_demo"/></a><br>
+  <figcaption><a href="examples/pylab_examples/geo_demo.html">geo_demo</a></figcaption>
+</figure>
+
+<figure>
+  <a href="examples/pylab_examples/geo_demo.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/geo_demo_01.png" border="0" alt="geo_demo"/></a><br>
+  <figcaption><a href="examples/pylab_examples/geo_demo.html">geo_demo</a></figcaption>
+</figure>
+
+<figure>
+  <a href="examples/pylab_examples/geo_demo.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/geo_demo_02.png" border="0" alt="geo_demo"/></a><br>
+  <figcaption><a href="examples/pylab_examples/geo_demo.html">geo_demo</a></figcaption>
+</figure>
+
+<figure>
+  <a href="examples/pylab_examples/geo_demo.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/geo_demo_03.png" border="0" alt="geo_demo"/></a><br>
   <figcaption><a href="examples/pylab_examples/geo_demo.html">geo_demo</a></figcaption>
 </figure>
 
@@ -1429,6 +1508,11 @@ type="text/css" />
 </figure>
 
 <figure>
+  <a href="examples/pylab_examples/leftventricle_bulleye.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/leftventricle_bulleye.png" border="0" alt="leftventricle_bulleye"/></a><br>
+  <figcaption><a href="examples/pylab_examples/leftventricle_bulleye.html">leftventricle_bulleye</a></figcaption>
+</figure>
+
+<figure>
   <a href="examples/pylab_examples/legend_demo2.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/legend_demo2.png" border="0" alt="legend_demo2"/></a><br>
   <figcaption><a href="examples/pylab_examples/legend_demo2.html">legend_demo2</a></figcaption>
 </figure>
@@ -1441,6 +1525,16 @@ type="text/css" />
 <figure>
   <a href="examples/pylab_examples/legend_demo4.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/legend_demo4.png" border="0" alt="legend_demo4"/></a><br>
   <figcaption><a href="examples/pylab_examples/legend_demo4.html">legend_demo4</a></figcaption>
+</figure>
+
+<figure>
+  <a href="examples/pylab_examples/legend_demo5.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/legend_demo5.png" border="0" alt="legend_demo5"/></a><br>
+  <figcaption><a href="examples/pylab_examples/legend_demo5.html">legend_demo5</a></figcaption>
+</figure>
+
+<figure>
+  <a href="examples/pylab_examples/legend_demo6.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/legend_demo6.png" border="0" alt="legend_demo6"/></a><br>
+  <figcaption><a href="examples/pylab_examples/legend_demo6.html">legend_demo6</a></figcaption>
 </figure>
 
 <figure>
@@ -1694,11 +1788,6 @@ type="text/css" />
 </figure>
 
 <figure>
-  <a href="examples/pylab_examples/psd_demo.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/psd_demo.png" border="0" alt="psd_demo"/></a><br>
-  <figcaption><a href="examples/pylab_examples/psd_demo.html">psd_demo</a></figcaption>
-</figure>
-
-<figure>
   <a href="examples/pylab_examples/psd_demo2.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/psd_demo2.png" border="0" alt="psd_demo2"/></a><br>
   <figcaption><a href="examples/pylab_examples/psd_demo2.html">psd_demo2</a></figcaption>
 </figure>
@@ -1706,6 +1795,11 @@ type="text/css" />
 <figure>
   <a href="examples/pylab_examples/psd_demo3.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/psd_demo3.png" border="0" alt="psd_demo3"/></a><br>
   <figcaption><a href="examples/pylab_examples/psd_demo3.html">psd_demo3</a></figcaption>
+</figure>
+
+<figure>
+  <a href="examples/pylab_examples/psd_demo.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/psd_demo_00_00.png" border="0" alt="psd_demo"/></a><br>
+  <figcaption><a href="examples/pylab_examples/psd_demo.html">psd_demo</a></figcaption>
 </figure>
 
 <figure>
@@ -1774,6 +1868,11 @@ type="text/css" />
 </figure>
 
 <figure>
+  <a href="examples/pylab_examples/scatter_profile.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/scatter_profile.png" border="0" alt="scatter_profile"/></a><br>
+  <figcaption><a href="examples/pylab_examples/scatter_profile.html">scatter_profile</a></figcaption>
+</figure>
+
+<figure>
   <a href="examples/pylab_examples/scatter_star_poly.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/scatter_star_poly.png" border="0" alt="scatter_star_poly"/></a><br>
   <figcaption><a href="examples/pylab_examples/scatter_star_poly.html">scatter_star_poly</a></figcaption>
 </figure>
@@ -1796,6 +1895,16 @@ type="text/css" />
 <figure>
   <a href="examples/pylab_examples/shading_example.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/shading_example_01_01.png" border="0" alt="shading_example"/></a><br>
   <figcaption><a href="examples/pylab_examples/shading_example.html">shading_example</a></figcaption>
+</figure>
+
+<figure>
+  <a href="examples/pylab_examples/shared_axis_across_figures.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/shared_axis_across_figures_00.png" border="0" alt="shared_axis_across_figures"/></a><br>
+  <figcaption><a href="examples/pylab_examples/shared_axis_across_figures.html">shared_axis_across_figures</a></figcaption>
+</figure>
+
+<figure>
+  <a href="examples/pylab_examples/shared_axis_across_figures.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/shared_axis_across_figures_01.png" border="0" alt="shared_axis_across_figures"/></a><br>
+  <figcaption><a href="examples/pylab_examples/shared_axis_across_figures.html">shared_axis_across_figures</a></figcaption>
 </figure>
 
 <figure>
@@ -1859,7 +1968,7 @@ type="text/css" />
 </figure>
 
 <figure>
-  <a href="examples/pylab_examples/stix_fonts_demo.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/stix_fonts_demo.png" border="0" alt="stix_fonts_demo"/></a><br>
+  <a href="examples/pylab_examples/stix_fonts_demo.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/stix_fonts_demo_01_00.png" border="0" alt="stix_fonts_demo"/></a><br>
   <figcaption><a href="examples/pylab_examples/stix_fonts_demo.html">stix_fonts_demo</a></figcaption>
 </figure>
 
@@ -1929,6 +2038,11 @@ type="text/css" />
 </figure>
 
 <figure>
+  <a href="examples/pylab_examples/system_monitor.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/system_monitor.png" border="0" alt="system_monitor"/></a><br>
+  <figcaption><a href="examples/pylab_examples/system_monitor.html">system_monitor</a></figcaption>
+</figure>
+
+<figure>
   <a href="examples/pylab_examples/table_demo.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/table_demo.png" border="0" alt="table_demo"/></a><br>
   <figcaption><a href="examples/pylab_examples/table_demo.html">table_demo</a></figcaption>
 </figure>
@@ -1961,11 +2075,6 @@ type="text/css" />
 <figure>
   <a href="examples/pylab_examples/titles_demo.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/titles_demo.png" border="0" alt="titles_demo"/></a><br>
   <figcaption><a href="examples/pylab_examples/titles_demo.html">titles_demo</a></figcaption>
-</figure>
-
-<figure>
-  <a href="examples/pylab_examples/to_numeric.html"><img src="plot_directive/mpl_examples/pylab_examples/thumbnails/to_numeric.png" border="0" alt="to_numeric"/></a><br>
-  <figcaption><a href="examples/pylab_examples/to_numeric.html">to_numeric</a></figcaption>
 </figure>
 
 <figure>
@@ -2233,139 +2342,149 @@ type="text/css" />
   <figcaption><a href="examples/mplot3d/wire3d_demo.html">wire3d_demo</a></figcaption>
 </figure>
 
+<figure>
+  <a href="examples/mplot3d/wire3d_zero_stride.html"><img src="plot_directive/mpl_examples/mplot3d/thumbnails/wire3d_zero_stride.png" border="0" alt="wire3d_zero_stride"/></a><br>
+  <figcaption><a href="examples/mplot3d/wire3d_zero_stride.html">wire3d_zero_stride</a></figcaption>
+</figure>
+
 </div>
-<div class="section" id="axes_grid">
+<div class="section" id="axes_grid1">
 <h4>
-    axes_grid toolkit<a class="headerlink" href="#axes_grid" title="Permalink to this headline">¶</a>
+    axes_grid1 toolkit<a class="headerlink" href="#axes_grid1" title="Permalink to this headline">¶</a>
 </h4>
 <figure>
-  <a href="examples/axes_grid/demo_axes_divider.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_axes_divider_01_00.png" border="0" alt="demo_axes_divider"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_axes_divider.html">demo_axes_divider</a></figcaption>
+  <a href="examples/axes_grid1/demo_axes_divider.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/demo_axes_divider_01_00.png" border="0" alt="demo_axes_divider"/></a><br>
+  <figcaption><a href="examples/axes_grid1/demo_axes_divider.html">demo_axes_divider</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_axes_grid.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_axes_grid.png" border="0" alt="demo_axes_grid"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_axes_grid.html">demo_axes_grid</a></figcaption>
+  <a href="examples/axes_grid1/demo_axes_grid.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/demo_axes_grid.png" border="0" alt="demo_axes_grid"/></a><br>
+  <figcaption><a href="examples/axes_grid1/demo_axes_grid.html">demo_axes_grid</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_axes_grid2.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_axes_grid2.png" border="0" alt="demo_axes_grid2"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_axes_grid2.html">demo_axes_grid2</a></figcaption>
+  <a href="examples/axes_grid1/demo_axes_grid2.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/demo_axes_grid2.png" border="0" alt="demo_axes_grid2"/></a><br>
+  <figcaption><a href="examples/axes_grid1/demo_axes_grid2.html">demo_axes_grid2</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_axes_hbox_divider.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_axes_hbox_divider.png" border="0" alt="demo_axes_hbox_divider"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_axes_hbox_divider.html">demo_axes_hbox_divider</a></figcaption>
+  <a href="examples/axes_grid1/demo_axes_hbox_divider.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/demo_axes_hbox_divider.png" border="0" alt="demo_axes_hbox_divider"/></a><br>
+  <figcaption><a href="examples/axes_grid1/demo_axes_hbox_divider.html">demo_axes_hbox_divider</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_axes_rgb.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_axes_rgb_00.png" border="0" alt="demo_axes_rgb"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_axes_rgb.html">demo_axes_rgb</a></figcaption>
+  <a href="examples/axes_grid1/demo_axes_rgb.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/demo_axes_rgb_00.png" border="0" alt="demo_axes_rgb"/></a><br>
+  <figcaption><a href="examples/axes_grid1/demo_axes_rgb.html">demo_axes_rgb</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_axes_rgb.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_axes_rgb_01.png" border="0" alt="demo_axes_rgb"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_axes_rgb.html">demo_axes_rgb</a></figcaption>
+  <a href="examples/axes_grid1/demo_axes_rgb.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/demo_axes_rgb_01.png" border="0" alt="demo_axes_rgb"/></a><br>
+  <figcaption><a href="examples/axes_grid1/demo_axes_rgb.html">demo_axes_rgb</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_axisline_style.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_axisline_style.png" border="0" alt="demo_axisline_style"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_axisline_style.html">demo_axisline_style</a></figcaption>
+  <a href="examples/axes_grid1/demo_colorbar_with_inset_locator.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/demo_colorbar_with_inset_locator.png" border="0" alt="demo_colorbar_with_inset_locator"/></a><br>
+  <figcaption><a href="examples/axes_grid1/demo_colorbar_with_inset_locator.html">demo_colorbar_with_inset_locator</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_colorbar_with_inset_locator.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_colorbar_with_inset_locator.png" border="0" alt="demo_colorbar_with_inset_locator"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_colorbar_with_inset_locator.html">demo_colorbar_with_inset_locator</a></figcaption>
+  <a href="examples/axes_grid1/demo_edge_colorbar.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/demo_edge_colorbar.png" border="0" alt="demo_edge_colorbar"/></a><br>
+  <figcaption><a href="examples/axes_grid1/demo_edge_colorbar.html">demo_edge_colorbar</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_curvelinear_grid.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_curvelinear_grid.png" border="0" alt="demo_curvelinear_grid"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_curvelinear_grid.html">demo_curvelinear_grid</a></figcaption>
+  <a href="examples/axes_grid1/demo_imagegrid_aspect.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/demo_imagegrid_aspect.png" border="0" alt="demo_imagegrid_aspect"/></a><br>
+  <figcaption><a href="examples/axes_grid1/demo_imagegrid_aspect.html">demo_imagegrid_aspect</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_curvelinear_grid2.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_curvelinear_grid2.png" border="0" alt="demo_curvelinear_grid2"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_curvelinear_grid2.html">demo_curvelinear_grid2</a></figcaption>
+  <a href="examples/axes_grid1/inset_locator_demo.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/inset_locator_demo.png" border="0" alt="inset_locator_demo"/></a><br>
+  <figcaption><a href="examples/axes_grid1/inset_locator_demo.html">inset_locator_demo</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_edge_colorbar.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_edge_colorbar.png" border="0" alt="demo_edge_colorbar"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_edge_colorbar.html">demo_edge_colorbar</a></figcaption>
+  <a href="examples/axes_grid1/inset_locator_demo2.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/inset_locator_demo2.png" border="0" alt="inset_locator_demo2"/></a><br>
+  <figcaption><a href="examples/axes_grid1/inset_locator_demo2.html">inset_locator_demo2</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_floating_axes.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_floating_axes.png" border="0" alt="demo_floating_axes"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_floating_axes.html">demo_floating_axes</a></figcaption>
+  <a href="examples/axes_grid1/make_room_for_ylabel_using_axesgrid.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/make_room_for_ylabel_using_axesgrid_00.png" border="0" alt="make_room_for_ylabel_using_axesgrid"/></a><br>
+  <figcaption><a href="examples/axes_grid1/make_room_for_ylabel_using_axesgrid.html">make_room_for_ylabel_using_axesgrid</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_floating_axis.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_floating_axis.png" border="0" alt="demo_floating_axis"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_floating_axis.html">demo_floating_axis</a></figcaption>
+  <a href="examples/axes_grid1/make_room_for_ylabel_using_axesgrid.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/make_room_for_ylabel_using_axesgrid_01.png" border="0" alt="make_room_for_ylabel_using_axesgrid"/></a><br>
+  <figcaption><a href="examples/axes_grid1/make_room_for_ylabel_using_axesgrid.html">make_room_for_ylabel_using_axesgrid</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_imagegrid_aspect.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_imagegrid_aspect.png" border="0" alt="demo_imagegrid_aspect"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_imagegrid_aspect.html">demo_imagegrid_aspect</a></figcaption>
+  <a href="examples/axes_grid1/make_room_for_ylabel_using_axesgrid.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/make_room_for_ylabel_using_axesgrid_02.png" border="0" alt="make_room_for_ylabel_using_axesgrid"/></a><br>
+  <figcaption><a href="examples/axes_grid1/make_room_for_ylabel_using_axesgrid.html">make_room_for_ylabel_using_axesgrid</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/demo_parasite_axes2.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/demo_parasite_axes2_00_00.png" border="0" alt="demo_parasite_axes2"/></a><br>
-  <figcaption><a href="examples/axes_grid/demo_parasite_axes2.html">demo_parasite_axes2</a></figcaption>
+  <a href="examples/axes_grid1/parasite_simple2.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/parasite_simple2.png" border="0" alt="parasite_simple2"/></a><br>
+  <figcaption><a href="examples/axes_grid1/parasite_simple2.html">parasite_simple2</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/inset_locator_demo.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/inset_locator_demo.png" border="0" alt="inset_locator_demo"/></a><br>
-  <figcaption><a href="examples/axes_grid/inset_locator_demo.html">inset_locator_demo</a></figcaption>
+  <a href="examples/axes_grid1/scatter_hist.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/scatter_hist.png" border="0" alt="scatter_hist"/></a><br>
+  <figcaption><a href="examples/axes_grid1/scatter_hist.html">scatter_hist</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/inset_locator_demo2.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/inset_locator_demo2.png" border="0" alt="inset_locator_demo2"/></a><br>
-  <figcaption><a href="examples/axes_grid/inset_locator_demo2.html">inset_locator_demo2</a></figcaption>
+  <a href="examples/axes_grid1/simple_anchored_artists.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/simple_anchored_artists.png" border="0" alt="simple_anchored_artists"/></a><br>
+  <figcaption><a href="examples/axes_grid1/simple_anchored_artists.html">simple_anchored_artists</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/make_room_for_ylabel_using_axesgrid.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/make_room_for_ylabel_using_axesgrid_00.png" border="0" alt="make_room_for_ylabel_using_axesgrid"/></a><br>
-  <figcaption><a href="examples/axes_grid/make_room_for_ylabel_using_axesgrid.html">make_room_for_ylabel_using_axesgrid</a></figcaption>
+  <a href="examples/axes_grid1/simple_axesgrid.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/simple_axesgrid.png" border="0" alt="simple_axesgrid"/></a><br>
+  <figcaption><a href="examples/axes_grid1/simple_axesgrid.html">simple_axesgrid</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/make_room_for_ylabel_using_axesgrid.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/make_room_for_ylabel_using_axesgrid_01.png" border="0" alt="make_room_for_ylabel_using_axesgrid"/></a><br>
-  <figcaption><a href="examples/axes_grid/make_room_for_ylabel_using_axesgrid.html">make_room_for_ylabel_using_axesgrid</a></figcaption>
+  <a href="examples/axes_grid1/simple_axesgrid2.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/simple_axesgrid2.png" border="0" alt="simple_axesgrid2"/></a><br>
+  <figcaption><a href="examples/axes_grid1/simple_axesgrid2.html">simple_axesgrid2</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/make_room_for_ylabel_using_axesgrid.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/make_room_for_ylabel_using_axesgrid_02.png" border="0" alt="make_room_for_ylabel_using_axesgrid"/></a><br>
-  <figcaption><a href="examples/axes_grid/make_room_for_ylabel_using_axesgrid.html">make_room_for_ylabel_using_axesgrid</a></figcaption>
+  <a href="examples/axes_grid1/simple_axisline4.html"><img src="plot_directive/mpl_examples/axes_grid1/thumbnails/simple_axisline4.png" border="0" alt="simple_axisline4"/></a><br>
+  <figcaption><a href="examples/axes_grid1/simple_axisline4.html">simple_axisline4</a></figcaption>
+</figure>
+
+</div>
+<div class="section" id="axisartist">
+<h4>
+    axisartist toolkit<a class="headerlink" href="#axisartist" title="Permalink to this headline">¶</a>
+</h4>
+<figure>
+  <a href="examples/axisartist/demo_axisline_style.html"><img src="plot_directive/mpl_examples/axisartist/thumbnails/demo_axisline_style.png" border="0" alt="demo_axisline_style"/></a><br>
+  <figcaption><a href="examples/axisartist/demo_axisline_style.html">demo_axisline_style</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/parasite_simple2.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/parasite_simple2.png" border="0" alt="parasite_simple2"/></a><br>
-  <figcaption><a href="examples/axes_grid/parasite_simple2.html">parasite_simple2</a></figcaption>
+  <a href="examples/axisartist/demo_curvelinear_grid.html"><img src="plot_directive/mpl_examples/axisartist/thumbnails/demo_curvelinear_grid.png" border="0" alt="demo_curvelinear_grid"/></a><br>
+  <figcaption><a href="examples/axisartist/demo_curvelinear_grid.html">demo_curvelinear_grid</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/scatter_hist.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/scatter_hist.png" border="0" alt="scatter_hist"/></a><br>
-  <figcaption><a href="examples/axes_grid/scatter_hist.html">scatter_hist</a></figcaption>
+  <a href="examples/axisartist/demo_curvelinear_grid2.html"><img src="plot_directive/mpl_examples/axisartist/thumbnails/demo_curvelinear_grid2.png" border="0" alt="demo_curvelinear_grid2"/></a><br>
+  <figcaption><a href="examples/axisartist/demo_curvelinear_grid2.html">demo_curvelinear_grid2</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/simple_anchored_artists.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/simple_anchored_artists.png" border="0" alt="simple_anchored_artists"/></a><br>
-  <figcaption><a href="examples/axes_grid/simple_anchored_artists.html">simple_anchored_artists</a></figcaption>
+  <a href="examples/axisartist/demo_floating_axes.html"><img src="plot_directive/mpl_examples/axisartist/thumbnails/demo_floating_axes.png" border="0" alt="demo_floating_axes"/></a><br>
+  <figcaption><a href="examples/axisartist/demo_floating_axes.html">demo_floating_axes</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/simple_axesgrid.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/simple_axesgrid.png" border="0" alt="simple_axesgrid"/></a><br>
-  <figcaption><a href="examples/axes_grid/simple_axesgrid.html">simple_axesgrid</a></figcaption>
+  <a href="examples/axisartist/demo_floating_axis.html"><img src="plot_directive/mpl_examples/axisartist/thumbnails/demo_floating_axis.png" border="0" alt="demo_floating_axis"/></a><br>
+  <figcaption><a href="examples/axisartist/demo_floating_axis.html">demo_floating_axis</a></figcaption>
 </figure>
 
 <figure>
-  <a href="examples/axes_grid/simple_axesgrid2.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/simple_axesgrid2.png" border="0" alt="simple_axesgrid2"/></a><br>
-  <figcaption><a href="examples/axes_grid/simple_axesgrid2.html">simple_axesgrid2</a></figcaption>
-</figure>
-
-<figure>
-  <a href="examples/axes_grid/simple_axisline4.html"><img src="plot_directive/mpl_examples/axes_grid/thumbnails/simple_axisline4.png" border="0" alt="simple_axisline4"/></a><br>
-  <figcaption><a href="examples/axes_grid/simple_axisline4.html">simple_axisline4</a></figcaption>
+  <a href="examples/axisartist/demo_parasite_axes2.html"><img src="plot_directive/mpl_examples/axisartist/thumbnails/demo_parasite_axes2_00_00.png" border="0" alt="demo_parasite_axes2"/></a><br>
+  <figcaption><a href="examples/axisartist/demo_parasite_axes2.html">demo_parasite_axes2</a></figcaption>
 </figure>
 
 </div>
@@ -2394,9 +2513,9 @@ type="text/css" />
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the matplotlib development team; 2012 - 2014 The matplotlib development team.
-      Last updated on Jan 15, 2015.
+      Last updated on Jun 23, 2016.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
     </div>
 
 <script>
@@ -2410,4 +2529,153 @@ href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
 
 </script>
 </body>
+<footer>
+  <!--Flipcause Integration v3.0// Flipcause Integration Instructions:
+Install the following code block once in the website Header (after <head> tag) -->
+
+<style>
+
+.fc-black_overlay{
+display:none; position: fixed; z-index:1000001; top: 0%;left: 0%;width: 100%;height: 100%;
+background-color: black; filter: alpha(opacity=50); cursor:pointer; opacity:0.5;
+}
+
+.fc-white_content {
+opacity:1; display:none; margin-top: -320px; margin-left: -485px; width:970px; height:640px;
+position:fixed; top:50%; left:50%; border: none;z-index:1000002;overflow: auto;
+}
+
+.fc-main-box{
+opacity:1; display:none; margin:15px auto 0 auto; width:930px; position:relative; z-index:1000003;
+}
+
+.fc-widget_close{
+opacity:1; content:url(http://i1338.photobucket.com/albums/o691/WeCause/X_zpse4a7e538.png);
+position:absolute; z-index=1000004; right:-16px; top:-16px; display:block; cursor:pointer;
+}
+
+.floating_button{
+display: block; margin-top: 0px; margin-left: 0px; width:auto ; height: auto;
+position:fixed; z-index:999999; overflow: auto;
+}
+
+@keyframes backfadesin {
+   from { opacity:0; }
+   to {opacity:.5;}
+}
+
+@-moz-keyframes backfadesin {
+    from { opacity:0; }
+    to {opacity:.5;}
+}
+
+@-webkit-keyframes backfadesin {
+    from { opacity:0; }
+    to {opacity:.5;}
+}
+
+@-o-keyframes backfadesin {
+    from { opacity:0; }
+    to {opacity:.5;}
+}
+
+
+@-ms-keyframes backfadesin {
+    from { opacity:0; }
+    to {opacity:.5;}
+}
+
+@keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; transform: translateY(20px);}
+   100% {opacity: 1; transform: translateY(0);}
+}
+
+@-moz-keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; -moz-transform: translateY(20px);}
+   100% {opacity: 1; -moz-transform: translateY(0);}
+}
+
+@-webkit-keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; -webkit-transform: translateY(20px);}
+   100% {opacity: 1; -webkit-transform: translateY(0);}
+}
+
+@-o-keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; -o-transform: translateY(20px);}
+   100% {opacity: 1; -o-transform: translateY(0);}
+}
+
+@-ms-keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; -ms-transform: translateY(20px);}
+   100% {opacity: 1; -ms-transform: translateY(0);}
+}
+
+</style>
+
+<script>
+
+function open_window(cause_id) {
+var  protocol=String(document.location.protocol);
+var new_url;
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+new_url="https://www.flipcause.com/widget/"+cause_id
+window.open(new_url);
+}
+
+else {
+document.getElementById("fc-fade").style.display = "block";
+document.getElementById("fc-fade").style.webkitAnimation = "backfadesin 1s";
+document.getElementById("fc-fade").style.animation = "backfadesin 1s";
+document.getElementById("fc-fade").style.mozAnimation = "backfadesin 1s";
+document.getElementById("fc-light").style.display = "block";
+document.getElementById("fc-light").style.webkitAnimation = "fadesin 1.5s";
+document.getElementById("fc-light").style.animation = "fadesin 1.5s";
+document.getElementById("fc-light").style.mozAnimation = "fadesin 1.5s";
+document.getElementById("fc-main").style.display = "block";
+document.getElementById("fc-main").style.webkitAnimation = "fadesin 1.5s";
+document.getElementById("fc-main").style.animation = "fadesin 1.5s";
+document.getElementById("fc-main").style.mozAnimation = "fadesin 1.5s";
+document.getElementById("fc-close").style.display = "block";
+document.getElementById("fc-close").style.webkitAnimation = "fadesin 1.5s";
+document.getElementById("fc-close").style.animation = "fadesin 1.5s";
+document.getElementById("fc-close").style.mozAnimation = "fadesin 1.5s";
+document.getElementById("fc-myFrame").style.display = "block";
+document.getElementById("fc-myFrame").style.webkitAnimation = "fadesin 1.5s";
+document.getElementById("fc-myFrame").style.animation = "fadesin 1.5s";
+document.getElementById("fc-myFrame").style.mozAnimation = "fadesin 1.5s";
+document.getElementById("fc-myFrame").src="https://www.flipcause.com/widget/"+cause_id;
+}
+}
+
+
+function close_window() {
+document.getElementById("fc-fade").style.display="none";
+document.getElementById("fc-light").style.display="none";
+document.getElementById("fc-main").style.display="none";
+document.getElementById("fc-close").style.display="none";
+document.getElementById("fc-myFrame").style.display="none";
+}
+
+</script>
+
+<div id="fc-fade" class="fc-black_overlay" onclick="close_window()"></div>
+<div id="fc-light" class="fc-white_content">
+<div id="fc-main" class="fc-main-box">
+<div id="fc-close" class="fc-widget_close" onclick="close_window()">
+</div><iframe id="fc-myFrame" iframe height="580" width="925" style="border: 0;
+border-radius:5px 5px 5px 5px; box-shadow:0 0 8px rgba(0, 0, 0, 0.5);" scrolling="no" src=""></iframe></div>
+</div>
+
+<!--END Flipcause Main Integration Code-->
+</footer>
 </html>

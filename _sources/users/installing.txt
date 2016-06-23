@@ -1,6 +1,7 @@
 .. The source of this document is INSTALL. During the doc build process,
 .. this file is copied over to doc/users/installing.rst.
 .. Therefore, you must edit INSTALL, *not* doc/users/installing.rst!
+.. _pip: https://pypi.python.org/pypi/pip/
 
 **********
 Installing
@@ -21,14 +22,12 @@ Most platforms : scientific Python distributions
 The first option is to use one of the pre-packaged python
 distributions that already provide matplotlib built-in.  The
 Continuum.io Python distribution (`Anaconda
-<https://store.continuum.io/cshop/anaconda/>`_ or `miniconda
+<https://www.continuum.io/downloads/>`_ or `miniconda
 <http://conda.pydata.org/miniconda.html>`_) and the Enthought
 distribution `(Canopy) <https://www.enthought.com/products/canopy/>`_
 are both excellent choices that "just work" out of the box for
 Windows, OSX and common Linux platforms.  Both of these distributions
-include matplotlib and *lots* of other useful tools.  Another
-excellent alternative for Windows users is `Python (x, y)
-<https://code.google.com/p/pythonxy>`_ .
+include matplotlib and *lots* of other useful tools.
 
 
 Linux : using your package manager
@@ -44,40 +43,36 @@ Mac OSX : using pip
 -------------------
 
 If you are on Mac OSX you can probably install matplotlib binaries using the
-standard Python installation program `pip <https://pypi.python.org/pip>`_.
+standard Python installation program pip_.
 See :ref:`install_osx_binaries`.
 
+.. _installing_windows:
 
 Windows
 -------
 
 If you don't already have Python installed, we recommend using
 one of the `scipy-stack compatible Python distributions
-<http://www.scipy.org/install.html>`_ such as Python(x,y),
-Enthought Canopy, or Continuum Anaconda, which have matplotlib and
-many of its dependencies, plus other useful packages, preinstalled.
+<http://www.scipy.org/install.html>`_ such as WinPython, Python(x,y),
+Enthought Canopy, or Continuum Anaconda, which have matplotlib and many
+of its dependencies, plus other useful packages, preinstalled.
 
-For `standard Python <http://www.python.org/download/>`_ installations
-you will also need to install compatible versions of
-`setuptools <https://pypi.python.org/pypi/setuptools/>`_,
-`numpy <https://pypi.python.org/pypi/numpy/>`_,
-`python-dateutil <https://pypi.python.org/pypi/python-dateutil/>`_,
-`pytz <https://pypi.python.org/pypi/pytz>`_,
-`pyparsing <https://pypi.python.org/pypi/pyparsing/>`_ and
-`six <https://pypi.python.org/pypi/six>`_
-in addition to
-`matplotlib <http://matplotlib.org/downloads.html>`_.
+For `standard Python <https://www.python.org/download/>`_ installations,
+install matplotlib using pip_::
 
-In case Python is not installed for all users (not the default), the
-Microsoft Visual C++ 2008 (
+    python -m pip install -U pip setuptools
+    python -m pip install matplotlib
+
+In case Python 2.7 or 3.4 are not installed for all users,
+the Microsoft Visual C++ 2008 (
 `64 bit <http://www.microsoft.com/download/en/details.aspx?id=15336>`__
 or
 `32 bit <http://www.microsoft.com/download/en/details.aspx?id=29>`__
-for Python 2.6 to 3.2) or Microsoft Visual C++ 2010 (
+for Python 2.7) or Microsoft Visual C++ 2010 (
 `64 bit <http://www.microsoft.com/en-us/download/details.aspx?id=14632>`__
 or
 `32 bit <http://www.microsoft.com/en-us/download/details.aspx?id=5555>`__
-for Python 3.3 and 3.4) redistributable packages need to be installed.
+for Python 3.4) redistributable packages need to be installed.
 
 Matplotlib depends on `Pillow <https://pypi.python.org/pypi/Pillow>`_
 for reading and saving JPEG, BMP, and TIFF image files.
@@ -102,23 +97,23 @@ For other backends you may need to install
 or GhostScript.
 
 TkAgg is probably the best backend for interactive use from the
-standard Python shell or IPython. It is enabled as the default backend
+standard Python shell or IPython.  It is enabled as the default backend
 for the official binaries.  GTK3 is not supported on Windows.
 
-The Windows installers (:file:`*.exe`) and wheels (:file:`*.whl`) on
-the `download page <http://matplotlib.org/downloads.html>`_ do not
-contain test data or example code.
+The Windows wheels (:file:`*.whl`) on the `PyPI download page
+<https://pypi.python.org/pypi/matplotlib/>`_ do not contain test data
+or example code.
 If you want to try the many demos that come in the matplotlib source
 distribution, download the :file:`*.tar.gz` file and look in the
 :file:`examples` subdirectory.
-To run the test suite, copy the :file:`lib\matplotlib\tests` and
-:file:`lib\mpl_toolkits\tests` directories from the source distribution to
-:file:`sys.prefix\Lib\site-packages\matplotlib` and
-:file:`sys.prefix\Lib\site-packages\mpl_toolkits` respectively, and install
-`nose <https://pypi.python.org/pypi/nose>`_,
-`mock <https://pypi.python.org/pypi/mock>`_,
-Pillow, MiKTeX, GhostScript, ffmpeg, avconv, mencoder, ImageMagick, and
-`Inkscape <http://inkscape.org/>`_.
+To run the test suite, copy the :file:`lib\\matplotlib\\tests` and
+:file:`lib\\mpl_toolkits\\tests` directories from the source
+distribution to :file:`sys.prefix\\Lib\\site-packages\\matplotlib` and
+:file:`sys.prefix\\Lib\\site-packages\\mpl_toolkits` respectively, and
+install `nose <https://pypi.python.org/pypi/nose>`_, `mock
+<https://pypi.python.org/pypi/mock>`_, Pillow, MiKTeX, GhostScript,
+ffmpeg, avconv, mencoder, ImageMagick, and `Inkscape
+<https://inkscape.org/>`_.
 
 
 
@@ -130,10 +125,18 @@ Installing from source
 If you are interested in contributing to matplotlib development,
 running the latest source code, or just like to build everything
 yourself, it is not difficult to build matplotlib from source.  Grab
-the latest *tar.gz* release file from `the download page
-<http://matplotlib.org/downloads.html>`_, or if you want
-to develop matplotlib or just need the latest bugfixed version, grab
-the latest git version :ref:`install-from-git`.
+the latest *tar.gz* release file from `the PyPI files page
+<https://pypi.python.org/pypi/matplotlib/>`_, or if you want to
+develop matplotlib or just need the latest bugfixed version, grab the
+latest git version :ref:`install-from-git`.
+
+The standard environment variables `CC`, `CXX`, `PKG_CONFIG` are respected.
+This means you can set them if your toolchain is prefixed. This may be used for
+cross compiling.
+
+  export CC=x86_64-pc-linux-gnu-gcc
+  export CXX=x86_64-pc-linux-gnu-g++
+  export PKG_CONFIG=x86_64-pc-linux-gnu-pkg-config
 
 Once you have satisfied the requirements detailed below (mainly
 python, numpy, libpng and freetype), you can build matplotlib::
@@ -174,40 +177,46 @@ themselves.
 Required Dependencies
 ^^^^^^^^^^^^^^^^^^^^^
 
-:term:`python` 2.6, 2.7, 3.3 or 3.4
+:term:`python` 2.7, 3.4, or 3.5
     `Download python <http://www.python.org/download/>`_.
 
 :term:`numpy` |minimum_numpy_version| (or later)
     array support for python (`download numpy <http://numpy.org>`_)
 
+`setuptools <http://pythonhosted.org/setuptools/>`__
+    Setuptools provides extensions for python package installation.
+
 :term:`dateutil` 1.1 or later
     Provides extensions to python datetime handling.  If using pip,
     easy_install or installing from source, the installer will attempt
-    to download and install `python_dateutil` from PyPI.  Note that
-    `python_dateutil` also depends on `six`.  `pip` and other package
-    managers should handle installing that secondary dependency
-    automatically.
+    to download and install `python_dateutil` from PyPI.
 
-`pyparsing`
+`pyparsing <https://pyparsing.wikispaces.com/>`__
     Required for matplotlib's mathtext math rendering support.  If
     using pip, easy_install or installing from source, the installer
     will attempt to download and install `pyparsing` from PyPI.
 
-six 1.4 or later
-    Python 2/3 compatibility library.  This is also a dependency of
-    :term:`dateutil`.
-
-libpng 1.2 (or later)
+`libpng 1.2 (or later) <http://www.libpng.org>`__
     library for loading and saving :term:`PNG` files (`download
     <http://www.libpng.org/pub/png/libpng.html>`__). libpng requires
     zlib.
 
-`pytz`
-    Used to manipulate time-zone aware datetimes.
+`pytz <http://pytz.sourceforge.net/>`__
+    Used to manipulate time-zone aware datetimes. http://pypi.python.org/pypi/pytz
 
-:term:`freetype` 2.3 or later
-    library for reading true type font files.
+:term:`FreeType` 2.3 or later
+    Library for reading true type font files. If using pip, easy_install or
+    installing from source, the installer will attempt to locate FreeType in
+    expected locations. If it cannot, try installing `pkg-config
+    <http://matplotlib.org/users/installing.html#optional-dependencies>`__,
+    a tool used to find required non-python libraries.
 
+`cycler <http://matplotlib.org/cycler/>`__ 0.10.0 or later
+   Composable cycle class used for constructing style-cycles
+
+`functools32`
+    Required for compatibility if running on versions of Python before
+    Python 3.2.
 
 Optional GUI framework
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -217,10 +226,13 @@ matplotlib with a user interface toolkit. See
 :ref:`what-is-a-backend` for more details on the optional matplotlib
 backends and the capabilities they provide.
 
-:term:`tk` 8.3 or later
-    The TCL/Tk widgets library used by the TkAgg backend
+:term:`tk` 8.3 or later, not 8.6.0 or 8.6.1
+    The TCL/Tk widgets library used by the TkAgg backend.
 
-:term:`pyqt` 4.0 or later
+    Versions 8.6.0 and 8.6.1 are known to have issues that may result
+    in segfaults when closing multiple windows in the wrong order.
+
+:term:`pyqt` 4.4 or later
     The Qt4 widgets library python wrappers for the Qt4Agg backend
 
 :term:`pygtk` 2.4 or later
@@ -233,19 +245,24 @@ backends and the capabilities they provide.
 
 Optional external programs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-ffmpeg/avconv or mencoder
+`ffmpeg <https://www.ffmpeg.org/>`__/`avconv <https://libav.org/avconv.html>`__ or `mencoder <http://www.mplayerhq.hu/design7/news.html>`__
     Required for the animation module to be save out put to movie
     formats.
 
-ImageMagick
+`ImageMagick <http://www.imagemagick.org/>`__
     Required for the animation module to be able to save to animated gif.
 
 Optional dependencies
 ^^^^^^^^^^^^^^^^^^^^^
 
-`Pillow <http://python-imaging.github.io/>`__
+`Pillow <http://python-pillow.github.io/>`__
     If Pillow is installed, matplotlib can read and write a larger
     selection of image file formats.
+
+`pkg-config <http://www.freedesktop.org/wiki/Software/pkg-config/>`__
+    A tool used to find required non-python libraries.  This is not strictly
+    required, but can make installation go more smoothly if the libraries and
+    headers are not in the expected locations.
 
 
 Required libraries that ship with matplotlib
@@ -260,6 +277,11 @@ Required libraries that ship with matplotlib
 
 `ttconv`
    truetype font utility
+
+six 1.9.0
+    Python 2/3 compatibility library.  Do not use this in third-party
+    code.
+
 
 .. _build_linux:
 
@@ -279,7 +301,7 @@ running::
 
    su -c "yum-builddep python-matplotlib"
 
-This does not build matplotlib, but it does get the install the
+This does not build matplotlib, but it does get and install the
 build dependencies, which will make building from source easier.
 
 
@@ -298,17 +320,14 @@ git repository and follow the instruction in :file:`README.osx`.
 
 .. _build_windows:
 
-
 Building on Windows
 -------------------
 
 The Python shipped from http://www.python.org is compiled with Visual Studio
-2008 for versions before 3.3 and Visual Studio 2010 for 3.3 and later.  Python
-extensions are recommended to be compiled with the same compiler.  The .NET
-Framework 4.0 is required for MSBuild (you'll likely have the requisite
-Framework with Visual Studio).  In addition to Visual Studio `CMake
-<http://www.cmake.org>`_ is required for building libpng.
+2008 for versions before 3.3, Visual Studio 2010 for 3.3 and 3.4, and
+Visual Studio 2015 for 3.5.  Python extensions are recommended to be compiled
+with the same compiler.
 
-Since there is no canonical Windows package manager the build methods for
-freetype, zlib, libpng, tcl, & tk source code are documented as a build script
+Since there is no canonical Windows package manager, the methods for building
+freetype, zlib, and libpng from source code are documented as a build script
 at `matplotlib-winbuild <https://github.com/jbmohler/matplotlib-winbuild>`_.

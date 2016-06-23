@@ -25,6 +25,7 @@ api Examples
     demo_affine_image <demo_affine_image.rst>
     donut_demo <donut_demo.rst>
     engineering_formatter <engineering_formatter.rst>
+    filled_step <filled_step.rst>
     font_family_rc <font_family_rc.rst>
     font_file <font_file.rst>
     histogram_path_demo <histogram_path_demo.rst>

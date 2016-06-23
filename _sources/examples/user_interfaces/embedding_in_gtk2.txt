@@ -7,7 +7,6 @@ user_interfaces example code: embedding_in_gtk2.py
 
 ::
 
-    #!/usr/bin/env python
     """
     show how to add a matplotlib FigureCanvasGTK or FigureCanvasGTKAgg widget and
     a toolbar to a gtk.Window

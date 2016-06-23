@@ -7,8 +7,6 @@ user_interfaces example code: mpl_with_glade_316.py
 
 ::
 
-    #!/usr/bin/env python3
-    
     from gi.repository import Gtk
     
     from matplotlib.figure import Figure

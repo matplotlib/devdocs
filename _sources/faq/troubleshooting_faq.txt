@@ -34,31 +34,45 @@ and printing the ``__file__`` attribute::
 
 .. _locating-matplotlib-config-dir:
 
-:file:`.matplotlib` directory location
-======================================
+:file:`matplotlib` configuration and cache directory locations
+==============================================================
 
 Each user has a matplotlib configuration directory which may contain a
 :ref:`matplotlibrc <customizing-with-matplotlibrc-files>` file. To
-locate your :file:`.matplotlib/` directory, use
+locate your :file:`matplotlib/` configuration directory, use
 :func:`matplotlib.get_configdir`::
 
     >>> import matplotlib as mpl
     >>> mpl.get_configdir()
-    '/home/darren/.matplotlib'
+    '/home/darren/.config/matplotlib'
 
 On unix-like systems, this directory is generally located in your
-:envvar:`HOME` directory.  On windows, it is in your documents and
-settings directory by default::
+:envvar:`HOME` directory under the :file:`.config/` directory. 
+
+In addition, users have a cache directory. On unix-like systems, this is 
+separate from the configuration directory by default. To locate your 
+:file:`.cache/` directory, use :func:`matplotlib.get_cachedir`::
+
+    >>> import matplotlib as mpl
+    >>> mpl.get_cachedir()
+    '/home/darren/.cache/matplotlib'
+    
+On windows, both the config directory and the cache directory are 
+the same and are in your :file:`Documents and Settings` or :file:`Users` 
+directory by default::
 
     >>> import matplotlib
     >>> mpl.get_configdir()
+    'C:\\Documents and Settings\\jdhunter\\.matplotlib'
+    >>> mpl.get_cachedir()
     'C:\\Documents and Settings\\jdhunter\\.matplotlib'
 
 If you would like to use a different configuration directory, you can
 do so by specifying the location in your :envvar:`MPLCONFIGDIR`
 environment variable -- see
-:ref:`setting-linux-osx-environment-variables`.
-
+:ref:`setting-linux-osx-environment-variables`.  Note that
+:envvar:`MPLCONFIGDIR` sets the location of both the configuration
+directory and the cache directory.
 
 .. _reporting-problems:
 
@@ -78,7 +92,7 @@ There is a good chance your question has already been asked:
 If you are unable to find an answer to your question through search,
 please provide the following information in your e-mail to the
 `mailing list
-<http://lists.sourceforge.net/mailman/listinfo/matplotlib-users>`_:
+<https://mail.python.org/mailman/listinfo/matplotlib-users>`_:
 
   * your operating system; (Linux/UNIX users: post the output of ``uname -a``)
 
@@ -87,9 +101,8 @@ please provide the following information in your e-mail to the
         python -c `import matplotlib; print matplotlib.__version__`
 
   * where you obtained matplotlib (e.g., your Linux distribution's
-    packages or the matplotlib Sourceforge site, or
-    Anaconda_ or
-    `Enthought Canopy <https://www.enthought.com/products/canopy/>`_).
+    packages, github, PyPi, or Anaconda_ or `Enthought Canopy
+    <https://www.enthought.com/products/canopy/>`_).
 
 .. _Anaconda: https://store.continuum.io/cshop/anaconda/
 
@@ -154,9 +167,9 @@ simple test script in debug mode::
 
 and post :file:`build.out` and :file:`run.out` to the
 `matplotlib-devel
-<http://lists.sourceforge.net/mailman/listinfo/matplotlib-devel>`_
+<http://mail.python.org/mailman/listinfo/matplotlib-devel>`_
 mailing list (please do not post git problems to the `users list
-<http://lists.sourceforge.net/mailman/listinfo/matplotlib-users>`_).
+<https://mail.python.org/mailman/listinfo/matplotlib-users>`_).
 
 Of course, you will want to clearly describe your problem, what you
 are expecting and what you are getting, but often a clean build and

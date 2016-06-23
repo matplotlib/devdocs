@@ -9,7 +9,6 @@ pylab_examples example code: multi_image.py
 
 ::
 
-    #!/usr/bin/env python
     '''
     Make a set of images with a single colormap, norm, and colorbar.
     

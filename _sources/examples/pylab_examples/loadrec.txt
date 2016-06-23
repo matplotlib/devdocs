@@ -11,7 +11,7 @@ pylab_examples example code: loadrec.py
 
     from __future__ import print_function
     from matplotlib import mlab
-    from pylab import figure, show
+    import matplotlib.pyplot as plt
     import matplotlib.cbook as cbook
     
     datafile = cbook.get_sample_data('msft.csv', asfileobj=False)
@@ -20,7 +20,7 @@ pylab_examples example code: loadrec.py
     a.sort()
     print(a.dtype)
     
-    fig = figure()
+    fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.plot(a.date, a.adj_close, '-')
     fig.autofmt_xdate()
@@ -31,7 +31,7 @@ pylab_examples example code: loadrec.py
         exceltools.rec2excel(a, 'test.xls')
     except ImportError:
         pass
-    show()
+    plt.show()
     
 
 Keywords: python, matplotlib, pylab, example, codex (see :ref:`how-to-search-examples`)

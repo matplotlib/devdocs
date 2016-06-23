@@ -7,7 +7,6 @@ event_handling example code: test_mouseclicks.py
 
 ::
 
-    #!/usr/bin/env python
     from __future__ import print_function
     
     import matplotlib

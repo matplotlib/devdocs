@@ -20,7 +20,7 @@ pylab_examples example code: interp_demo.py
     yi = stineman_interp(xi, x, y, yp)
     
     fig, ax = plt.subplots()
-    ax.plot(x, y, 'ro', xi, yi, '-b.')
+    ax.plot(x, y, 'o', xi, yi, '.')
     plt.show()
     
 

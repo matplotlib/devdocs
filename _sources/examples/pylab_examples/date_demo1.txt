@@ -9,7 +9,6 @@ pylab_examples example code: date_demo1.py
 
 ::
 
-    #!/usr/bin/env python
     """
     Show how to make date plots in matplotlib using date tick locators and
     formatters.  See major_minor_demo1.py for more information on

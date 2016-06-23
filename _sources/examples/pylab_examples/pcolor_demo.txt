@@ -50,7 +50,7 @@ pylab_examples example code: pcolor_demo.py
     plt.imshow(z, cmap='RdBu', vmin=z_min, vmax=z_max,
                extent=[x.min(), x.max(), y.min(), y.max()],
                interpolation='nearest', origin='lower')
-    plt.title('image (interp. nearest)')
+    plt.title('image (nearest)')
     plt.colorbar()
     
     
@@ -59,6 +59,7 @@ pylab_examples example code: pcolor_demo.py
     plt.title('pcolorfast')
     plt.colorbar()
     
+    plt.subplots_adjust(wspace=0.5, hspace=0.5)
     
     plt.show()
     

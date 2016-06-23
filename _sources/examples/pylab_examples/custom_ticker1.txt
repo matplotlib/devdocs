@@ -9,8 +9,6 @@ pylab_examples example code: custom_ticker1.py
 
 ::
 
-    #!/usr/bin/env python
-    
     """
     The new ticker code was designed to explicitly support user customized
     ticking.  The documentation

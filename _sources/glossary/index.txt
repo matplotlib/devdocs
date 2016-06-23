@@ -8,7 +8,7 @@ Glossary
 .. glossary::
 
   AGG
-      The Anti-Grain Geometry (`Agg <http://agg.sourceforge.net/antigrain.com/index.html>`_) rendering engine, capable of rendering
+      The Anti-Grain Geometry (`Agg <http://antigrain.com/>`_) rendering engine, capable of rendering
       high-quality images
 
   Cairo
@@ -16,14 +16,14 @@ Glossary
 
 
   dateutil
-      The `dateutil <http://labix.org/python-dateutil>`_ library
+      The `dateutil <https://dateutil.readthedocs.org>`_ library
       provides extensions to the standard datetime module
 
   EPS
       Encapsulated Postscript (`EPS <http://en.wikipedia.org/wiki/Encapsulated_PostScript>`_)
 
-  freetype
-      `freetype <http://www.freetype.org/>`_ is a font rasterization
+  FreeType
+      `FreeType <http://www.freetype.org/>`_ is a font rasterization
       library used by matplotlib which supports TrueType, Type 1, and
       OpenType fonts.
 
@@ -73,9 +73,9 @@ Glossary
   pyqt
       `pyqt <http://wiki.python.org/moin/PyQt>`_ provides python
       wrappers for the :term:`Qt` widgets library and is required by
-      the matplotlib QtAgg and Qt4Agg backends.  Widely used on linux
+      the matplotlib Qt5Agg and Qt4Agg backends.  Widely used on linux
       and windows; many linux distributions package this as
-      'python-qt3' or 'python-qt4'.
+      'python-qt5' or 'python-qt4'.
 
   python
       `python <http://python.org>`_ is an object oriented interpreted
@@ -84,20 +84,25 @@ Glossary
 
 
   pytz
-      `pytz <http://pytz.sourceforge.net/>`_ provides the Olson tz
+      `pytz <http://pythonhosted.org/pytz/>`_ provides the Olson tz
       database in Python. it allows accurate and cross platform
       timezone calculations and solves the issue of ambiguous times at
       the end of daylight savings
 
 
   Qt
-      `Qt <http://trolltech.com/products/qt/>`__ is a cross-platform
+      `Qt <http://www.qt.io/>`__ is a cross-platform
       application framework for desktop and embedded development.
 
   Qt4
-      `Qt4 <http://trolltech.com/products/qt/>`__ is the most recent
-      version of Qt cross-platform application framework for desktop
-      and embedded development.
+      `Qt4 <http://doc.qt.io/qt-4.8/index.html>`__ is the previous,
+      but most widely used, version of Qt cross-platform application
+      framework for desktop and embedded development.
+
+  Qt5
+      `Qt5 <http://doc.qt.io/qt-5/index.html>`__ is the current
+      version of Qt cross-platform application
+      framework for desktop and embedded development.
 
   raster graphics
       `Raster graphics

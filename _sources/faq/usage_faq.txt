@@ -417,26 +417,29 @@ a file:
 ============   ================================================================
 Backend        Description
 ============   ================================================================
-GTKAgg         Agg rendering to a :term:`GTK` 2.x canvas (requires PyGTK_)
-GTK3Agg        Agg rendering to a :term:`GTK` 3.x canvas (requires PyGObject_)
+GTKAgg         Agg rendering to a :term:`GTK` 2.x canvas (requires PyGTK_ and
+               pycairo_ or cairocffi_; Python2 only)
+GTK3Agg        Agg rendering to a :term:`GTK` 3.x canvas (requires PyGObject_
+               and pycairo_ or cairocffi_)
 GTK            GDK rendering to a :term:`GTK` 2.x canvas (not recommended)
-               (requires PyGTK_)
+               (requires PyGTK_ and pycairo_ or cairocffi_; Python2 only)
 GTKCairo       Cairo rendering to a :term:`GTK` 2.x canvas (requires PyGTK_
-               and pycairo_)
+               and pycairo_ or cairocffi_; Python2 only)
 GTK3Cairo      Cairo rendering to a :term:`GTK` 3.x canvas (requires PyGObject_
-               and pycairo_)
+               and pycairo_ or cairocffi_)
 WXAgg          Agg rendering to to a :term:`wxWidgets` canvas
                (requires wxPython_)
 WX             Native :term:`wxWidgets` drawing to a :term:`wxWidgets` Canvas
                (not recommended) (requires wxPython_)
 TkAgg          Agg rendering to a :term:`Tk` canvas (requires TkInter_)
-Qt4Agg         Agg rendering to a :term:`Qt4` canvas (requires PyQt4_)
+Qt4Agg         Agg rendering to a :term:`Qt4` canvas (requires PyQt4_ or ``pyside``)
+Qt5Agg         Agg rendering in a :term:`Qt5` canvas (requires PyQt5_)
 macosx         Cocoa rendering in OSX windows
                (presently lacks blocking show() behavior when matplotlib
                is in non-interactive mode)
 ============   ================================================================
 
-.. _`Anti-Grain Geometry`: http://agg.sourceforge.net/antigrain.com/index.html
+.. _`Anti-Grain Geometry`: http://antigrain.com/
 .. _Postscript: http://en.wikipedia.org/wiki/PostScript
 .. _`Portable Document Format`: http://en.wikipedia.org/wiki/Portable_Document_Format
 .. _`Scalable Vector Graphics`: http://en.wikipedia.org/wiki/Scalable_Vector_Graphics
@@ -445,9 +448,30 @@ macosx         Cocoa rendering in OSX windows
 .. _PyGTK: http://www.pygtk.org
 .. _PyGObject: https://live.gnome.org/PyGObject
 .. _pycairo: http://www.cairographics.org/pycairo/
+.. _cairocffi: https://pythonhosted.org/cairocffi/
 .. _wxPython: http://www.wxpython.org/
 .. _TkInter: http://wiki.python.org/moin/TkInter
 .. _PyQt4: http://www.riverbankcomputing.co.uk/software/pyqt/intro
+.. _PyQt5: http://www.riverbankcomputing.co.uk/software/pyqt/intro
+
+WX backends
+===========
+
+At present the release version of `wxPython` (also known as wxPython classic)
+does not support python3. A work in progress redesigned version known as
+wxPython-Phoenix_ does support python3.
+Matplotlib should work with both versions.
+
+.. _wxPython-Phoenix: http://wxpython.org/Phoenix/docs/html/main.html
+
+GTK and Cairo
+=============
+
+Both `GTK2` and `GTK3` have implicit dependencies on PyCairo regardless of the
+specific Matplotlib backend used. Unfortunatly the latest release of PyCairo
+for Python3 does not implement the Python wrappers needed for the `GTK3Agg`
+backend. `Cairocffi` can be used as a replacement which implements the correct
+wrapper.
 
 How do I select PyQt4 or PySide?
 ========================================
@@ -498,7 +522,9 @@ and turned off via :func:`matplotlib.pyplot.ioff`.
 
 .. note::
    Interactive mode works with suitable backends in ipython and in
-   the ordinary python shell, but it does *not* work in the IDLE IDE.
+   the ordinary python shell, but it does *not* work in the IDLE IDE. 
+   If the default backend does not support interactivity, an interactive 
+   backend can be explicitly activated using any of the methods discussed in `What is a backend?`_.
 
 
 Interactive example
@@ -521,9 +547,8 @@ can type additional commands such as::
 
 and you will see the plot being updated after each line.  This is
 because you are in interactive mode *and* you are using pyplot
-functions.  Now try an alternative method of modifying the
-plot.  Get a
-reference to the :class:`~matplotlib.axes.Axes` instance, and
+functions. Now try an alternative method of modifying the
+plot.  Get a reference to the :class:`~matplotlib.axes.Axes` instance, and
 call a method of that instance::
 
     ax = plt.gca()

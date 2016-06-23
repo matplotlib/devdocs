@@ -16,7 +16,9 @@ Matplotlib Examples
 
     api/index.rst
 
-    axes_grid/index.rst
+    axes_grid1/index.rst
+
+    axisartist/index.rst
 
     color/index.rst
 
@@ -33,6 +35,8 @@ Matplotlib Examples
     pie_and_polar_charts/index.rst
 
     pylab_examples/index.rst
+
+    scales/index.rst
 
     shapes_and_collections/index.rst
 

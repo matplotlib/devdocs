@@ -9,7 +9,6 @@ api example code: joinstyle.py
 
 ::
 
-    #!/usr/bin/env python
     """
     Illustrate the three different join styles
     """

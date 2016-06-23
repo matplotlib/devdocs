@@ -7,7 +7,6 @@ pylab_examples example code: hyperlinks.py
 
 ::
 
-    #!/usr/bin/env python
     # -*- noplot -*-
     
     """

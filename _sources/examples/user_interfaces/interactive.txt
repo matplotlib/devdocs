@@ -7,8 +7,6 @@ user_interfaces example code: interactive.py
 
 ::
 
-    #!/usr/bin/env python
-    
     """Multithreaded interactive interpreter with GTK and Matplotlib support.
     
     WARNING:

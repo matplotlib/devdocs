@@ -7,8 +7,6 @@ event_handling example code: keypress_demo.py
 
 ::
 
-    #!/usr/bin/env python
-    
     """
     Show how to connect to keypress events
     """

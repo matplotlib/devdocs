@@ -7,9 +7,8 @@ This is currently a proof-of-concept implementation (though it is
 usable as is).  There will be some refinement of the API.
 """
 from matplotlib.widgets import Lasso
-from matplotlib.colors import colorConverter
 from matplotlib.collections import RegularPolyCollection
-from matplotlib import path
+from matplotlib import colors as mcolors, path
 
 import matplotlib.pyplot as plt
 from numpy import nonzero
@@ -17,8 +16,8 @@ from numpy.random import rand
 
 
 class Datum(object):
-    colorin = colorConverter.to_rgba('red')
-    colorout = colorConverter.to_rgba('blue')
+    colorin = mcolors.to_rgba("red")
+    colorout = mcolors.to_rgba("blue")
 
     def __init__(self, x, y, include=False):
         self.x = x
@@ -43,8 +42,8 @@ class LassoManager(object):
         self.collection = RegularPolyCollection(
             fig.dpi, 6, sizes=(100,),
             facecolors=facecolors,
-            offsets = self.xys,
-            transOffset = ax.transData)
+            offsets=self.xys,
+            transOffset=ax.transData)
 
         ax.add_collection(self.collection)
 
@@ -69,7 +68,9 @@ class LassoManager(object):
             return
         if event.inaxes is None:
             return
-        self.lasso = Lasso(event.inaxes, (event.xdata, event.ydata), self.callback)
+        self.lasso = Lasso(event.inaxes,
+                           (event.xdata, event.ydata),
+                           self.callback)
         # acquire a lock on the widget drawing
         self.canvas.widgetlock(self.lasso)
 

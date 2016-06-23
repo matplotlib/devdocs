@@ -13,6 +13,7 @@ pylab_examples Examples
     :maxdepth: 1
 
     accented_text <accented_text.rst>
+    agg_buffer <agg_buffer.rst>
     agg_buffer_to_array <agg_buffer_to_array.rst>
     alignment_test <alignment_test.rst>
     anchored_artists <anchored_artists.rst>
@@ -38,22 +39,20 @@ pylab_examples Examples
     boxplot_demo <boxplot_demo.rst>
     boxplot_demo2 <boxplot_demo2.rst>
     boxplot_demo3 <boxplot_demo3.rst>
-    break <break.rst>
     broken_axis <broken_axis.rst>
     broken_barh <broken_barh.rst>
     centered_ticklabels <centered_ticklabels.rst>
-    clippedline <clippedline.rst>
     cohere_demo <cohere_demo.rst>
     color_by_yvalue <color_by_yvalue.rst>
     color_demo <color_demo.rst>
     colorbar_tick_labelling_demo <colorbar_tick_labelling_demo.rst>
     colours <colours.rst>
+    contour_corner_mask <contour_corner_mask.rst>
     contour_demo <contour_demo.rst>
     contour_image <contour_image.rst>
     contour_label_demo <contour_label_demo.rst>
     contourf_demo <contourf_demo.rst>
     contourf_hatching <contourf_hatching.rst>
-    contourf_log <contourf_log.rst>
     coords_demo <coords_demo.rst>
     coords_report <coords_report.rst>
     csd_demo <csd_demo.rst>
@@ -126,9 +125,12 @@ pylab_examples Examples
     interp_demo <interp_demo.rst>
     invert_axes <invert_axes.rst>
     layer_images <layer_images.rst>
+    leftventricle_bulleye <leftventricle_bulleye.rst>
     legend_demo2 <legend_demo2.rst>
     legend_demo3 <legend_demo3.rst>
     legend_demo4 <legend_demo4.rst>
+    legend_demo5 <legend_demo5.rst>
+    legend_demo6 <legend_demo6.rst>
     line_collection <line_collection.rst>
     line_collection2 <line_collection2.rst>
     load_converter <load_converter.rst>
@@ -145,7 +147,6 @@ pylab_examples Examples
     masked_demo <masked_demo.rst>
     mathtext_demo <mathtext_demo.rst>
     mathtext_examples <mathtext_examples.rst>
-    matplotlib_icon <matplotlib_icon.rst>
     matshow <matshow.rst>
     movie_demo <movie_demo.rst>
     mri_demo <mri_demo.rst>
@@ -171,7 +172,6 @@ pylab_examples Examples
     psd_demo2 <psd_demo2.rst>
     psd_demo3 <psd_demo3.rst>
     psd_demo_complex <psd_demo_complex.rst>
-    pstest <pstest.rst>
     pythonic_matplotlib <pythonic_matplotlib.rst>
     quadmesh_demo <quadmesh_demo.rst>
     quiver_demo <quiver_demo.rst>
@@ -187,7 +187,6 @@ pylab_examples Examples
     shared_axis_across_figures <shared_axis_across_figures.rst>
     shared_axis_demo <shared_axis_demo.rst>
     simple_plot <simple_plot.rst>
-    simple_plot_fps <simple_plot_fps.rst>
     specgram_demo <specgram_demo.rst>
     spectrum_demo <spectrum_demo.rst>
     spine_placement_demo <spine_placement_demo.rst>
@@ -211,7 +210,6 @@ pylab_examples Examples
     text_rotation <text_rotation.rst>
     text_rotation_relative_to_line <text_rotation_relative_to_line.rst>
     titles_demo <titles_demo.rst>
-    to_numeric <to_numeric.rst>
     toggle_images <toggle_images.rst>
     transoffset <transoffset.rst>
     tricontour_demo <tricontour_demo.rst>

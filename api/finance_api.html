@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>finance &mdash; Matplotlib 1.5.dev1 documentation</title>
+    <title>finance &mdash; Matplotlib 2.0.0b1.post1110+gf8ea2c5 documentation</title>
     
     <link rel="stylesheet" href="../_static/mpl.css"
 type="text/css" />
@@ -16,7 +16,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.5.dev1',
+        VERSION:     '2.0.0b1.post1110+gf8ea2c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,20 +26,19 @@ type="text/css" />
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 1.5.dev1 documentation"
+          title="Search within Matplotlib 2.0.0b1.post1110+gf8ea2c5 documentation"
           href="../_static/opensearch.xml"/>
-    <link rel="top" title="Matplotlib 1.5.dev1 documentation" href="../index.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Matplotlib 2.0.0b1.post1110+gf8ea2c5 documentation" href="../index.html" />
     <link rel="up" title="The Matplotlib API" href="index.html" />
     <link rel="next" title="font_manager" href="font_manager_api.html" />
     <link rel="prev" title="figure" href="figure_api.html" /> 
-<link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
 
   </head>
   <body>
 
 
-
-<link rel="shortcut icon" href="/_static/favicon.ico">
 
 <!-- The "Fork me on github" ribbon -->
 <img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
@@ -48,7 +47,7 @@ type="text/css" />
 </map>
 
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../index.html"><img src="../_static/logo2.png" border="0" alt="matplotlib"/></a>
+<a href="../index.html"><img src="../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 </div>
 
 
@@ -82,36 +81,49 @@ type="text/css" />
   
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+<a href="http://depsy.org/package/python/matplotlib">
+  <img src="http://depsy.org/api/package/pypi/matplotlib/badge.svg">
+</a>
+
+<br/>
+
+Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
+  <img src="https://travis-ci.org/matplotlib/matplotlib.svg?branch=master"/>
+</a>
+<br/>
   <h3><a href="../contents.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">finance</a><ul>
-<li><a class="reference internal" href="#module-matplotlib.finance"><tt class="docutils literal"><span class="pre">matplotlib.finance</span></tt></a></li>
+<li><a class="reference internal" href="#module-matplotlib.finance"><code class="docutils literal"><span class="pre">matplotlib.finance</span></code></a></li>
 </ul>
 </li>
 </ul>
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="figure_api.html"
-                        title="previous chapter">figure</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="font_manager_api.html"
-                        title="next chapter">font_manager</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/api/finance_api.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../contents.html">Documentation overview</a><ul>
+  <li><a href="index.html">The Matplotlib API</a><ul>
+      <li>Previous: <a href="figure_api.html" title="previous chapter">figure</a></li>
+      <li>Next: <a href="font_manager_api.html" title="next chapter">font_manager</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/finance_api.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -125,129 +137,14 @@ type="text/css" />
   <div class="section" id="finance">
 <h1>finance<a class="headerlink" href="#finance" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module-matplotlib.finance">
-<span id="matplotlib-finance"></span><h2><a class="reference internal" href="#module-matplotlib.finance" title="matplotlib.finance"><tt class="xref py py-mod docutils literal"><span class="pre">matplotlib.finance</span></tt></a><a class="headerlink" href="#module-matplotlib.finance" title="Permalink to this headline">¶</a></h2>
+<span id="matplotlib-finance"></span><h2><a class="reference internal" href="#module-matplotlib.finance" title="matplotlib.finance"><code class="xref py py-mod docutils literal"><span class="pre">matplotlib.finance</span></code></a><a class="headerlink" href="#module-matplotlib.finance" title="Permalink to this headline">¶</a></h2>
 <p>A collection of functions for collecting, analyzing and plotting
 financial data.   User contributions welcome!</p>
-<p>This module is deprecated in 1.4 and will be moved to <tt class="xref py py-obj docutils literal"><span class="pre">mpl_toolkits</span></tt>
+<p>This module is deprecated in 1.4 and will be moved to <code class="xref py py-obj docutils literal"><span class="pre">mpl_toolkits</span></code>
 or it&#8217;s own project in the future.</p>
 <dl class="function">
-<dt id="matplotlib.finance.candlestick">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">candlestick</tt><big>(</big><em>ax</em>, <em>quotes</em>, <em>width=0.2</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em>, <em>alpha=1.0</em><big>)</big><a class="headerlink" href="#matplotlib.finance.candlestick" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot the time, open, close, high, low as a vertical line ranging
-from low to high.  Use a rectangular bar to represent the
-open-close span.  If close &gt;= open, use colorup to color the bar,
-otherwise use colordown</p>
-<p>This function has been deprecated in 1.4 in favor of
-<a class="reference internal" href="#matplotlib.finance.candlestick_ochl" title="matplotlib.finance.candlestick_ochl"><tt class="xref py py-obj docutils literal"><span class="pre">candlestick_ochl</span></tt></a>, which maintains the original argument
-order, or <a class="reference internal" href="#matplotlib.finance.candlestick_ohlc" title="matplotlib.finance.candlestick_ohlc"><tt class="xref py py-obj docutils literal"><span class="pre">candlestick_ohlc</span></tt></a>, which uses the
-open-high-low-close order.  This function will be removed in 1.5</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
-<blockquote>
-<div><p>an Axes instance to plot to</p>
-</div></blockquote>
-<p><strong>quotes</strong> : sequence of (time, open, close, high, low, ...) sequences</p>
-<blockquote>
-<div><p>As long as the first 5 elements are these values,
-the record can be as long as you want (e.g., it may store volume).</p>
-<p>time must be in float days format - see date2num</p>
-</div></blockquote>
-<p><strong>width</strong> : float</p>
-<blockquote>
-<div><p>fraction of a day for the rectangle width</p>
-</div></blockquote>
-<p><strong>colorup</strong> : color</p>
-<blockquote>
-<div><p>the color of the rectangle where close &gt;= open</p>
-</div></blockquote>
-<p><strong>colordown</strong> : color</p>
-<blockquote>
-<div><p>the color of the rectangle where close &lt;  open</p>
-</div></blockquote>
-<p><strong>alpha</strong> : float</p>
-<blockquote>
-<div><p>the rectangle alpha level</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ret</strong> : tuple</p>
-<blockquote class="last">
-<div><p>returns (lines, patches) where lines is a list of lines
-added and patches is a list of the rectangle patches added</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="matplotlib.finance.candlestick2">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">candlestick2</tt><big>(</big><em>ax</em>, <em>opens</em>, <em>closes</em>, <em>highs</em>, <em>lows</em>, <em>width=4</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em>, <em>alpha=0.75</em><big>)</big><a class="headerlink" href="#matplotlib.finance.candlestick2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Represent the open, close as a bar line and high low range as a
-vertical line.</p>
-<p>This function has been deprecated in 1.4 in favor of
-<a class="reference internal" href="#matplotlib.finance.candlestick2_ochl" title="matplotlib.finance.candlestick2_ochl"><tt class="xref py py-obj docutils literal"><span class="pre">candlestick2_ochl</span></tt></a>, which maintains the original argument order,
-or <a class="reference internal" href="#matplotlib.finance.candlestick2_ohlc" title="matplotlib.finance.candlestick2_ohlc"><tt class="xref py py-obj docutils literal"><span class="pre">candlestick2_ohlc</span></tt></a>, which uses the open-high-low-close order.
-This function will be removed in 1.5</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
-<blockquote>
-<div><p>an Axes instance to plot to</p>
-</div></blockquote>
-<p><strong>opens</strong> : sequence</p>
-<blockquote>
-<div><p>sequence of opening values</p>
-</div></blockquote>
-<p><strong>closes</strong> : sequence</p>
-<blockquote>
-<div><p>sequence of closing values</p>
-</div></blockquote>
-<p><strong>highs</strong> : sequence</p>
-<blockquote>
-<div><p>sequence of high values</p>
-</div></blockquote>
-<p><strong>lows</strong> : sequence</p>
-<blockquote>
-<div><p>sequence of low values</p>
-</div></blockquote>
-<p><strong>ticksize</strong> : int</p>
-<blockquote>
-<div><p>size of open and close ticks in points</p>
-</div></blockquote>
-<p><strong>colorup</strong> : color</p>
-<blockquote>
-<div><p>the color of the lines where close &gt;= open</p>
-</div></blockquote>
-<p><strong>colordown</strong> : color</p>
-<blockquote>
-<div><p>the color of the lines where close &lt;  open</p>
-</div></blockquote>
-<p><strong>alpha</strong> : float</p>
-<blockquote>
-<div><p>bar transparency</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ret</strong> : tuple</p>
-<blockquote class="last">
-<div><p>(lineCollection, barCollection)</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
 <dt id="matplotlib.finance.candlestick2_ochl">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">candlestick2_ochl</tt><big>(</big><em>ax</em>, <em>opens</em>, <em>closes</em>, <em>highs</em>, <em>lows</em>, <em>width=4</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em>, <em>alpha=0.75</em><big>)</big><a class="headerlink" href="#matplotlib.finance.candlestick2_ochl" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">candlestick2_ochl</code><span class="sig-paren">(</span><em>ax</em>, <em>opens</em>, <em>closes</em>, <em>highs</em>, <em>lows</em>, <em>width=4</em>, <em>colorup='k'</em>, <em>colordown='r'</em>, <em>alpha=0.75</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.candlestick2_ochl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represent the open, close as a bar line and high low range as a
 vertical line.</p>
 <p>Preserves the original argument order.</p>
@@ -255,7 +152,7 @@ vertical line.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code></p>
 <blockquote>
 <div><p>an Axes instance to plot to</p>
 </div></blockquote>
@@ -305,14 +202,16 @@ vertical line.</p>
 
 <dl class="function">
 <dt id="matplotlib.finance.candlestick2_ohlc">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">candlestick2_ohlc</tt><big>(</big><em>ax</em>, <em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em>, <em>width=4</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em>, <em>alpha=0.75</em><big>)</big><a class="headerlink" href="#matplotlib.finance.candlestick2_ohlc" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">candlestick2_ohlc</code><span class="sig-paren">(</span><em>ax</em>, <em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em>, <em>width=4</em>, <em>colorup='k'</em>, <em>colordown='r'</em>, <em>alpha=0.75</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.candlestick2_ohlc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represent the open, close as a bar line and high low range as a
 vertical line.</p>
+<p>NOTE: this code assumes if any value open, low, high, close is
+missing they all are missing</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code></p>
 <blockquote>
 <div><p>an Axes instance to plot to</p>
 </div></blockquote>
@@ -362,7 +261,7 @@ vertical line.</p>
 
 <dl class="function">
 <dt id="matplotlib.finance.candlestick_ochl">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">candlestick_ochl</tt><big>(</big><em>ax</em>, <em>quotes</em>, <em>width=0.2</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em>, <em>alpha=1.0</em><big>)</big><a class="headerlink" href="#matplotlib.finance.candlestick_ochl" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">candlestick_ochl</code><span class="sig-paren">(</span><em>ax</em>, <em>quotes</em>, <em>width=0.2</em>, <em>colorup='k'</em>, <em>colordown='r'</em>, <em>alpha=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.candlestick_ochl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the time, open, close, high, low as a vertical line ranging
 from low to high.  Use a rectangular bar to represent the
 open-close span.  If close &gt;= open, use colorup to color the bar,
@@ -371,7 +270,7 @@ otherwise use colordown</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code></p>
 <blockquote>
 <div><p>an Axes instance to plot to</p>
 </div></blockquote>
@@ -412,7 +311,7 @@ added and patches is a list of the rectangle patches added</p>
 
 <dl class="function">
 <dt id="matplotlib.finance.candlestick_ohlc">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">candlestick_ohlc</tt><big>(</big><em>ax</em>, <em>quotes</em>, <em>width=0.2</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em>, <em>alpha=1.0</em><big>)</big><a class="headerlink" href="#matplotlib.finance.candlestick_ohlc" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">candlestick_ohlc</code><span class="sig-paren">(</span><em>ax</em>, <em>quotes</em>, <em>width=0.2</em>, <em>colorup='k'</em>, <em>colordown='r'</em>, <em>alpha=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.candlestick_ohlc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the time, open, high, low, close as a vertical line ranging
 from low to high.  Use a rectangular bar to represent the
 open-close span.  If close &gt;= open, use colorup to color the bar,
@@ -421,7 +320,7 @@ otherwise use colordown</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code></p>
 <blockquote>
 <div><p>an Axes instance to plot to</p>
 </div></blockquote>
@@ -462,7 +361,7 @@ added and patches is a list of the rectangle patches added</p>
 
 <dl class="function">
 <dt id="matplotlib.finance.fetch_historical_yahoo">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">fetch_historical_yahoo</tt><big>(</big><em>ticker</em>, <em>date1</em>, <em>date2</em>, <em>cachename=None</em>, <em>dividends=False</em><big>)</big><a class="headerlink" href="#matplotlib.finance.fetch_historical_yahoo" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">fetch_historical_yahoo</code><span class="sig-paren">(</span><em>ticker</em>, <em>date1</em>, <em>date2</em>, <em>cachename=None</em>, <em>dividends=False</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.fetch_historical_yahoo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fetch historical data for ticker between date1 and date2.  date1 and
 date2 are date or datetime instances, or (year, month, day) sequences.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -473,11 +372,11 @@ date2 are date or datetime instances, or (year, month, day) sequences.</p>
 <blockquote>
 <div><p>ticker</p>
 </div></blockquote>
-<p><strong>date1</strong> : sequence of form (year, month, day), <tt class="xref py py-obj docutils literal"><span class="pre">datetime</span></tt>, or <tt class="xref py py-obj docutils literal"><span class="pre">date</span></tt></p>
+<p><strong>date1</strong> : sequence of form (year, month, day), <code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code>, or <code class="xref py py-obj docutils literal"><span class="pre">date</span></code></p>
 <blockquote>
 <div><p>start date</p>
 </div></blockquote>
-<p><strong>date2</strong> : sequence of form (year, month, day), <tt class="xref py py-obj docutils literal"><span class="pre">datetime</span></tt>, or <tt class="xref py py-obj docutils literal"><span class="pre">date</span></tt></p>
+<p><strong>date2</strong> : sequence of form (year, month, day), <code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code>, or <code class="xref py py-obj docutils literal"><span class="pre">date</span></code></p>
 <blockquote>
 <div><p>end date</p>
 </div></blockquote>
@@ -503,20 +402,20 @@ this option set, parse functions will not work</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">fh</span> <span class="o">=</span> <span class="n">fetch_historical_yahoo</span><span class="p">(</span><span class="s">&#39;^GSPC&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2001</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fh</span> <span class="o">=</span> <span class="n">fetch_historical_yahoo</span><span class="p">(</span><span class="s1">&#39;^GSPC&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2001</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="matplotlib.finance.index_bar">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">index_bar</tt><big>(</big><em>ax</em>, <em>vals</em>, <em>facecolor=u'b'</em>, <em>edgecolor=u'l'</em>, <em>width=4</em>, <em>alpha=1.0</em><big>)</big><a class="headerlink" href="#matplotlib.finance.index_bar" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">index_bar</code><span class="sig-paren">(</span><em>ax</em>, <em>vals</em>, <em>facecolor='b'</em>, <em>edgecolor='l'</em>, <em>width=4</em>, <em>alpha=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.index_bar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a bar collection graph with height vals (-1 is missing).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code></p>
 <blockquote>
 <div><p>an Axes instance to plot to</p>
 </div></blockquote>
@@ -542,9 +441,9 @@ this option set, parse functions will not work</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ret</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">barCollection</span></tt></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ret</strong> : <code class="xref py py-obj docutils literal"><span class="pre">barCollection</span></code></p>
 <blockquote class="last">
-<div><p>The <tt class="xref py py-obj docutils literal"><span class="pre">barrCollection</span></tt> added to the axes</p>
+<div><p>The <code class="xref py py-obj docutils literal"><span class="pre">barrCollection</span></code> added to the axes</p>
 </div></blockquote>
 </td>
 </tr>
@@ -553,64 +452,13 @@ this option set, parse functions will not work</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="matplotlib.finance.parse_yahoo_historical">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">parse_yahoo_historical</tt><big>(</big><em>fh</em>, <em>adjusted=True</em>, <em>asobject=False</em><big>)</big><a class="headerlink" href="#matplotlib.finance.parse_yahoo_historical" title="Permalink to this definition">¶</a></dt>
-<dd><p>Parse the historical data in file handle fh from yahoo finance.</p>
-<p>This function has been deprecated in 1.4 in favor of
-<a class="reference internal" href="#matplotlib.finance.parse_yahoo_historical_ochl" title="matplotlib.finance.parse_yahoo_historical_ochl"><tt class="xref py py-obj docutils literal"><span class="pre">parse_yahoo_historical_ochl</span></tt></a>, which maintains the original argument
-order, or <a class="reference internal" href="#matplotlib.finance.parse_yahoo_historical_ohlc" title="matplotlib.finance.parse_yahoo_historical_ohlc"><tt class="xref py py-obj docutils literal"><span class="pre">parse_yahoo_historical_ohlc</span></tt></a>, which uses the
-open-high-low-close order.  This function will be removed in 1.5</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>adjusted</strong> : bool</p>
-<blockquote>
-<div><p>If True (default) replace open, close, high, low prices with
-their adjusted values. The adjustment is by a scale factor, S =
-adjusted_close/close. Adjusted prices are actual prices
-multiplied by S.</p>
-<p>Volume is not adjusted as it is already backward split adjusted
-by Yahoo. If you want to compute dollars traded, multiply volume
-by the adjusted close, regardless of whether you choose adjusted
-= True|False.</p>
-</div></blockquote>
-<p><strong>asobject</strong> : bool or None</p>
-<blockquote>
-<div><p>If False (default for compatibility with earlier versions)
-return a list of tuples containing</p>
-<blockquote>
-<div><p>d, open, close, high, low, volume</p>
-</div></blockquote>
-<p>If None (preferred alternative to False), return
-a 2-D ndarray corresponding to the list of tuples.</p>
-<p>Otherwise return a numpy recarray with</p>
-<blockquote>
-<div><p>date, year, month, day, d, open, close, high, low,
-volume, adjusted_close</p>
-</div></blockquote>
-<p>where d is a floating poing representation of date,
-as returned by date2num, and date is a python standard
-library datetime.date instance.</p>
-<p>The name of this kwarg is a historical artifact.  Formerly,
-True returned a cbook Bunch
-holding 1-D ndarrays.  The behavior of a numpy recarray is
-very similar to the Bunch.</p>
-</div></blockquote>
-<p><strong>ochl</strong> : bool</p>
-<blockquote class="last">
-<div><p>Temporary argument to select between ochl and ohlc ordering.
-Defaults to True to preserve original functionality.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
+<dt id="matplotlib.finance.md5">
+<code class="descclassname">matplotlib.finance.</code><code class="descname">md5</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.md5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="matplotlib.finance.parse_yahoo_historical_ochl">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">parse_yahoo_historical_ochl</tt><big>(</big><em>fh</em>, <em>adjusted=True</em>, <em>asobject=False</em><big>)</big><a class="headerlink" href="#matplotlib.finance.parse_yahoo_historical_ochl" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">parse_yahoo_historical_ochl</code><span class="sig-paren">(</span><em>fh</em>, <em>adjusted=True</em>, <em>asobject=False</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.parse_yahoo_historical_ochl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse the historical data in file handle fh from yahoo finance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -657,7 +505,7 @@ very similar to the Bunch.</p>
 
 <dl class="function">
 <dt id="matplotlib.finance.parse_yahoo_historical_ohlc">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">parse_yahoo_historical_ohlc</tt><big>(</big><em>fh</em>, <em>adjusted=True</em>, <em>asobject=False</em><big>)</big><a class="headerlink" href="#matplotlib.finance.parse_yahoo_historical_ohlc" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">parse_yahoo_historical_ohlc</code><span class="sig-paren">(</span><em>fh</em>, <em>adjusted=True</em>, <em>asobject=False</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.parse_yahoo_historical_ohlc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse the historical data in file handle fh from yahoo finance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -703,114 +551,8 @@ very similar to the Bunch.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="matplotlib.finance.plot_day_summary">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">plot_day_summary</tt><big>(</big><em>ax</em>, <em>quotes</em>, <em>ticksize=3</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em><big>)</big><a class="headerlink" href="#matplotlib.finance.plot_day_summary" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots day summary</p>
-<blockquote>
-<div>Represent the time, open, close, high, low as a vertical line
-ranging from low to high.  The left tick is the open and the right
-tick is the close.</div></blockquote>
-<p>This function has been deprecated in 1.4 in favor of
-<tt class="xref py py-obj docutils literal"><span class="pre">plot_day_summary_ochl</span></tt>, which maintains the original argument
-order, or <a class="reference internal" href="#matplotlib.finance.plot_day_summary_ohlc" title="matplotlib.finance.plot_day_summary_ohlc"><tt class="xref py py-obj docutils literal"><span class="pre">plot_day_summary_ohlc</span></tt></a>, which uses the
-open-high-low-close order.  This function will be removed in 1.5</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
-<blockquote>
-<div><p>an <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt> instance to plot to</p>
-</div></blockquote>
-<p><strong>quotes</strong> : sequence of (time, open, close, high, low, ...) sequences</p>
-<blockquote>
-<div><p>data to plot.  time must be in float date format - see date2num</p>
-</div></blockquote>
-<p><strong>ticksize</strong> : int</p>
-<blockquote>
-<div><p>open/close tick marker in points</p>
-</div></blockquote>
-<p><strong>colorup</strong> : color</p>
-<blockquote>
-<div><p>the color of the lines where close &gt;= open</p>
-</div></blockquote>
-<p><strong>colordown</strong> : color</p>
-<blockquote>
-<div><p>the color of the lines where close &lt;  open</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lines</strong> : list</p>
-<blockquote class="last">
-<div><p>list of tuples of the lines added (one tuple per quote)</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="matplotlib.finance.plot_day_summary2">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">plot_day_summary2</tt><big>(</big><em>ax</em>, <em>opens</em>, <em>closes</em>, <em>highs</em>, <em>lows</em>, <em>ticksize=4</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em><big>)</big><a class="headerlink" href="#matplotlib.finance.plot_day_summary2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Represent the time, open, close, high, low,  as a vertical line
-ranging from low to high.  The left tick is the open and the right
-tick is the close.</p>
-<p>This function has been deprecated in 1.4 in favor of
-<a class="reference internal" href="#matplotlib.finance.plot_day_summary2_ochl" title="matplotlib.finance.plot_day_summary2_ochl"><tt class="xref py py-obj docutils literal"><span class="pre">plot_day_summary2_ochl</span></tt></a>, which maintains the original argument
-order, or <a class="reference internal" href="#matplotlib.finance.plot_day_summary2_ohlc" title="matplotlib.finance.plot_day_summary2_ohlc"><tt class="xref py py-obj docutils literal"><span class="pre">plot_day_summary2_ohlc</span></tt></a>, which uses the
-open-high-low-close order.  This function will be removed in 1.5</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
-<blockquote>
-<div><p>an Axes instance to plot to</p>
-</div></blockquote>
-<p><strong>opens</strong> : sequence</p>
-<blockquote>
-<div><p>sequence of opening values</p>
-</div></blockquote>
-<p><strong>closes</strong> : sequence</p>
-<blockquote>
-<div><p>sequence of closing values</p>
-</div></blockquote>
-<p><strong>highs</strong> : sequence</p>
-<blockquote>
-<div><p>sequence of high values</p>
-</div></blockquote>
-<p><strong>lows</strong> : sequence</p>
-<blockquote>
-<div><p>sequence of low values</p>
-</div></blockquote>
-<p><strong>ticksize</strong> : int</p>
-<blockquote>
-<div><p>size of open and close ticks in points</p>
-</div></blockquote>
-<p><strong>colorup</strong> : color</p>
-<blockquote>
-<div><p>the color of the lines where close &gt;= open</p>
-</div></blockquote>
-<p><strong>colordown</strong> : color</p>
-<blockquote>
-<div><p>the color of the lines where close &lt;  open</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ret</strong> : list</p>
-<blockquote class="last">
-<div><p>a list of lines added to the axes</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
 <dt id="matplotlib.finance.plot_day_summary2_ochl">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">plot_day_summary2_ochl</tt><big>(</big><em>ax</em>, <em>opens</em>, <em>closes</em>, <em>highs</em>, <em>lows</em>, <em>ticksize=4</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em><big>)</big><a class="headerlink" href="#matplotlib.finance.plot_day_summary2_ochl" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">plot_day_summary2_ochl</code><span class="sig-paren">(</span><em>ax</em>, <em>opens</em>, <em>closes</em>, <em>highs</em>, <em>lows</em>, <em>ticksize=4</em>, <em>colorup='k'</em>, <em>colordown='r'</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.plot_day_summary2_ochl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represent the time, open, close, high, low,  as a vertical line
 ranging from low to high.  The left tick is the open and the right
 tick is the close.</p>
@@ -818,7 +560,7 @@ tick is the close.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code></p>
 <blockquote>
 <div><p>an Axes instance to plot to</p>
 </div></blockquote>
@@ -864,15 +606,18 @@ tick is the close.</p>
 
 <dl class="function">
 <dt id="matplotlib.finance.plot_day_summary2_ohlc">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">plot_day_summary2_ohlc</tt><big>(</big><em>ax</em>, <em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em>, <em>ticksize=4</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em><big>)</big><a class="headerlink" href="#matplotlib.finance.plot_day_summary2_ohlc" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">plot_day_summary2_ohlc</code><span class="sig-paren">(</span><em>ax</em>, <em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em>, <em>ticksize=4</em>, <em>colorup='k'</em>, <em>colordown='r'</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.plot_day_summary2_ohlc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represent the time, open, high, low, close as a vertical line
 ranging from low to high.  The left tick is the open and the right
-tick is the close.</p>
+tick is the close.
+<em>opens</em>, <em>highs</em>, <em>lows</em> and <em>closes</em> must have the same length.
+NOTE: this code assumes if any value open, high, low, close is
+missing (<em>-1</em>) they all are missing</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code></p>
 <blockquote>
 <div><p>an Axes instance to plot to</p>
 </div></blockquote>
@@ -918,7 +663,7 @@ tick is the close.</p>
 
 <dl class="function">
 <dt id="matplotlib.finance.plot_day_summary_oclh">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">plot_day_summary_oclh</tt><big>(</big><em>ax</em>, <em>quotes</em>, <em>ticksize=3</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em><big>)</big><a class="headerlink" href="#matplotlib.finance.plot_day_summary_oclh" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">plot_day_summary_oclh</code><span class="sig-paren">(</span><em>ax</em>, <em>quotes</em>, <em>ticksize=3</em>, <em>colorup='k'</em>, <em>colordown='r'</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.plot_day_summary_oclh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots day summary</p>
 <blockquote>
 <div>Represent the time, open, close, high, low as a vertical line
@@ -928,9 +673,9 @@ tick is the close.</div></blockquote>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code></p>
 <blockquote>
-<div><p>an <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt> instance to plot to</p>
+<div><p>an <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code> instance to plot to</p>
 </div></blockquote>
 <p><strong>quotes</strong> : sequence of (time, open, close, high, low, ...) sequences</p>
 <blockquote>
@@ -962,7 +707,7 @@ tick is the close.</div></blockquote>
 
 <dl class="function">
 <dt id="matplotlib.finance.plot_day_summary_ohlc">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">plot_day_summary_ohlc</tt><big>(</big><em>ax</em>, <em>quotes</em>, <em>ticksize=3</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em><big>)</big><a class="headerlink" href="#matplotlib.finance.plot_day_summary_ohlc" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">plot_day_summary_ohlc</code><span class="sig-paren">(</span><em>ax</em>, <em>quotes</em>, <em>ticksize=3</em>, <em>colorup='k'</em>, <em>colordown='r'</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.plot_day_summary_ohlc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots day summary</p>
 <blockquote>
 <div>Represent the time, open, high, low, close as a vertical line
@@ -972,9 +717,9 @@ tick is the close.</div></blockquote>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code></p>
 <blockquote>
-<div><p>an <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt> instance to plot to</p>
+<div><p>an <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code> instance to plot to</p>
 </div></blockquote>
 <p><strong>quotes</strong> : sequence of (time, open, high, low, close, ...) sequences</p>
 <blockquote>
@@ -1005,59 +750,10 @@ tick is the close.</div></blockquote>
 </dd></dl>
 
 <dl class="function">
-<dt id="matplotlib.finance.quotes_historical_yahoo">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">quotes_historical_yahoo</tt><big>(</big><em>ticker</em>, <em>date1</em>, <em>date2</em>, <em>asobject=False</em>, <em>adjusted=True</em>, <em>cachename=None</em><big>)</big><a class="headerlink" href="#matplotlib.finance.quotes_historical_yahoo" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get historical data for ticker between date1 and date2.</p>
-<p>This function has been deprecated in 1.4 in favor of
-<tt class="xref py py-obj docutils literal"><span class="pre">quotes_yahoo_historical_ochl</span></tt>, which maintains the original argument
-order, or <tt class="xref py py-obj docutils literal"><span class="pre">quotes_yahoo_historical_ohlc</span></tt>, which uses the
-open-high-low-close order.  This function will be removed in 1.5</p>
-<p>See <a class="reference internal" href="#matplotlib.finance.parse_yahoo_historical" title="matplotlib.finance.parse_yahoo_historical"><tt class="xref py py-func docutils literal"><span class="pre">parse_yahoo_historical()</span></tt></a> for explanation of output formats
-and the <em>asobject</em> and <em>adjusted</em> kwargs.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ticker</strong> : str</p>
-<blockquote>
-<div><p>stock ticker</p>
-</div></blockquote>
-<p><strong>date1</strong> : sequence of form (year, month, day), <tt class="xref py py-obj docutils literal"><span class="pre">datetime</span></tt>, or <tt class="xref py py-obj docutils literal"><span class="pre">date</span></tt></p>
-<blockquote>
-<div><p>start date</p>
-</div></blockquote>
-<p><strong>date2</strong> : sequence of form (year, month, day), <tt class="xref py py-obj docutils literal"><span class="pre">datetime</span></tt>, or <tt class="xref py py-obj docutils literal"><span class="pre">date</span></tt></p>
-<blockquote>
-<div><p>end date</p>
-</div></blockquote>
-<p><strong>cachename</strong> : str or <tt class="xref py py-obj docutils literal"><span class="pre">None</span></tt></p>
-<blockquote class="last">
-<div><p>is the name of the local file cache.  If None, will
-default to the md5 hash or the url (which incorporates the ticker
-and date range)</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sp</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">quotes_historical_yahoo</span><span class="p">(</span><span class="s">&#39;^GSPC&#39;</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span>
-<span class="go">                         asobject=True, adjusted=True)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">returns</span> <span class="o">=</span> <span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">open</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">open</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">open</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="n">bins</span><span class="p">,</span><span class="n">patches</span><span class="p">]</span> <span class="o">=</span> <span class="n">hist</span><span class="p">(</span><span class="n">returns</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mu</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="n">std</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">normpdf</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="function">
 <dt id="matplotlib.finance.quotes_historical_yahoo_ochl">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">quotes_historical_yahoo_ochl</tt><big>(</big><em>ticker</em>, <em>date1</em>, <em>date2</em>, <em>asobject=False</em>, <em>adjusted=True</em>, <em>cachename=None</em><big>)</big><a class="headerlink" href="#matplotlib.finance.quotes_historical_yahoo_ochl" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">quotes_historical_yahoo_ochl</code><span class="sig-paren">(</span><em>ticker</em>, <em>date1</em>, <em>date2</em>, <em>asobject=False</em>, <em>adjusted=True</em>, <em>cachename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.quotes_historical_yahoo_ochl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get historical data for ticker between date1 and date2.</p>
-<p>See <a class="reference internal" href="#matplotlib.finance.parse_yahoo_historical" title="matplotlib.finance.parse_yahoo_historical"><tt class="xref py py-func docutils literal"><span class="pre">parse_yahoo_historical()</span></tt></a> for explanation of output formats
+<p>See <code class="xref py py-func docutils literal"><span class="pre">parse_yahoo_historical()</span></code> for explanation of output formats
 and the <em>asobject</em> and <em>adjusted</em> kwargs.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1067,15 +763,15 @@ and the <em>asobject</em> and <em>adjusted</em> kwargs.</p>
 <blockquote>
 <div><p>stock ticker</p>
 </div></blockquote>
-<p><strong>date1</strong> : sequence of form (year, month, day), <tt class="xref py py-obj docutils literal"><span class="pre">datetime</span></tt>, or <tt class="xref py py-obj docutils literal"><span class="pre">date</span></tt></p>
+<p><strong>date1</strong> : sequence of form (year, month, day), <code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code>, or <code class="xref py py-obj docutils literal"><span class="pre">date</span></code></p>
 <blockquote>
 <div><p>start date</p>
 </div></blockquote>
-<p><strong>date2</strong> : sequence of form (year, month, day), <tt class="xref py py-obj docutils literal"><span class="pre">datetime</span></tt>, or <tt class="xref py py-obj docutils literal"><span class="pre">date</span></tt></p>
+<p><strong>date2</strong> : sequence of form (year, month, day), <code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code>, or <code class="xref py py-obj docutils literal"><span class="pre">date</span></code></p>
 <blockquote>
 <div><p>end date</p>
 </div></blockquote>
-<p><strong>cachename</strong> : str or <tt class="xref py py-obj docutils literal"><span class="pre">None</span></tt></p>
+<p><strong>cachename</strong> : str or <code class="xref py py-obj docutils literal"><span class="pre">None</span></code></p>
 <blockquote class="last">
 <div><p>is the name of the local file cache.  If None, will
 default to the md5 hash or the url (which incorporates the ticker
@@ -1086,23 +782,23 @@ and date range)</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sp</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">quotes_historical_yahoo_ochl</span><span class="p">(</span><span class="s">&#39;^GSPC&#39;</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sp</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">quotes_historical_yahoo_ochl</span><span class="p">(</span><span class="s1">&#39;^GSPC&#39;</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span>
 <span class="go">                         asobject=True, adjusted=True)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">returns</span> <span class="o">=</span> <span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">open</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">open</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">open</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="n">bins</span><span class="p">,</span><span class="n">patches</span><span class="p">]</span> <span class="o">=</span> <span class="n">hist</span><span class="p">(</span><span class="n">returns</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mu</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="n">std</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">normpdf</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="matplotlib.finance.quotes_historical_yahoo_ohlc">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">quotes_historical_yahoo_ohlc</tt><big>(</big><em>ticker</em>, <em>date1</em>, <em>date2</em>, <em>asobject=False</em>, <em>adjusted=True</em>, <em>cachename=None</em><big>)</big><a class="headerlink" href="#matplotlib.finance.quotes_historical_yahoo_ohlc" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">quotes_historical_yahoo_ohlc</code><span class="sig-paren">(</span><em>ticker</em>, <em>date1</em>, <em>date2</em>, <em>asobject=False</em>, <em>adjusted=True</em>, <em>cachename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.quotes_historical_yahoo_ohlc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get historical data for ticker between date1 and date2.</p>
-<p>See <a class="reference internal" href="#matplotlib.finance.parse_yahoo_historical" title="matplotlib.finance.parse_yahoo_historical"><tt class="xref py py-func docutils literal"><span class="pre">parse_yahoo_historical()</span></tt></a> for explanation of output formats
+<p>See <code class="xref py py-func docutils literal"><span class="pre">parse_yahoo_historical()</span></code> for explanation of output formats
 and the <em>asobject</em> and <em>adjusted</em> kwargs.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1112,15 +808,15 @@ and the <em>asobject</em> and <em>adjusted</em> kwargs.</p>
 <blockquote>
 <div><p>stock ticker</p>
 </div></blockquote>
-<p><strong>date1</strong> : sequence of form (year, month, day), <tt class="xref py py-obj docutils literal"><span class="pre">datetime</span></tt>, or <tt class="xref py py-obj docutils literal"><span class="pre">date</span></tt></p>
+<p><strong>date1</strong> : sequence of form (year, month, day), <code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code>, or <code class="xref py py-obj docutils literal"><span class="pre">date</span></code></p>
 <blockquote>
 <div><p>start date</p>
 </div></blockquote>
-<p><strong>date2</strong> : sequence of form (year, month, day), <tt class="xref py py-obj docutils literal"><span class="pre">datetime</span></tt>, or <tt class="xref py py-obj docutils literal"><span class="pre">date</span></tt></p>
+<p><strong>date2</strong> : sequence of form (year, month, day), <code class="xref py py-obj docutils literal"><span class="pre">datetime</span></code>, or <code class="xref py py-obj docutils literal"><span class="pre">date</span></code></p>
 <blockquote>
 <div><p>end date</p>
 </div></blockquote>
-<p><strong>cachename</strong> : str or <tt class="xref py py-obj docutils literal"><span class="pre">None</span></tt></p>
+<p><strong>cachename</strong> : str or <code class="xref py py-obj docutils literal"><span class="pre">None</span></code></p>
 <blockquote class="last">
 <div><p>is the name of the local file cache.  If None, will
 default to the md5 hash or the url (which incorporates the ticker
@@ -1131,21 +827,21 @@ and date range)</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sp</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">quotes_historical_yahoo_ohlc</span><span class="p">(</span><span class="s">&#39;^GSPC&#39;</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sp</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">quotes_historical_yahoo_ohlc</span><span class="p">(</span><span class="s1">&#39;^GSPC&#39;</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span>
 <span class="go">                         asobject=True, adjusted=True)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">returns</span> <span class="o">=</span> <span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">open</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">open</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">open</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="n">bins</span><span class="p">,</span><span class="n">patches</span><span class="p">]</span> <span class="o">=</span> <span class="n">hist</span><span class="p">(</span><span class="n">returns</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mu</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="n">std</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">normpdf</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="matplotlib.finance.volume_overlay">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">volume_overlay</tt><big>(</big><em>ax</em>, <em>opens</em>, <em>closes</em>, <em>volumes</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em>, <em>width=4</em>, <em>alpha=1.0</em><big>)</big><a class="headerlink" href="#matplotlib.finance.volume_overlay" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">volume_overlay</code><span class="sig-paren">(</span><em>ax</em>, <em>opens</em>, <em>closes</em>, <em>volumes</em>, <em>colorup='k'</em>, <em>colordown='r'</em>, <em>width=4</em>, <em>alpha=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.volume_overlay" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a volume overlay to the current axes.  The opens and closes
 are used to determine the color of the bar.  -1 is missing.  If a
 value is missing on one it must be missing on all</p>
@@ -1153,7 +849,7 @@ value is missing on one it must be missing on all</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code></p>
 <blockquote>
 <div><p>an Axes instance to plot to</p>
 </div></blockquote>
@@ -1187,9 +883,9 @@ value is missing on one it must be missing on all</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ret</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">barCollection</span></tt></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ret</strong> : <code class="xref py py-obj docutils literal"><span class="pre">barCollection</span></code></p>
 <blockquote class="last">
-<div><p>The <tt class="xref py py-obj docutils literal"><span class="pre">barrCollection</span></tt> added to the axes</p>
+<div><p>The <code class="xref py py-obj docutils literal"><span class="pre">barrCollection</span></code> added to the axes</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1199,7 +895,7 @@ value is missing on one it must be missing on all</p>
 
 <dl class="function">
 <dt id="matplotlib.finance.volume_overlay2">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">volume_overlay2</tt><big>(</big><em>ax</em>, <em>closes</em>, <em>volumes</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em>, <em>width=4</em>, <em>alpha=1.0</em><big>)</big><a class="headerlink" href="#matplotlib.finance.volume_overlay2" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">volume_overlay2</code><span class="sig-paren">(</span><em>ax</em>, <em>closes</em>, <em>volumes</em>, <em>colorup='k'</em>, <em>colordown='r'</em>, <em>width=4</em>, <em>alpha=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.volume_overlay2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a volume overlay to the current axes.  The closes are used to
 determine the color of the bar.  -1 is missing.  If a value is
 missing on one it must be missing on all</p>
@@ -1209,7 +905,7 @@ right color</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code></p>
 <blockquote>
 <div><p>an Axes instance to plot to</p>
 </div></blockquote>
@@ -1239,9 +935,9 @@ right color</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ret</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">barCollection</span></tt></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ret</strong> : <code class="xref py py-obj docutils literal"><span class="pre">barCollection</span></code></p>
 <blockquote class="last">
-<div><p>The <tt class="xref py py-obj docutils literal"><span class="pre">barrCollection</span></tt> added to the axes</p>
+<div><p>The <code class="xref py py-obj docutils literal"><span class="pre">barrCollection</span></code> added to the axes</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1251,7 +947,7 @@ right color</p>
 
 <dl class="function">
 <dt id="matplotlib.finance.volume_overlay3">
-<tt class="descclassname">matplotlib.finance.</tt><tt class="descname">volume_overlay3</tt><big>(</big><em>ax</em>, <em>quotes</em>, <em>colorup=u'k'</em>, <em>colordown=u'r'</em>, <em>width=4</em>, <em>alpha=1.0</em><big>)</big><a class="headerlink" href="#matplotlib.finance.volume_overlay3" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">matplotlib.finance.</code><code class="descname">volume_overlay3</code><span class="sig-paren">(</span><em>ax</em>, <em>quotes</em>, <em>colorup='k'</em>, <em>colordown='r'</em>, <em>width=4</em>, <em>alpha=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.finance.volume_overlay3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a volume overlay to the current axes.  quotes is a list of (d,
 open, high, low, close, volume) and close-open is used to
 determine the color of the bar</p>
@@ -1259,7 +955,7 @@ determine the color of the bar</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">Axes</span></tt></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ax</strong> : <code class="xref py py-obj docutils literal"><span class="pre">Axes</span></code></p>
 <blockquote>
 <div><p>an Axes instance to plot to</p>
 </div></blockquote>
@@ -1285,9 +981,9 @@ determine the color of the bar</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ret</strong> : <tt class="xref py py-obj docutils literal"><span class="pre">barCollection</span></tt></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ret</strong> : <code class="xref py py-obj docutils literal"><span class="pre">barCollection</span></code></p>
 <blockquote class="last">
-<div><p>The <tt class="xref py py-obj docutils literal"><span class="pre">barrCollection</span></tt> added to the axes</p>
+<div><p>The <code class="xref py py-obj docutils literal"><span class="pre">barrCollection</span></code> added to the axes</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1307,9 +1003,9 @@ determine the color of the bar</p>
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the matplotlib development team; 2012 - 2014 The matplotlib development team.
-      Last updated on Jan 15, 2015.
+      Last updated on Jun 23, 2016.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
     </div>
 
 <script>
@@ -1323,4 +1019,153 @@ href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
 
 </script>
 </body>
+<footer>
+  <!--Flipcause Integration v3.0// Flipcause Integration Instructions:
+Install the following code block once in the website Header (after <head> tag) -->
+
+<style>
+
+.fc-black_overlay{
+display:none; position: fixed; z-index:1000001; top: 0%;left: 0%;width: 100%;height: 100%;
+background-color: black; filter: alpha(opacity=50); cursor:pointer; opacity:0.5;
+}
+
+.fc-white_content {
+opacity:1; display:none; margin-top: -320px; margin-left: -485px; width:970px; height:640px;
+position:fixed; top:50%; left:50%; border: none;z-index:1000002;overflow: auto;
+}
+
+.fc-main-box{
+opacity:1; display:none; margin:15px auto 0 auto; width:930px; position:relative; z-index:1000003;
+}
+
+.fc-widget_close{
+opacity:1; content:url(http://i1338.photobucket.com/albums/o691/WeCause/X_zpse4a7e538.png);
+position:absolute; z-index=1000004; right:-16px; top:-16px; display:block; cursor:pointer;
+}
+
+.floating_button{
+display: block; margin-top: 0px; margin-left: 0px; width:auto ; height: auto;
+position:fixed; z-index:999999; overflow: auto;
+}
+
+@keyframes backfadesin {
+   from { opacity:0; }
+   to {opacity:.5;}
+}
+
+@-moz-keyframes backfadesin {
+    from { opacity:0; }
+    to {opacity:.5;}
+}
+
+@-webkit-keyframes backfadesin {
+    from { opacity:0; }
+    to {opacity:.5;}
+}
+
+@-o-keyframes backfadesin {
+    from { opacity:0; }
+    to {opacity:.5;}
+}
+
+
+@-ms-keyframes backfadesin {
+    from { opacity:0; }
+    to {opacity:.5;}
+}
+
+@keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; transform: translateY(20px);}
+   100% {opacity: 1; transform: translateY(0);}
+}
+
+@-moz-keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; -moz-transform: translateY(20px);}
+   100% {opacity: 1; -moz-transform: translateY(0);}
+}
+
+@-webkit-keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; -webkit-transform: translateY(20px);}
+   100% {opacity: 1; -webkit-transform: translateY(0);}
+}
+
+@-o-keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; -o-transform: translateY(20px);}
+   100% {opacity: 1; -o-transform: translateY(0);}
+}
+
+@-ms-keyframes fadesin {
+   0%{ opacity:0; }
+   50%{ opacity:0; }
+   75% {opacity: 0; -ms-transform: translateY(20px);}
+   100% {opacity: 1; -ms-transform: translateY(0);}
+}
+
+</style>
+
+<script>
+
+function open_window(cause_id) {
+var  protocol=String(document.location.protocol);
+var new_url;
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+new_url="https://www.flipcause.com/widget/"+cause_id
+window.open(new_url);
+}
+
+else {
+document.getElementById("fc-fade").style.display = "block";
+document.getElementById("fc-fade").style.webkitAnimation = "backfadesin 1s";
+document.getElementById("fc-fade").style.animation = "backfadesin 1s";
+document.getElementById("fc-fade").style.mozAnimation = "backfadesin 1s";
+document.getElementById("fc-light").style.display = "block";
+document.getElementById("fc-light").style.webkitAnimation = "fadesin 1.5s";
+document.getElementById("fc-light").style.animation = "fadesin 1.5s";
+document.getElementById("fc-light").style.mozAnimation = "fadesin 1.5s";
+document.getElementById("fc-main").style.display = "block";
+document.getElementById("fc-main").style.webkitAnimation = "fadesin 1.5s";
+document.getElementById("fc-main").style.animation = "fadesin 1.5s";
+document.getElementById("fc-main").style.mozAnimation = "fadesin 1.5s";
+document.getElementById("fc-close").style.display = "block";
+document.getElementById("fc-close").style.webkitAnimation = "fadesin 1.5s";
+document.getElementById("fc-close").style.animation = "fadesin 1.5s";
+document.getElementById("fc-close").style.mozAnimation = "fadesin 1.5s";
+document.getElementById("fc-myFrame").style.display = "block";
+document.getElementById("fc-myFrame").style.webkitAnimation = "fadesin 1.5s";
+document.getElementById("fc-myFrame").style.animation = "fadesin 1.5s";
+document.getElementById("fc-myFrame").style.mozAnimation = "fadesin 1.5s";
+document.getElementById("fc-myFrame").src="https://www.flipcause.com/widget/"+cause_id;
+}
+}
+
+
+function close_window() {
+document.getElementById("fc-fade").style.display="none";
+document.getElementById("fc-light").style.display="none";
+document.getElementById("fc-main").style.display="none";
+document.getElementById("fc-close").style.display="none";
+document.getElementById("fc-myFrame").style.display="none";
+}
+
+</script>
+
+<div id="fc-fade" class="fc-black_overlay" onclick="close_window()"></div>
+<div id="fc-light" class="fc-white_content">
+<div id="fc-main" class="fc-main-box">
+<div id="fc-close" class="fc-widget_close" onclick="close_window()">
+</div><iframe id="fc-myFrame" iframe height="580" width="925" style="border: 0;
+border-radius:5px 5px 5px 5px; box-shadow:0 0 8px rgba(0, 0, 0, 0.5);" scrolling="no" src=""></iframe></div>
+</div>
+
+<!--END Flipcause Main Integration Code-->
+</footer>
 </html>

@@ -7,8 +7,6 @@ event_handling example code: pick_event_demo.py
 
 ::
 
-    #!/usr/bin/env python
-    
     """
     
     You can enable picking by setting the "picker" property of an artist

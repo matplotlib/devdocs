@@ -7,7 +7,6 @@ pylab_examples example code: ginput_manual_clabel.py
 
 ::
 
-    #!/usr/bin/env python
     # -*- noplot -*-
     
     from __future__ import print_function

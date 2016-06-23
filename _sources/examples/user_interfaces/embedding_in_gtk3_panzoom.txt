@@ -7,7 +7,6 @@ user_interfaces example code: embedding_in_gtk3_panzoom.py
 
 ::
 
-    #!/usr/bin/env python
     """
     demonstrate NavigationToolbar with GTK3 accessed via pygobject
     """

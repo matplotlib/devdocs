@@ -9,14 +9,14 @@ Copyright (c) 2010, Bartosz Telenczuk
 BSD License
 """
 import matplotlib.pyplot as plt
-plt.rcdefaults()
-
 import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib.path as mpath
 import matplotlib.lines as mlines
 import matplotlib.patches as mpatches
 from matplotlib.collections import PatchCollection
+
+
+plt.rcdefaults()
 
 
 def label(xy, text):
@@ -84,7 +84,7 @@ fancybox = mpatches.FancyBboxPatch(
     grid[7] - [0.025, 0.05], 0.05, 0.1,
     boxstyle=mpatches.BoxStyle("Round", pad=0.02))
 patches.append(fancybox)
-label(grid[7], "FancyBoxPatch")
+label(grid[7], "FancyBboxPatch")
 
 # add a line
 x, y = np.array([[-0.06, 0.0, 0.1], [0.05, -0.05, 0.05]])

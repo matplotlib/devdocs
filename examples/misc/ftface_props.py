@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 from __future__ import print_function
 """
 This is a demo script to show you how to use all the properties of an
@@ -12,7 +10,7 @@ import matplotlib.ft2font as ft
 
 
 #fname = '/usr/local/share/matplotlib/VeraIt.ttf'
-fname = matplotlib.get_data_path() + '/fonts/ttf/VeraIt.ttf'
+fname = matplotlib.get_data_path() + '/fonts/ttf/DejaVuSans-Oblique.ttf'
 #fname = '/usr/local/share/matplotlib/cmr10.ttf'
 
 font = ft.FT2Font(fname)
@@ -63,5 +61,4 @@ for style in ('Italic',
 
 print(dir(font))
 
-cmap = font.get_charmap()
 print(font.get_kerning)

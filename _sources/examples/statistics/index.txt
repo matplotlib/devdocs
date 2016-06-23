@@ -19,6 +19,7 @@ statistics Examples
     errorbar_demo <errorbar_demo.rst>
     errorbar_demo_features <errorbar_demo_features.rst>
     errorbar_limits <errorbar_limits.rst>
+    errorbars_and_boxes <errorbars_and_boxes.rst>
     histogram_demo_cumulative <histogram_demo_cumulative.rst>
     histogram_demo_features <histogram_demo_features.rst>
     histogram_demo_histtypes <histogram_demo_histtypes.rst>

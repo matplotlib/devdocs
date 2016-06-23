@@ -1,22 +1,23 @@
-import numpy as np
-#np.seterr("raise")
+import matplotlib.pyplot as plt
 
-from pylab import *
+plt.figure()
+plt.subplot(111, projection="aitoff")
+plt.title("Aitoff")
+plt.grid(True)
 
-subplot(221, projection="aitoff")
-title("Aitoff")
-grid(True)
+plt.figure()
+plt.subplot(111, projection="hammer")
+plt.title("Hammer")
+plt.grid(True)
 
-subplot(222, projection="hammer")
-title("Hammer")
-grid(True)
+plt.figure()
+plt.subplot(111, projection="lambert")
+plt.title("Lambert")
+plt.grid(True)
 
-subplot(223, projection="lambert")
-title("Lambert")
-grid(True)
+plt.figure()
+plt.subplot(111, projection="mollweide")
+plt.title("Mollweide")
+plt.grid(True)
 
-subplot(224, projection="mollweide")
-title("Mollweide")
-grid(True)
-
-show()
+plt.show()
