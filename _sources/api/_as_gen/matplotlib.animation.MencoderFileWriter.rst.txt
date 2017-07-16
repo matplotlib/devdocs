@@ -1,0 +1,16 @@
+matplotlib\.animation\.MencoderFileWriter
+=========================================
+
+.. currentmodule:: matplotlib.animation
+
+.. autoclass:: MencoderFileWriter
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

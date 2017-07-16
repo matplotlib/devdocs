@@ -1,0 +1,16 @@
+matplotlib\.animation\.AVConvFileWriter
+=======================================
+
+.. currentmodule:: matplotlib.animation
+
+.. autoclass:: AVConvFileWriter
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

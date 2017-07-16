@@ -1,0 +1,16 @@
+matplotlib\.animation\.ImageMagickFileWriter
+============================================
+
+.. currentmodule:: matplotlib.animation
+
+.. autoclass:: ImageMagickFileWriter
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

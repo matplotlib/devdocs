@@ -1,0 +1,16 @@
+matplotlib\.animation\.FuncAnimation
+====================================
+
+.. currentmodule:: matplotlib.animation
+
+.. autoclass:: FuncAnimation
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

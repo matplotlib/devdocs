@@ -1,0 +1,16 @@
+matplotlib\.animation\.MovieWriterRegistry
+==========================================
+
+.. currentmodule:: matplotlib.animation
+
+.. autoclass:: MovieWriterRegistry
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

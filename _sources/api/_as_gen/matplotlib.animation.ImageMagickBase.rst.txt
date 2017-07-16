@@ -1,0 +1,16 @@
+matplotlib\.animation\.ImageMagickBase
+======================================
+
+.. currentmodule:: matplotlib.animation
+
+.. autoclass:: ImageMagickBase
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

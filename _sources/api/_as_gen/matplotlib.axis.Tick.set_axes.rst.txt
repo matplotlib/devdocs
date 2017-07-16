@@ -1,0 +1,16 @@
+matplotlib\.axis\.Tick\.set\_axes
+=================================
+
+
+.. currentmodule:: matplotlib.axis
+
+.. automethod:: Tick.set_axes
+
+
+
+.. include:: matplotlib.axis.Tick.set_axes.examples
+
+.. raw:: html
+
+    <div class="clearer"></div>
+

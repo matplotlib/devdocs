@@ -1,0 +1,16 @@
+matplotlib\.axis\.Axis\.set\_axes
+=================================
+
+
+.. currentmodule:: matplotlib.axis
+
+.. automethod:: Axis.set_axes
+
+
+
+.. include:: matplotlib.axis.Axis.set_axes.examples
+
+.. raw:: html
+
+    <div class="clearer"></div>
+

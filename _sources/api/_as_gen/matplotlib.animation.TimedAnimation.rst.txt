@@ -1,0 +1,16 @@
+matplotlib\.animation\.TimedAnimation
+=====================================
+
+.. currentmodule:: matplotlib.animation
+
+.. autoclass:: TimedAnimation
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

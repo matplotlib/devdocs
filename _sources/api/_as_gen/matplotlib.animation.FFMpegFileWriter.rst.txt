@@ -1,0 +1,16 @@
+matplotlib\.animation\.FFMpegFileWriter
+=======================================
+
+.. currentmodule:: matplotlib.animation
+
+.. autoclass:: FFMpegFileWriter
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

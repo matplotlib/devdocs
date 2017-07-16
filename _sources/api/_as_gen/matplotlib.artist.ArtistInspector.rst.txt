@@ -1,0 +1,16 @@
+matplotlib\.artist\.ArtistInspector
+===================================
+
+.. currentmodule:: matplotlib.artist
+
+.. autoclass:: ArtistInspector
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

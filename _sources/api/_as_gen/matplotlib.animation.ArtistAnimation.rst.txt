@@ -1,0 +1,16 @@
+matplotlib\.animation\.ArtistAnimation
+======================================
+
+.. currentmodule:: matplotlib.animation
+
+.. autoclass:: ArtistAnimation
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   
