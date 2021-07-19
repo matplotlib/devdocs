@@ -1,166 +1,512 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set up your fork &#8212; Matplotlib 3.4.2.post1414+g246a489ce6 documentation</title>
     
-    <title>Set up your fork &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
     
-    <link rel="stylesheet" href="../../_static/mpl.css"
-type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css"
-type="text/css" />
-    <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mpl.css?v3.4.2-1414-g246a489ce6" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 3.4.2.post1414+g246a489ce6 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html"
-/>
-    <link rel="search" title="Search" href="../../search.html"
-/>
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../../index.html" />
-    <link rel="up" title="Git for development" href="git_development.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Configure git" href="configure_git.html" />
-    <link rel="prev" title="Making your own copy (fork) of Matplotlib" href="forking_hell.html" /> 
-
-
+    <link rel="prev" title="Making your own copy (fork) of Matplotlib" href="forking_hell.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo2.svg" class="logo" alt="logo">
+</a>      
 
 
+    
+  </div>
 
-<!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
-</div>
-
-
-
-
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="configure_git.html" title="Configure git"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="forking_hell.html" title="Making your own copy (fork) of Matplotlib"
-             accesskey="P">previous</a> |</li>
-
-        <li><a href="../../index.html">home</a>|&nbsp;</li>
-        <li><a href="../../gallery/index.html">examples</a>|&nbsp;</li>
-        <li><a href="../../tutorials/index.html">tutorials</a>|&nbsp;</li>
-        <li><a href="../../api/pyplot_summary.html">pyplot</a>|&nbsp;</li>
-        <li><a href="../../contents.html">docs</a> &raquo;</li>
-          <li><a href="../index.html" >The Matplotlib Developers’ Guide</a> &raquo;</li>
-          <li><a href="index.html" >Working with <em>Matplotlib</em> source code</a> &raquo;</li>
-          <li><a href="git_development.html" accesskey="U">Git for development</a> &raquo;</li> 
-      </ul>
-    </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
   
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
-  <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
-
-<br/>
-
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../../_static/depsy_badge.svg">
-</a>
-
-<br/>
-
-Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
-  <img src="https://travis-ci.org/matplotlib/matplotlib.svg?branch=master"/>
-</a>
-<br/>
-  <h3><a href="../../contents.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Set up your fork</a><ul>
-<li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#in-detail">In detail</a><ul>
-<li><a class="reference internal" href="#clone-your-fork">Clone your fork</a></li>
-<li><a class="reference internal" href="#linking-your-repository-to-the-upstream-repo">Linking your repository to the upstream repo</a></li>
-</ul>
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../users/installing.html">
+  Installation
+ </a>
 </li>
-</ul>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../plot_types/index.html">
+  Plot types
+ </a>
 </li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../gallery/index.html">
+  Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api/index.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../users/index.html">
+  User's guide
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference external nav-link" href="https://matplotlib.org/mpl-third-party/">
+  Third-party packages
+ </a>
+</li>
+
+    
 </ul>
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../../contents.html">Documentation overview</a><ul>
-  <li><a href="../index.html">The Matplotlib Developers’ Guide</a><ul>
-  <li><a href="index.html">Working with <em>Matplotlib</em> source code</a><ul>
-  <li><a href="git_development.html">Git for development</a><ul>
-      <li>Previous: <a href="forking_hell.html" title="previous chapter">Making your own copy (fork) of Matplotlib</a></li>
-      <li>Next: <a href="configure_git.html" title="next chapter">Configure git</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../_sources/devel/gitwash/set_up_fork.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
       </div>
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://gitter.im/matplotlib" rel="noopener" target="_blank" title="gitter">
+            <span><i class="fab fa-gitter"></i></span>
+            <label class="sr-only">gitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discourse.matplotlib.org" rel="noopener" target="_blank" title="discourse">
+            <span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">discourse</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/matplotlib/matplotlib" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/matplotlib/" rel="noopener" target="_blank" title="twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
             
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../contributing.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../triage.html">
+   Bug triaging and issue curation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development_setup.html">
+   Setting up Matplotlib for development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../testing.html">
+   Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../documenting_mpl.html">
+   Writing documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../style_guide.html">
+   Documentation style guide
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Working with
+   <em>
+    Matplotlib
+   </em>
+   source code
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_install.html">
+     Install git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="following_latest.html">
+     Following the latest source
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="patching.html">
+     Making a patch
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="git_development.html">
+     Git for development
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="forking_hell.html">
+       Making your own copy (fork) of Matplotlib
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Set up your fork
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="configure_git.html">
+       Configure git
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="development_workflow.html">
+       Development workflow
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="maintainer_workflow.html">
+       Maintainer workflow
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_resources.html">
+     git resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dot2_dot3.html">
+     Two and three dots in difference specs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../coding_guide.html">
+   Pull request guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../release_guide.html">
+   Release guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dependencies.html">
+   Dependencies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../min_dep_policy.html">
+   Minimum version of dependencies policy
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../MEP/index.html">
+   Matplotlib Enhancement Proposals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/template.html">
+     MEP Template
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP08.html">
+     MEP8: PEP8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP09.html">
+     MEP9: Global interaction manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP10.html">
+     MEP10: Docstring consistency
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP11.html">
+     MEP11: Third-party dependencies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP12.html">
+     MEP12: Improve Gallery and Examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP13.html">
+     MEP13: Use properties for Artists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP14.html">
+     MEP14: Text handling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP15.html">
+     MEP15 - Fix axis autoscaling when limits are specified for one axis only
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP19.html">
+     MEP19: Continuous Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP21.html">
+     MEP21: color and cm refactor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP22.html">
+     MEP22: Toolbar rewrite
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP23.html">
+     MEP23: Multiple Figures per GUI window
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP24.html">
+     MEP24: negative radius in polar plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP25.html">
+     MEP25: Serialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP26.html">
+     MEP26: Artist styling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP27.html">
+     MEP27: decouple pyplot from backends
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP28.html">
+     MEP28: Remove Complexity from Axes.boxplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MEP/MEP29.html">
+     MEP29: Text light markup
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../license.html">
+   Licenses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../color_changes.html">
+   Default color changes
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-detail">
+   In detail
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clone-your-fork">
+     Clone your fork
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linking-your-repository-to-the-upstream-repo">
+     Linking your repository to the upstream repo
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
   <div class="section" id="set-up-your-fork">
 <span id="set-up-fork"></span><h1>Set up your fork<a class="headerlink" href="#set-up-your-fork" title="Permalink to this headline">¶</a></h1>
 <p>First you follow the instructions for <a class="reference internal" href="forking_hell.html#forking"><span class="std std-ref">Making your own copy (fork) of Matplotlib</span></a>.</p>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com:your-user-name/matplotlib.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/your-user-name/matplotlib.git
 <span class="nb">cd</span> matplotlib
 git remote add upstream git://github.com/matplotlib/matplotlib.git
 </pre></div>
@@ -171,19 +517,18 @@ git remote add upstream git://github.com/matplotlib/matplotlib.git
 <div class="section" id="clone-your-fork">
 <h3>Clone your fork<a class="headerlink" href="#clone-your-fork" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Clone your fork to the local computer with <code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span>
-<span class="pre">https://github.com:your-user-name/matplotlib.git</span></code></p>
-</li>
-<li><p class="first">Investigate.  Change directory to your new repo: <code class="docutils literal"><span class="pre">cd</span> <span class="pre">matplotlib</span></code>. Then
-<code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-a</span></code> to show you all branches.  You’ll get something
+<li><p>Clone your fork to the local computer with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span>
+<span class="pre">https://github.com/your-user-name/matplotlib.git</span></code></p></li>
+<li><p>Investigate.  Change directory to your new repo: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">matplotlib</span></code>. Then
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-a</span></code> to show you all branches.  You'll get something
 like:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>* master
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* master
 remotes/origin/master
 </pre></div>
 </div>
-<p>This tells you that you are currently on the <code class="docutils literal"><span class="pre">master</span></code> branch, and
-that you also have a <code class="docutils literal"><span class="pre">remote</span></code> connection to <code class="docutils literal"><span class="pre">origin/master</span></code>.
-What remote repository is <code class="docutils literal"><span class="pre">remote/origin</span></code>? Try <code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> to
+<p>This tells you that you are currently on the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, and
+that you also have a <code class="docutils literal notranslate"><span class="pre">remote</span></code> connection to <code class="docutils literal notranslate"><span class="pre">origin/master</span></code>.
+What remote repository is <code class="docutils literal notranslate"><span class="pre">remote/origin</span></code>? Try <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> to
 see the URLs for the remote.  They will point to your github fork.</p>
 <p>Now you want to connect to the upstream <a class="reference external" href="https://github.com/matplotlib/matplotlib">Matplotlib github</a> repository, so
 you can merge in changes from trunk.</p>
@@ -192,22 +537,22 @@ you can merge in changes from trunk.</p>
 </div>
 <div class="section" id="linking-your-repository-to-the-upstream-repo">
 <span id="linking-to-upstream"></span><h3>Linking your repository to the upstream repo<a class="headerlink" href="#linking-your-repository-to-the-upstream-repo" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> matplotlib
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> matplotlib
 git remote add upstream git://github.com/matplotlib/matplotlib.git
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">upstream</span></code> here is just the arbitrary name we’re using to refer to the
+<p><code class="docutils literal notranslate"><span class="pre">upstream</span></code> here is just the arbitrary name we're using to refer to the
 main <a class="reference external" href="http://matplotlib.org">Matplotlib</a> repository at <a class="reference external" href="https://github.com/matplotlib/matplotlib">Matplotlib github</a>.</p>
-<p>Note that we’ve used <code class="docutils literal"><span class="pre">git://</span></code> for the URL rather than <code class="docutils literal"><span class="pre">https://</span></code> or <code class="docutils literal"><span class="pre">git&#64;</span></code>.  The
-<code class="docutils literal"><span class="pre">git://</span></code> URL is read only.  This means we that we can’t accidentally
+<p>Note that we've used <code class="docutils literal notranslate"><span class="pre">git://</span></code> for the URL rather than <code class="docutils literal notranslate"><span class="pre">https://</span></code> or <code class="docutils literal notranslate"><span class="pre">git&#64;</span></code>.  The
+<code class="docutils literal notranslate"><span class="pre">git://</span></code> URL is read only.  This means that we can't accidentally
 (or deliberately) write to the upstream repo, and we are only going to
 use it to merge into our own code.</p>
 <p>Just for your own satisfaction, show yourself that you now have a new
-‘remote’, with <code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span> <span class="pre">show</span></code>, giving you something like:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>upstream     git://github.com/matplotlib/matplotlib.git (fetch)
+'remote', with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span> <span class="pre">show</span></code>, giving you something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>upstream     git://github.com/matplotlib/matplotlib.git (fetch)
 upstream     git://github.com/matplotlib/matplotlib.git (push)
-origin       https://github.com:your-user-name/matplotlib.git (fetch)
-origin       https://github.com:your-user-name/matplotlib.git (push)
+origin       https://github.com/your-user-name/matplotlib.git (fetch)
+origin       https://github.com/your-user-name/matplotlib.git (push)
 </pre></div>
 </div>
 </div>
@@ -215,177 +560,40 @@ origin       https://github.com:your-user-name/matplotlib.git (push)
 </div>
 
 
-          </div>
-        </div>
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="forking_hell.html" title="previous page">Making your own copy (fork) of Matplotlib</a>
+    <a class='right-next' id="next-link" href="configure_git.html" title="next page">Configure git</a>
+
+              </div>
+              
+          </main>
+          
+
       </div>
-
-      <div class="clearer"></div>
     </div>
-    <div class="footer">
-        &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
-      Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2021 The Matplotlib development team.<br/>
+</p>
     </div>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-55954603-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</body>
-<footer>
-  <!--Flipcause Integration v3.0// Flipcause Integration Instructions:
-Install the following code block once in the website Header (after <head> tag) -->
-
-<style>
-
-.fc-black_overlay{
-display:none; position: fixed; z-index:1000001; top: 0%;left: 0%;width: 100%;height: 100%;
-background-color: black; filter: alpha(opacity=50); cursor:pointer; opacity:0.5;
-}
-
-.fc-white_content {
-opacity:1; display:none; margin-top: -320px; margin-left: -485px; width:970px; height:640px;
-position:fixed; top:50%; left:50%; border: none;z-index:1000002;overflow: auto;
-}
-
-.fc-main-box{
-opacity:1; display:none; margin:15px auto 0 auto; width:930px; position:relative; z-index:1000003;
-}
-
-.fc-widget_close{
-opacity:1; content:url(http://i1338.photobucket.com/albums/o691/WeCause/X_zpse4a7e538.png);
-position:absolute; z-index=1000004; right:-16px; top:-16px; display:block; cursor:pointer;
-}
-
-.floating_button{
-display: block; margin-top: 0px; margin-left: 0px; width:auto ; height: auto;
-position:fixed; z-index:999999; overflow: auto;
-}
-
-@keyframes backfadesin {
-   from { opacity:0; }
-   to {opacity:.5;}
-}
-
-@-moz-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@-webkit-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@-o-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-
-@-ms-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; transform: translateY(20px);}
-   100% {opacity: 1; transform: translateY(0);}
-}
-
-@-moz-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -moz-transform: translateY(20px);}
-   100% {opacity: 1; -moz-transform: translateY(0);}
-}
-
-@-webkit-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -webkit-transform: translateY(20px);}
-   100% {opacity: 1; -webkit-transform: translateY(0);}
-}
-
-@-o-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -o-transform: translateY(20px);}
-   100% {opacity: 1; -o-transform: translateY(0);}
-}
-
-@-ms-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -ms-transform: translateY(20px);}
-   100% {opacity: 1; -ms-transform: translateY(0);}
-}
-
-</style>
-
-<script>
-
-function open_window(cause_id) {
-var  protocol=String(document.location.protocol);
-var new_url;
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-new_url="https://www.flipcause.com/widget/"+cause_id
-window.open(new_url);
-}
-
-else {
-document.getElementById("fc-fade").style.display = "block";
-document.getElementById("fc-fade").style.webkitAnimation = "backfadesin 1s";
-document.getElementById("fc-fade").style.animation = "backfadesin 1s";
-document.getElementById("fc-fade").style.mozAnimation = "backfadesin 1s";
-document.getElementById("fc-light").style.display = "block";
-document.getElementById("fc-light").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-light").style.animation = "fadesin 1.5s";
-document.getElementById("fc-light").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-main").style.display = "block";
-document.getElementById("fc-main").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-main").style.animation = "fadesin 1.5s";
-document.getElementById("fc-main").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-close").style.display = "block";
-document.getElementById("fc-close").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-close").style.animation = "fadesin 1.5s";
-document.getElementById("fc-close").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.display = "block";
-document.getElementById("fc-myFrame").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.animation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").src="https://www.flipcause.com/widget/"+cause_id;
-}
-}
-
-
-function close_window() {
-document.getElementById("fc-fade").style.display="none";
-document.getElementById("fc-light").style.display="none";
-document.getElementById("fc-main").style.display="none";
-document.getElementById("fc-close").style.display="none";
-document.getElementById("fc-myFrame").style.display="none";
-}
-
-</script>
-
-<div id="fc-fade" class="fc-black_overlay" onclick="close_window()"></div>
-<div id="fc-light" class="fc-white_content">
-<div id="fc-main" class="fc-main-box">
-<div id="fc-close" class="fc-widget_close" onclick="close_window()">
-</div><iframe id="fc-myFrame" iframe height="580" width="925" style="border: 0;
-border-radius:5px 5px 5px 5px; box-shadow:0 0 8px rgba(0, 0, 0, 0.5);" scrolling="no" src=""></iframe></div>
-</div>
-
-<!--END Flipcause Main Integration Code-->
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
 </footer>
+  </body>
 </html>

@@ -1,0 +1,616 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plot types &#8212; Matplotlib 3.4.2.post1414+g246a489ce6 documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mpl.css?v3.4.2-1414-g246a489ce6" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Matplotlib 3.4.2.post1414+g246a489ce6 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plot(X, Y)" href="basic/plot.html" />
+    <link rel="prev" title="Installing from source" href="../users/installing_source.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo2.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../users/installing.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  Plot types
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../gallery/index.html">
+  Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/index.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../users/index.html">
+  User's guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../devel/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference external nav-link" href="https://matplotlib.org/mpl-third-party/">
+  Third-party packages
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://gitter.im/matplotlib" rel="noopener" target="_blank" title="gitter">
+            <span><i class="fab fa-gitter"></i></span>
+            <label class="sr-only">gitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discourse.matplotlib.org" rel="noopener" target="_blank" title="discourse">
+            <span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">discourse</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/matplotlib/matplotlib" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/matplotlib/" rel="noopener" target="_blank" title="twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic/plot.html">
+   plot(X, Y)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic/scatter_plot.html">
+   scatter(X, Y)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic/bar.html">
+   bar(x, height) / barh(x, height)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic/stem.html">
+   stem(x, y)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic/step.html">
+   step(x, y)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic/pie.html">
+   pie(X)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="arrays/imshow.html">
+   imshow(Z)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="arrays/pcolormesh.html">
+   pcolormesh(X, Y, Z)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="arrays/contourf.html">
+   contour(X, Y, Z) / contourf(X, Y, Z)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="arrays/quiver.html">
+   quiver(X, Y, U, V)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="arrays/streamplot.html">
+   streamplot(X, Y, U, V)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="stats/hist_plot.html">
+   hist(x)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="stats/boxplot_plot.html">
+   boxplot(X)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="stats/errorbar_plot.html">
+   errorbar(x, y, yerr, xerr)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="stats/violin.html">
+   violinplot(D)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="stats/barbs.html">
+   barbs(U, V)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="stats/eventplot.html">
+   eventplot(D)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="stats/hist2d.html">
+   hist2d(x, y)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="stats/hexbin.html">
+   hexbin(x, y, C)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="unstructured/tricontour.html">
+   tricontour(x, y, z) / tricontourf(x, y, z)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="unstructured/tripcolor.html">
+   tripcolor(x, y, z)
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="unstructured/triplot.html">
+   triplot(x, y)
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic">
+   Basic
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plots-of-arrays-and-fields">
+   Plots of arrays and fields
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specialized-statistics-plots">
+   Specialized statistics plots
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unstructured-coordinates">
+   Unstructured coordinates
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="plot-types">
+<span id="sphx-glr-plot-types"></span><span id="id1"></span><h1>Plot types<a class="headerlink" href="#plot-types" title="Permalink to this headline">¶</a></h1>
+<p>Overview of many common plotting commands in Matplotlib.</p>
+<p>Note that we have stripped all labels, but they are present by default.
+See the <a class="reference external" href="../gallery/index.html">gallery</a> for many more examples and
+the <a class="reference external" href="../tutorials/index.html">tutorials page</a> for longer examples.</p>
+<div class="sphx-glr-clear"></div><div class="section" id="basic">
+<span id="basic-plots"></span><span id="sphx-glr-plot-types-basic"></span><h2>Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h2>
+<p>Basic plot types, usually y versus x.</p>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.plot."><div class="figure align-default" id="id2">
+<img alt="plot(X, Y)" src="../_images/sphx_glr_plot_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="basic/plot.html#sphx-glr-plot-types-basic-plot-py"><span class="std std-ref">plot(X, Y)</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.scatter."><div class="figure align-default" id="id3">
+<img alt="scatter(X, Y)" src="../_images/sphx_glr_scatter_plot_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="basic/scatter_plot.html#sphx-glr-plot-types-basic-scatter-plot-py"><span class="std std-ref">scatter(X, Y)</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.bar / ~matplotlib.axes.Axes.barh."><div class="figure align-default" id="id4">
+<img alt="bar(x, height) / barh(x, height)" src="../_images/sphx_glr_bar_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="basic/bar.html#sphx-glr-plot-types-basic-bar-py"><span class="std std-ref">bar(x, height) / barh(x, height)</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.stem."><div class="figure align-default" id="id5">
+<img alt="stem(x, y)" src="../_images/sphx_glr_stem_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="basic/stem.html#sphx-glr-plot-types-basic-stem-py"><span class="std std-ref">stem(x, y)</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.step."><div class="figure align-default" id="id6">
+<img alt="step(x, y)" src="../_images/sphx_glr_step_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="basic/step.html#sphx-glr-plot-types-basic-step-py"><span class="std std-ref">step(x, y)</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.pie."><div class="figure align-default" id="id7">
+<img alt="pie(X)" src="../_images/sphx_glr_pie_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="basic/pie.html#sphx-glr-plot-types-basic-pie-py"><span class="std std-ref">pie(X)</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-clear"></div></div>
+<div class="section" id="plots-of-arrays-and-fields">
+<span id="array-plots"></span><span id="sphx-glr-plot-types-arrays"></span><h2>Plots of arrays and fields<a class="headerlink" href="#plots-of-arrays-and-fields" title="Permalink to this headline">¶</a></h2>
+<p>Plotting for arrays of data <code class="docutils literal notranslate"><span class="pre">Z(x,</span> <span class="pre">y)</span></code> and fields <code class="docutils literal notranslate"><span class="pre">U(x,</span> <span class="pre">y),</span> <span class="pre">V(x,</span> <span class="pre">y)</span></code>.</p>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.imshow."><div class="figure align-default" id="id8">
+<img alt="imshow(Z)" src="../_images/sphx_glr_imshow_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="arrays/imshow.html#sphx-glr-plot-types-arrays-imshow-py"><span class="std std-ref">imshow(Z)</span></a></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="~.axes.Axes.pcolormesh is more flexible than ~.axes.Axes.imshow in that the x and y vectors nee..."><div class="figure align-default" id="id9">
+<img alt="pcolormesh(X, Y, Z)" src="../_images/sphx_glr_pcolormesh_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="arrays/pcolormesh.html#sphx-glr-plot-types-arrays-pcolormesh-py"><span class="std std-ref">pcolormesh(X, Y, Z)</span></a></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.contour / ~matplotlib.axes.Axes.contourf."><div class="figure align-default" id="id10">
+<img alt="contour(X, Y, Z) / contourf(X, Y, Z)" src="../_images/sphx_glr_contourf_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="arrays/contourf.html#sphx-glr-plot-types-arrays-contourf-py"><span class="std std-ref">contour(X, Y, Z) / contourf(X, Y, Z)</span></a></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.quiver."><div class="figure align-default" id="id11">
+<img alt="quiver(X, Y, U, V)" src="../_images/sphx_glr_quiver_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="arrays/quiver.html#sphx-glr-plot-types-arrays-quiver-py"><span class="std std-ref">quiver(X, Y, U, V)</span></a></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.streamplot."><div class="figure align-default" id="id12">
+<img alt="streamplot(X, Y, U, V)" src="../_images/sphx_glr_streamplot_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="arrays/streamplot.html#sphx-glr-plot-types-arrays-streamplot-py"><span class="std std-ref">streamplot(X, Y, U, V)</span></a></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-clear"></div></div>
+<div class="section" id="specialized-statistics-plots">
+<span id="stats-plots"></span><span id="sphx-glr-plot-types-stats"></span><h2>Specialized statistics plots<a class="headerlink" href="#specialized-statistics-plots" title="Permalink to this headline">¶</a></h2>
+<p>Specialized plots for statistical analysis.</p>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.hist."><div class="figure align-default" id="id13">
+<img alt="hist(x)" src="../_images/sphx_glr_hist_plot_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="stats/hist_plot.html#sphx-glr-plot-types-stats-hist-plot-py"><span class="std std-ref">hist(x)</span></a></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.boxplot."><div class="figure align-default" id="id14">
+<img alt="boxplot(X)" src="../_images/sphx_glr_boxplot_plot_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="stats/boxplot_plot.html#sphx-glr-plot-types-stats-boxplot-plot-py"><span class="std std-ref">boxplot(X)</span></a></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.errorbar."><div class="figure align-default" id="id15">
+<img alt="errorbar(x, y, yerr, xerr)" src="../_images/sphx_glr_errorbar_plot_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="stats/errorbar_plot.html#sphx-glr-plot-types-stats-errorbar-plot-py"><span class="std std-ref">errorbar(x, y, yerr, xerr)</span></a></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.violinplot."><div class="figure align-default" id="id16">
+<img alt="violinplot(D)" src="../_images/sphx_glr_violin_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="stats/violin.html#sphx-glr-plot-types-stats-violin-py"><span class="std std-ref">violinplot(D)</span></a></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.barbs."><div class="figure align-default" id="id17">
+<img alt="barbs(U, V)" src="../_images/sphx_glr_barbs_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="stats/barbs.html#sphx-glr-plot-types-stats-barbs-py"><span class="std std-ref">barbs(U, V)</span></a></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.eventplot."><div class="figure align-default" id="id18">
+<img alt="eventplot(D)" src="../_images/sphx_glr_eventplot_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="stats/eventplot.html#sphx-glr-plot-types-stats-eventplot-py"><span class="std std-ref">eventplot(D)</span></a></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.hist2d."><div class="figure align-default" id="id19">
+<img alt="hist2d(x, y)" src="../_images/sphx_glr_hist2d_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="stats/hist2d.html#sphx-glr-plot-types-stats-hist2d-py"><span class="std std-ref">hist2d(x, y)</span></a></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.hexbin."><div class="figure align-default" id="id20">
+<img alt="hexbin(x, y, C)" src="../_images/sphx_glr_hexbin_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="stats/hexbin.html#sphx-glr-plot-types-stats-hexbin-py"><span class="std std-ref">hexbin(x, y, C)</span></a></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-clear"></div></div>
+<div class="section" id="unstructured-coordinates">
+<span id="unstructured-plots"></span><span id="sphx-glr-plot-types-unstructured"></span><h2>Unstructured coordinates<a class="headerlink" href="#unstructured-coordinates" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes we collect data <code class="docutils literal notranslate"><span class="pre">z</span></code> at coordinates <code class="docutils literal notranslate"><span class="pre">(x,y)</span></code> and want to visualize
+as a contour.  Instead of gridding the data and then using
+<a class="reference internal" href="../api/_as_gen/matplotlib.axes.Axes.contour.html#matplotlib.axes.Axes.contour" title="matplotlib.axes.Axes.contour"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contour</span></code></a>, we can use a triangulation algorithm and fill the
+triangles.</p>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.tricontour / ~matplotlib.axes.Axes.tricontourf."><div class="figure align-default" id="id21">
+<img alt="tricontour(x, y, z) / tricontourf(x, y, z)" src="../_images/sphx_glr_tricontour_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="unstructured/tricontour.html#sphx-glr-plot-types-unstructured-tricontour-py"><span class="std std-ref">tricontour(x, y, z) / tricontourf(x, y, z)</span></a></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.tripcolor."><div class="figure align-default" id="id22">
+<img alt="tripcolor(x, y, z)" src="../_images/sphx_glr_tripcolor_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="unstructured/tripcolor.html#sphx-glr-plot-types-unstructured-tripcolor-py"><span class="std std-ref">tripcolor(x, y, z)</span></a></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="See ~matplotlib.axes.Axes.triplot."><div class="figure align-default" id="id23">
+<img alt="triplot(x, y)" src="../_images/sphx_glr_triplot_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="unstructured/triplot.html#sphx-glr-plot-types-unstructured-triplot-py"><span class="std std-ref">triplot(x, y)</span></a></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-clear"></div><div class="sphx-glr-footer class sphx-glr-footer-gallery docutils container">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/ea73be0751ffd403489ec6af7a17ed2c/plot_types_python.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">all</span> <span class="pre">examples</span> <span class="pre">in</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_types_python.zip</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/4e1270d363927f553fd952d7a2603176/plot_types_jupyter.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">all</span> <span class="pre">examples</span> <span class="pre">in</span> <span class="pre">Jupyter</span> <span class="pre">notebooks:</span> <span class="pre">plot_types_jupyter.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature">Keywords: matplotlib code example, codex, python plot, pyplot
+<a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="../users/installing_source.html" title="previous page">Installing from source</a>
+    <a class='right-next' id="next-link" href="basic/plot.html" title="next page">plot(X, Y)</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2021 The Matplotlib development team.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,338 +1,701 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contributing &#8212; Matplotlib 3.4.2.post1414+g246a489ce6 documentation</title>
     
-    <title>Contributing &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
     
-    <link rel="stylesheet" href="../_static/mpl.css"
-type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css"
-type="text/css" />
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mpl.css?v3.4.2-1414-g246a489ce6" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 3.4.2.post1414+g246a489ce6 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html"
-/>
-    <link rel="search" title="Search" href="../search.html"
-/>
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../index.html" />
-    <link rel="up" title="The Matplotlib Developers’ Guide" href="index.html" />
-    <link rel="next" title="Developer’s tips for testing" href="testing.html" />
-    <link rel="prev" title="The Matplotlib Developers’ Guide" href="index.html" /> 
-
-
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bug triaging and issue curation" href="triage.html" />
+    <link rel="prev" title="Contributing" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo2.svg" class="logo" alt="logo">
+</a>      
 
 
+    
+  </div>
 
-<!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../index.html"><img src="../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
-</div>
-
-
-
-
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="testing.html" title="Developer’s tips for testing"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="The Matplotlib Developers’ Guide"
-             accesskey="P">previous</a> |</li>
-
-        <li><a href="../index.html">home</a>|&nbsp;</li>
-        <li><a href="../gallery/index.html">examples</a>|&nbsp;</li>
-        <li><a href="../tutorials/index.html">tutorials</a>|&nbsp;</li>
-        <li><a href="../api/pyplot_summary.html">pyplot</a>|&nbsp;</li>
-        <li><a href="../contents.html">docs</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">The Matplotlib Developers’ Guide</a> &raquo;</li> 
-      </ul>
-    </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
   
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
-  <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
-
-<br/>
-
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../_static/depsy_badge.svg">
-</a>
-
-<br/>
-
-Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
-  <img src="https://travis-ci.org/matplotlib/matplotlib.svg?branch=master"/>
-</a>
-<br/>
-  <h3><a href="../contents.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Contributing</a><ul>
-<li><a class="reference internal" href="#submitting-a-bug-report">Submitting a bug report</a></li>
-<li><a class="reference internal" href="#retrieving-and-installing-the-latest-version-of-the-code">Retrieving and installing the latest version of the code</a></li>
-<li><a class="reference internal" href="#contributing-code">Contributing code</a><ul>
-<li><a class="reference internal" href="#how-to-contribute">How to contribute</a></li>
-<li><a class="reference internal" href="#contributing-pull-requests">Contributing pull requests</a></li>
-<li><a class="reference internal" href="#issues-for-new-contributors">Issues for New Contributors</a></li>
-</ul>
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../users/installing.html">
+  Installation
+ </a>
 </li>
-<li><a class="reference internal" href="#other-ways-to-contribute">Other ways to contribute</a></li>
-<li><a class="reference internal" href="#coding-guidelines">Coding guidelines</a><ul>
-<li><a class="reference internal" href="#new-modules-and-files-installation">New modules and files: installation</a></li>
-<li><a class="reference internal" href="#c-c-extensions">C/C++ extensions</a></li>
-<li><a class="reference internal" href="#keyword-argument-processing">Keyword argument processing</a></li>
-<li><a class="reference internal" href="#developing-a-new-backend">Developing a new backend</a></li>
-<li><a class="reference internal" href="#writing-examples">Writing examples</a></li>
-</ul>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../plot_types/index.html">
+  Plot types
+ </a>
 </li>
-</ul>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../gallery/index.html">
+  Gallery
+ </a>
 </li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/index.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../users/index.html">
+  User's guide
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference external nav-link" href="https://matplotlib.org/mpl-third-party/">
+  Third-party packages
+ </a>
+</li>
+
+    
 </ul>
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../contents.html">Documentation overview</a><ul>
-  <li><a href="index.html">The Matplotlib Developers’ Guide</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">The Matplotlib Developers’ Guide</a></li>
-      <li>Next: <a href="testing.html" title="next chapter">Developer’s tips for testing</a></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/devel/contributing.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
       </div>
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://gitter.im/matplotlib" rel="noopener" target="_blank" title="gitter">
+            <span><i class="fab fa-gitter"></i></span>
+            <label class="sr-only">gitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discourse.matplotlib.org" rel="noopener" target="_blank" title="discourse">
+            <span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">discourse</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/matplotlib/matplotlib" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/matplotlib/" rel="noopener" target="_blank" title="twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
             
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="triage.html">
+   Bug triaging and issue curation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="development_setup.html">
+   Setting up Matplotlib for development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testing.html">
+   Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documenting_mpl.html">
+   Writing documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="style_guide.html">
+   Documentation style guide
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="gitwash/index.html">
+   Working with
+   <em>
+    Matplotlib
+   </em>
+   source code
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gitwash/git_intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gitwash/git_install.html">
+     Install git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gitwash/following_latest.html">
+     Following the latest source
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gitwash/patching.html">
+     Making a patch
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="gitwash/git_development.html">
+     Git for development
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="gitwash/forking_hell.html">
+       Making your own copy (fork) of Matplotlib
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="gitwash/set_up_fork.html">
+       Set up your fork
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="gitwash/configure_git.html">
+       Configure git
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="gitwash/development_workflow.html">
+       Development workflow
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="gitwash/maintainer_workflow.html">
+       Maintainer workflow
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gitwash/git_resources.html">
+     git resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gitwash/dot2_dot3.html">
+     Two and three dots in difference specs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coding_guide.html">
+   Pull request guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="release_guide.html">
+   Release guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dependencies.html">
+   Dependencies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="min_dep_policy.html">
+   Minimum version of dependencies policy
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="MEP/index.html">
+   Matplotlib Enhancement Proposals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/template.html">
+     MEP Template
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP08.html">
+     MEP8: PEP8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP09.html">
+     MEP9: Global interaction manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP10.html">
+     MEP10: Docstring consistency
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP11.html">
+     MEP11: Third-party dependencies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP12.html">
+     MEP12: Improve Gallery and Examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP13.html">
+     MEP13: Use properties for Artists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP14.html">
+     MEP14: Text handling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP15.html">
+     MEP15 - Fix axis autoscaling when limits are specified for one axis only
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP19.html">
+     MEP19: Continuous Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP21.html">
+     MEP21: color and cm refactor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP22.html">
+     MEP22: Toolbar rewrite
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP23.html">
+     MEP23: Multiple Figures per GUI window
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP24.html">
+     MEP24: negative radius in polar plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP25.html">
+     MEP25: Serialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP26.html">
+     MEP26: Artist styling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP27.html">
+     MEP27: decouple pyplot from backends
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP28.html">
+     MEP28: Remove Complexity from Axes.boxplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP/MEP29.html">
+     MEP29: Text light markup
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="license.html">
+   Licenses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="color_changes.html">
+   Default color changes
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contributor-incubator">
+   Contributor incubator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#issues-for-new-contributors">
+     Issues for new contributors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submitting-a-bug-report">
+   Submitting a bug report
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requesting-a-new-feature">
+   Requesting a new feature
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contributing-code">
+   Contributing code
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-contribute">
+     How to contribute
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contributing-pull-requests">
+     Contributing pull requests
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contributing-documentation">
+   Contributing documentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-ways-to-contribute">
+   Other ways to contribute
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coding-guidelines">
+   Coding guidelines
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-changes">
+     API changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-new-api">
+     Adding new API
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#new-modules-and-files-installation">
+     New modules and files: installation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-c-extensions">
+     C/C++ extensions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keyword-argument-processing">
+     Keyword argument processing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-logging-for-debug-messages">
+     Using logging for debug messages
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#which-logging-level-to-use">
+       Which logging level to use?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-examples">
+     Writing examples
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
   <div class="section" id="contributing">
 <span id="id1"></span><h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h1>
 <p>This project is a community effort, and everyone is welcome to
-contribute.</p>
-<p>The project is hosted on <a class="reference external" href="https://github.com/matplotlib/matplotlib">https://github.com/matplotlib/matplotlib</a></p>
+contribute. Everyone within the community
+is expected to abide by our
+<a class="reference external" href="https://github.com/matplotlib/matplotlib/blob/master/CODE_OF_CONDUCT.md">code of conduct</a>.</p>
+<p>The project is hosted on
+<a class="reference external" href="https://github.com/matplotlib/matplotlib">https://github.com/matplotlib/matplotlib</a></p>
+<div class="section" id="contributor-incubator">
+<h2>Contributor incubator<a class="headerlink" href="#contributor-incubator" title="Permalink to this headline">¶</a></h2>
+<p>If you are interested in becoming a regular contributor to Matplotlib, but
+don't know where to start or feel insecure about it, you can join our non-public
+communication channel for new contributors. To do so, please go to <a class="reference external" href="https://gitter.im/matplotlib/matplotlib">gitter</a> and ask to be added to '#incubator'.
+This is a private gitter room moderated by core Matplotlib developers where you can
+get guidance and support for your first few PRs.  This is a place you can ask questions
+about anything: how to use git, github, how our PR review process works, technical questions
+about the code, what makes for good documentation or a blog post, how to get involved involved
+in community work, or get &quot;pre-review&quot; on your PR.</p>
+<div class="section" id="issues-for-new-contributors">
+<span id="new-contributors"></span><h3>Issues for new contributors<a class="headerlink" href="#issues-for-new-contributors" title="Permalink to this headline">¶</a></h3>
+<p>While any contributions are welcome, we have marked some issues as
+particularly suited for new contributors by the label
+<a class="reference external" href="https://github.com/matplotlib/matplotlib/labels/good%20first%20issue">good first issue</a>
+These are well documented issues, that do not require a deep understanding of
+the internals of Matplotlib. The issues may additionally be tagged with a
+difficulty. <code class="docutils literal notranslate"><span class="pre">Difficulty:</span> <span class="pre">Easy</span></code> is suited for people with little Python experience.
+<code class="docutils literal notranslate"><span class="pre">Difficulty:</span> <span class="pre">Medium</span></code> and <code class="docutils literal notranslate"><span class="pre">Difficulty:</span> <span class="pre">Hard</span></code> are not trivial to solve and
+require more thought and programming experience.</p>
+</div>
+</div>
 <div class="section" id="submitting-a-bug-report">
-<h2>Submitting a bug report<a class="headerlink" href="#submitting-a-bug-report" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Submitting a bug report<a class="headerlink" href="#submitting-a-bug-report" title="Permalink to this headline">¶</a></h2>
 <p>If you find a bug in the code or documentation, do not hesitate to submit a
 ticket to the
-<a class="reference external" href="https://github.com/matplotlib/matplotlib/issues">Bug Tracker</a>. You are also
-welcome to post feature requests or pull requests.</p>
+<a class="reference external" href="https://github.com/matplotlib/matplotlib/issues">Issue Tracker</a>. You are
+also welcome to post feature requests or pull requests.</p>
 <p>If you are reporting a bug, please do your best to include the following:</p>
-<blockquote>
-<div><ol class="arabic">
-<li><p class="first">A short, top-level summary of the bug. In most cases, this should be 1-2
-sentences.</p>
-</li>
-<li><p class="first">A short, self-contained code snippet to reproduce the bug, ideally allowing
+<ol class="arabic">
+<li><p>A short, top-level summary of the bug. In most cases, this should be 1-2
+sentences.</p></li>
+<li><p>A short, self-contained code snippet to reproduce the bug, ideally allowing
 a simple copy and paste to reproduce. Please do your best to reduce the code
-snippet to the minimum required.</p>
-</li>
-<li><p class="first">The actual outcome of the code snippet</p>
-</li>
-<li><p class="first">The expected outcome of the code snippet</p>
-</li>
-<li><p class="first">The Matplotlib version, Python version and platform that you are using. You
+snippet to the minimum required.</p></li>
+<li><p>The actual outcome of the code snippet.</p></li>
+<li><p>The expected outcome of the code snippet.</p></li>
+<li><p>The Matplotlib version, Python version and platform that you are using. You
 can grab the version with the following commands:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">matplotlib</span><span class="o">.</span><span class="n">__version__</span>
-<span class="go">&#39;1.5.3&#39;</span>
+<span class="go">&#39;3.4.1&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">platform</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">python_version</span><span class="p">()</span>
-<span class="go">&#39;2.7.12&#39;</span>
+<span class="go">&#39;3.9.2&#39;</span>
 </pre></div>
 </div>
 </li>
 </ol>
-</div></blockquote>
 <p>We have preloaded the issue creation page with a Markdown template that you can
 use to organize this information.</p>
 <p>Thank you for your help in keeping bug reports complete, targeted and descriptive.</p>
 </div>
-<div class="section" id="retrieving-and-installing-the-latest-version-of-the-code">
-<h2>Retrieving and installing the latest version of the code<a class="headerlink" href="#retrieving-and-installing-the-latest-version-of-the-code" title="Permalink to this headline">¶</a></h2>
-<p>When working on the Matplotlib source, setting up a <a class="reference external" href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">virtual
-environment</a> or a
-<a class="reference external" href="http://conda.pydata.org/docs/using/envs.html">conda environment</a> is
-recommended.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">If you already have a version of Matplotlib installed, use an
-virtual environment or uninstall using the same method you used
-to install it.  Installing multiple versions of Matplotlib via different
-methods into the same environment may not always work as expected.</p>
-</div>
-<p>We use <a class="reference external" href="https://git-scm.com/">Git</a> for version control and
-<a class="reference external" href="https://github.com/">GitHub</a> for hosting our main repository.</p>
-<p>You can check out the latest sources with the command (see
-<a class="reference internal" href="gitwash/set_up_fork.html#set-up-fork"><span class="std std-ref">Set up your fork</span></a> for more details):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
-<p>and navigate to the <code class="file docutils literal"><span class="pre">matplotlib</span></code> directory. If you have the proper privileges,
-you can use <code class="docutils literal"><span class="pre">git&#64;</span></code> instead of  <code class="docutils literal"><span class="pre">https://</span></code>, which works through the ssh protocol
-and might be easier to use if you are using 2-factor authentication.</p>
-<p>To make sure the tests run locally you must build against the correct version
-of freetype.  To configure the build system to fetch and build it either export
-the env <code class="docutils literal"><span class="pre">MPLLOCALFREETYPE</span></code> as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">MPLLOCALFREETYPE</span><span class="o">=</span><span class="mi">1</span>
-</pre></div>
-</div>
-<p>or copy <code class="file docutils literal"><span class="pre">setup.cfg.template</span></code> to <code class="file docutils literal"><span class="pre">setup.cfg</span></code> and edit it to contain</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">test</span><span class="p">]</span>
-<span class="n">local_freetype</span> <span class="o">=</span> <span class="kc">True</span>
-</pre></div>
-</div>
-<p>To install Matplotlib (and compile the c-extensions) run the following
-command from the top-level directory</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">e</span> <span class="o">./</span>
-</pre></div>
-</div>
-<p>This installs Matplotlib in ‘editable/develop mode’, i.e., builds
-everything and places the correct link entries in the install
-directory so that python will be able to import Matplotlib from the
-source directory.  Thus, any changes to the <code class="docutils literal"><span class="pre">*.py</span></code> files will be
-reflected the next time you import the library.  If you change the
-c-extension source (which might happen if you change branches) you
-will need to run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build</span>
-</pre></div>
-</div>
-<p>or re-run <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-v</span> <span class="pre">-e</span> <span class="pre">./</span></code>.</p>
-<p>Alternatively, if you do</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">v</span> <span class="o">./</span>
-</pre></div>
-</div>
-<p>all of the files will be copied to the installation directory however,
-you will have to rerun this command every time the source is changed.
-Additionally you will need to copy <code class="file docutils literal"><span class="pre">setup.cfg.template</span></code> to
-<code class="file docutils literal"><span class="pre">setup.cfg</span></code> and edit it to contain</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">test</span><span class="p">]</span>
-<span class="n">local_freetype</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">tests</span> <span class="o">=</span> <span class="kc">True</span>
-</pre></div>
-</div>
-<p>In either case you can then run the tests to check your work
-environment is set up properly:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">tests</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><strong>Additional dependencies for testing</strong>: <a class="reference external" href="http://doc.pytest.org/en/latest/">pytest</a> (version 3.0 or later),
-<a class="reference external" href="https://docs.python.org/dev/library/unittest.mock.html">mock</a> (if python &lt; 3.3), <a class="reference external" href="https://www.ghostscript.com/">Ghostscript</a>, <a class="reference external" href="https://inkscape.org&gt;">Inkscape</a></p>
-</div>
-<div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<ul class="last simple">
-<li><a class="reference internal" href="testing.html#testing"><span class="std std-ref">Developer’s tips for testing</span></a></li>
-</ul>
-</div>
+<div class="section" id="requesting-a-new-feature">
+<span id="request-a-new-feature"></span><h2>Requesting a new feature<a class="headerlink" href="#requesting-a-new-feature" title="Permalink to this headline">¶</a></h2>
+<p>Please post feature requests to the
+<a class="reference external" href="https://github.com/matplotlib/matplotlib/issues">Issue Tracker</a>.</p>
+<p>The Matplotlib developers will give feedback on the feature proposal. Since
+Matplotlib is an open source project with limited resources, we encourage
+users to then also
+<a class="reference internal" href="#contributing-code"><span class="std std-ref">participate in the implementation</span></a>.</p>
 </div>
 <div class="section" id="contributing-code">
-<h2>Contributing code<a class="headerlink" href="#contributing-code" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>Contributing code<a class="headerlink" href="#contributing-code" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="how-to-contribute">
-<h3>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">¶</a></h3>
+<span id="id5"></span><h3>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">¶</a></h3>
 <p>The preferred way to contribute to Matplotlib is to fork the <a class="reference external" href="https://github.com/matplotlib/matplotlib/">main
 repository</a> on GitHub,
-then submit a “pull request” (PR):</p>
-<blockquote>
-<div><ol class="arabic">
-<li><p class="first"><a class="reference external" href="https://github.com/join">Create an account</a> on
-GitHub if you do not already have one.</p>
-</li>
-<li><p class="first">Fork the <a class="reference external" href="https://github.com/matplotlib/matplotlib">project repository</a>: click on the ‘Fork’ button
-near the top of the page. This creates a copy of the code under your
-account on the GitHub server.</p>
-</li>
-<li><p class="first">Clone this copy to your local disk:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone https://github.com:YourLogin/matplotlib.git
+then submit a &quot;pull request&quot; (PR).</p>
+<p>A brief overview is:</p>
+<ol class="arabic">
+<li><p><a class="reference external" href="https://github.com/join">Create an account</a> on GitHub if you do not
+already have one.</p></li>
+<li><p>Fork the <a class="reference external" href="https://github.com/matplotlib/matplotlib">project repository</a>:
+click on the 'Fork' button near the top of the page. This creates a copy of
+the code under your account on the GitHub server.</p></li>
+<li><p>Clone this copy to your local disk:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">YOUR</span> <span class="n">GITHUB</span> <span class="n">USERNAME</span><span class="o">&gt;/</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Create a branch to hold your changes:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git checkout -b my-feature origin/master
+<li><p>Enter the directory and install the local version of Matplotlib.
+See ref`&lt;installing_for_devs&gt;` for instructions</p></li>
+<li><p>Create a branch to hold your changes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">my</span><span class="o">-</span><span class="n">feature</span> <span class="n">origin</span><span class="o">/</span><span class="n">master</span>
 </pre></div>
 </div>
-<p>and start making changes. Never work in the <code class="docutils literal"><span class="pre">master</span></code> branch!</p>
+<p>and start making changes. Never work in the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch!</p>
 </li>
-<li><p class="first">Work on this copy, on your computer, using Git to do the version
-control. When you’re done editing e.g., <code class="docutils literal"><span class="pre">lib/matplotlib/collections.py</span></code>,
-do:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git add lib/matplotlib/collections.py
-$ git commit
+<li><p>Work on this copy, on your computer, using Git to do the version control.
+When you're done editing e.g., <code class="docutils literal notranslate"><span class="pre">lib/matplotlib/collections.py</span></code>, do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">lib</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">collections</span><span class="o">.</span><span class="n">py</span>
+<span class="n">git</span> <span class="n">commit</span>
 </pre></div>
 </div>
 <p>to record your changes in Git, then push them to GitHub with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git push -u origin my-feature
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">my</span><span class="o">-</span><span class="n">feature</span>
 </pre></div>
 </div>
 </li>
 </ol>
-</div></blockquote>
-<p>Finally, go to the web page of your fork of the Matplotlib repo,
-and click ‘Pull request’ to send your changes to the maintainers for review.
-You may want to consider sending an email to the mailing list for more
-visibility.</p>
+<p>Finally, go to the web page of your fork of the Matplotlib repo, and click
+'Pull request' to send your changes to the maintainers for review.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<ul class="last simple">
-<li><a class="reference external" href="https://git-scm.com/documentation">Git documentation</a></li>
-<li><a class="reference internal" href="gitwash/development_workflow.html#development-workflow"><span class="std std-ref">Development workflow</span></a>.</li>
-<li><a class="reference internal" href="gitwash/index.html#using-git"><span class="std std-ref">Working with Matplotlib source code</span></a></li>
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://git-scm.com/doc">Git documentation</a></p></li>
+<li><p><a class="reference external" href="https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project">Git-Contributing to a Project</a></p></li>
+<li><p><a class="reference external" href="https://lab.github.com/githubtraining/introduction-to-github">Introduction to GitHub</a></p></li>
+<li><p><a class="reference internal" href="gitwash/development_workflow.html#development-workflow"><span class="std std-ref">Development workflow</span></a> for best practices for Matplotlib</p></li>
+<li><p><a class="reference internal" href="gitwash/index.html#using-git"><span class="std std-ref">Working with Matplotlib source code</span></a></p></li>
 </ul>
 </div>
 </div>
@@ -340,31 +703,31 @@ visibility.</p>
 <h3>Contributing pull requests<a class="headerlink" href="#contributing-pull-requests" title="Permalink to this headline">¶</a></h3>
 <p>It is recommended to check that your contribution complies with the following
 rules before submitting a pull request:</p>
-<blockquote>
-<div><ul>
-<li><p class="first">If your pull request addresses an issue, please use the title to describe
-the issue and mention the issue number in the pull request description
-to ensure a link is created to the original issue.</p>
+<ul>
+<li><p>If your pull request addresses an issue, please use the title to describe the
+issue and mention the issue number in the pull request description to ensure
+that a link is created to the original issue.</p></li>
+<li><p>All public methods should have informative docstrings with sample usage when
+appropriate. Use the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpy docstring standard</a>.</p></li>
+<li><p>Formatting should follow the recommendations of <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>, as enforced by
+<a class="reference external" href="https://flake8.pycqa.org/">flake8</a>.  You can check flake8 compliance from the command line with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">flake8</span>
+<span class="n">flake8</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">module</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>or your editor may provide integration with it.  Note that Matplotlib
+intentionally does not use the <a class="reference external" href="https://black.readthedocs.io/">black</a> auto-formatter (<a class="reference external" href="https://github.com/matplotlib/matplotlib/issues/18796">1</a>), in particular due
+to its unability to understand the semantics of mathematical expressions
+(<a class="reference external" href="https://github.com/psf/black/issues/148">2</a>, <a class="reference external" href="https://github.com/psf/black/issues/1984">3</a>).</p>
 </li>
-<li><p class="first">All public methods should have informative docstrings with sample
-usage when appropriate. Use the
-<a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">numpy docstring standard</a></p>
-</li>
-<li><p class="first">Formatting should follow <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8 recommendation</a>. You should consider
-installing/enabling automatic PEP8 checking in your editor.  Part of the
-test suite is checking PEP8 compliance, things go smoother if the code is
-mostly PEP8 compliant to begin with.</p>
-</li>
-<li><p class="first">Each high-level plotting function should have a simple example in
-the <code class="docutils literal"><span class="pre">Example</span></code> section of the docstring.  This should be as simple as
-possible to demonstrate the method.  More complex examples should go
-in the <code class="docutils literal"><span class="pre">examples</span></code> tree.</p>
-</li>
-<li><p class="first">Changes (both new features and bugfixes) should be tested. See
-<a class="reference internal" href="testing.html#testing"><span class="std std-ref">Developer’s tips for testing</span></a> for more details.</p>
-</li>
-<li><p class="first">Import the following modules using the standard scipy conventions:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<li><p>Each high-level plotting function should have a simple example in the
+<code class="docutils literal notranslate"><span class="pre">Example</span></code> section of the docstring.  This should be as simple as possible
+to demonstrate the method.  More complex examples should go in the
+<code class="docutils literal notranslate"><span class="pre">examples</span></code> tree.</p></li>
+<li><p>Changes (both new features and bugfixes) should have good test coverage. See
+<a class="reference internal" href="testing.html#testing"><span class="std std-ref">Testing</span></a> for more details.</p></li>
+<li><p>Import the following modules using the standard scipy conventions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">numpy.ma</span> <span class="k">as</span> <span class="nn">ma</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -372,221 +735,301 @@ in the <code class="docutils literal"><span class="pre">examples</span></code> t
 <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
 </pre></div>
 </div>
+<p>In general, Matplotlib modules should <strong>not</strong> import <a class="reference internal" href="../api/matplotlib_configuration_api.html#matplotlib.rcParams" title="matplotlib.rcParams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rcParams</span></code></a> using <code class="docutils literal notranslate"><span class="pre">from</span>
+<span class="pre">matplotlib</span> <span class="pre">import</span> <span class="pre">rcParams</span></code>, but rather access it as <code class="docutils literal notranslate"><span class="pre">mpl.rcParams</span></code>.  This
+is because some modules are imported very early, before the <a class="reference internal" href="../api/matplotlib_configuration_api.html#matplotlib.rcParams" title="matplotlib.rcParams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rcParams</span></code></a>
+singleton is constructed.</p>
 </li>
-<li><p class="first">If your change is a major new feature, add an entry to the <code class="docutils literal"><span class="pre">What's</span> <span class="pre">new</span></code>
-section by adding a new file in <code class="docutils literal"><span class="pre">doc/users/whats_new</span></code> (see
-<code class="file docutils literal"><span class="pre">doc/users/whats_new/README</span></code> for more information).</p>
-</li>
-<li><p class="first">If you change the API in a backward-incompatible way, please
-document it in <code class="xref py py-obj docutils literal"><span class="pre">doc/api/api_changes</span></code>, by adding a new file describing your
-changes (see <code class="file docutils literal"><span class="pre">doc/api/api_changes/README</span></code> for more information)</p>
-</li>
-<li><p class="first">See below for additional points about
-<a class="reference internal" href="#keyword-argument-processing"><span class="std std-ref">Keyword argument processing</span></a>, if code in your pull request
-does that.</p>
-</li>
+<li><p>If your change is a major new feature, add an entry to the <code class="docutils literal notranslate"><span class="pre">What's</span> <span class="pre">new</span></code>
+section by adding a new file in <code class="docutils literal notranslate"><span class="pre">doc/users/next_whats_new</span></code> (see
+<code class="file docutils literal notranslate"><span class="pre">doc/users/next_whats_new/README.rst</span></code> for more information).</p></li>
+<li><p>If you change the API in a backward-incompatible way, please document it in
+<code class="file docutils literal notranslate"><span class="pre">doc/api/next_api_changes/behavior</span></code>, by adding a new file with the
+naming convention <code class="docutils literal notranslate"><span class="pre">99999-ABC.rst</span></code> where the pull request number is followed
+by the contributor's initials. (see <code class="file docutils literal notranslate"><span class="pre">doc/api/api_changes.rst</span></code> for more
+information)</p></li>
+<li><p>See below for additional points about <a class="reference internal" href="#keyword-argument-processing"><span class="std std-ref">Keyword argument processing</span></a>, if
+applicable for your pull request.</p></li>
 </ul>
-</div></blockquote>
-<p>In addition, you can check for common programming errors with the following
-tools:</p>
-<blockquote>
-<div><ul>
-<li><p class="first">Code with a good unittest coverage (at least 70%, better 100%), check
-with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">coverage</span>
-<span class="n">python</span> <span class="n">tests</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">coverage</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">No pyflakes warnings, check with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyflakes</span>
-<span class="n">pyflakes</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">module</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</div></blockquote>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The current state of the Matplotlib code base is not compliant with all
+<p class="admonition-title">Note</p>
+<p>The current state of the Matplotlib code base is not compliant with all
 of those guidelines, but we expect that enforcing those constraints on all
 new contributions will move the overall code base quality in the right
 direction.</p>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<ul class="last simple">
-<li><a class="reference internal" href="#coding-guidelines"><span class="std std-ref">Coding guidelines</span></a></li>
-<li><a class="reference internal" href="testing.html#testing"><span class="std std-ref">Developer’s tips for testing</span></a></li>
-<li><a class="reference internal" href="documenting_mpl.html#documenting-matplotlib"><span class="std std-ref">Developer’s tips for documenting matplotlib</span></a></li>
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#coding-guidelines"><span class="std std-ref">Coding guidelines</span></a></p></li>
+<li><p><a class="reference internal" href="testing.html#testing"><span class="std std-ref">Testing</span></a></p></li>
+<li><p><a class="reference internal" href="documenting_mpl.html#documenting-matplotlib"><span class="std std-ref">Writing documentation</span></a></p></li>
 </ul>
 </div>
 </div>
-<div class="section" id="issues-for-new-contributors">
-<span id="new-contributors"></span><h3>Issues for New Contributors<a class="headerlink" href="#issues-for-new-contributors" title="Permalink to this headline">¶</a></h3>
-<p>New contributors should look for the following tags when looking for issues.
-We strongly recommend that new contributors tackle
-<a class="reference external" href="https://github.com/matplotlib/matplotlib/labels/new-contributor-friendly">new-contributor-friendly</a>
-issues (easy, well documented issues, that do not require an understanding of
-the different submodules of Matplotlib) and
-<a class="reference external" href="https://github.com/matplotlib/matplotlib/labels/Difficulty%3A%20Easy">Easy-fix</a>
-issues. This helps the contributor become familiar with the contribution
-workflow, and for the core devs to become acquainted with the contributor;
-besides which, we frequently underestimate how easy an issue is to solve!</p>
+</div>
+<div class="section" id="contributing-documentation">
+<span id="id9"></span><h2>Contributing documentation<a class="headerlink" href="#contributing-documentation" title="Permalink to this headline">¶</a></h2>
+<p>You as an end-user of Matplotlib can make a valuable contribution because you
+more clearly see the potential for improvement than a core developer. For example, you can:</p>
+<ul class="simple">
+<li><p>Fix a typo</p></li>
+<li><p>Clarify a docstring</p></li>
+<li><p>Write or update an <a class="reference internal" href="../gallery/index.html#gallery"><span class="std std-ref">example plot</span></a></p></li>
+<li><p>Write or update a comprehensive <a class="reference internal" href="../tutorials/index.html#tutorials"><span class="std std-ref">tutorial</span></a></p></li>
+</ul>
+<p>The documentation source files live in the same GitHub repository as the code.
+Contributions are proposed and accepted through the pull request process.
+For details see <a class="reference internal" href="#how-to-contribute"><span class="std std-ref">How to contribute</span></a>.</p>
+<p>If you have trouble getting started, you may instead open an <a class="reference external" href="https://github.com/matplotlib/matplotlib/issues">issue</a>
+describing the intended improvement.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="documenting_mpl.html#documenting-matplotlib"><span class="std std-ref">Writing documentation</span></a></p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="other-ways-to-contribute">
-<span id="id2"></span><h2>Other ways to contribute<a class="headerlink" href="#other-ways-to-contribute" title="Permalink to this headline">¶</a></h2>
-<p>Code is not the only way to contribute to Matplotlib. For instance,
-documentation is also a very important part of the project and often doesn’t
-get as much attention as it deserves. If you find a typo in the documentation,
-or have made improvements, do not hesitate to send an email to the mailing
-list or submit a GitHub pull request. Full documentation can be found under
-the doc/ directory.</p>
+<span id="id10"></span><h2>Other ways to contribute<a class="headerlink" href="#other-ways-to-contribute" title="Permalink to this headline">¶</a></h2>
 <p>It also helps us if you spread the word: reference the project from your blog
-and articles or link to it from your website!</p>
+and articles or link to it from your website!  If Matplotlib contributes to a
+project that leads to a scientific publication, please follow the
+<a class="reference internal" href="../citing.html"><span class="doc">Citing Matplotlib</span></a> guidelines.</p>
 </div>
 <div class="section" id="coding-guidelines">
-<span id="id3"></span><h2>Coding guidelines<a class="headerlink" href="#coding-guidelines" title="Permalink to this headline">¶</a></h2>
+<span id="id11"></span><h2>Coding guidelines<a class="headerlink" href="#coding-guidelines" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="api-changes">
+<h3>API changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">¶</a></h3>
+<p>Changes to the public API must follow a standard deprecation procedure to
+prevent unexpected breaking of code that uses Matplotlib.</p>
+<ul class="simple">
+<li><p>Deprecations must be announced via a new file in
+a new file in <code class="file docutils literal notranslate"><span class="pre">doc/api/next_api_changes/deprecations/</span></code> with
+naming convention <code class="docutils literal notranslate"><span class="pre">99999-ABC.rst</span></code> where <code class="docutils literal notranslate"><span class="pre">99999</span></code> is the pull request
+number and <code class="docutils literal notranslate"><span class="pre">ABC</span></code> are the contributor's initials.</p></li>
+<li><p>Deprecations are targeted at the next point-release (i.e. 3.x.0).</p></li>
+<li><p>The deprecated API should, to the maximum extent possible, remain fully
+functional during the deprecation period. In cases where this is not
+possible, the deprecation must never make a given piece of code do something
+different than it was before; at least an exception should be raised.</p></li>
+<li><p>If possible, usage of an deprecated API should emit a
+<a class="reference internal" href="../api/_api_api.html#matplotlib._api.deprecation.MatplotlibDeprecationWarning" title="matplotlib._api.deprecation.MatplotlibDeprecationWarning"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatplotlibDeprecationWarning</span></code></a>. There are a number of helper tools for this:</p>
+<ul>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">cbook.warn_deprecated()</span></code> for general deprecation warnings.</p></li>
+<li><p>Use the decorator <code class="docutils literal notranslate"><span class="pre">&#64;cbook.deprecated</span></code> to deprecate classes, functions,
+methods, or properties.</p></li>
+<li><p>To warn on changes of the function signature, use the decorators
+<code class="docutils literal notranslate"><span class="pre">&#64;cbook._delete_parameter</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;cbook._rename_parameter</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">&#64;cbook._make_keyword_only</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Deprecated API may be removed two point-releases after they were deprecated.</p></li>
+</ul>
+</div>
+<div class="section" id="adding-new-api">
+<h3>Adding new API<a class="headerlink" href="#adding-new-api" title="Permalink to this headline">¶</a></h3>
+<p>Every new function, parameter and attribute that is not explicitly marked as
+private (i.e., starts with an underscore) becomes part of Matplotlib's public
+API. As discussed above, changing the existing API is cumbersome. Therefore,
+take particular care when adding new API:</p>
+<ul class="simple">
+<li><p>Mark helper functions and internal attributes as private by prefixing them
+with an underscore.</p></li>
+<li><p>Carefully think about good names for your functions and variables.</p></li>
+<li><p>Try to adopt patterns and naming conventions from existing parts of the
+Matplotlib API.</p></li>
+<li><p>Consider making as many arguments keyword-only as possible. See also
+<a class="reference external" href="https://emptysqua.re/blog/api-evolution-the-right-way/#adding-parameters">API Evolution the Right Way -- Add Parameters Compatibly</a>.</p>
+</li>
+</ul>
+</div>
 <div class="section" id="new-modules-and-files-installation">
 <h3>New modules and files: installation<a class="headerlink" href="#new-modules-and-files-installation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>If you have added new files or directories, or reorganized existing
+<li><p>If you have added new files or directories, or reorganized existing
 ones, make sure the new files are included in the match patterns in
-<code class="file docutils literal"><span class="pre">MANIFEST.in</span></code>, and/or in <code class="xref py py-obj docutils literal"><span class="pre">package_data</span></code> in <code class="xref py py-obj docutils literal"><span class="pre">setup.py</span></code>.</li>
+in <em>package_data</em> in <code class="file docutils literal notranslate"><span class="pre">setupext.py</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="c-c-extensions">
 <h3>C/C++ extensions<a class="headerlink" href="#c-c-extensions" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Extensions may be written in C or C++.</li>
-<li>Code style should conform to PEP7 (understanding that PEP7 doesn’t
-address C++, but most of its admonitions still apply).</li>
-<li>Python/C interface code should be kept separate from the core C/C++
-code.  The interface code should be named <code class="xref py py-obj docutils literal"><span class="pre">FOO_wrap.cpp</span></code> or
-<code class="xref py py-obj docutils literal"><span class="pre">FOO_wrapper.cpp</span></code>.</li>
-<li>Header file documentation (aka docstrings) should be in Numpydoc
-format.  We don’t plan on using automated tools for these
+<li><p>Extensions may be written in C or C++.</p></li>
+<li><p>Code style should conform to PEP7 (understanding that PEP7 doesn't
+address C++, but most of its admonitions still apply).</p></li>
+<li><p>Python/C interface code should be kept separate from the core C/C++
+code.  The interface code should be named <code class="file docutils literal notranslate"><span class="pre">FOO_wrap.cpp</span></code> or
+<code class="file docutils literal notranslate"><span class="pre">FOO_wrapper.cpp</span></code>.</p></li>
+<li><p>Header file documentation (aka docstrings) should be in Numpydoc
+format.  We don't plan on using automated tools for these
 docstrings, and the Numpydoc format is well understood in the
-scientific Python community.</li>
+scientific Python community.</p></li>
 </ul>
 </div>
 <div class="section" id="keyword-argument-processing">
-<span id="id4"></span><h3>Keyword argument processing<a class="headerlink" href="#keyword-argument-processing" title="Permalink to this headline">¶</a></h3>
-<p>Matplotlib makes extensive use of <code class="docutils literal"><span class="pre">**kwargs</span></code> for pass-through
-customizations from one function to another.  A typical example is in
-<a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="matplotlib.pyplot.text"><code class="xref py py-func docutils literal"><span class="pre">matplotlib.pyplot.text()</span></code></a>.  The definition of the pylab text
-function is a simple pass-through to
-<a class="reference internal" href="../api/_as_gen/matplotlib.axes.Axes.text.html#matplotlib.axes.Axes.text" title="matplotlib.axes.Axes.text"><code class="xref py py-meth docutils literal"><span class="pre">matplotlib.axes.Axes.text()</span></code></a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># in pylab.py</span>
+<span id="id13"></span><h3>Keyword argument processing<a class="headerlink" href="#keyword-argument-processing" title="Permalink to this headline">¶</a></h3>
+<p>Matplotlib makes extensive use of <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> for pass-through customizations
+from one function to another. A typical example is in <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="matplotlib.pyplot.text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot.text</span></code></a>.
+The definition of the pylab text function is a simple pass-through to
+<a class="reference internal" href="../api/_as_gen/matplotlib.axes.Axes.text.html#matplotlib.axes.Axes.text" title="matplotlib.axes.Axes.text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.axes.Axes.text</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># in pylab.py</span>
 <span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="n">ret</span> <span class="o">=</span>  <span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="n">draw_if_interactive</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">ret</span>
+    <span class="k">return</span> <span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="../api/_as_gen/matplotlib.axes.Axes.text.html#matplotlib.axes.Axes.text" title="matplotlib.axes.Axes.text"><code class="xref py py-meth docutils literal"><span class="pre">text()</span></code></a> in simplified form looks like this,
-i.e., it just passes all <code class="docutils literal"><span class="pre">args</span></code> and <code class="docutils literal"><span class="pre">kwargs</span></code> on to
-<code class="xref py py-meth docutils literal"><span class="pre">matplotlib.text.Text.__init__()</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># in axes/_axes.py</span>
+<p><a class="reference internal" href="../api/_as_gen/matplotlib.axes.Axes.text.html#matplotlib.axes.Axes.text" title="matplotlib.axes.Axes.text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">text</span></code></a> in simplified form looks like this, i.e., it just
+passes all <code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> on to <code class="docutils literal notranslate"><span class="pre">matplotlib.text.Text.__init__</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># in axes/_axes.py</span>
 <span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">withdash</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>and <code class="xref py py-meth docutils literal"><span class="pre">__init__()</span></code> (again with liberties for
-illustration) just passes them on to the
-<a class="reference internal" href="../api/_as_gen/matplotlib.artist.Artist.update.html#matplotlib.artist.Artist.update" title="matplotlib.artist.Artist.update"><code class="xref py py-meth docutils literal"><span class="pre">matplotlib.artist.Artist.update()</span></code></a> method:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># in text.py</span>
-<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="n">Artist</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<p>and <code class="docutils literal notranslate"><span class="pre">matplotlib.text.Text.__init__</span></code> (again with liberties for illustration)
+just passes them on to the <a class="reference internal" href="../api/_as_gen/matplotlib.artist.Artist.update.html#matplotlib.artist.Artist.update" title="matplotlib.artist.Artist.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.artist.Artist.update</span></code></a> method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># in text.py</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">update</span></code> does the work looking for methods named like
-<code class="docutils literal"><span class="pre">set_property</span></code> if <code class="docutils literal"><span class="pre">property</span></code> is a keyword argument.  i.e., no one
+<p><code class="docutils literal notranslate"><span class="pre">update</span></code> does the work looking for methods named like
+<code class="docutils literal notranslate"><span class="pre">set_property</span></code> if <code class="docutils literal notranslate"><span class="pre">property</span></code> is a keyword argument.  i.e., no one
 looks at the keywords, they just get passed through the API to the
 artist constructor which looks for suitably named methods and calls
 them with the value.</p>
-<p>As a general rule, the use of <code class="docutils literal"><span class="pre">**kwargs</span></code> should be reserved for
+<p>As a general rule, the use of <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> should be reserved for
 pass-through keyword arguments, as in the example above.  If all the
 keyword args are to be used in the function, and not passed
 on, use the key/value keyword args in the function definition rather
-than the <code class="docutils literal"><span class="pre">**kwargs</span></code> idiom.</p>
+than the <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> idiom.</p>
 <p>In some cases, you may want to consume some keys in the local
-function, and let others pass through.  You can <code class="docutils literal"><span class="pre">pop</span></code> the ones to be
-used locally and pass on the rest.  For example, in
-<a class="reference internal" href="../api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot"><code class="xref py py-meth docutils literal"><span class="pre">plot()</span></code></a>, <code class="docutils literal"><span class="pre">scalex</span></code> and <code class="docutils literal"><span class="pre">scaley</span></code> are
+function, and let others pass through.  Instead of popping arguments to
+use off <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>, specify them as keyword-only arguments to the local
+function.  This makes it obvious at a glance which arguments will be
+consumed in the function.  For example, in
+<a class="reference internal" href="../api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">plot()</span></code></a>, <code class="docutils literal notranslate"><span class="pre">scalex</span></code> and <code class="docutils literal notranslate"><span class="pre">scaley</span></code> are
 local arguments and the rest are passed on as
-<a class="reference internal" href="../api/_as_gen/matplotlib.lines.Line2D.html#matplotlib.lines.Line2D" title="matplotlib.lines.Line2D"><code class="xref py py-meth docutils literal"><span class="pre">Line2D()</span></code></a> keyword arguments:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># in axes/_axes.py</span>
-<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="n">scalex</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;scalex&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-    <span class="n">scaley</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;scaley&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hold</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">cla</span><span class="p">()</span>
+<a class="reference internal" href="../api/_as_gen/matplotlib.lines.Line2D.html#matplotlib.lines.Line2D" title="matplotlib.lines.Line2D"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Line2D()</span></code></a> keyword arguments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># in axes/_axes.py</span>
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">scalex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scaley</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_lines</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
         <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note: there is a use case when <code class="docutils literal"><span class="pre">kwargs</span></code> are meant to be used locally
-in the function (not passed on), but you still need the <code class="docutils literal"><span class="pre">**kwargs</span></code>
-idiom.  That is when you want to use <code class="docutils literal"><span class="pre">*args</span></code> to allow variable
-numbers of non-keyword args.  In this case, python will not allow you
-to use named keyword args after the <code class="docutils literal"><span class="pre">*args</span></code> usage, so you will be
-forced to use <code class="docutils literal"><span class="pre">**kwargs</span></code>.  An example is
-<a class="reference internal" href="../api/contour_api.html#matplotlib.contour.ContourLabeler.clabel" title="matplotlib.contour.ContourLabeler.clabel"><code class="xref py py-meth docutils literal"><span class="pre">matplotlib.contour.ContourLabeler.clabel()</span></code></a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># in contour.py</span>
-<span class="k">def</span> <span class="nf">clabel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="n">fontsize</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;fontsize&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-    <span class="n">inline</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;inline&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">fmt</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;fmt&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%1.3f</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="n">colors</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;colors&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">levels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">levels</span>
-        <span class="n">indices</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">))</span>
-    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-       <span class="o">...</span><span class="n">etc</span><span class="o">...</span>
+</div>
+<div class="section" id="using-logging-for-debug-messages">
+<span id="using-logging"></span><h3>Using logging for debug messages<a class="headerlink" href="#using-logging-for-debug-messages" title="Permalink to this headline">¶</a></h3>
+<p>Matplotlib uses the standard Python <a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging</span></code></a> library to write verbose
+warnings, information, and debug messages. Please use it! In all those places
+you write <a class="reference external" href="https://docs.python.org/3/library/functions.html#print" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print</span></code></a> calls to do your debugging, try using <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.debug" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.debug</span></code></a>
+instead!</p>
+<p>To include <a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging</span></code></a> in your module, at the top of the module, you need to
+<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">logging</span></code>.  Then calls in your code like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>  <span class="c1"># right after the imports</span>
+
+<span class="c1"># code</span>
+<span class="c1"># more code</span>
+<span class="n">_log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Here is some information&#39;</span><span class="p">)</span>
+<span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Here is some more detailed information&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="developing-a-new-backend">
-<span id="custom-backend"></span><h3>Developing a new backend<a class="headerlink" href="#developing-a-new-backend" title="Permalink to this headline">¶</a></h3>
-<p>If you are working on a custom backend, the <em>backend</em> setting in
-<code class="file docutils literal"><span class="pre">matplotlibrc</span></code> (<a class="reference internal" href="../tutorials/01_introductory/customizing.html#sphx-glr-tutorials-01-introductory-customizing-py"><span class="std std-ref">Customizing matplotlib</span></a>) supports an
-external backend via the <code class="docutils literal"><span class="pre">module</span></code> directive.  If
-<code class="file docutils literal"><span class="pre">my_backend.py</span></code> is a Matplotlib backend in your
-<span class="target" id="index-0"></span><a class="reference internal" href="../faq/environment_variables_faq.html#envvar-PYTHONPATH"><code class="xref std std-envvar docutils literal"><span class="pre">PYTHONPATH</span></code></a>, you can set it on one of several ways</p>
-<ul>
-<li><p class="first">in <code class="file docutils literal"><span class="pre">matplotlibrc</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">backend</span> <span class="p">:</span> <span class="n">module</span><span class="p">:</span><span class="o">//</span><span class="n">my_backend</span>
+<p>will log to a logger named <code class="docutils literal notranslate"><span class="pre">matplotlib.yourmodulename</span></code>.</p>
+<p>If an end-user of Matplotlib sets up <a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging</span></code></a> to display at levels more
+verbose than <code class="docutils literal notranslate"><span class="pre">logging.WARNING</span></code> in their code with the Matplotlib-provided
+helper:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">set_loglevel</span><span class="p">(</span><span class="s2">&quot;debug&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</li>
-<li><p class="first">with the <span class="target" id="index-1"></span><a class="reference internal" href="../faq/environment_variables_faq.html#envvar-MPLBACKEND"><code class="xref std std-envvar docutils literal"><span class="pre">MPLBACKEND</span></code></a> environment variable:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">export</span> <span class="n">MPLBACKEND</span><span class="o">=</span><span class="s2">&quot;module://my_backend&quot;</span>
-<span class="o">&gt;</span> <span class="n">python</span> <span class="n">simple_plot</span><span class="o">.</span><span class="n">py</span>
+<p>or manually with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
-</li>
-<li><p class="first">with the use directive in your script:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;module://my_backend&#39;</span><span class="p">)</span>
+<p>Then they will receive messages like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DEBUG</span><span class="p">:</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">backends</span><span class="p">:</span><span class="n">backend</span> <span class="n">MacOSX</span> <span class="n">version</span> <span class="n">unknown</span>
+<span class="n">DEBUG</span><span class="p">:</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">yourmodulename</span><span class="p">:</span><span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">information</span>
+<span class="n">DEBUG</span><span class="p">:</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">yourmodulename</span><span class="p">:</span><span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">more</span> <span class="n">detailed</span> <span class="n">information</span>
 </pre></div>
 </div>
-</li>
+<div class="section" id="which-logging-level-to-use">
+<h4>Which logging level to use?<a class="headerlink" href="#which-logging-level-to-use" title="Permalink to this headline">¶</a></h4>
+<p>There are five levels at which you can emit messages.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.critical" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.critical</span></code></a> and <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.error" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.error</span></code></a> are really only there for errors that
+will end the use of the library but not kill the interpreter.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.warning" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.warning</span></code></a> and <a class="reference internal" href="../api/_api_api.html#matplotlib._api.warn_external" title="matplotlib._api.warn_external"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_api.warn_external</span></code></a> are used to warn the user,
+see below.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.info" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.info</span></code></a> is for information that the user may want to know if the
+program behaves oddly. They are not displayed by default. For instance, if
+an object isn't drawn because its position is <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, that can usually
+be ignored, but a mystified user could call
+<code class="docutils literal notranslate"><span class="pre">logging.basicConfig(level=logging.INFO)</span></code> and get an error message that
+says why.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.debug" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.debug</span></code></a> is the least likely to be displayed, and hence can be the
+most verbose.  &quot;Expected&quot; code paths (e.g., reporting normal intermediate
+steps of layouting or rendering) should only log at this level.</p></li>
 </ul>
+<p>By default, <a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging</span></code></a> displays all log messages at levels higher than
+<code class="docutils literal notranslate"><span class="pre">logging.WARNING</span></code> to <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.stderr" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys.stderr</span></code></a>.</p>
+<p>The <a class="reference external" href="https://docs.python.org/3/howto/logging.html#logging-basic-tutorial">logging tutorial</a> suggests that the difference between <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.warning" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.warning</span></code></a>
+and <a class="reference internal" href="../api/_api_api.html#matplotlib._api.warn_external" title="matplotlib._api.warn_external"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_api.warn_external</span></code></a> (which uses <a class="reference external" href="https://docs.python.org/3/library/warnings.html#warnings.warn" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">warnings.warn</span></code></a>) is that
+<a class="reference internal" href="../api/_api_api.html#matplotlib._api.warn_external" title="matplotlib._api.warn_external"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_api.warn_external</span></code></a> should be used for things the user must change to stop
+the warning (typically in the source), whereas <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.warning" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.warning</span></code></a> can be more
+persistent. Moreover, note that <a class="reference internal" href="../api/_api_api.html#matplotlib._api.warn_external" title="matplotlib._api.warn_external"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_api.warn_external</span></code></a> will by default only
+emit a given warning <em>once</em> for each line of user code, whereas
+<a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.warning" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging.warning</span></code></a> will display the message every time it is called.</p>
+<p>By default, <a class="reference external" href="https://docs.python.org/3/library/warnings.html#warnings.warn" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">warnings.warn</span></code></a> displays the line of code that has the <code class="docutils literal notranslate"><span class="pre">warn</span></code>
+call. This usually isn't more informative than the warning message itself.
+Therefore, Matplotlib uses <a class="reference internal" href="../api/_api_api.html#matplotlib._api.warn_external" title="matplotlib._api.warn_external"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_api.warn_external</span></code></a> which uses <a class="reference external" href="https://docs.python.org/3/library/warnings.html#warnings.warn" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">warnings.warn</span></code></a>,
+but goes up the stack and displays the first line of code outside of
+Matplotlib. For example, for the module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># in my_matplotlib_module.py</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="k">def</span> <span class="nf">set_range</span><span class="p">(</span><span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">bottom</span> <span class="o">==</span> <span class="n">top</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Attempting to set identical bottom==top&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>running the script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">my_matplotlib_module</span>
+<span class="n">my_matplotlib_module</span><span class="o">.</span><span class="n">set_range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1">#set range</span>
+</pre></div>
+</div>
+<p>will display:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">UserWarning</span><span class="p">:</span> <span class="n">Attempting</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">identical</span> <span class="n">bottom</span><span class="o">==</span><span class="n">top</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Attempting to set identical bottom==top&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Modifying the module to use <a class="reference internal" href="../api/_api_api.html#matplotlib._api.warn_external" title="matplotlib._api.warn_external"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_api.warn_external</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">_api</span>
+
+<span class="k">def</span> <span class="nf">set_range</span><span class="p">(</span><span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">bottom</span> <span class="o">==</span> <span class="n">top</span><span class="p">:</span>
+        <span class="n">_api</span><span class="o">.</span><span class="n">warn_external</span><span class="p">(</span><span class="s1">&#39;Attempting to set identical bottom==top&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and running the same script will display:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">UserWarning</span><span class="p">:</span> <span class="n">Attempting</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">identical</span> <span class="n">bottom</span><span class="o">==</span><span class="n">top</span>
+<span class="n">my_matplotlib_module</span><span class="o">.</span><span class="n">set_range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1">#set range</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="writing-examples">
 <span id="sample-data"></span><h3>Writing examples<a class="headerlink" href="#writing-examples" title="Permalink to this headline">¶</a></h3>
-<p>We have hundreds of examples in subdirectories of
-<code class="file docutils literal"><span class="pre">matplotlib/examples</span></code>, and these are automatically generated
-when the website is built to show up in the <code class="xref py py-obj docutils literal"><span class="pre">examples</span></code> section of the website.</p>
+<p>We have hundreds of examples in subdirectories of <code class="file docutils literal notranslate"><span class="pre">matplotlib/examples</span></code>,
+and these are automatically generated when the website is built to show up in
+the <a class="reference internal" href="../gallery/index.html#gallery"><span class="std std-ref">examples</span></a> section of the website.</p>
 <p>Any sample data that the example uses should be kept small and
 distributed with Matplotlib in the
-<code class="xref py py-obj docutils literal"><span class="pre">lib/matplotlib/mpl-data/sample_data/</span></code> directory.  Then in your
+<code class="file docutils literal notranslate"><span class="pre">lib/matplotlib/mpl-data/sample_data/</span></code> directory.  Then in your
 example code you can load it into a file handle with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.cbook</span> <span class="k">as</span> <span class="nn">cbook</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.cbook</span> <span class="k">as</span> <span class="nn">cbook</span>
 <span class="n">fh</span> <span class="o">=</span> <span class="n">cbook</span><span class="o">.</span><span class="n">get_sample_data</span><span class="p">(</span><span class="s1">&#39;mydata.dat&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -595,177 +1038,40 @@ example code you can load it into a file handle with:</p>
 </div>
 
 
-          </div>
-        </div>
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Contributing</a>
+    <a class='right-next' id="next-link" href="triage.html" title="next page">Bug triaging and issue curation</a>
+
+              </div>
+              
+          </main>
+          
+
       </div>
-
-      <div class="clearer"></div>
     </div>
-    <div class="footer">
-        &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
-      Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2021 The Matplotlib development team.<br/>
+</p>
     </div>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-55954603-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</body>
-<footer>
-  <!--Flipcause Integration v3.0// Flipcause Integration Instructions:
-Install the following code block once in the website Header (after <head> tag) -->
-
-<style>
-
-.fc-black_overlay{
-display:none; position: fixed; z-index:1000001; top: 0%;left: 0%;width: 100%;height: 100%;
-background-color: black; filter: alpha(opacity=50); cursor:pointer; opacity:0.5;
-}
-
-.fc-white_content {
-opacity:1; display:none; margin-top: -320px; margin-left: -485px; width:970px; height:640px;
-position:fixed; top:50%; left:50%; border: none;z-index:1000002;overflow: auto;
-}
-
-.fc-main-box{
-opacity:1; display:none; margin:15px auto 0 auto; width:930px; position:relative; z-index:1000003;
-}
-
-.fc-widget_close{
-opacity:1; content:url(http://i1338.photobucket.com/albums/o691/WeCause/X_zpse4a7e538.png);
-position:absolute; z-index=1000004; right:-16px; top:-16px; display:block; cursor:pointer;
-}
-
-.floating_button{
-display: block; margin-top: 0px; margin-left: 0px; width:auto ; height: auto;
-position:fixed; z-index:999999; overflow: auto;
-}
-
-@keyframes backfadesin {
-   from { opacity:0; }
-   to {opacity:.5;}
-}
-
-@-moz-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@-webkit-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@-o-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-
-@-ms-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; transform: translateY(20px);}
-   100% {opacity: 1; transform: translateY(0);}
-}
-
-@-moz-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -moz-transform: translateY(20px);}
-   100% {opacity: 1; -moz-transform: translateY(0);}
-}
-
-@-webkit-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -webkit-transform: translateY(20px);}
-   100% {opacity: 1; -webkit-transform: translateY(0);}
-}
-
-@-o-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -o-transform: translateY(20px);}
-   100% {opacity: 1; -o-transform: translateY(0);}
-}
-
-@-ms-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -ms-transform: translateY(20px);}
-   100% {opacity: 1; -ms-transform: translateY(0);}
-}
-
-</style>
-
-<script>
-
-function open_window(cause_id) {
-var  protocol=String(document.location.protocol);
-var new_url;
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-new_url="https://www.flipcause.com/widget/"+cause_id
-window.open(new_url);
-}
-
-else {
-document.getElementById("fc-fade").style.display = "block";
-document.getElementById("fc-fade").style.webkitAnimation = "backfadesin 1s";
-document.getElementById("fc-fade").style.animation = "backfadesin 1s";
-document.getElementById("fc-fade").style.mozAnimation = "backfadesin 1s";
-document.getElementById("fc-light").style.display = "block";
-document.getElementById("fc-light").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-light").style.animation = "fadesin 1.5s";
-document.getElementById("fc-light").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-main").style.display = "block";
-document.getElementById("fc-main").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-main").style.animation = "fadesin 1.5s";
-document.getElementById("fc-main").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-close").style.display = "block";
-document.getElementById("fc-close").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-close").style.animation = "fadesin 1.5s";
-document.getElementById("fc-close").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.display = "block";
-document.getElementById("fc-myFrame").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.animation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").src="https://www.flipcause.com/widget/"+cause_id;
-}
-}
-
-
-function close_window() {
-document.getElementById("fc-fade").style.display="none";
-document.getElementById("fc-light").style.display="none";
-document.getElementById("fc-main").style.display="none";
-document.getElementById("fc-close").style.display="none";
-document.getElementById("fc-myFrame").style.display="none";
-}
-
-</script>
-
-<div id="fc-fade" class="fc-black_overlay" onclick="close_window()"></div>
-<div id="fc-light" class="fc-white_content">
-<div id="fc-main" class="fc-main-box">
-<div id="fc-close" class="fc-widget_close" onclick="close_window()">
-</div><iframe id="fc-myFrame" iframe height="580" width="925" style="border: 0;
-border-radius:5px 5px 5px 5px; box-shadow:0 0 8px rgba(0, 0, 0, 0.5);" scrolling="no" src=""></iframe></div>
-</div>
-
-<!--END Flipcause Main Integration Code-->
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
 </footer>
+  </body>
 </html>

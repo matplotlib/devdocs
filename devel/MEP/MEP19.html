@@ -1,173 +1,558 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MEP19: Continuous Integration &#8212; Matplotlib 3.4.2.post1414+g246a489ce6 documentation</title>
     
-    <title>MEP19: Continuous Integration &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
     
-    <link rel="stylesheet" href="../../_static/mpl.css"
-type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css"
-type="text/css" />
-    <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mpl.css?v3.4.2-1414-g246a489ce6" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 3.4.2.post1414+g246a489ce6 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html"
-/>
-    <link rel="search" title="Search" href="../../search.html"
-/>
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../../index.html" />
-    <link rel="up" title="Matplotlib Enhancement Proposals" href="index.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="MEP21: color and cm refactor" href="MEP21.html" />
-    <link rel="prev" title="MEP15 - Fix axis autoscaling when limits are specified for one axis only" href="MEP15.html" /> 
-
-
+    <link rel="prev" title="MEP15 - Fix axis autoscaling when limits are specified for one axis only" href="MEP15.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo2.svg" class="logo" alt="logo">
+</a>      
 
 
+    
+  </div>
 
-<!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
-</div>
-
-
-
-
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="MEP21.html" title="MEP21: color and cm refactor"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="MEP15.html" title="MEP15 - Fix axis autoscaling when limits are specified for one axis only"
-             accesskey="P">previous</a> |</li>
-
-        <li><a href="../../index.html">home</a>|&nbsp;</li>
-        <li><a href="../../gallery/index.html">examples</a>|&nbsp;</li>
-        <li><a href="../../tutorials/index.html">tutorials</a>|&nbsp;</li>
-        <li><a href="../../api/pyplot_summary.html">pyplot</a>|&nbsp;</li>
-        <li><a href="../../contents.html">docs</a> &raquo;</li>
-          <li><a href="../index.html" >The Matplotlib Developers’ Guide</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Matplotlib Enhancement Proposals</a> &raquo;</li> 
-      </ul>
-    </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
   
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
-  <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
-
-<br/>
-
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../../_static/depsy_badge.svg">
-</a>
-
-<br/>
-
-Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
-  <img src="https://travis-ci.org/matplotlib/matplotlib.svg?branch=master"/>
-</a>
-<br/>
-  <h3><a href="../../contents.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">MEP19: Continuous Integration</a><ul>
-<li><a class="reference internal" href="#status">Status</a></li>
-<li><a class="reference internal" href="#branches-and-pull-requests">Branches and Pull requests</a></li>
-<li><a class="reference internal" href="#abstract">Abstract</a></li>
-<li><a class="reference internal" href="#detailed-description">Detailed description</a><ul>
-<li><a class="reference internal" href="#current-state-of-the-art">Current state-of-the-art</a></li>
-<li><a class="reference internal" href="#peculiarities-of-matplotlib">Peculiarities of matplotlib</a></li>
-<li><a class="reference internal" href="#requirements">Requirements</a></li>
-</ul>
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../users/installing.html">
+  Installation
+ </a>
 </li>
-<li><a class="reference internal" href="#implementation">Implementation</a></li>
-<li><a class="reference internal" href="#backward-compatibility">Backward compatibility</a></li>
-<li><a class="reference internal" href="#alternatives">Alternatives</a></li>
-<li><a class="reference internal" href="#hangout-notes">Hangout Notes</a><ul>
-<li><a class="reference internal" href="#ci-infrastructure">CI Infrastructure</a></li>
-<li><a class="reference internal" href="#the-test-framework-itself">The test framework itself</a></li>
-</ul>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../plot_types/index.html">
+  Plot types
+ </a>
 </li>
-</ul>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../gallery/index.html">
+  Gallery
+ </a>
 </li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api/index.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../users/index.html">
+  User's guide
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference external nav-link" href="https://matplotlib.org/mpl-third-party/">
+  Third-party packages
+ </a>
+</li>
+
+    
 </ul>
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../../contents.html">Documentation overview</a><ul>
-  <li><a href="../index.html">The Matplotlib Developers’ Guide</a><ul>
-  <li><a href="index.html">Matplotlib Enhancement Proposals</a><ul>
-      <li>Previous: <a href="MEP15.html" title="previous chapter">MEP15 - Fix axis autoscaling when limits are specified for one axis only</a></li>
-      <li>Next: <a href="MEP21.html" title="next chapter">MEP21: color and cm refactor</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../_sources/devel/MEP/MEP19.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
       </div>
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://gitter.im/matplotlib" rel="noopener" target="_blank" title="gitter">
+            <span><i class="fab fa-gitter"></i></span>
+            <label class="sr-only">gitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discourse.matplotlib.org" rel="noopener" target="_blank" title="discourse">
+            <span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">discourse</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/matplotlib/matplotlib" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/matplotlib/" rel="noopener" target="_blank" title="twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
             
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../contributing.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../triage.html">
+   Bug triaging and issue curation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development_setup.html">
+   Setting up Matplotlib for development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../testing.html">
+   Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../documenting_mpl.html">
+   Writing documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../style_guide.html">
+   Documentation style guide
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../gitwash/index.html">
+   Working with
+   <em>
+    Matplotlib
+   </em>
+   source code
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gitwash/git_intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gitwash/git_install.html">
+     Install git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gitwash/following_latest.html">
+     Following the latest source
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gitwash/patching.html">
+     Making a patch
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../gitwash/git_development.html">
+     Git for development
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../gitwash/forking_hell.html">
+       Making your own copy (fork) of Matplotlib
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../gitwash/set_up_fork.html">
+       Set up your fork
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../gitwash/configure_git.html">
+       Configure git
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../gitwash/development_workflow.html">
+       Development workflow
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../gitwash/maintainer_workflow.html">
+       Maintainer workflow
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gitwash/git_resources.html">
+     git resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gitwash/dot2_dot3.html">
+     Two and three dots in difference specs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../coding_guide.html">
+   Pull request guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../release_guide.html">
+   Release guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dependencies.html">
+   Dependencies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../min_dep_policy.html">
+   Minimum version of dependencies policy
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Matplotlib Enhancement Proposals
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="template.html">
+     MEP Template
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP08.html">
+     MEP8: PEP8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP09.html">
+     MEP9: Global interaction manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP10.html">
+     MEP10: Docstring consistency
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP11.html">
+     MEP11: Third-party dependencies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP12.html">
+     MEP12: Improve Gallery and Examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP13.html">
+     MEP13: Use properties for Artists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP14.html">
+     MEP14: Text handling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP15.html">
+     MEP15 - Fix axis autoscaling when limits are specified for one axis only
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     MEP19: Continuous Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP21.html">
+     MEP21: color and cm refactor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP22.html">
+     MEP22: Toolbar rewrite
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP23.html">
+     MEP23: Multiple Figures per GUI window
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP24.html">
+     MEP24: negative radius in polar plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP25.html">
+     MEP25: Serialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP26.html">
+     MEP26: Artist styling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP27.html">
+     MEP27: decouple pyplot from backends
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP28.html">
+     MEP28: Remove Complexity from Axes.boxplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MEP29.html">
+     MEP29: Text light markup
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../license.html">
+   Licenses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../color_changes.html">
+   Default color changes
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#status">
+   Status
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#branches-and-pull-requests">
+   Branches and Pull requests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstract">
+   Abstract
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detailed-description">
+   Detailed description
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#current-state-of-the-art">
+     Current state-of-the-art
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#peculiarities-of-matplotlib">
+     Peculiarities of matplotlib
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#requirements">
+     Requirements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementation">
+   Implementation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#backward-compatibility">
+   Backward compatibility
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternatives">
+   Alternatives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hangout-notes">
+   Hangout Notes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ci-infrastructure">
+     CI Infrastructure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-test-framework-itself">
+     The test framework itself
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
   <div class="section" id="mep19-continuous-integration">
 <h1>MEP19: Continuous Integration<a class="headerlink" href="#mep19-continuous-integration" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="status">
 <h2>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
-<p><strong>Discussion</strong></p>
+<p><strong>Completed</strong></p>
 </div>
 <div class="section" id="branches-and-pull-requests">
 <h2>Branches and Pull requests<a class="headerlink" href="#branches-and-pull-requests" title="Permalink to this headline">¶</a></h2>
@@ -187,35 +572,35 @@ documentation.</p>
 Travis-CI should be praised for how much it does as a free service, it
 has a number of shortcomings:</p>
 <ul class="simple">
-<li>It often fails due to network timeouts when installing dependencies.</li>
-<li>It often fails for inexplicable reasons.</li>
-<li>build or test products can only be saved from build off of branches
-on the main repo, not pull requsts, so it is often difficult to
-“post mortem” analyse what went wrong.  This is particularly
+<li><p>It often fails due to network timeouts when installing dependencies.</p></li>
+<li><p>It often fails for inexplicable reasons.</p></li>
+<li><p>build or test products can only be saved from build off of branches
+on the main repo, not pull requests, so it is often difficult to
+&quot;post mortem&quot; analyse what went wrong.  This is particularly
 frustrating when the failure can not be subsequently reproduced
-locally.</li>
-<li>It is not extremely fast.  matplotlib’s cpu and memory requirements
-for testing are much higher than the average Python project.</li>
-<li>It only tests on Ubuntu Linux, and we have only minimal control over
+locally.</p></li>
+<li><p>It is not extremely fast.  matplotlib's cpu and memory requirements
+for testing are much higher than the average Python project.</p></li>
+<li><p>It only tests on Ubuntu Linux, and we have only minimal control over
 the specifics of the platform.  It can be upgraded at any time
 outside of our control, causing unexpected delays at times that may
-not be convenient in our release schedule.</li>
+not be convenient in our release schedule.</p></li>
 </ul>
-<p>On the plus side, Travis-CI’s integration with github – automatically
-testing all pending pull requests – is exceptional.</p>
+<p>On the plus side, Travis-CI's integration with github -- automatically
+testing all pending pull requests -- is exceptional.</p>
 <p><strong>Builds</strong></p>
 <p>There is no centralized effort for automated binary builds for
 matplotlib.  However, the following disparate things are being done
 [If the authors mentioned here could fill in detail, that would be
 great!]:</p>
 <ul class="simple">
-<li>&#64;sandrotosi: builds Debian packages</li>
-<li>&#64;takluyver: Has automated Ubuntu builds on Launchpad</li>
-<li>&#64;cgohlke: Makes Windows builds (don’t know how automated that is)</li>
-<li>&#64;r-owen: Makes OS-X builds (don’t know how automated that is)</li>
+<li><p>&#64;sandrotosi: builds Debian packages</p></li>
+<li><p>&#64;takluyver: Has automated Ubuntu builds on Launchpad</p></li>
+<li><p>&#64;cgohlke: Makes Windows builds (don't know how automated that is)</p></li>
+<li><p>&#64;r-owen: Makes OS-X builds (don't know how automated that is)</p></li>
 </ul>
 <p><strong>Documentation</strong></p>
-<p>Documentation of master is now built by travis and uploaded to <a class="reference external" href="http://matplotlib.org/devdocs/index.html">http://matplotlib.org/devdocs/index.html</a></p>
+<p>Documentation of master is now built by travis and uploaded to <a class="reference external" href="https://matplotlib.org/devdocs/index.html">https://matplotlib.org/devdocs/index.html</a></p>
 <p>&#64;NelleV, I believe, generates the docs automatically and posts them on
 the web to chart MEP10 progress.</p>
 </div>
@@ -224,45 +609,45 @@ the web to chart MEP10 progress.</p>
 <p>matplotlib has complex requirements that make testing and building
 more taxing than many other Python projects.</p>
 <ul class="simple">
-<li>The CPU time to run the tests is quite high.  It puts us beyond the
-free accounts of many CI services (e.g. ShiningPanda)</li>
-<li>It has a large number of dependencies, and testing the full matrix
+<li><p>The CPU time to run the tests is quite high.  It puts us beyond the
+free accounts of many CI services (e.g. ShiningPanda)</p></li>
+<li><p>It has a large number of dependencies, and testing the full matrix
 of all combinations is impractical.  We need to be clever about what
-space we test and guarantee to support.</li>
+space we test and guarantee to support.</p></li>
 </ul>
 </div>
 <div class="section" id="requirements">
 <h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
 <p>This section outlines the requirements that we would like to have.</p>
 <ol class="arabic simple">
-<li>Testing all pull requests by hooking into the Github API, as
-Travis-CI does</li>
-<li>Testing on all major platforms: Linux, Mac OS-X, MS Windows (in
-that order of priority, based on user survey)</li>
-<li>Retain the last n days worth of build and test products, to aid in
-post-mortem debugging.</li>
-<li>Automated nightly binary builds, so that users can test the
+<li><p>Testing all pull requests by hooking into the GitHub API, as
+Travis-CI does</p></li>
+<li><p>Testing on all major platforms: Linux, Mac OS-X, MS Windows (in
+that order of priority, based on user survey)</p></li>
+<li><p>Retain the last n days worth of build and test products, to aid in
+post-mortem debugging.</p></li>
+<li><p>Automated nightly binary builds, so that users can test the
 bleeding edge without installing a complete compilation
-environment.</li>
-<li>Automated benchmarking.  It would be nice to have a standard
+environment.</p></li>
+<li><p>Automated benchmarking.  It would be nice to have a standard
 benchmark suite (separate from the tests) whose performance could
 be tracked over time, in different backends and platforms.  While
 this is separate from building and testing, ideally it would run on
-the same infrastructure.</li>
-<li>Automated nightly building and publishing of documentation (or as
-part of testing, to ensure PRs don’t introduce documentation bugs).
+the same infrastructure.</p></li>
+<li><p>Automated nightly building and publishing of documentation (or as
+part of testing, to ensure PRs don't introduce documentation bugs).
 (This would not replace the static documentation for stable
-releases as a default).</li>
-<li>The test systems should be managable by multiple developers, so
-that no single person becomes a bottleneck.  (Travis-CI’s design
-does this well – storing build configuration in the git
-repository, rather than elsewhere, is a very good design.)</li>
-<li>Make it easy to test a large but sparse matrix of different
-versions of matplotlib’s dependencies.  The matplotlib user survey
+releases as a default).</p></li>
+<li><p>The test systems should be manageable by multiple developers, so
+that no single person becomes a bottleneck.  (Travis-CI's design
+does this well -- storing build configuration in the git
+repository, rather than elsewhere, is a very good design.)</p></li>
+<li><p>Make it easy to test a large but sparse matrix of different
+versions of matplotlib's dependencies.  The matplotlib user survey
 provides some good data as to where to focus our efforts:
-<a class="reference external" href="https://docs.google.com/spreadsheet/ccc?key=0AjrPjlTMRTwTdHpQS25pcTZIRWdqX0pNckNSU01sMHc#gid=0">https://docs.google.com/spreadsheet/ccc?key=0AjrPjlTMRTwTdHpQS25pcTZIRWdqX0pNckNSU01sMHc#gid=0</a></li>
-<li>Nice to have: A decentralized design so that those with more
-obscure platforms can publish build results to a central dashboard.</li>
+<a class="reference external" href="https://docs.google.com/spreadsheets/d/1jbK0J4cIkyBNncnS-gP7pINSliNy9lI-N4JHwxlNSXE/edit">https://docs.google.com/spreadsheets/d/1jbK0J4cIkyBNncnS-gP7pINSliNy9lI-N4JHwxlNSXE/edit</a></p></li>
+<li><p>Nice to have: A decentralized design so that those with more
+obscure platforms can publish build results to a central dashboard.</p></li>
 </ol>
 </div>
 </div>
@@ -288,219 +673,80 @@ out the old.</p>
 <div class="section" id="ci-infrastructure">
 <h3>CI Infrastructure<a class="headerlink" href="#ci-infrastructure" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>We like Travis and it will probably remain part of our arsenal in
-any event.  The reliability issues are being looked into.</li>
-<li>Enable Amazon S3 uploads of testing products on Travis.  This will
+<li><p>We like Travis and it will probably remain part of our arsenal in
+any event.  The reliability issues are being looked into.</p></li>
+<li><p>Enable Amazon S3 uploads of testing products on Travis.  This will
 help with post-mortem of failures (&#64;mdboom is looking into this
-now).</li>
-<li>We want Mac coverage.  The best bet is probably to push Travis to
+now).</p></li>
+<li><p>We want Mac coverage.  The best bet is probably to push Travis to
 enable it for our project by paying them for a Pro account (since
-they don’t otherwise allow testing on both Linux and Mac).</li>
-<li>We want Windows coverage.  Shining Panda is an option there.</li>
-<li>Investigate finding or building a tool that would collect and
+they don't otherwise allow testing on both Linux and Mac).</p></li>
+<li><p>We want Windows coverage.  Shining Panda is an option there.</p></li>
+<li><p>Investigate finding or building a tool that would collect and
 synthesize test results from a number of sources and post it to
-Github using the Github API.  This may be of general use to the
-Scipy community.</li>
-<li>For both Windows and Mac, we should document (or better yet, script)
+GitHub using the GitHub API.  This may be of general use to the
+Scipy community.</p></li>
+<li><p>For both Windows and Mac, we should document (or better yet, script)
 the process of setting up the machine for a build, and how to build
 binaries and installers.  This may require getting information from
 Russel Owen and Christoph Gohlke.  This is a necessary step for
 doing automated builds, but would also be valuable for a number of
-other reasons.</li>
+other reasons.</p></li>
 </ul>
 </div>
 <div class="section" id="the-test-framework-itself">
 <h3>The test framework itself<a class="headerlink" href="#the-test-framework-itself" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p class="first">We should investigate ways to make it take less time</p>
+<li><p>We should investigate ways to make it take less time</p>
 <blockquote>
 <div><ul class="simple">
-<li>Eliminating redundant tests, if possible</li>
-<li>General performance improvements to matplotlib will help</li>
+<li><p>Eliminating redundant tests, if possible</p></li>
+<li><p>General performance improvements to matplotlib will help</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">We should be covering more things, particularly more backends</p>
-</li>
-<li><p class="first">We should have more unit tests, fewer integration tests, if possible</p>
-</li>
+<li><p>We should be covering more things, particularly more backends</p></li>
+<li><p>We should have more unit tests, fewer integration tests, if possible</p></li>
 </ul>
 </div>
 </div>
 </div>
 
 
-          </div>
-        </div>
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="MEP15.html" title="previous page">MEP15 - Fix axis autoscaling when limits are specified for one axis only</a>
+    <a class='right-next' id="next-link" href="MEP21.html" title="next page">MEP21: color and cm refactor</a>
+
+              </div>
+              
+          </main>
+          
+
       </div>
-
-      <div class="clearer"></div>
     </div>
-    <div class="footer">
-        &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
-      Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2021 The Matplotlib development team.<br/>
+</p>
     </div>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-55954603-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</body>
-<footer>
-  <!--Flipcause Integration v3.0// Flipcause Integration Instructions:
-Install the following code block once in the website Header (after <head> tag) -->
-
-<style>
-
-.fc-black_overlay{
-display:none; position: fixed; z-index:1000001; top: 0%;left: 0%;width: 100%;height: 100%;
-background-color: black; filter: alpha(opacity=50); cursor:pointer; opacity:0.5;
-}
-
-.fc-white_content {
-opacity:1; display:none; margin-top: -320px; margin-left: -485px; width:970px; height:640px;
-position:fixed; top:50%; left:50%; border: none;z-index:1000002;overflow: auto;
-}
-
-.fc-main-box{
-opacity:1; display:none; margin:15px auto 0 auto; width:930px; position:relative; z-index:1000003;
-}
-
-.fc-widget_close{
-opacity:1; content:url(http://i1338.photobucket.com/albums/o691/WeCause/X_zpse4a7e538.png);
-position:absolute; z-index=1000004; right:-16px; top:-16px; display:block; cursor:pointer;
-}
-
-.floating_button{
-display: block; margin-top: 0px; margin-left: 0px; width:auto ; height: auto;
-position:fixed; z-index:999999; overflow: auto;
-}
-
-@keyframes backfadesin {
-   from { opacity:0; }
-   to {opacity:.5;}
-}
-
-@-moz-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@-webkit-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@-o-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-
-@-ms-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; transform: translateY(20px);}
-   100% {opacity: 1; transform: translateY(0);}
-}
-
-@-moz-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -moz-transform: translateY(20px);}
-   100% {opacity: 1; -moz-transform: translateY(0);}
-}
-
-@-webkit-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -webkit-transform: translateY(20px);}
-   100% {opacity: 1; -webkit-transform: translateY(0);}
-}
-
-@-o-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -o-transform: translateY(20px);}
-   100% {opacity: 1; -o-transform: translateY(0);}
-}
-
-@-ms-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -ms-transform: translateY(20px);}
-   100% {opacity: 1; -ms-transform: translateY(0);}
-}
-
-</style>
-
-<script>
-
-function open_window(cause_id) {
-var  protocol=String(document.location.protocol);
-var new_url;
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-new_url="https://www.flipcause.com/widget/"+cause_id
-window.open(new_url);
-}
-
-else {
-document.getElementById("fc-fade").style.display = "block";
-document.getElementById("fc-fade").style.webkitAnimation = "backfadesin 1s";
-document.getElementById("fc-fade").style.animation = "backfadesin 1s";
-document.getElementById("fc-fade").style.mozAnimation = "backfadesin 1s";
-document.getElementById("fc-light").style.display = "block";
-document.getElementById("fc-light").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-light").style.animation = "fadesin 1.5s";
-document.getElementById("fc-light").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-main").style.display = "block";
-document.getElementById("fc-main").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-main").style.animation = "fadesin 1.5s";
-document.getElementById("fc-main").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-close").style.display = "block";
-document.getElementById("fc-close").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-close").style.animation = "fadesin 1.5s";
-document.getElementById("fc-close").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.display = "block";
-document.getElementById("fc-myFrame").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.animation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").src="https://www.flipcause.com/widget/"+cause_id;
-}
-}
-
-
-function close_window() {
-document.getElementById("fc-fade").style.display="none";
-document.getElementById("fc-light").style.display="none";
-document.getElementById("fc-main").style.display="none";
-document.getElementById("fc-close").style.display="none";
-document.getElementById("fc-myFrame").style.display="none";
-}
-
-</script>
-
-<div id="fc-fade" class="fc-black_overlay" onclick="close_window()"></div>
-<div id="fc-light" class="fc-white_content">
-<div id="fc-main" class="fc-main-box">
-<div id="fc-close" class="fc-widget_close" onclick="close_window()">
-</div><iframe id="fc-myFrame" iframe height="580" width="925" style="border: 0;
-border-radius:5px 5px 5px 5px; box-shadow:0 0 8px rgba(0, 0, 0, 0.5);" scrolling="no" src=""></iframe></div>
-</div>
-
-<!--END Flipcause Main Integration Code-->
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
 </footer>
+  </body>
 </html>

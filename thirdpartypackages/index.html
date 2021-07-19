@@ -1,198 +1,523 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Third party packages &#8212; Matplotlib 3.4.2.post1414+g246a489ce6 documentation</title>
     
-    <title>Third party packages &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
     
-    <link rel="stylesheet" href="../_static/mpl.css"
-type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css"
-type="text/css" />
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mpl.css?v3.4.2-1414-g246a489ce6" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 3.4.2.post1414+g246a489ce6 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html"
-/>
-    <link rel="search" title="Search" href="../search.html"
-/>
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../index.html" />
-    <link rel="next" title="The Matplotlib API" href="../api/index.html" />
-    <link rel="prev" title="External Resources" href="../resources/index.html" /> 
-
-
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo2.svg" class="logo" alt="logo">
+</a>      
 
 
+    
+  </div>
 
-<!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../index.html"><img src="../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
-</div>
-
-
-
-
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="../api/index.html" title="The Matplotlib API"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../resources/index.html" title="External Resources"
-             accesskey="P">previous</a> |</li>
-
-        <li><a href="../index.html">home</a>|&nbsp;</li>
-        <li><a href="../gallery/index.html">examples</a>|&nbsp;</li>
-        <li><a href="../tutorials/index.html">tutorials</a>|&nbsp;</li>
-        <li><a href="../api/pyplot_summary.html">pyplot</a>|&nbsp;</li>
-        <li><a href="../contents.html">docs</a> &raquo;</li> 
-      </ul>
-    </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
   
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
-  <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../users/installing.html">
+  Installation
+ </a>
+</li>
 
-<br/>
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../plot_types/index.html">
+  Plot types
+ </a>
+</li>
 
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../_static/depsy_badge.svg">
-</a>
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../gallery/index.html">
+  Gallery
+ </a>
+</li>
 
-<br/>
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
 
-Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
-  <img src="https://travis-ci.org/matplotlib/matplotlib.svg?branch=master"/>
-</a>
-<br/>
-  <h3><a href="../contents.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Third party packages</a><ul>
-<li><a class="reference internal" href="#mapping-toolkits">Mapping toolkits</a><ul>
-<li><a class="reference internal" href="#basemap">Basemap</a></li>
-<li><a class="reference internal" href="#cartopy">Cartopy</a></li>
-</ul>
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/index.html">
+  Reference
+ </a>
 </li>
-<li><a class="reference internal" href="#declarative-libraries">Declarative libraries</a><ul>
-<li><a class="reference internal" href="#ggplot">ggplot</a></li>
-<li><a class="reference internal" href="#holoviews">holoviews</a></li>
-</ul>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../users/index.html">
+  User's guide
+ </a>
 </li>
-<li><a class="reference internal" href="#specialty-plots">Specialty plots</a><ul>
-<li><a class="reference internal" href="#matplotlib-venn">Matplotlib-Venn</a></li>
-<li><a class="reference internal" href="#mpl-probscale">mpl-probscale</a></li>
-<li><a class="reference internal" href="#mplstereonet">mplstereonet</a></li>
-<li><a class="reference internal" href="#natgrid">Natgrid</a></li>
-<li><a class="reference internal" href="#pyupset">pyUpSet</a></li>
-<li><a class="reference internal" href="#seaborn">seaborn</a></li>
-<li><a class="reference internal" href="#windrose">Windrose</a></li>
-<li><a class="reference internal" href="#decida">DeCiDa</a></li>
-</ul>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../devel/index.html">
+  Contributing
+ </a>
 </li>
-<li><a class="reference internal" href="#interactivity">Interactivity</a><ul>
-<li><a class="reference internal" href="#mplcursors">mplcursors</a></li>
-<li><a class="reference internal" href="#mpldatacursor">MplDataCursor</a></li>
-</ul>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference external nav-link" href="https://matplotlib.org/mpl-third-party/">
+  Third-party packages
+ </a>
 </li>
-<li><a class="reference internal" href="#miscellaneous">Miscellaneous</a><ul>
-<li><a class="reference internal" href="#adjusttext">adjustText</a></li>
-<li><a class="reference internal" href="#iterm2-terminal-backend">iTerm2 terminal backend</a></li>
+
+    
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../contents.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../resources/index.html" title="previous chapter">External Resources</a></li>
-      <li>Next: <a href="../api/index.html" title="next chapter">The Matplotlib API</a></li>
-  </ul></li>
-</ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/thirdpartypackages/index.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
       </div>
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://gitter.im/matplotlib" rel="noopener" target="_blank" title="gitter">
+            <span><i class="fab fa-gitter"></i></span>
+            <label class="sr-only">gitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discourse.matplotlib.org" rel="noopener" target="_blank" title="discourse">
+            <span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">discourse</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/matplotlib/matplotlib" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/matplotlib/" rel="noopener" target="_blank" title="twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
             
-  <div class="section" id="third-party-packages">
-<span id="thirdparty-index"></span><h1>Third party packages<a class="headerlink" href="#third-party-packages" title="Permalink to this headline">¶</a></h1>
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mapping-toolkits">
+   Mapping toolkits
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basemap">
+     Basemap
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cartopy">
+     Cartopy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geoplot">
+     Geoplot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ridge-map">
+     Ridge Map
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#declarative-libraries">
+   Declarative libraries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ggplot">
+     ggplot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#holoviews">
+     holoviews
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotnine">
+     plotnine
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specialty-plots">
+   Specialty plots
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#broken-axes">
+     Broken Axes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decida">
+     DeCiDa
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib-scalebar">
+     matplotlib-scalebar
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib-venn">
+     Matplotlib-Venn
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mpl-probscale">
+     mpl-probscale
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mpl-scatter-density">
+     mpl-scatter-density
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mplstereonet">
+     mplstereonet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#natgrid">
+     Natgrid
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyupset">
+     pyUpSet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seaborn">
+     seaborn
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wcsaxes">
+     WCSAxes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#windrose">
+     Windrose
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#yellowbrick">
+     Yellowbrick
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#animations">
+   Animations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#animatplot">
+     animatplot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gif">
+     gif
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpngw">
+     numpngw
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactivity">
+   Interactivity
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mplcursors">
+     mplcursors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mpldatacursor">
+     MplDataCursor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mpl-interactions">
+     mpl_interactions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rendering-backends">
+   Rendering backends
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mplcairo">
+     mplcairo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gr">
+     gr
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gui-integration">
+   GUI integration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wxmplot">
+     wxmplot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#miscellaneous">
+   Miscellaneous
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adjusttext">
+     adjustText
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterm2-terminal-backend">
+     iTerm2 terminal backend
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mpl-template">
+     mpl-template
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figpager">
+     figpager
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#blume">
+     blume
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#highlight-text">
+     highlight-text
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dna-features-viewer">
+     DNA Features Viewer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gui-applications">
+   GUI applications
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sviewgui">
+     sviewgui
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page has been moved to &lt;<a class="reference external" href="https://matplotlib.org/mpl-third-party/">https://matplotlib.org/mpl-third-party/</a>&gt;,
+where you will find an up-to-date list of packages.</p>
+</div>
+<div class="section" id="third-party-packages">
+<h1>Third party packages<a class="headerlink" href="#third-party-packages" title="Permalink to this headline">¶</a></h1>
 <p>Several external packages that extend or build on Matplotlib functionality are
-listed below.  They are maintained and distributed separately from Matplotlib
+listed below. You can find more packages at <a class="reference external" href="https://pypi.org/search/?q=&amp;o=&amp;c=Framework+%3A%3A+Matplotlib">PyPI</a>.
+They are maintained and distributed separately from Matplotlib,
 and thus need to be installed individually.</p>
-<p>Please submit an issue or pull request on Github if you have created
-a package that you would like to have included.  We are also happy to
-host third party packages within the <a class="reference external" href="https://github.com/matplotlib">Matplotlib Github Organization</a>.</p>
+<p>If you have a created a package that extends or builds on Matplotlib
+and would like to have your package listed on this page, please submit
+an issue or pull request on GitHub. The pull request should include a short
+description of the library and an image demonstrating the functionality.
+To be included in the PyPI listing, please include <code class="docutils literal notranslate"><span class="pre">Framework</span> <span class="pre">::</span> <span class="pre">Matplotlib</span></code>
+in the classifier list in the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file for your package. We are also
+happy to host third party packages within the <a class="reference external" href="https://github.com/matplotlib">Matplotlib GitHub Organization</a>.</p>
 <div class="section" id="mapping-toolkits">
 <h2>Mapping toolkits<a class="headerlink" href="#mapping-toolkits" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="basemap">
 <h3>Basemap<a class="headerlink" href="#basemap" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://matplotlib.org/basemap">Basemap</a> plots data on map projections, with
-continental and political boundaries.</p>
+<p><a class="reference external" href="https://matplotlib.org/basemap/">Basemap</a> plots data on map projections,
+with continental and political boundaries.</p>
 <a class="reference internal image-reference" href="../_images/basemap_contour1.png"><img alt="../_images/basemap_contour1.png" src="../_images/basemap_contour1.png" style="height: 400px;" /></a>
 </div>
 <div class="section" id="cartopy">
 <h3>Cartopy<a class="headerlink" href="#cartopy" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://scitools.org.uk/cartopy/docs/latest">Cartopy</a> builds on top
+<p><a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/">Cartopy</a> builds on top
 of Matplotlib to provide object oriented map projection definitions
 and close integration with Shapely for powerful yet easy-to-use vector
-data processing tools. An example plot from the <a class="reference external" href="http://scitools.org.uk/cartopy/docs/latest/gallery.html">Cartopy gallery</a>:</p>
+data processing tools. An example plot from the <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/gallery/index.html">Cartopy gallery</a>:</p>
 <a class="reference internal image-reference" href="../_images/cartopy_hurricane_katrina_01_00.png"><img alt="../_images/cartopy_hurricane_katrina_01_00.png" src="../_images/cartopy_hurricane_katrina_01_00.png" style="height: 400px;" /></a>
+</div>
+<div class="section" id="geoplot">
+<h3>Geoplot<a class="headerlink" href="#geoplot" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://residentmario.github.io/geoplot/index.html">Geoplot</a> builds on top
+of Matplotlib and Cartopy to provide a &quot;standard library&quot; of simple, powerful,
+and customizable plot types. An example plot from the <a class="reference external" href="https://residentmario.github.io/geoplot/index.html">Geoplot gallery</a>:</p>
+<a class="reference internal image-reference" href="../_images/geoplot_nyc_traffic_tickets.png"><img alt="../_images/geoplot_nyc_traffic_tickets.png" src="../_images/geoplot_nyc_traffic_tickets.png" style="height: 400px;" /></a>
+</div>
+<div class="section" id="ridge-map">
+<h3>Ridge Map<a class="headerlink" href="#ridge-map" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/ColCarroll/ridge_map">ridge_map</a> uses Matplotlib,
+SRTM.py, NumPy, and scikit-image to make ridge plots of your favorite
+ridges.</p>
+<a class="reference internal image-reference" href="../_images/ridge_map_white_mountains.png"><img alt="../_images/ridge_map_white_mountains.png" src="../_images/ridge_map_white_mountains.png" style="height: 364px;" /></a>
 </div>
 </div>
 <div class="section" id="declarative-libraries">
@@ -206,16 +531,42 @@ to python based on Matplotlib.</p>
 <div class="section" id="holoviews">
 <h3>holoviews<a class="headerlink" href="#holoviews" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="http://holoviews.org">holoviews</a> makes it easier to visualize data
-interactively, especially in a <a class="reference external" href="http://jupyter.org">Jupyter notebook</a>, by
+interactively, especially in a <a class="reference external" href="https://jupyter.org">Jupyter notebook</a>, by
 providing a set of declarative plotting objects that store your data and
 associated metadata.  Your data is then immediately visualizable alongside or
 overlaid with other data, either statically or with automatically provided
 widgets for parameter exploration.</p>
 <a class="reference internal image-reference" href="../_images/holoviews.png"><img alt="../_images/holoviews.png" src="../_images/holoviews.png" style="height: 354px;" /></a>
 </div>
+<div class="section" id="plotnine">
+<h3>plotnine<a class="headerlink" href="#plotnine" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://plotnine.readthedocs.io/en/stable/">plotnine</a> implements a grammar
+of graphics, similar to R's <a class="reference external" href="https://ggplot2.tidyverse.org/">ggplot2</a>.
+The grammar allows users to compose plots by explicitly mapping data to the
+visual objects that make up the plot.</p>
+<img alt="../_images/plotnine.png" src="../_images/plotnine.png" />
+</div>
 </div>
 <div class="section" id="specialty-plots">
 <h2>Specialty plots<a class="headerlink" href="#specialty-plots" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="broken-axes">
+<h3>Broken Axes<a class="headerlink" href="#broken-axes" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/bendichter/brokenaxes">brokenaxes</a> supplies an axes
+class that can have a visual break to indicate a discontinuous range.</p>
+<img alt="../_images/brokenaxes.png" src="../_images/brokenaxes.png" />
+</div>
+<div class="section" id="decida">
+<h3>DeCiDa<a class="headerlink" href="#decida" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://pypi.org/project/DeCiDa/">DeCiDa</a> is a library of functions
+and classes for electron device characterization, electronic circuit design and
+general data visualization and analysis.</p>
+</div>
+<div class="section" id="matplotlib-scalebar">
+<h3>matplotlib-scalebar<a class="headerlink" href="#matplotlib-scalebar" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/ppinard/matplotlib-scalebar">matplotlib-scalebar</a> provides a new artist to display a scale bar, aka micron bar.
+It is particularly useful when displaying calibrated images plotted using <code class="docutils literal notranslate"><span class="pre">plt.imshow(...)</span></code>.</p>
+<img alt="../_images/gold_on_carbon.jpg" src="../_images/gold_on_carbon.jpg" />
+</div>
 <div class="section" id="matplotlib-venn">
 <h3>Matplotlib-Venn<a class="headerlink" href="#matplotlib-venn" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/konstantint/matplotlib-venn">Matplotlib-Venn</a> provides a
@@ -224,11 +575,22 @@ diagrams.</p>
 </div>
 <div class="section" id="mpl-probscale">
 <h3>mpl-probscale<a class="headerlink" href="#mpl-probscale" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://matplotlib.org/mpl-probscale/">mpl-probscale</a> is a small extension
-that allows Matplotlib users to specify probabilty scales. Simply importing the
-<code class="docutils literal"><span class="pre">probscale</span></code> module registers the scale with Matplotlib, making it accessible
-via e.g., <code class="docutils literal"><span class="pre">ax.set_xscale('prob')</span></code> or <code class="docutils literal"><span class="pre">plt.yscale('prob')</span></code>.</p>
+<p><a class="reference external" href="https://matplotlib.org/mpl-probscale/">mpl-probscale</a> is a small extension
+that allows Matplotlib users to specify probability scales. Simply importing the
+<code class="docutils literal notranslate"><span class="pre">probscale</span></code> module registers the scale with Matplotlib, making it accessible
+via e.g., <code class="docutils literal notranslate"><span class="pre">ax.set_xscale('prob')</span></code> or <code class="docutils literal notranslate"><span class="pre">plt.yscale('prob')</span></code>.</p>
 <img alt="../_images/probscale_demo.png" src="../_images/probscale_demo.png" />
+</div>
+<div class="section" id="mpl-scatter-density">
+<h3>mpl-scatter-density<a class="headerlink" href="#mpl-scatter-density" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/astrofrog/mpl-scatter-density">mpl-scatter-density</a> is a
+small package that makes it easy to make scatter plots of large numbers
+of points using a density map. The following example contains around 13 million
+points and the plotting (excluding reading in the data) took less than a
+second on an average laptop:</p>
+<a class="reference internal image-reference" href="../_images/mpl-scatter-density.png"><img alt="../_images/mpl-scatter-density.png" src="../_images/mpl-scatter-density.png" style="height: 400px;" /></a>
+<p>When used in interactive mode, the density map is downsampled on-the-fly while
+panning/zooming in order to provide a smooth interactive experience.</p>
 </div>
 <div class="section" id="mplstereonet">
 <h3>mplstereonet<a class="headerlink" href="#mplstereonet" title="Permalink to this headline">¶</a></h3>
@@ -243,7 +605,7 @@ to the natgrid C library for gridding irregularly spaced data.</p>
 <div class="section" id="pyupset">
 <h3>pyUpSet<a class="headerlink" href="#pyupset" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/ImSoErgodic/py-upset">pyUpSet</a> is a
-static Python implementation of the <a class="reference external" href="http://www.caleydo.org/tools/upset/">UpSet suite by Lex et al.</a> to explore complex intersections of
+static Python implementation of the <a class="reference external" href="http://caleydo.org/tools/upset/">UpSet suite by Lex et al.</a> to explore complex intersections of
 sets and data frames.</p>
 </div>
 <div class="section" id="seaborn">
@@ -253,17 +615,51 @@ statistical graphics with Matplotlib. It aims to make visualization a central
 part of exploring and understanding complex datasets.</p>
 <a class="reference internal image-reference" href="../_images/seaborn.png"><img alt="../_images/seaborn.png" src="../_images/seaborn.png" style="height: 157px;" /></a>
 </div>
+<div class="section" id="wcsaxes">
+<h3>WCSAxes<a class="headerlink" href="#wcsaxes" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://www.astropy.org/">Astropy</a> core package includes a submodule
+called WCSAxes (available at <a class="reference external" href="http://docs.astropy.org/en/stable/visualization/wcsaxes/index.html">astropy.visualization.wcsaxes</a>) which
+adds Matplotlib projections for Astronomical image data. The following is an
+example of a plot made with WCSAxes which includes the original coordinate
+system of the image and an overlay of a different coordinate system:</p>
+<a class="reference internal image-reference" href="../_images/wcsaxes.jpg"><img alt="../_images/wcsaxes.jpg" src="../_images/wcsaxes.jpg" style="height: 400px;" /></a>
+</div>
 <div class="section" id="windrose">
 <h3>Windrose<a class="headerlink" href="#windrose" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/scls19fr/windrose">Windrose</a> is a Python Matplotlib,
 Numpy library to manage wind data, draw windroses (also known as polar rose
 plots), draw probability density functions and fit Weibull distributions.</p>
 </div>
-<div class="section" id="decida">
-<h3>DeCiDa<a class="headerlink" href="#decida" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://pypi.python.org/pypi/DeCiDa">DeCiDa</a> is a library of functions
-and classes for electron device characterization, electronic circuit design and
-general data visualization and analysis.</p>
+<div class="section" id="yellowbrick">
+<h3>Yellowbrick<a class="headerlink" href="#yellowbrick" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.scikit-yb.org/">Yellowbrick</a> is a suite of visual diagnostic tools for machine learning that enables human steering of the model selection process. Yellowbrick combines scikit-learn with matplotlib using an estimator-based API called the <code class="docutils literal notranslate"><span class="pre">Visualizer</span></code>, which wraps both sklearn models and matplotlib Axes. <code class="docutils literal notranslate"><span class="pre">Visualizer</span></code> objects fit neatly into the machine learning workflow allowing data scientists to integrate visual diagnostic and model interpretation tools into experimentation without extra steps.</p>
+<a class="reference internal image-reference" href="../_images/yellowbrick.png"><img alt="../_images/yellowbrick.png" src="../_images/yellowbrick.png" style="height: 400px;" /></a>
+</div>
+</div>
+<div class="section" id="animations">
+<h2>Animations<a class="headerlink" href="#animations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="animatplot">
+<h3>animatplot<a class="headerlink" href="#animatplot" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://animatplot.readthedocs.io/">animatplot</a> is a library for
+producing interactive animated plots with the goal of making production of
+animated plots almost as easy as static ones.</p>
+<img alt="../_images/animatplot.png" src="../_images/animatplot.png" />
+<p>For an animated version of the above picture and more examples, see the
+<a class="reference external" href="https://animatplot.readthedocs.io/en/stable/gallery.html">animatplot gallery.</a></p>
+</div>
+<div class="section" id="gif">
+<h3>gif<a class="headerlink" href="#gif" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/maxhumber/gif/">gif</a> is an ultra lightweight animated gif API.</p>
+<img alt="../_images/gif_attachment_example.png" src="../_images/gif_attachment_example.png" />
+</div>
+<div class="section" id="numpngw">
+<h3>numpngw<a class="headerlink" href="#numpngw" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://pypi.org/project/numpngw/">numpngw</a>  provides functions for writing
+NumPy arrays to PNG and animated PNG files.  It also includes the class
+<code class="docutils literal notranslate"><span class="pre">AnimatedPNGWriter</span></code> that can be used to save a Matplotlib animation as an
+animated PNG file.  See the example on the PyPI page or at the <code class="docutils literal notranslate"><span class="pre">numpngw</span></code>
+<a class="reference external" href="https://github.com/WarrenWeckesser/numpngw">github repository</a>.</p>
+<img alt="../_images/numpngw_animated_example.png" src="../_images/numpngw_animated_example.png" />
 </div>
 </div>
 <div class="section" id="interactivity">
@@ -276,8 +672,40 @@ cursors for Matplotlib.</p>
 <div class="section" id="mpldatacursor">
 <h3>MplDataCursor<a class="headerlink" href="#mpldatacursor" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/joferkington/mpldatacursor">MplDataCursor</a> is a toolkit
-written by Joe Kington to provide interactive “data cursors” (clickable
+written by Joe Kington to provide interactive &quot;data cursors&quot; (clickable
 annotation boxes) for Matplotlib.</p>
+</div>
+<div class="section" id="mpl-interactions">
+<h3>mpl_interactions<a class="headerlink" href="#mpl-interactions" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://mpl-interactions.readthedocs.io/en/latest/">mpl_interactions</a>
+makes it easy to create interactive plots controlled by sliders and other
+widgets. It also provides several handy capabilities such as manual
+image segmentation, comparing cross-sections of arrays, and using the
+scroll wheel to zoom.</p>
+<img alt="../_images/mpl-interactions-slider-animated.png" src="../_images/mpl-interactions-slider-animated.png" />
+</div>
+</div>
+<div class="section" id="rendering-backends">
+<h2>Rendering backends<a class="headerlink" href="#rendering-backends" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mplcairo">
+<h3>mplcairo<a class="headerlink" href="#mplcairo" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/anntzer/mplcairo">mplcairo</a> is a cairo backend for
+Matplotlib, with faster and more accurate marker drawing, support for a wider
+selection of font formats and complex text layout, and various other features.</p>
+</div>
+<div class="section" id="gr">
+<h3>gr<a class="headerlink" href="#gr" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://gr-framework.org/">gr</a> is a framework for cross-platform
+visualisation applications, which can be used as a high-performance Matplotlib
+backend.</p>
+</div>
+</div>
+<div class="section" id="gui-integration">
+<h2>GUI integration<a class="headerlink" href="#gui-integration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="wxmplot">
+<h3>wxmplot<a class="headerlink" href="#wxmplot" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://pypi.org/project/wxmplot/">WXMPlot</a> provides advanced wxPython
+widgets for plotting and image display of numerical data based on Matplotlib.</p>
 </div>
 </div>
 <div class="section" id="miscellaneous">
@@ -296,181 +724,97 @@ external Matplotlib backend using the iTerm2 nightly build inline image display
 feature.</p>
 <img alt="../_images/matplotlib_iterm2_demo.png" src="../_images/matplotlib_iterm2_demo.png" />
 </div>
+<div class="section" id="mpl-template">
+<h3>mpl-template<a class="headerlink" href="#mpl-template" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://austinorr.github.io/mpl-template/index.html">mpl-template</a> provides
+a customizable way to add engineering figure elements such as a title block,
+border, and logo.</p>
+<a class="reference internal image-reference" href="../_images/mpl_template_example.png"><img alt="../_images/mpl_template_example.png" src="../_images/mpl_template_example.png" style="height: 330px;" /></a>
+</div>
+<div class="section" id="figpager">
+<h3>figpager<a class="headerlink" href="#figpager" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://pypi.org/project/figpager/">figpager</a> provides customizable figure
+elements such as text, lines and images and subplot layout control for single
+or multi page output.</p>
+<blockquote>
+<div><img alt="../_images/figpager.png" src="../_images/figpager.png" />
+</div></blockquote>
+</div>
+<div class="section" id="blume">
+<h3>blume<a class="headerlink" href="#blume" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://pypi.org/project/blume/">blume</a> provides a replacement for
+the Matplotlib <code class="docutils literal notranslate"><span class="pre">table</span></code> module.  It fixes a number of issues with the
+existing table. See the <a class="reference external" href="https://github.com/swfiua/blume">blume github repository</a> for more details.</p>
+<img alt="../_images/blume_table_example.png" src="../_images/blume_table_example.png" />
+</div>
+<div class="section" id="highlight-text">
+<h3>highlight-text<a class="headerlink" href="#highlight-text" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://pypi.org/project/highlight-text/">highlight-text</a> is a small library
+that provides an easy way to effectively annotate plots by highlighting
+substrings with the font properties of your choice.
+See the <a class="reference external" href="https://github.com/znstrider/highlight_text">highlight-text github repository</a> for more details and examples.</p>
+<img alt="../_images/highlight_text_examples.png" src="../_images/highlight_text_examples.png" />
+</div>
+<div class="section" id="dna-features-viewer">
+<h3>DNA Features Viewer<a class="headerlink" href="#dna-features-viewer" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/Edinburgh-Genome-Foundry/DnaFeaturesViewer">DNA Features Viewer</a>
+provides methods to plot annotated DNA sequence maps (possibly along other Matplotlib
+plots) for Bioinformatics and Synthetic Biology applications.</p>
+<img alt="../_images/dna_features_viewer_screenshot.png" src="../_images/dna_features_viewer_screenshot.png" />
+</div>
+</div>
+<div class="section" id="gui-applications">
+<h2>GUI applications<a class="headerlink" href="#gui-applications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sviewgui">
+<h3>sviewgui<a class="headerlink" href="#sviewgui" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://pypi.org/project/sviewgui/">sviewgui</a> is a PyQt-based GUI for
+visualisation of data from csv files or <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>s. Main features:</p>
+<ul class="simple">
+<li><p>Scatter, line, density, histogram, and box plot types</p></li>
+<li><p>Settings for the marker size, line width, number of bins of histogram,
+colormap (from cmocean)</p></li>
+<li><p>Save figure as editable PDF</p></li>
+<li><p>Code of the plotted graph is available so that it can be reused and modified
+outside of sviewgui</p></li>
+</ul>
+<img alt="../_images/sviewgui_sample.png" src="../_images/sviewgui_sample.png" />
+</div>
 </div>
 </div>
 
 
-          </div>
-        </div>
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
       </div>
-
-      <div class="clearer"></div>
     </div>
-    <div class="footer">
-        &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
-      Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2021 The Matplotlib development team.<br/>
+</p>
     </div>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-55954603-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</body>
-<footer>
-  <!--Flipcause Integration v3.0// Flipcause Integration Instructions:
-Install the following code block once in the website Header (after <head> tag) -->
-
-<style>
-
-.fc-black_overlay{
-display:none; position: fixed; z-index:1000001; top: 0%;left: 0%;width: 100%;height: 100%;
-background-color: black; filter: alpha(opacity=50); cursor:pointer; opacity:0.5;
-}
-
-.fc-white_content {
-opacity:1; display:none; margin-top: -320px; margin-left: -485px; width:970px; height:640px;
-position:fixed; top:50%; left:50%; border: none;z-index:1000002;overflow: auto;
-}
-
-.fc-main-box{
-opacity:1; display:none; margin:15px auto 0 auto; width:930px; position:relative; z-index:1000003;
-}
-
-.fc-widget_close{
-opacity:1; content:url(http://i1338.photobucket.com/albums/o691/WeCause/X_zpse4a7e538.png);
-position:absolute; z-index=1000004; right:-16px; top:-16px; display:block; cursor:pointer;
-}
-
-.floating_button{
-display: block; margin-top: 0px; margin-left: 0px; width:auto ; height: auto;
-position:fixed; z-index:999999; overflow: auto;
-}
-
-@keyframes backfadesin {
-   from { opacity:0; }
-   to {opacity:.5;}
-}
-
-@-moz-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@-webkit-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@-o-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-
-@-ms-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; transform: translateY(20px);}
-   100% {opacity: 1; transform: translateY(0);}
-}
-
-@-moz-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -moz-transform: translateY(20px);}
-   100% {opacity: 1; -moz-transform: translateY(0);}
-}
-
-@-webkit-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -webkit-transform: translateY(20px);}
-   100% {opacity: 1; -webkit-transform: translateY(0);}
-}
-
-@-o-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -o-transform: translateY(20px);}
-   100% {opacity: 1; -o-transform: translateY(0);}
-}
-
-@-ms-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -ms-transform: translateY(20px);}
-   100% {opacity: 1; -ms-transform: translateY(0);}
-}
-
-</style>
-
-<script>
-
-function open_window(cause_id) {
-var  protocol=String(document.location.protocol);
-var new_url;
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-new_url="https://www.flipcause.com/widget/"+cause_id
-window.open(new_url);
-}
-
-else {
-document.getElementById("fc-fade").style.display = "block";
-document.getElementById("fc-fade").style.webkitAnimation = "backfadesin 1s";
-document.getElementById("fc-fade").style.animation = "backfadesin 1s";
-document.getElementById("fc-fade").style.mozAnimation = "backfadesin 1s";
-document.getElementById("fc-light").style.display = "block";
-document.getElementById("fc-light").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-light").style.animation = "fadesin 1.5s";
-document.getElementById("fc-light").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-main").style.display = "block";
-document.getElementById("fc-main").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-main").style.animation = "fadesin 1.5s";
-document.getElementById("fc-main").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-close").style.display = "block";
-document.getElementById("fc-close").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-close").style.animation = "fadesin 1.5s";
-document.getElementById("fc-close").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.display = "block";
-document.getElementById("fc-myFrame").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.animation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").src="https://www.flipcause.com/widget/"+cause_id;
-}
-}
-
-
-function close_window() {
-document.getElementById("fc-fade").style.display="none";
-document.getElementById("fc-light").style.display="none";
-document.getElementById("fc-main").style.display="none";
-document.getElementById("fc-close").style.display="none";
-document.getElementById("fc-myFrame").style.display="none";
-}
-
-</script>
-
-<div id="fc-fade" class="fc-black_overlay" onclick="close_window()"></div>
-<div id="fc-light" class="fc-white_content">
-<div id="fc-main" class="fc-main-box">
-<div id="fc-close" class="fc-widget_close" onclick="close_window()">
-</div><iframe id="fc-myFrame" iframe height="580" width="925" style="border: 0;
-border-radius:5px 5px 5px 5px; box-shadow:0 0 8px rgba(0, 0, 0, 0.5);" scrolling="no" src=""></iframe></div>
-</div>
-
-<!--END Flipcause Main Integration Code-->
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
 </footer>
+  </body>
 </html>

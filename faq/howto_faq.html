@@ -1,263 +1,1904 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How-to &#8212; Matplotlib 3.4.2.post1414+g246a489ce6 documentation</title>
     
-    <title>How-To &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
     
-    <link rel="stylesheet" href="../_static/mpl.css"
-type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css"
-type="text/css" />
-    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mpl.css?v3.4.2-1414-g246a489ce6" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 3.4.2.post1414+g246a489ce6 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html"
-/>
-    <link rel="search" title="Search" href="../search.html"
-/>
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../index.html" />
-    <link rel="up" title="The Matplotlib FAQ" href="index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Troubleshooting" href="troubleshooting_faq.html" />
-    <link rel="prev" title="Installation" href="installing_faq.html" /> 
-
-
+    <link rel="prev" title="Installation" href="installing_faq.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo2.svg" class="logo" alt="logo">
+</a>      
 
 
+    
+  </div>
 
-<!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../index.html"><img src="../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
-</div>
-
-
-
-
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="troubleshooting_faq.html" title="Troubleshooting"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="installing_faq.html" title="Installation"
-             accesskey="P">previous</a> |</li>
-
-        <li><a href="../index.html">home</a>|&nbsp;</li>
-        <li><a href="../gallery/index.html">examples</a>|&nbsp;</li>
-        <li><a href="../tutorials/index.html">tutorials</a>|&nbsp;</li>
-        <li><a href="../api/pyplot_summary.html">pyplot</a>|&nbsp;</li>
-        <li><a href="../contents.html">docs</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">The Matplotlib FAQ</a> &raquo;</li> 
-      </ul>
-    </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
   
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
-  <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
-
-<br/>
-
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../_static/depsy_badge.svg">
-</a>
-
-<br/>
-
-Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
-  <img src="https://travis-ci.org/matplotlib/matplotlib.svg?branch=master"/>
-</a>
-<br/>
-  <h3><a href="../contents.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">How-To</a><ul>
-<li><a class="reference internal" href="#plotting-howto">Plotting: howto</a><ul>
-<li><a class="reference internal" href="#plot-numpy-datetime64-values">Plot <code class="docutils literal"><span class="pre">numpy.datetime64</span></code> values</a></li>
-<li><a class="reference internal" href="#find-all-objects-in-a-figure-of-a-certain-type">Find all objects in a figure of a certain type</a></li>
-<li><a class="reference internal" href="#how-to-prevent-ticklabels-from-having-an-offset">How to prevent ticklabels from having an offset</a></li>
-<li><a class="reference internal" href="#save-transparent-figures">Save transparent figures</a></li>
-<li><a class="reference internal" href="#save-multiple-plots-to-one-pdf-file">Save multiple plots to one pdf file</a></li>
-<li><a class="reference internal" href="#move-the-edge-of-an-axes-to-make-room-for-tick-labels">Move the edge of an axes to make room for tick labels</a></li>
-<li><a class="reference internal" href="#automatically-make-room-for-tick-labels">Automatically make room for tick labels</a></li>
-<li><a class="reference internal" href="#configure-the-tick-linewidths">Configure the tick linewidths</a></li>
-<li><a class="reference internal" href="#align-my-ylabels-across-multiple-subplots">Align my ylabels across multiple subplots</a></li>
-<li><a class="reference internal" href="#skip-dates-where-there-is-no-data">Skip dates where there is no data</a></li>
-<li><a class="reference internal" href="#control-the-depth-of-plot-elements">Control the depth of plot elements</a></li>
-<li><a class="reference internal" href="#make-the-aspect-ratio-for-plots-equal">Make the aspect ratio for plots equal</a></li>
-<li><a class="reference internal" href="#multiple-y-axis-scales">Multiple y-axis scales</a></li>
-<li><a class="reference internal" href="#generate-images-without-having-a-window-appear">Generate images without having a window appear</a></li>
-<li><a class="reference internal" href="#use-show">Use <code class="docutils literal"><span class="pre">show()</span></code></a></li>
-<li><a class="reference internal" href="#interpreting-box-plots-and-violin-plots">Interpreting box plots and violin plots</a></li>
-</ul>
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../users/installing.html">
+  Installation
+ </a>
 </li>
-<li><a class="reference internal" href="#contributing-howto">Contributing: howto</a><ul>
-<li><a class="reference internal" href="#request-a-new-feature">Request a new feature</a></li>
-<li><a class="reference internal" href="#reporting-a-bug-or-submitting-a-patch">Reporting a bug or submitting a patch</a></li>
-<li><a class="reference internal" href="#contribute-to-matplotlib-documentation">Contribute to Matplotlib documentation</a></li>
-</ul>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../plot_types/index.html">
+  Plot types
+ </a>
 </li>
-<li><a class="reference internal" href="#matplotlib-in-a-web-application-server">Matplotlib in a web application server</a><ul>
-<li><a class="reference internal" href="#matplotlib-with-apache">Matplotlib with apache</a></li>
-<li><a class="reference internal" href="#matplotlib-with-django">Matplotlib with django</a></li>
-<li><a class="reference internal" href="#matplotlib-with-zope">Matplotlib with zope</a></li>
-<li><a class="reference internal" href="#clickable-images-for-html">Clickable images for HTML</a></li>
-</ul>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../gallery/index.html">
+  Gallery
+ </a>
 </li>
-<li><a class="reference internal" href="#search-examples">Search examples</a></li>
-<li><a class="reference internal" href="#cite-matplotlib">Cite Matplotlib</a></li>
-</ul>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../tutorials/index.html">
+  Tutorials
+ </a>
 </li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/index.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../users/index.html">
+  User's guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../devel/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference external nav-link" href="https://matplotlib.org/mpl-third-party/">
+  Third-party packages
+ </a>
+</li>
+
+    
 </ul>
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../contents.html">Documentation overview</a><ul>
-  <li><a href="index.html">The Matplotlib FAQ</a><ul>
-      <li>Previous: <a href="installing_faq.html" title="previous chapter">Installation</a></li>
-      <li>Next: <a href="troubleshooting_faq.html" title="next chapter">Troubleshooting</a></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/faq/howto_faq.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
       </div>
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
-            
-  <div class="section" id="how-to">
-<span id="howto-faq"></span><h1>How-To<a class="headerlink" href="#how-to" title="Permalink to this headline">¶</a></h1>
-<div class="contents topic" id="contents">
-<p class="topic-title first">Contents</p>
-<ul class="simple">
-<li><a class="reference internal" href="#how-to" id="id4">How-To</a><ul>
-<li><a class="reference internal" href="#plotting-howto" id="id5">Plotting: howto</a><ul>
-<li><a class="reference internal" href="#plot-numpy-datetime64-values" id="id6">Plot <code class="xref py py-obj docutils literal"><span class="pre">numpy.datetime64</span></code> values</a></li>
-<li><a class="reference internal" href="#find-all-objects-in-a-figure-of-a-certain-type" id="id7">Find all objects in a figure of a certain type</a></li>
-<li><a class="reference internal" href="#how-to-prevent-ticklabels-from-having-an-offset" id="id8">How to prevent ticklabels from having an offset</a></li>
-<li><a class="reference internal" href="#save-transparent-figures" id="id9">Save transparent figures</a></li>
-<li><a class="reference internal" href="#save-multiple-plots-to-one-pdf-file" id="id10">Save multiple plots to one pdf file</a></li>
-<li><a class="reference internal" href="#move-the-edge-of-an-axes-to-make-room-for-tick-labels" id="id11">Move the edge of an axes to make room for tick labels</a></li>
-<li><a class="reference internal" href="#automatically-make-room-for-tick-labels" id="id12">Automatically make room for tick labels</a></li>
-<li><a class="reference internal" href="#configure-the-tick-linewidths" id="id13">Configure the tick linewidths</a></li>
-<li><a class="reference internal" href="#align-my-ylabels-across-multiple-subplots" id="id14">Align my ylabels across multiple subplots</a></li>
-<li><a class="reference internal" href="#skip-dates-where-there-is-no-data" id="id15">Skip dates where there is no data</a></li>
-<li><a class="reference internal" href="#control-the-depth-of-plot-elements" id="id16">Control the depth of plot elements</a></li>
-<li><a class="reference internal" href="#make-the-aspect-ratio-for-plots-equal" id="id17">Make the aspect ratio for plots equal</a></li>
-<li><a class="reference internal" href="#multiple-y-axis-scales" id="id18">Multiple y-axis scales</a></li>
-<li><a class="reference internal" href="#generate-images-without-having-a-window-appear" id="id19">Generate images without having a window appear</a></li>
-<li><a class="reference internal" href="#use-show" id="id20">Use <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><code class="xref py py-func docutils literal"><span class="pre">show()</span></code></a></a></li>
-<li><a class="reference internal" href="#interpreting-box-plots-and-violin-plots" id="id21">Interpreting box plots and violin plots</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#contributing-howto" id="id22">Contributing: howto</a><ul>
-<li><a class="reference internal" href="#request-a-new-feature" id="id23">Request a new feature</a></li>
-<li><a class="reference internal" href="#reporting-a-bug-or-submitting-a-patch" id="id24">Reporting a bug or submitting a patch</a></li>
-<li><a class="reference internal" href="#contribute-to-matplotlib-documentation" id="id25">Contribute to Matplotlib documentation</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#matplotlib-in-a-web-application-server" id="id26">Matplotlib in a web application server</a><ul>
-<li><a class="reference internal" href="#matplotlib-with-apache" id="id27">Matplotlib with apache</a></li>
-<li><a class="reference internal" href="#matplotlib-with-django" id="id28">Matplotlib with django</a></li>
-<li><a class="reference internal" href="#matplotlib-with-zope" id="id29">Matplotlib with zope</a></li>
-<li><a class="reference internal" href="#clickable-images-for-html" id="id30">Clickable images for HTML</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#search-examples" id="id31">Search examples</a></li>
-<li><a class="reference internal" href="#cite-matplotlib" id="id32">Cite Matplotlib</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="plotting-howto">
-<span id="howto-plotting"></span><h2>Plotting: howto<a class="headerlink" href="#plotting-howto" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="plot-numpy-datetime64-values">
-<span id="howto-datetime64"></span><h3>Plot <code class="xref py py-obj docutils literal"><span class="pre">numpy.datetime64</span></code> values<a class="headerlink" href="#plot-numpy-datetime64-values" title="Permalink to this headline">¶</a></h3>
-<p>For Matplotlib to plot dates (or any scalar with units) a converter
-to float needs to be registered with the <code class="xref py py-obj docutils literal"><span class="pre">matplolib.units</span></code> module.  The
-current best converters for <code class="xref py py-obj docutils literal"><span class="pre">datetime64</span></code> values are in <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/index.html#module-pandas" title="(in pandas v0.20.3)"><code class="xref py py-obj docutils literal"><span class="pre">pandas</span></code></a>.  Simply
-importing <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/index.html#module-pandas" title="(in pandas v0.20.3)"><code class="xref py py-obj docutils literal"><span class="pre">pandas</span></code></a></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-</div>
-<p>should be sufficient as <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/index.html#module-pandas" title="(in pandas v0.20.3)"><code class="xref py py-obj docutils literal"><span class="pre">pandas</span></code></a> will try to install the converters
-on import.  If that does not work, or you need to reset <code class="xref py py-obj docutils literal"><span class="pre">munits.registry</span></code>
-you can explicitly install the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/index.html#module-pandas" title="(in pandas v0.20.3)"><code class="xref py py-obj docutils literal"><span class="pre">pandas</span></code></a> converters by</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas.tseries</span> <span class="k">import</span> <span class="n">converter</span> <span class="k">as</span> <span class="n">pdtc</span>
-<span class="n">pdtc</span><span class="o">.</span><span class="n">register</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>If you only want to use the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/index.html#module-pandas" title="(in pandas v0.20.3)"><code class="xref py py-obj docutils literal"><span class="pre">pandas</span></code></a> converter for <code class="xref py py-obj docutils literal"><span class="pre">datetime64</span></code> values</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas.tseries</span> <span class="k">import</span> <span class="n">converter</span> <span class="k">as</span> <span class="n">pdtc</span>
-<span class="kn">import</span> <span class="nn">matplotlib.units</span> <span class="k">as</span> <span class="nn">munits</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+      
+    </div>
 
-<span class="n">munits</span><span class="o">.</span><span class="n">registry</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">]</span> <span class="o">=</span> <span class="n">pdtc</span><span class="o">.</span><span class="n">DatetimeConverter</span><span class="p">()</span>
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://gitter.im/matplotlib" rel="noopener" target="_blank" title="gitter">
+            <span><i class="fab fa-gitter"></i></span>
+            <label class="sr-only">gitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discourse.matplotlib.org" rel="noopener" target="_blank" title="discourse">
+            <span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">discourse</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/matplotlib/matplotlib" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/matplotlib/" rel="noopener" target="_blank" title="twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../users/interactive.html">
+   Interactive figures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/interactive_guide.html">
+     Interactive figures and asynchronous programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/event_handling.html">
+     Event handling and picking
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../users/fonts.html">
+   Fonts in Matplotlib Text Engine
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../users/release_notes.html">
+   Release notes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../users/next_whats_new.html">
+     Next what's new?
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/next_whats_new/README.html">
+       Instructions for writing "What's new" entries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/next_whats_new/allow_changing_the_vertical_axis_in_3d_plots.html">
+       Allow changing the vertical axis in 3d plots
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/next_whats_new/animatable_FancyArrow.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         set_data
+        </span>
+       </code>
+       method for
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         FancyArrow
+        </span>
+       </code>
+       patch
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/next_whats_new/annulus.html">
+       Add
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Annulus
+        </span>
+       </code>
+       patch
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/next_whats_new/axes3d_computed_zorder.html">
+       Axes3D now allows manual control of draw order
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/next_whats_new/fig_draw_no_output.html">
+       Figure now has draw_no_output method
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/next_whats_new/legend_title_fontproperties_kwarg.html">
+       Font properties of legend title are configurable
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/next_whats_new/polygons_selector_remove_points.html">
+       Removing points on a PolygonSelector
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/next_whats_new/rcparams_legend.html">
+       New rcParams for legend: set legend labelcolor globally
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/next_whats_new/set_ticks_labels.html">
+       Settings tick positions and labels simultaneously in
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         set_ticks
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/next_whats_new/simplify_font_setting_usetex.html">
+       Simplifying the font setting for usetex mode
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/next_whats_new/slider_styling.html">
+       Updated the appearance of Slider widgets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/next_whats_new/widget_dragging.html">
+       Dragging selectors
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../api/next_api_changes.html">
+     Next API changes
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/00001-ABC.html">
+       Behavior Change template
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/14913-AL.html">
+       The output of
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         NonUniformImage
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         PcolorImage
+        </span>
+       </code>
+       has changed
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/18216-ES.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Axes
+        </span>
+       </code>
+       children are no longer separated by type
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/19375-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Figure.suppressComposite
+        </span>
+       </code>
+       now also controls compositing of Axes images
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/20012-AL.html">
+       Default theta tick locations for non-full-circle polar plots have changed
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/20027-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         axvspan
+        </span>
+       </code>
+       now plots full wedges in polar plots
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/20046-BB.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         MatplotlibDeprecationWarning
+        </span>
+       </code>
+       now subclasses
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         DeprecationWarning
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/20054-JMK.html">
+       Colorbar lines no longer clipped
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/20064-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         AxesDivider
+        </span>
+       </code>
+       now defaults to rcParams-specified pads
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/20077-TH.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Artist.set
+        </span>
+       </code>
+       applies artist properties in the order in which they are given
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/20150-TAC.html">
+       Rename fist arg to subplot_mosaic
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/20199-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Line2D.set_markeredgecolor(None)
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Line2D.set_markerfacecolor(None)
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/20268-JMK.html">
+       pcolor(mesh) shading defaults to auto
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/20367-AG.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Text
+        </span>
+       </code>
+       allows a boolean
+       <em>
+        parse_math
+       </em>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/behavior/20405-JMK.html">
+       Make norm from scale now public
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/00001-ABC.html">
+       Template for deprecations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/13860-AL.html">
+       Locator and Formatter wrapper methods
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/15604-AL.html">
+       Auto-removal of grids by
+       <code class="xref py py-obj docutils literal notranslate">
+        <span class="pre">
+         pcolor
+        </span>
+       </code>
+       and
+       <code class="xref py py-obj docutils literal notranslate">
+        <span class="pre">
+         pcolormesh
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/18216-ES.html">
+       Modification of
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Axes
+        </span>
+       </code>
+       children sublists
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/18346-TH.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         plot_date
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/19401-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         mpl_toolkits.axisartist.clip_path
+        </span>
+       </code>
+       is deprecated
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/19441-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         cursord
+        </span>
+       </code>
+       in GTK, Qt, and wx backends
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/19483-JMK.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         epoch2num
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         num2epoch
+        </span>
+       </code>
+       are deprecated
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/19487-AL.html">
+       Unused positional parameters to
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         print_&lt;fmt&gt;
+        </span>
+       </code>
+       methods are deprecated
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/19517-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         is_url
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         URL_REGEX
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/19558-AL.html">
+       The
+       <em>
+        format
+       </em>
+       parameter of
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         dviread.find_tex_file
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/19575-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Text.get_prop_tup
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/19585-AL.html">
+       matplotlib.style.core deprecations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/19655-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Tick.apply_tickdir
+        </span>
+       </code>
+       is deprecated
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/19795-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Dvi.baseline
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/19858-AL.html">
+       "units finalize" signal
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/19934-DS.html">
+       <em>
+        drawtype
+       </em>
+       argument to RectangleSelector
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20063-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Divider.get_vsize_hsize
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Grid.get_vsize_hsize
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20065-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         AxesDivider.append_axes(...,
+        </span>
+        <span class="pre">
+         add_to_figure=False)
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20091-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         tight_layout.auto_adjust_subplotpars
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20108-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ContourLabeler.get_label_width
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20109-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         plot_directive
+        </span>
+       </code>
+       internals deprecations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20113-EP.html">
+       SpanSelector
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20126-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         font_manager
+        </span>
+       </code>
+       helpers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20170-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         SubplotParams.validate
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20173-AL.html">
+       The first parameter of
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Axes.grid
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Axis.grid
+        </span>
+       </code>
+       has been renamed to
+       <em>
+        visible
+       </em>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20193-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ParasiteAxesBase.get_images_artists
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20206-AL.html">
+       The
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         grid_info
+        </span>
+       </code>
+       attribute of
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         axisartist
+        </span>
+       </code>
+       classes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20208-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         matplotlib.blocking_input
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20209-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         cbook.report_memory
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20237-TH.html">
+       QuadMesh signature
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20278-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         TexManager
+        </span>
+       </code>
+       attributes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20302-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         QuadMesh.convert_mesh_to_paths
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         QuadMesh.convert_mesh_to_triangles
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20311-AL.html">
+       rcParams will no longer cast inputs to str
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20334-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ConversionInterface.convert
+        </span>
+       </code>
+       no longer needs to accept unitless values
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20428-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         FancyArrowPatch.get_path_in_displaycoord
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ConnectionPath.get_path_in_displaycoord
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20466-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         backend_pgf.LatexManager.str_cache
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20474-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         dviread.PsfontsMap
+        </span>
+       </code>
+       now raises LookupError instead of KeyError for missing fonts
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20540-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         :encoding:
+        </span>
+       </code>
+       option to
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ..
+        </span>
+        <span class="pre">
+         plot
+        </span>
+       </code>
+       directive
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20543-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         @pytest.mark.style
+        </span>
+       </code>
+       is deprecated
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20585-EP.html">
+       Unification of Selector API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20601-ES.html">
+       Selector widget state internals
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/deprecations/20638-AL.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         FixedAxisArtistHelper.change_tick_coord
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/development/00001-ABC.html">
+       Development Change template
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/development/20003-ES.html">
+       Increase to minimum supported versions of dependencies
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/00001-ABC.html">
+       Removal Change template
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/19033-AL.html">
+       The private
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         matplotlib.axes._subplots._subplot_classes
+        </span>
+       </code>
+       dict has been removed
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/19348-OE.html">
+       Removed
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         dates.YearLocator.replaced
+        </span>
+       </code>
+       attribute
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/19552-GL.html">
+       ScalarMappable update checkers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/19795-AL.html">
+       usetex-related removals
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/19796-AL.html">
+       Keymaps toggling
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Axes.get_navigate
+        </span>
+       </code>
+       have been removed
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/19801-AL.html">
+       The
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         mathtext.fallback_to_cm
+        </span>
+       </code>
+       rcParams
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/19810-AL.html">
+       jpeg-related keywords and rcParams
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/19894-ES.html">
+       Qt4-based backends
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/19898-ES.html">
+       NavigationToolbar2._init_toolbar
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/19900-ES.html">
+       The
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         TTFPATH
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         AFMPATH
+        </span>
+       </code>
+       environment variables
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/19901-ES.html">
+       Deprecated rcParams validators
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/19922-ES.html">
+       Removed modules
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/20051-AL.html">
+       Removal of deprecated
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         offsetbox
+        </span>
+       </code>
+       APIs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/20052-AL.html">
+       Removal of
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         axes_grid
+        </span>
+       </code>
+       /
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         axisartist
+        </span>
+       </code>
+       APIs deprecated in Matplotlib 3.3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/20095-ES.html">
+       Axis and Locator
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pan
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         zoom
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/20188-ES.html">
+       Removal of
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         cbook
+        </span>
+       </code>
+       deprecations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/20245-GL.html">
+       Collection's offset_position has been removed
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/20314-GL.html">
+       Colorbar related removals
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/20331-ES.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Axes.pie
+        </span>
+       </code>
+       <em>
+        radius
+       </em>
+       ,
+       <em>
+        startangle
+       </em>
+       , and
+       <em>
+        normalize
+       </em>
+       parameters
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/20447-ES.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         figure.add_axes()
+        </span>
+       </code>
+       without arguments
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/20465-ES.html">
+       Case-insensitive properties
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/next_api_changes/removals/20563-TH.html">
+       MaxNLocator passing
+       <em>
+        nbins
+       </em>
+       in two ways
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../users/github_stats.html">
+     GitHub statistics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.4.1.html">
+       GitHub Stats for Matplotlib 3.4.1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.4.0.html">
+       GitHub Stats for Matplotlib 3.4.0
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.3.4.html">
+       GitHub Stats for Matplotlib 3.3.4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.3.3.html">
+       GitHub Stats for Matplotlib 3.3.3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.3.2.html">
+       GitHub Stats for Matplotlib 3.3.2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.3.1.html">
+       GitHub Stats for Matplotlib 3.3.1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.3.0.html">
+       GitHub Stats for Matplotlib 3.3.0
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.2.2.html">
+       GitHub Stats for Matplotlib 3.2.2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.2.1.html">
+       GitHub Stats for Matplotlib 3.2.1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.2.0.html">
+       GitHub Stats for Matplotlib 3.2.0
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.1.2.html">
+       GitHub Stats for Matplotlib 3.1.2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.1.1.html">
+       GitHub Stats for Matplotlib 3.1.1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.1.0.html">
+       GitHub Stats for Matplotlib 3.1.0
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/prev_whats_new/github_stats_3.0.2.html">
+       GitHub Stats for Matplotlib 3.0.2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_3.4.0.html">
+     What's new in Matplotlib 3.4.0
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_3.4.2.html">
+     API Changes for 3.4.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_3.4.0.html">
+     API Changes for 3.4.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.4.1.html">
+     GitHub Stats for Matplotlib 3.4.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.4.0.html">
+     GitHub Stats for Matplotlib 3.4.0
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_3.3.0.html">
+     What's new in Matplotlib 3.3.0
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_3.3.1.html">
+     API Changes for 3.3.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_3.3.0.html">
+     API Changes for 3.3.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.3.4.html">
+     GitHub Stats for Matplotlib 3.3.4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.3.3.html">
+     GitHub Stats for Matplotlib 3.3.3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.3.2.html">
+     GitHub Stats for Matplotlib 3.3.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.3.1.html">
+     GitHub Stats for Matplotlib 3.3.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.3.0.html">
+     GitHub Stats for Matplotlib 3.3.0
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_3.2.0.html">
+     What's new in Matplotlib 3.2
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_3.2.0.html">
+     API Changes for 3.2.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.2.2.html">
+     GitHub Stats for Matplotlib 3.2.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.2.1.html">
+     GitHub Stats for Matplotlib 3.2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.2.0.html">
+     GitHub Stats for Matplotlib 3.2.0
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_3.1.0.html">
+     What's new in Matplotlib 3.1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_3.1.1.html">
+     API Changes for 3.1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_3.1.0.html">
+     API Changes for 3.1.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.1.2.html">
+     GitHub Stats for Matplotlib 3.1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.1.1.html">
+     GitHub Stats for Matplotlib 3.1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.1.0.html">
+     GitHub Stats for Matplotlib 3.1.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_3.0.html">
+     New in Matplotlib 3.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_3.0.1.html">
+     API Changes for 3.0.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_3.0.0.html">
+     API Changes for 3.0.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/github_stats_3.0.2.html">
+     GitHub Stats for Matplotlib 3.0.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_2.2.html">
+     New in Matplotlib 2.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_2.2.0.html">
+     API Changes in 2.2.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_2.1.0.html">
+     New in Matplotlib 2.1.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_2.1.2.html">
+     API Changes in 2.1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_2.1.1.html">
+     API Changes in 2.1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_2.1.0.html">
+     API Changes in 2.1.0
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_2.0.0.html">
+     New in matplotlib 2.0
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../users/dflt_style_changes.html">
+       Changes to the default style
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_2.0.1.html">
+     API Changes in 2.0.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_2.0.0.html">
+     API Changes in 2.0.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_1.5.html">
+     New in matplotlib 1.5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_1.5.3.html">
+     Changes in 1.5.3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_1.5.2.html">
+     Changes in 1.5.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_1.4.html">
+     New in matplotlib 1.4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_1.4.x.html">
+     Changes in 1.4.x
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_1.5.0.html">
+     Changes in 1.5.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_1.3.html">
+     New in matplotlib 1.3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_1.3.x.html">
+     Changes in 1.3.x
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_1.2.2.html">
+     New in matplotlib 1.2.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_1.2.html">
+     New in matplotlib 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_1.2.x.html">
+     Changes in 1.2.x
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_1.1.html">
+     New in matplotlib 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_1.1.x.html">
+     Changes in 1.1.x
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_1.0.html">
+     New in matplotlib 1.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/changelog.html">
+     List of changes to Matplotlib prior to 2015
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_0.99.html">
+     New in matplotlib 0.99
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.99.x.html">
+     Changes beyond 0.99.x
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.99.html">
+     Changes in 0.99
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../users/prev_whats_new/whats_new_0.98.4.html">
+     New in matplotlib 0.98.4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.98.x.html">
+     Changes for 0.98.x
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.98.1.html">
+     Changes for 0.98.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.98.0.html">
+     Changes for 0.98.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.91.2.html">
+     Changes for 0.91.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.91.0.html">
+     Changes for 0.91.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.90.1.html">
+     Changes for 0.90.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.90.0.html">
+     Changes for 0.90.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.87.7.html">
+     Changes for 0.87.7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.86.html">
+     Changes for 0.86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.85.html">
+     Changes for 0.85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.84.html">
+     Changes for 0.84
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.83.html">
+     Changes for 0.83
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.82.html">
+     Changes for 0.82
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.81.html">
+     Changes for 0.81
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.80.html">
+     Changes for 0.80
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.73.html">
+     Changes for 0.73
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.72.html">
+     Changes for 0.72
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.71.html">
+     Changes for 0.71
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.70.html">
+     Changes for 0.70
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.65.1.html">
+     Changes for 0.65.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.65.html">
+     Changes for 0.65
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.63.html">
+     Changes for 0.63
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.61.html">
+     Changes for 0.61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.60.html">
+     Changes for 0.60
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.54.3.html">
+     Changes for 0.54.3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.54.html">
+     Changes for 0.54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.50.html">
+     Changes for 0.50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.42.html">
+     Changes for 0.42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/prev_api_changes/api_changes_0.40.html">
+     Changes for 0.40
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../users/license.html">
+   License
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../citing.html">
+   Citing Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources/index.html">
+   External resources
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   The Matplotlib FAQ
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="installing_faq.html">
+     Installation
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     How-to
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="troubleshooting_faq.html">
+     Troubleshooting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="environment_variables_faq.html">
+     Environment variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../users/credits.html">
+   Credits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../users/history.html">
+   History
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-whether-a-figure-is-empty">
+   Check whether a figure is empty
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-all-objects-in-a-figure-of-a-certain-type">
+   Find all objects in a figure of a certain type
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prevent-ticklabels-from-having-an-offset">
+   Prevent ticklabels from having an offset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-transparent-figures">
+   Save transparent figures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-multiple-plots-to-one-pdf-file">
+   Save multiple plots to one pdf file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-room-for-tick-labels">
+   Make room for tick labels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#align-my-ylabels-across-multiple-subplots">
+   Align my ylabels across multiple subplots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#control-the-draw-order-of-plot-elements">
+   Control the draw order of plot elements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-the-aspect-ratio-for-plots-equal">
+   Make the aspect ratio for plots equal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#draw-multiple-y-axis-scales">
+   Draw multiple y-axis scales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generate-images-without-having-a-window-appear">
+   Generate images without having a window appear
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#work-with-threads">
+   Work with threads
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="how-to">
+<span id="howto-faq"></span><h1>How-to<a class="headerlink" href="#how-to" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#how-to" id="id2">How-to</a></p>
+<ul>
+<li><p><a class="reference internal" href="#check-whether-a-figure-is-empty" id="id3">Check whether a figure is empty</a></p></li>
+<li><p><a class="reference internal" href="#find-all-objects-in-a-figure-of-a-certain-type" id="id4">Find all objects in a figure of a certain type</a></p></li>
+<li><p><a class="reference internal" href="#prevent-ticklabels-from-having-an-offset" id="id5">Prevent ticklabels from having an offset</a></p></li>
+<li><p><a class="reference internal" href="#save-transparent-figures" id="id6">Save transparent figures</a></p></li>
+<li><p><a class="reference internal" href="#save-multiple-plots-to-one-pdf-file" id="id7">Save multiple plots to one pdf file</a></p></li>
+<li><p><a class="reference internal" href="#make-room-for-tick-labels" id="id8">Make room for tick labels</a></p></li>
+<li><p><a class="reference internal" href="#align-my-ylabels-across-multiple-subplots" id="id9">Align my ylabels across multiple subplots</a></p></li>
+<li><p><a class="reference internal" href="#control-the-draw-order-of-plot-elements" id="id10">Control the draw order of plot elements</a></p></li>
+<li><p><a class="reference internal" href="#make-the-aspect-ratio-for-plots-equal" id="id11">Make the aspect ratio for plots equal</a></p></li>
+<li><p><a class="reference internal" href="#draw-multiple-y-axis-scales" id="id12">Draw multiple y-axis scales</a></p></li>
+<li><p><a class="reference internal" href="#generate-images-without-having-a-window-appear" id="id13">Generate images without having a window appear</a></p></li>
+<li><p><a class="reference internal" href="#work-with-threads" id="id14">Work with threads</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="check-whether-a-figure-is-empty">
+<span id="howto-figure-empty"></span><h2>Check whether a figure is empty<a class="headerlink" href="#check-whether-a-figure-is-empty" title="Permalink to this headline">¶</a></h2>
+<p>Empty can actually mean different things. Does the figure contain any artists?
+Does a figure with an empty <a class="reference internal" href="../api/axes_api.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> still count as empty? Is the figure
+empty if it was rendered pure white (there may be artists present, but they
+could be outside the drawing area or transparent)?</p>
+<p>For the purpose here, we define empty as: &quot;The figure does not contain any
+artists except it's background patch.&quot; The exception for the background is
+necessary, because by default every figure contains a <a class="reference internal" href="../api/_as_gen/matplotlib.patches.Rectangle.html#matplotlib.patches.Rectangle" title="matplotlib.patches.Rectangle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Rectangle</span></code></a> as it's
+background patch. This definition could be checked via:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="n">figure</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return whether the figure contains no Artists (other than the default</span>
+<span class="sd">    background patch).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">contained_artists</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">get_children</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">contained_artists</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span>
 </pre></div>
 </div>
+<p>We've decided not to include this as a figure method because this is only one
+way of defining empty, and checking the above is only rarely necessary.
+Usually the user or program handling the figure know if they have added
+something to the figure.</p>
+<p>Checking whether a figure would render empty cannot be reliably checked except
+by actually rendering the figure and investigating the rendered result.</p>
 </div>
 <div class="section" id="find-all-objects-in-a-figure-of-a-certain-type">
-<span id="howto-findobj"></span><h3>Find all objects in a figure of a certain type<a class="headerlink" href="#find-all-objects-in-a-figure-of-a-certain-type" title="Permalink to this headline">¶</a></h3>
-<p>Every Matplotlib artist (see <a class="reference internal" href="../tutorials/02_intermediate/artists.html#sphx-glr-tutorials-02-intermediate-artists-py"><span class="std std-ref">Artist tutorial</span></a>) has a method
-called <a class="reference internal" href="../api/_as_gen/matplotlib.artist.Artist.findobj.html#matplotlib.artist.Artist.findobj" title="matplotlib.artist.Artist.findobj"><code class="xref py py-meth docutils literal"><span class="pre">findobj()</span></code></a> that can be used to
+<span id="howto-findobj"></span><h2>Find all objects in a figure of a certain type<a class="headerlink" href="#find-all-objects-in-a-figure-of-a-certain-type" title="Permalink to this headline">¶</a></h2>
+<p>Every Matplotlib artist (see <a class="reference internal" href="../tutorials/intermediate/artists.html"><span class="doc">Artist tutorial</span></a>) has a method
+called <a class="reference internal" href="../api/_as_gen/matplotlib.artist.Artist.findobj.html#matplotlib.artist.Artist.findobj" title="matplotlib.artist.Artist.findobj"><code class="xref py py-meth docutils literal notranslate"><span class="pre">findobj()</span></code></a> that can be used to
 recursively search the artist for any artists it may contain that meet
-some criteria (e.g., match all <a class="reference internal" href="../api/_as_gen/matplotlib.lines.Line2D.html#matplotlib.lines.Line2D" title="matplotlib.lines.Line2D"><code class="xref py py-class docutils literal"><span class="pre">Line2D</span></code></a>
+some criteria (e.g., match all <a class="reference internal" href="../api/_as_gen/matplotlib.lines.Line2D.html#matplotlib.lines.Line2D" title="matplotlib.lines.Line2D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Line2D</span></code></a>
 instances or match some arbitrary filter function).  For example, the
 following snippet finds every object in the figure which has a
-<code class="xref py py-obj docutils literal"><span class="pre">set_color</span></code> property and makes the object blue:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<code class="docutils literal notranslate"><span class="pre">set_color</span></code> property and makes the object blue:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;set_color&#39;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">fig</span><span class="o">.</span><span class="n">findobj</span><span class="p">(</span><span class="n">myfunc</span><span class="p">):</span>
@@ -265,37 +1906,37 @@ following snippet finds every object in the figure which has a
 </pre></div>
 </div>
 <p>You can also filter on class instances:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.text</span> <span class="k">as</span> <span class="nn">text</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.text</span> <span class="k">as</span> <span class="nn">text</span>
 <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">fig</span><span class="o">.</span><span class="n">findobj</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span><span class="p">):</span>
     <span class="n">o</span><span class="o">.</span><span class="n">set_fontstyle</span><span class="p">(</span><span class="s1">&#39;italic&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="how-to-prevent-ticklabels-from-having-an-offset">
-<span id="howto-supress-offset"></span><h3>How to prevent ticklabels from having an offset<a class="headerlink" href="#how-to-prevent-ticklabels-from-having-an-offset" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="prevent-ticklabels-from-having-an-offset">
+<span id="howto-supress-offset"></span><h2>Prevent ticklabels from having an offset<a class="headerlink" href="#prevent-ticklabels-from-having-an-offset" title="Permalink to this headline">¶</a></h2>
 <p>The default formatter will use an offset to reduce
 the length of the ticklabels.  To turn this feature
 off on a per-axis basis:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">get_xaxis</span><span class="p">()</span><span class="o">.</span><span class="n">get_major_formatter</span><span class="p">()</span><span class="o">.</span><span class="n">set_useOffset</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">get_xaxis</span><span class="p">()</span><span class="o">.</span><span class="n">get_major_formatter</span><span class="p">()</span><span class="o">.</span><span class="n">set_useOffset</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>set the rcParam <code class="docutils literal"><span class="pre">axes.formatter.useoffset</span></code>, or use a different
-formatter.  See <a class="reference internal" href="../api/ticker_api.html#module-matplotlib.ticker" title="matplotlib.ticker"><code class="xref py py-mod docutils literal"><span class="pre">ticker</span></code></a> for details.</p>
+<p>set <code class="docutils literal notranslate"><a class="reference external" href="../tutorials/introductory/customizing.html?highlight=axes.formatter.useoffset#a-sample-matplotlibrc-file"><span class="pre">rcParams[&quot;axes.formatter.useoffset&quot;]</span></a></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>), or use a different
+formatter.  See <a class="reference internal" href="../api/ticker_api.html#module-matplotlib.ticker" title="matplotlib.ticker"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ticker</span></code></a> for details.</p>
 </div>
 <div class="section" id="save-transparent-figures">
-<span id="howto-transparent"></span><h3>Save transparent figures<a class="headerlink" href="#save-transparent-figures" title="Permalink to this headline">¶</a></h3>
-<p>The <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.savefig.html#matplotlib.pyplot.savefig" title="matplotlib.pyplot.savefig"><code class="xref py py-meth docutils literal"><span class="pre">savefig()</span></code></a> command has a keyword argument
-<em>transparent</em> which, if ‘True’, will make the figure and axes
+<span id="howto-transparent"></span><h2>Save transparent figures<a class="headerlink" href="#save-transparent-figures" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.savefig.html#matplotlib.pyplot.savefig" title="matplotlib.pyplot.savefig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">savefig()</span></code></a> command has a keyword argument
+<em>transparent</em> which, if 'True', will make the figure and axes
 backgrounds transparent when saving, but will not affect the displayed
 image on the screen.</p>
 <p>If you need finer grained control, e.g., you do not want full transparency
 or you want to affect the screen displayed version as well, you can set
 the alpha properties directly.  The figure has a
-<a class="reference internal" href="../api/_as_gen/matplotlib.patches.Rectangle.html#matplotlib.patches.Rectangle" title="matplotlib.patches.Rectangle"><code class="xref py py-class docutils literal"><span class="pre">Rectangle</span></code></a> instance called <em>patch</em>
+<a class="reference internal" href="../api/_as_gen/matplotlib.patches.Rectangle.html#matplotlib.patches.Rectangle" title="matplotlib.patches.Rectangle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Rectangle</span></code></a> instance called <em>patch</em>
 and the axes has a Rectangle instance called <em>patch</em>.  You can set
 any property on them directly (<em>facecolor</em>, <em>edgecolor</em>, <em>linewidth</em>,
 <em>linestyle</em>, <em>alpha</em>).  e.g.:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
@@ -304,147 +1945,61 @@ any property on them directly (<em>facecolor</em>, <em>edgecolor</em>, <em>linew
 <p>If you need <em>all</em> the figure elements to be transparent, there is
 currently no global alpha setting, but you can set the alpha channel
 on individual elements, e.g.:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;volts&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="save-multiple-plots-to-one-pdf-file">
-<span id="howto-multipage"></span><h3>Save multiple plots to one pdf file<a class="headerlink" href="#save-multiple-plots-to-one-pdf-file" title="Permalink to this headline">¶</a></h3>
+<span id="howto-multipage"></span><h2>Save multiple plots to one pdf file<a class="headerlink" href="#save-multiple-plots-to-one-pdf-file" title="Permalink to this headline">¶</a></h2>
 <p>Many image file formats can only have one image per file, but some
 formats support multi-page files. Currently only the pdf backend has
 support for this. To make a multi-page pdf file, first initialize the
 file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.backends.backend_pdf</span> <span class="k">import</span> <span class="n">PdfPages</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.backends.backend_pdf</span> <span class="kn">import</span> <span class="n">PdfPages</span>
 <span class="n">pp</span> <span class="o">=</span> <span class="n">PdfPages</span><span class="p">(</span><span class="s1">&#39;multipage.pdf&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can give the <a class="reference internal" href="../api/backend_pdf_api.html#matplotlib.backends.backend_pdf.PdfPages" title="matplotlib.backends.backend_pdf.PdfPages"><code class="xref py py-class docutils literal"><span class="pre">PdfPages</span></code></a>
-object to <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.savefig.html#matplotlib.pyplot.savefig" title="matplotlib.pyplot.savefig"><code class="xref py py-func docutils literal"><span class="pre">savefig()</span></code></a>, but you have to specify
+<p>You can give the <a class="reference internal" href="../api/backend_pdf_api.html#matplotlib.backends.backend_pdf.PdfPages" title="matplotlib.backends.backend_pdf.PdfPages"><code class="xref py py-class docutils literal notranslate"><span class="pre">PdfPages</span></code></a>
+object to <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.savefig.html#matplotlib.pyplot.savefig" title="matplotlib.pyplot.savefig"><code class="xref py py-func docutils literal notranslate"><span class="pre">savefig()</span></code></a>, but you have to specify
 the format:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;pdf&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;pdf&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>An easier way is to call
-<a class="reference internal" href="../api/backend_pdf_api.html#matplotlib.backends.backend_pdf.PdfPages.savefig" title="matplotlib.backends.backend_pdf.PdfPages.savefig"><code class="xref py py-meth docutils literal"><span class="pre">PdfPages.savefig</span></code></a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pp</span><span class="o">.</span><span class="n">savefig</span><span class="p">()</span>
+<a class="reference internal" href="../api/backend_pdf_api.html#matplotlib.backends.backend_pdf.PdfPages.savefig" title="matplotlib.backends.backend_pdf.PdfPages.savefig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PdfPages.savefig</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pp</span><span class="o">.</span><span class="n">savefig</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Finally, the multipage pdf object has to be closed:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The same can be done using the pgf backend:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.backends.backend_pgf</span> <span class="kn">import</span> <span class="n">PdfPages</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="move-the-edge-of-an-axes-to-make-room-for-tick-labels">
-<span id="howto-subplots-adjust"></span><h3>Move the edge of an axes to make room for tick labels<a class="headerlink" href="#move-the-edge-of-an-axes-to-make-room-for-tick-labels" title="Permalink to this headline">¶</a></h3>
-<p>For subplots, you can control the default spacing on the left, right,
-bottom, and top as well as the horizontal and vertical spacing between
-multiple rows and columns using the
-<code class="xref py py-meth docutils literal"><span class="pre">matplotlib.figure.Figure.subplots_adjust()</span></code> method (in pyplot it
-is <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.subplots_adjust.html#matplotlib.pyplot.subplots_adjust" title="matplotlib.pyplot.subplots_adjust"><code class="xref py py-func docutils literal"><span class="pre">subplots_adjust()</span></code></a>).  For example, to move
-the bottom of the subplots up to make room for some rotated x tick
-labels:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>You can control the defaults for these parameters in your
-<code class="file docutils literal"><span class="pre">matplotlibrc</span></code> file; see <a class="reference internal" href="../tutorials/01_introductory/customizing.html#sphx-glr-tutorials-01-introductory-customizing-py"><span class="std std-ref">Customizing matplotlib</span></a>.  For
-example, to make the above setting permanent, you would set:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="o">.</span><span class="n">subplot</span><span class="o">.</span><span class="n">bottom</span> <span class="p">:</span> <span class="mf">0.2</span>   <span class="c1"># the bottom of the subplots of the figure</span>
-</pre></div>
-</div>
-<p>The other parameters you can configure are, with their defaults</p>
-<dl class="docutils">
-<dt><em>left</em>  = 0.125</dt>
-<dd>the left side of the subplots of the figure</dd>
-<dt><em>right</em> = 0.9</dt>
-<dd>the right side of the subplots of the figure</dd>
-<dt><em>bottom</em> = 0.1</dt>
-<dd>the bottom of the subplots of the figure</dd>
-<dt><em>top</em> = 0.9</dt>
-<dd>the top of the subplots of the figure</dd>
-<dt><em>wspace</em> = 0.2</dt>
-<dd>the amount of width reserved for blank space between subplots,
-expressed as a fraction of the average axis width</dd>
-<dt><em>hspace</em> = 0.2</dt>
-<dd>the amount of height reserved for white space between subplots,
-expressed as a fraction of the average axis height</dd>
-</dl>
-<p>If you want additional control, you can create an
-<a class="reference internal" href="../api/axes_api.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><code class="xref py py-class docutils literal"><span class="pre">Axes</span></code></a> using the
-<a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.axes.html#matplotlib.pyplot.axes" title="matplotlib.pyplot.axes"><code class="xref py py-func docutils literal"><span class="pre">axes()</span></code></a> command (or equivalently the figure
-<code class="xref py py-meth docutils literal"><span class="pre">add_axes()</span></code> method), which allows you to
-specify the location explicitly:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">])</span>
-</pre></div>
-</div>
-<p>where all values are in fractional (0 to 1) coordinates.  See
-<a class="reference internal" href="../gallery/pylab_examples/axes_demo.html#sphx-glr-gallery-pylab-examples-axes-demo-py"><span class="std std-ref">Axes Demo</span></a> for an example of placing axes manually.</p>
-</div>
-<div class="section" id="automatically-make-room-for-tick-labels">
-<span id="howto-auto-adjust"></span><h3>Automatically make room for tick labels<a class="headerlink" href="#automatically-make-room-for-tick-labels" title="Permalink to this headline">¶</a></h3>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>This is now easier to handle than ever before.
-Calling <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout"><code class="xref py py-func docutils literal"><span class="pre">tight_layout()</span></code></a> can fix many common
-layout issues. See the <a class="reference internal" href="../tutorials/02_intermediate/tight_layout_guide.html#sphx-glr-tutorials-02-intermediate-tight-layout-guide-py"><span class="std std-ref">Tight Layout guide</span></a>.</p>
-<p class="last">The information below is kept here in case it is useful for other
-purposes.</p>
-</div>
-<p>In most use cases, it is enough to simply change the subplots adjust
-parameters as described in <a class="reference internal" href="#howto-subplots-adjust"><span class="std std-ref">Move the edge of an axes to make room for tick labels</span></a>.  But in some
-cases, you don’t know ahead of time what your tick labels will be, or
-how large they will be (data and labels outside your control may be
-being fed into your graphing application), and you may need to
-automatically adjust your subplot parameters based on the size of the
-tick labels.  Any <a class="reference internal" href="../api/text_api.html#matplotlib.text.Text" title="matplotlib.text.Text"><code class="xref py py-class docutils literal"><span class="pre">Text</span></code></a> instance can report
-its extent in window coordinates (a negative x coordinate is outside
-the window), but there is a rub.</p>
-<p>The <a class="reference internal" href="../api/backend_bases_api.html#matplotlib.backend_bases.RendererBase" title="matplotlib.backend_bases.RendererBase"><code class="xref py py-class docutils literal"><span class="pre">RendererBase</span></code></a> instance, which is
-used to calculate the text size, is not known until the figure is
-drawn (<code class="xref py py-meth docutils literal"><span class="pre">draw()</span></code>).  After the window is
-drawn and the text instance knows its renderer, you can call
-<a class="reference internal" href="../api/text_api.html#matplotlib.text.Text.get_window_extent" title="matplotlib.text.Text.get_window_extent"><code class="xref py py-meth docutils literal"><span class="pre">get_window_extent()</span></code></a>.  One way to solve
-this chicken and egg problem is to wait until the figure is draw by
-connecting
-(<a class="reference internal" href="../api/backend_bases_api.html#matplotlib.backend_bases.FigureCanvasBase.mpl_connect" title="matplotlib.backend_bases.FigureCanvasBase.mpl_connect"><code class="xref py py-meth docutils literal"><span class="pre">mpl_connect()</span></code></a>) to the
-“on_draw” signal (<a class="reference internal" href="../api/backend_bases_api.html#matplotlib.backend_bases.DrawEvent" title="matplotlib.backend_bases.DrawEvent"><code class="xref py py-class docutils literal"><span class="pre">DrawEvent</span></code></a>) and
-get the window extent there, and then do something with it, e.g., move
-the left of the canvas over; see <a class="reference internal" href="../users/event_handling.html#event-handling-tutorial"><span class="std std-ref">Event handling and picking</span></a>.</p>
-<p>Here is an example that gets a bounding box in relative figure coordinates
-(0..1) of each of the labels and uses it to move the left of the subplots
-over so that the tick labels fit in the figure:</p>
-<div class="figure align-center" id="id2">
-<a class="reference external image-reference" href="../gallery/pyplots/auto_subplots_adjust.html"><img alt="../_images/sphx_glr_auto_subplots_adjust_001.png" src="../_images/sphx_glr_auto_subplots_adjust_001.png" style="width: 320.0px; height: 240.0px;" /></a>
-<p class="caption"><span class="caption-text">Auto Subplots Adjust</span></p>
-</div>
-</div>
-<div class="section" id="configure-the-tick-linewidths">
-<span id="howto-ticks"></span><h3>Configure the tick linewidths<a class="headerlink" href="#configure-the-tick-linewidths" title="Permalink to this headline">¶</a></h3>
-<p>In Matplotlib, the ticks are <em>markers</em>.  All
-<a class="reference internal" href="../api/_as_gen/matplotlib.lines.Line2D.html#matplotlib.lines.Line2D" title="matplotlib.lines.Line2D"><code class="xref py py-class docutils literal"><span class="pre">Line2D</span></code></a> objects support a line (solid,
-dashed, etc) and a marker (circle, square, tick).  The tick linewidth
-is controlled by the “markeredgewidth” property:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xticklines</span><span class="p">()</span> <span class="o">+</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_yticklines</span><span class="p">():</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">set_markersize</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>The other properties that control the tick marker, and all markers,
-are <code class="docutils literal"><span class="pre">markerfacecolor</span></code>, <code class="docutils literal"><span class="pre">markeredgecolor</span></code>, <code class="docutils literal"><span class="pre">markeredgewidth</span></code>,
-<code class="docutils literal"><span class="pre">markersize</span></code>.  For more information on configuring ticks, see
-<a class="reference internal" href="../tutorials/02_intermediate/artists.html#axis-container"><span class="std std-ref">Axis containers</span></a> and <a class="reference internal" href="../tutorials/02_intermediate/artists.html#tick-container"><span class="std std-ref">Tick containers</span></a>.</p>
+<div class="section" id="make-room-for-tick-labels">
+<span id="howto-auto-adjust"></span><h2>Make room for tick labels<a class="headerlink" href="#make-room-for-tick-labels" title="Permalink to this headline">¶</a></h2>
+<p>By default, Matplotlib uses fixed percentage margins around subplots. This can
+lead to labels overlapping or being cut off at the figure boundary. There are
+multiple ways to fix this:</p>
+<ul class="simple">
+<li><p>Manually adapt the subplot parameters using <a class="reference internal" href="../api/figure_api.html#matplotlib.figure.Figure.subplots_adjust" title="matplotlib.figure.Figure.subplots_adjust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Figure.subplots_adjust</span></code></a> /
+<a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.subplots_adjust.html#matplotlib.pyplot.subplots_adjust" title="matplotlib.pyplot.subplots_adjust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pyplot.subplots_adjust</span></code></a>.</p></li>
+<li><p>Use one of the automatic layout mechanisms:</p>
+<ul>
+<li><p>constrained layout (<a class="reference internal" href="../tutorials/intermediate/constrainedlayout_guide.html"><span class="doc">Constrained Layout Guide</span></a>)</p></li>
+<li><p>tight layout (<a class="reference internal" href="../tutorials/intermediate/tight_layout_guide.html"><span class="doc">Tight Layout guide</span></a>)</p></li>
+</ul>
+</li>
+<li><p>Calculate good values from the size of the plot elements yourself
+(<a class="reference internal" href="../gallery/pyplots/auto_subplots_adjust.html"><span class="doc">Programmatically controlling subplot adjustment</span></a>)</p></li>
+</ul>
 </div>
 <div class="section" id="align-my-ylabels-across-multiple-subplots">
-<span id="howto-align-label"></span><h3>Align my ylabels across multiple subplots<a class="headerlink" href="#align-my-ylabels-across-multiple-subplots" title="Permalink to this headline">¶</a></h3>
+<span id="howto-align-label"></span><h2>Align my ylabels across multiple subplots<a class="headerlink" href="#align-my-ylabels-across-multiple-subplots" title="Permalink to this headline">¶</a></h2>
 <p>If you have multiple subplots over one another, and the y data have
 different scales, you can often get ylabels that do not align
 vertically across the multiple subplots, which can be unattractive.
@@ -453,559 +2008,111 @@ it does not overlap any of the y ticks.  You can override this default
 behavior by specifying the coordinates of the label.  The example
 below shows the default behavior in the left subplots, and the manual
 setting in the right subplots.</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id1">
 <a class="reference external image-reference" href="../gallery/pyplots/align_ylabels.html"><img alt="../_images/sphx_glr_align_ylabels_001.png" src="../_images/sphx_glr_align_ylabels_001.png" style="width: 320.0px; height: 240.0px;" /></a>
-<p class="caption"><span class="caption-text">Align Ylabels</span></p>
+<p class="caption"><span class="caption-text">Align Ylabels</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="skip-dates-where-there-is-no-data">
-<span id="date-index-plots"></span><h3>Skip dates where there is no data<a class="headerlink" href="#skip-dates-where-there-is-no-data" title="Permalink to this headline">¶</a></h3>
-<p>When plotting time series, e.g., financial time series, one often wants
-to leave out days on which there is no data, e.g., weekends.  By passing
-in dates on the x-xaxis, you get large horizontal gaps on periods when
-there is not data. The solution is to pass in some proxy x-data, e.g.,
-evenly sampled indices, and then use a custom formatter to format
-these as dates. The example below shows how to use an ‘index formatter’
-to achieve the desired plot:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.mlab</span> <span class="k">as</span> <span class="nn">mlab</span>
-<span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="k">as</span> <span class="nn">ticker</span>
-
-<span class="n">r</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">csv2rec</span><span class="p">(</span><span class="s1">&#39;../data/aapl.csv&#39;</span><span class="p">)</span>
-<span class="n">r</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="o">-</span><span class="mi">30</span><span class="p">:]</span>  <span class="c1"># get the last 30 days</span>
-
-<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-<span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>  <span class="c1"># the evenly spaced plot indices</span>
-
-<span class="k">def</span> <span class="nf">format_date</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">thisind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">0.5</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="n">thisind</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">adj_close</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">ticker</span><span class="o">.</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="n">format_date</span><span class="p">))</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">autofmt_xdate</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="control-the-depth-of-plot-elements">
-<span id="howto-set-zorder"></span><h3>Control the depth of plot elements<a class="headerlink" href="#control-the-depth-of-plot-elements" title="Permalink to this headline">¶</a></h3>
-<p>Within an axes, the order that the various lines, markers, text,
-collections, etc appear is determined by the
-<a class="reference internal" href="../api/_as_gen/matplotlib.artist.Artist.set_zorder.html#matplotlib.artist.Artist.set_zorder" title="matplotlib.artist.Artist.set_zorder"><code class="xref py py-meth docutils literal"><span class="pre">set_zorder()</span></code></a> property.  The default
-order is patches, lines, text, with collections of lines and
-collections of patches appearing at the same level as regular lines
-and patches, respectively:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-See <a class="reference internal" href="../gallery/pylab_examples/zorder_demo.html#sphx-glr-gallery-pylab-examples-zorder-demo-py"><span class="std std-ref">Zorder Demo</span></a> for a complete example.<p>You can also use the Axes property
-<a class="reference internal" href="../api/_as_gen/matplotlib.axes.Axes.set_axisbelow.html#matplotlib.axes.Axes.set_axisbelow" title="matplotlib.axes.Axes.set_axisbelow"><code class="xref py py-meth docutils literal"><span class="pre">set_axisbelow()</span></code></a> to control whether the grid
-lines are placed above or below your other plot elements.</p>
+<div class="section" id="control-the-draw-order-of-plot-elements">
+<span id="howto-set-zorder"></span><h2>Control the draw order of plot elements<a class="headerlink" href="#control-the-draw-order-of-plot-elements" title="Permalink to this headline">¶</a></h2>
+<p>The draw order of plot elements, and thus which elements will be on top, is
+determined by the <a class="reference internal" href="../api/_as_gen/matplotlib.artist.Artist.set_zorder.html#matplotlib.artist.Artist.set_zorder" title="matplotlib.artist.Artist.set_zorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_zorder</span></code></a> property.
+See <a class="reference internal" href="../gallery/misc/zorder_demo.html"><span class="doc">Zorder Demo</span></a> for a detailed description.</p>
 </div>
 <div class="section" id="make-the-aspect-ratio-for-plots-equal">
-<span id="howto-axis-equal"></span><h3>Make the aspect ratio for plots equal<a class="headerlink" href="#make-the-aspect-ratio-for-plots-equal" title="Permalink to this headline">¶</a></h3>
-<p>The Axes property <a class="reference internal" href="../api/_as_gen/matplotlib.axes.Axes.set_aspect.html#matplotlib.axes.Axes.set_aspect" title="matplotlib.axes.Axes.set_aspect"><code class="xref py py-meth docutils literal"><span class="pre">set_aspect()</span></code></a> controls the
-aspect ratio of the axes.  You can set it to be ‘auto’, ‘equal’, or
+<span id="howto-axis-equal"></span><h2>Make the aspect ratio for plots equal<a class="headerlink" href="#make-the-aspect-ratio-for-plots-equal" title="Permalink to this headline">¶</a></h2>
+<p>The Axes property <a class="reference internal" href="../api/_as_gen/matplotlib.axes.Axes.set_aspect.html#matplotlib.axes.Axes.set_aspect" title="matplotlib.axes.Axes.set_aspect"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_aspect()</span></code></a> controls the
+aspect ratio of the axes.  You can set it to be 'auto', 'equal', or
 some ratio which controls the ratio:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-See <a class="reference internal" href="../gallery/pylab_examples/axis_equal_demo.html#sphx-glr-gallery-pylab-examples-axis-equal-demo-py"><span class="std std-ref">Axis Equal Demo</span></a> for a
-complete example.</div>
-<div class="section" id="multiple-y-axis-scales">
-<span id="howto-twoscale"></span><h3>Multiple y-axis scales<a class="headerlink" href="#multiple-y-axis-scales" title="Permalink to this headline">¶</a></h3>
+<p>See <a class="reference internal" href="../gallery/subplots_axes_and_figures/axis_equal_demo.html"><span class="doc">Equal axis aspect ratio</span></a> for a
+complete example.</p>
+</div>
+<div class="section" id="draw-multiple-y-axis-scales">
+<span id="howto-twoscale"></span><h2>Draw multiple y-axis scales<a class="headerlink" href="#draw-multiple-y-axis-scales" title="Permalink to this headline">¶</a></h2>
 <p>A frequent request is to have two scales for the left and right
-y-axis, which is possible using <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.twinx.html#matplotlib.pyplot.twinx" title="matplotlib.pyplot.twinx"><code class="xref py py-func docutils literal"><span class="pre">twinx()</span></code></a> (more
+y-axis, which is possible using <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.twinx.html#matplotlib.pyplot.twinx" title="matplotlib.pyplot.twinx"><code class="xref py py-func docutils literal notranslate"><span class="pre">twinx()</span></code></a> (more
 than two scales are not currently supported, though it is on the wish
 list).  This works pretty well, though there are some quirks when you
 are trying to interactively pan and zoom, because both scales do not get
 the signals.</p>
-<p>The approach uses <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.twinx.html#matplotlib.pyplot.twinx" title="matplotlib.pyplot.twinx"><code class="xref py py-func docutils literal"><span class="pre">twinx()</span></code></a> (and its sister
-<a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.twiny.html#matplotlib.pyplot.twiny" title="matplotlib.pyplot.twiny"><code class="xref py py-func docutils literal"><span class="pre">twiny()</span></code></a>) to use <em>2 different axes</em>,
+<p>The approach uses <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.twinx.html#matplotlib.pyplot.twinx" title="matplotlib.pyplot.twinx"><code class="xref py py-func docutils literal notranslate"><span class="pre">twinx()</span></code></a> (and its sister
+<a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.twiny.html#matplotlib.pyplot.twiny" title="matplotlib.pyplot.twiny"><code class="xref py py-func docutils literal notranslate"><span class="pre">twiny()</span></code></a>) to use <em>2 different axes</em>,
 turning the axes rectangular frame off on the 2nd axes to keep it from
 obscuring the first, and manually setting the tick locs and labels as
-desired.  You can use separate <code class="docutils literal"><span class="pre">matplotlib.ticker</span></code> formatters and
+desired.  You can use separate <code class="docutils literal notranslate"><span class="pre">matplotlib.ticker</span></code> formatters and
 locators as desired because the two axes are independent.</p>
 <p>(<a class="reference external" href="../faq/howto_faq-1.py">Source code</a>, <a class="reference external" href="../faq/howto_faq-1.png">png</a>, <a class="reference external" href="../faq/howto_faq-1.pdf">pdf</a>)</p>
-<div class="figure">
-<img alt="../_images/howto_faq-1.png" src="../_images/howto_faq-1.png" />
+<div class="figure align-default">
+<img alt="../_images/howto_faq-1.png" class="plot-directive" src="../_images/howto_faq-1.png" />
 </div>
-See <a class="reference internal" href="../gallery/api/two_scales.html#sphx-glr-gallery-api-two-scales-py"><span class="std std-ref">Plots with different scales</span></a> for a complete example</div>
+<p>See <a class="reference internal" href="../gallery/subplots_axes_and_figures/two_scales.html"><span class="doc">Plots with different scales</span></a> for a
+complete example.</p>
+</div>
 <div class="section" id="generate-images-without-having-a-window-appear">
-<span id="howto-batch"></span><h3>Generate images without having a window appear<a class="headerlink" href="#generate-images-without-having-a-window-appear" title="Permalink to this headline">¶</a></h3>
-<p>The easiest way to do this is use a non-interactive backend (see
-<a class="reference internal" href="../tutorials/01_introductory/usage.html#what-is-a-backend"><span class="std std-ref">What is a backend?</span></a>) such as Agg (for PNGs), PDF, SVG or PS.  In
-your figure-generating script, just call the
-<a class="reference internal" href="../api/matplotlib_configuration_api.html#matplotlib.use" title="matplotlib.use"><code class="xref py py-func docutils literal"><span class="pre">matplotlib.use()</span></code></a> directive before importing pylab or
-pyplot:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;myfig&#39;</span><span class="p">)</span>
+<span id="howto-batch"></span><h2>Generate images without having a window appear<a class="headerlink" href="#generate-images-without-having-a-window-appear" title="Permalink to this headline">¶</a></h2>
+<p>Simply do not call <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show</span></code></a>, and directly save the figure to
+the desired format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;myfig.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#howto-webapp"><span class="std std-ref">Matplotlib in a web application server</span></a> for information about running matplotlib inside
-of a web application.</p>
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../gallery/user_interfaces/web_application_server_sgskip.html"><span class="doc">Embedding in a web application server (Flask)</span></a> for
+information about running matplotlib inside of a web application.</p>
 </div>
 </div>
-<div class="section" id="use-show">
-<span id="howto-show"></span><h3>Use <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><code class="xref py py-func docutils literal"><span class="pre">show()</span></code></a><a class="headerlink" href="#use-show" title="Permalink to this headline">¶</a></h3>
-<p>When you want to view your plots on your display,
-the user interface backend will need to start the GUI mainloop.
-This is what <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><code class="xref py py-func docutils literal"><span class="pre">show()</span></code></a> does.  It tells
-Matplotlib to raise all of the figure windows created so far and start
-the mainloop. Because this mainloop is blocking by default (i.e., script
-execution is paused), you should only call this once per script, at the end.
-Script execution is resumed after the last window is closed. Therefore, if
-you are using Matplotlib to generate only images and do not want a user
-interface window, you do not need to call <code class="docutils literal"><span class="pre">show</span></code>  (see <a class="reference internal" href="#howto-batch"><span class="std std-ref">Generate images without having a window appear</span></a>
-and <a class="reference internal" href="../tutorials/01_introductory/usage.html#what-is-a-backend"><span class="std std-ref">What is a backend?</span></a>).</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Because closing a figure window invokes the destruction of its plotting
-elements, you should call <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.savefig.html#matplotlib.pyplot.savefig" title="matplotlib.pyplot.savefig"><code class="xref py py-func docutils literal"><span class="pre">savefig()</span></code></a> <em>before</em>
-calling <code class="docutils literal"><span class="pre">show</span></code> if you wish to save the figure as well as view it.</p>
-</div>
-<div class="versionadded">
-<p><span class="versionmodified">New in version v1.0.0: </span><code class="docutils literal"><span class="pre">show</span></code> now starts the GUI mainloop only if it isn’t already running.
-Therefore, multiple calls to <code class="docutils literal"><span class="pre">show</span></code> are now allowed.</p>
-</div>
-<p>Having <code class="docutils literal"><span class="pre">show</span></code> block further execution of the script or the python
-interpreter depends on whether Matplotlib is set for interactive mode
-or not.  In non-interactive mode (the default setting), execution is paused
-until the last figure window is closed.  In interactive mode, the execution
-is not paused, which allows you to create additional figures (but the script
-won’t finish until the last figure window is closed).</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Support for interactive/non-interactive mode depends upon the backend.
-Until version 1.0.0 (and subsequent fixes for 1.0.1), the behavior of
-the interactive mode was not consistent across backends.
-As of v1.0.1, only the macosx backend differs from other backends
-because it does not support non-interactive mode.</p>
-</div>
-<p>Because it is expensive to draw, you typically will not want Matplotlib
-to redraw a figure many times in a script such as the following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>            <span class="c1"># draw here ?</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>           <span class="c1"># and here ?</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;volts&#39;</span><span class="p">)</span>          <span class="c1"># and here ?</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;a simple plot&#39;</span><span class="p">)</span>   <span class="c1"># and here ?</span>
-<span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>However, it is <em>possible</em> to force Matplotlib to draw after every command,
-which might be what you want when working interactively at the
-python console (see <a class="reference internal" href="../users/shell.html#mpl-shell"><span class="std std-ref">Using matplotlib in a python shell</span></a>), but in a script you want to
-defer all drawing until the call to <code class="docutils literal"><span class="pre">show</span></code>.  This is especially
-important for complex figures that take some time to draw.
-<a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><code class="xref py py-func docutils literal"><span class="pre">show()</span></code></a> is designed to tell Matplotlib that
-you’re all done issuing commands and you want to draw the figure now.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><code class="xref py py-func docutils literal"><span class="pre">show()</span></code></a> should typically only be called at
-most once per script and it should be the last line of your
-script.  At that point, the GUI takes control of the interpreter.
-If you want to force a figure draw, use
-<a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.draw.html#matplotlib.pyplot.draw" title="matplotlib.pyplot.draw"><code class="xref py py-func docutils literal"><span class="pre">draw()</span></code></a> instead.</p>
-</div>
-<p>Many users are frustrated by <code class="docutils literal"><span class="pre">show</span></code> because they want it to be a
-blocking call that raises the figure, pauses the script until they
-close the figure, and then allow the script to continue running until
-the next figure is created and the next show is made.  Something like
-this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># WARNING : illustrating how NOT to use show</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="c1"># make figure i</span>
-    <span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>This is not what show does and unfortunately, because doing blocking
-calls across user interfaces can be tricky, is currently unsupported,
-though we have made significant progress towards supporting blocking events.</p>
-<div class="versionadded">
-<p><span class="versionmodified">New in version v1.0.0: </span>As noted earlier, this restriction has been relaxed to allow multiple
-calls to <code class="docutils literal"><span class="pre">show</span></code>.  In <em>most</em> backends, you can now expect to be
-able to create new figures and raise them in a subsequent call to
-<code class="docutils literal"><span class="pre">show</span></code> after closing the figures from a previous call to <code class="docutils literal"><span class="pre">show</span></code>.</p>
-</div>
-</div>
-<div class="section" id="interpreting-box-plots-and-violin-plots">
-<span id="howto-boxplot-violinplot"></span><h3>Interpreting box plots and violin plots<a class="headerlink" href="#interpreting-box-plots-and-violin-plots" title="Permalink to this headline">¶</a></h3>
-<p>Tukey’s <a class="reference external" href="http://matplotlib.org/examples/pylab_examples/boxplot_demo.html">box plots</a> (Robert McGill, John W. Tukey and Wayne A. Larsen: “The American Statistician” Vol. 32, No. 1, Feb., 1978, pp. 12-16) are statistical plots that provide useful information about the data distribution such as skewness. However, bar plots with error bars are still the common standard in most scientific literature, and thus, the interpretation of box plots can be challenging for the unfamiliar reader. The figure below illustrates the different visual features of a box plot.</p>
-<div class="figure">
-<img alt="../_images/boxplot_explanation.png" src="../_images/boxplot_explanation.png" />
-</div>
-<p><a class="reference external" href="http://matplotlib.org/examples/statistics/violinplot_demo.html">Violin plots</a> are closely related to box plots but add useful information such as the distribution of the sample data (density trace).
-Violin plots were added in Matplotlib 1.4.</p>
-</div>
-</div>
-<div class="section" id="contributing-howto">
-<span id="howto-contribute"></span><h2>Contributing: howto<a class="headerlink" href="#contributing-howto" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="request-a-new-feature">
-<span id="how-to-request-feature"></span><h3>Request a new feature<a class="headerlink" href="#request-a-new-feature" title="Permalink to this headline">¶</a></h3>
-<p>Is there a feature you wish Matplotlib had?  Then ask!  The best
-way to get started is to email the developer <a class="reference external" href="mailto:matplotlib-devel&#37;&#52;&#48;python&#46;org">mailing
-list</a> for discussion.
-This is an open source project developed primarily in the
-contributors free time, so there is no guarantee that your
-feature will be added.  The <em>best</em> way to get the feature
-you need added is to contribute it your self.</p>
-</div>
-<div class="section" id="reporting-a-bug-or-submitting-a-patch">
-<span id="how-to-submit-patch"></span><h3>Reporting a bug or submitting a patch<a class="headerlink" href="#reporting-a-bug-or-submitting-a-patch" title="Permalink to this headline">¶</a></h3>
-<p>The development of Matplotlib is organized through <a class="reference external" href="https://github.com/matplotlib/matplotlib">github</a>.  If you would like
-to report a bug or submit a patch please use that interface.</p>
-<p>To report a bug <a class="reference external" href="https://github.com/matplotlib/matplotlib/issues/new">create an issue</a> on github
-(this requires having a github account).  Please include a <a class="reference external" href="http://sscce.org">Short,
-Self Contained, Correct (Compilable), Example</a>
-demonstrating what the bug is.  Including a clear, easy to test
-example makes it easy for the developers to evaluate the bug.  Expect
-that the bug reports will be a conversation.  If you do not want to
-register with github, please email bug reports to the <a class="reference external" href="mailto:matplotlib-devel&#37;&#52;&#48;python&#46;org">mailing list</a>.</p>
-<p>The easiest way to submit patches to Matplotlib is through pull
-requests on github.  Please see the <a class="reference internal" href="../devel/index.html#developers-guide-index"><span class="std std-ref">The Matplotlib Developers’ Guide</span></a> for
-the details.</p>
-</div>
-<div class="section" id="contribute-to-matplotlib-documentation">
-<span id="how-to-contribute-docs"></span><h3>Contribute to Matplotlib documentation<a class="headerlink" href="#contribute-to-matplotlib-documentation" title="Permalink to this headline">¶</a></h3>
-<p>Matplotlib is a big library, which is used in many ways, and the
-documentation has only scratched the surface of everything it can
-do.  So far, the place most people have learned all these features are
-through studying the examples (<a class="reference internal" href="#how-to-search-examples"><span class="std std-ref">Search examples</span></a>), which is a
-recommended and great way to learn, but it would be nice to have more
-official narrative documentation guiding people through all the dark
-corners.  This is where you come in.</p>
-<p>There is a good chance you know more about Matplotlib usage in some
-areas, the stuff you do every day, than many of the core developers
-who wrote most of the documentation.  Just pulled your hair out
-compiling Matplotlib for windows?  Write a FAQ or a section for the
-<a class="reference internal" href="installing_faq.html#installing-faq"><span class="std std-ref">Installation</span></a> page.  Are you a digital signal processing wizard?
-Write a tutorial on the signal analysis plotting functions like
-<a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.xcorr.html#matplotlib.pyplot.xcorr" title="matplotlib.pyplot.xcorr"><code class="xref py py-func docutils literal"><span class="pre">xcorr()</span></code></a>, <a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.psd.html#matplotlib.pyplot.psd" title="matplotlib.pyplot.psd"><code class="xref py py-func docutils literal"><span class="pre">psd()</span></code></a> and
-<a class="reference internal" href="../api/_as_gen/matplotlib.pyplot.specgram.html#matplotlib.pyplot.specgram" title="matplotlib.pyplot.specgram"><code class="xref py py-func docutils literal"><span class="pre">specgram()</span></code></a>.  Do you use Matplotlib with
-<a class="reference external" href="https://www.djangoproject.com/">django</a> or other popular web
-application servers?  Write a FAQ or tutorial and we’ll find a place
-for it in the <a class="reference internal" href="../users/index.html#users-guide-index"><span class="std std-ref">User’s Guide</span></a>.  Bundle Matplotlib in a
-<a class="reference external" href="http://www.py2exe.org/">py2exe</a> app?  … I think you get the idea.</p>
-<p>Matplotlib is documented using the <a class="reference external" href="http://www.sphinx-doc.org/index.html">sphinx</a> extensions to restructured text
-<a class="reference external" href="http://docutils.sourceforge.net/rst.html">(ReST)</a>.  sphinx is an
-extensible python framework for documentation projects which generates
-HTML and PDF, and is pretty easy to write; you can see the source for this
-document or any page on this site by clicking on the <em>Show Source</em> link
-at the end of the page in the sidebar.</p>
-<p>The sphinx website is a good resource for learning sphinx, but we have
-put together a cheat-sheet at <a class="reference internal" href="../devel/documenting_mpl.html#documenting-matplotlib"><span class="std std-ref">Developer’s tips for documenting matplotlib</span></a> which
-shows you how to get started, and outlines the Matplotlib conventions
-and extensions, e.g., for including plots directly from external code in
-your documents.</p>
-<p>Once your documentation contributions are working (and hopefully
-tested by actually <em>building</em> the docs) you can submit them as a patch
-against git.  See <a class="reference internal" href="../devel/gitwash/git_install.html#install-git"><span class="std std-ref">Install git</span></a> and <a class="reference internal" href="#how-to-submit-patch"><span class="std std-ref">Reporting a bug or submitting a patch</span></a>.
-Looking for something to do?  Search for <a class="reference external" href="../search.html?q=todo">TODO</a>
-or look at the open issues on github.</p>
-</div>
-</div>
-<div class="section" id="matplotlib-in-a-web-application-server">
-<span id="howto-webapp"></span><h2>Matplotlib in a web application server<a class="headerlink" href="#matplotlib-in-a-web-application-server" title="Permalink to this headline">¶</a></h2>
-<p>Many users report initial problems trying to use maptlotlib in web
-application servers, because by default Matplotlib ships configured to
-work with a graphical user interface which may require an X11
-connection.  Since many barebones application servers do not have X11
-enabled, you may get errors if you don’t configure Matplotlib for use
-in these environments.  Most importantly, you need to decide what
-kinds of images you want to generate (PNG, PDF, SVG) and configure the
-appropriate default backend.  For 99% of users, this will be the Agg
-backend, which uses the C++
-<a class="reference external" href="http://antigrain.com">antigrain</a>
-rendering engine to make nice PNGs.  The Agg backend is also
-configured to recognize requests to generate other output formats
-(PDF, PS, EPS, SVG).  The easiest way to configure Matplotlib to use
-Agg is to call:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># do this before importing pylab or pyplot</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</pre></div>
-</div>
-<p>For more on configuring your backend, see
-<a class="reference internal" href="../tutorials/01_introductory/usage.html#what-is-a-backend"><span class="std std-ref">What is a backend?</span></a>.</p>
-<p>Alternatively, you can avoid pylab/pyplot altogether, which will give
-you a little more control, by calling the API directly as shown in
-<a class="reference internal" href="../gallery/api/agg_oo_sgskip.html#sphx-glr-gallery-api-agg-oo-sgskip-py"><span class="std std-ref">The object-oriented interface</span></a>.</p>
-<p>You can either generate hardcopy on the filesystem by calling savefig:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># do this before importing pylab or pyplot</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;test.png&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>or by saving to a file handle:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Here is an example using <a class="reference external" href="http://python-imaging.github.io/">Pillow</a>.
-First, the figure is saved to a BytesIO object which is then fed to
-Pillow for further processing:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">io</span> <span class="k">import</span> <span class="n">BytesIO</span>
-<span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
-<span class="n">imgdata</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">imgdata</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">)</span>
-<span class="n">imgdata</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># rewind the data</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">imgdata</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="section" id="matplotlib-with-apache">
-<h3>Matplotlib with apache<a class="headerlink" href="#matplotlib-with-apache" title="Permalink to this headline">¶</a></h3>
-<p>TODO; see <a class="reference internal" href="#how-to-contribute-docs"><span class="std std-ref">Contribute to Matplotlib documentation</span></a>.</p>
-</div>
-<div class="section" id="matplotlib-with-django">
-<h3>Matplotlib with django<a class="headerlink" href="#matplotlib-with-django" title="Permalink to this headline">¶</a></h3>
-<p>TODO; see <a class="reference internal" href="#how-to-contribute-docs"><span class="std std-ref">Contribute to Matplotlib documentation</span></a>.</p>
-</div>
-<div class="section" id="matplotlib-with-zope">
-<h3>Matplotlib with zope<a class="headerlink" href="#matplotlib-with-zope" title="Permalink to this headline">¶</a></h3>
-<p>TODO; see <a class="reference internal" href="#how-to-contribute-docs"><span class="std std-ref">Contribute to Matplotlib documentation</span></a>.</p>
-</div>
-<div class="section" id="clickable-images-for-html">
-<span id="howto-click-maps"></span><h3>Clickable images for HTML<a class="headerlink" href="#clickable-images-for-html" title="Permalink to this headline">¶</a></h3>
-<p>Andrew Dalke of <a class="reference external" href="http://www.dalkescientific.com">Dalke Scientific</a>
-has written a nice <a class="reference external" href="http://www.dalkescientific.com/writings/diary/archive/2005/04/24/interactive_html.html">article</a>
-on how to make html click maps with Matplotlib agg PNGs.  We would
-also like to add this functionality to SVG.  If you are interested in
-contributing to these efforts that would be great.</p>
-</div>
-</div>
-<div class="section" id="search-examples">
-<span id="how-to-search-examples"></span><h2>Search examples<a class="headerlink" href="#search-examples" title="Permalink to this headline">¶</a></h2>
-<p>The nearly 300 code <a class="reference internal" href="../gallery/index.html#examples-index"><span class="std std-ref">Gallery</span></a> included with the Matplotlib
-source distribution are full-text searchable from the <a class="reference internal" href="../search.html"><span class="std std-ref">Search Page</span></a>
-page, but sometimes when you search, you get a lot of results from the
-<a class="reference internal" href="../api/index.html#api-index"><span class="std std-ref">The Matplotlib API</span></a> or other documentation that you may not be interested
-in if you just want to find a complete, free-standing, working piece
-of example code.  To facilitate example searches, we have tagged every
-code example page with the keyword <code class="docutils literal"><span class="pre">codex</span></code> for <em>code example</em> which
-shouldn’t appear anywhere else on this site except in the FAQ.
-So if you want to search for an example that uses an
-ellipse, <a class="reference internal" href="../search.html"><span class="std std-ref">Search Page</span></a> for <code class="docutils literal"><span class="pre">codex</span> <span class="pre">ellipse</span></code>.</p>
-</div>
-<div class="section" id="cite-matplotlib">
-<span id="how-to-cite-mpl"></span><h2>Cite Matplotlib<a class="headerlink" href="#cite-matplotlib" title="Permalink to this headline">¶</a></h2>
-<p>If you want to refer to Matplotlib in a publication, you can use
-“Matplotlib: A 2D Graphics Environment” by J. D. Hunter In Computing
-in Science &amp; Engineering, Vol. 9, No. 3. (2007), pp. 90-95 (see <a class="reference external" href="http://dx.doi.org/10.1109/MCSE.2007.55">this
-reference page</a>):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>@article{Hunter:2007,
-        Address = {10662 LOS VAQUEROS CIRCLE, PO BOX 3014, LOS ALAMITOS, CA 90720-1314 USA},
-        Author = {Hunter, John D.},
-        Date-Added = {2010-09-23 12:22:10 -0700},
-        Date-Modified = {2010-09-23 12:22:10 -0700},
-        Isi = {000245668100019},
-        Isi-Recid = {155389429},
-        Journal = {Computing In Science \&amp; Engineering},
-        Month = {May-Jun},
-        Number = {3},
-        Pages = {90--95},
-        Publisher = {IEEE COMPUTER SOC},
-        Times-Cited = {21},
-        Title = {Matplotlib: A 2D graphics environment},
-        Type = {Editorial Material},
-        Volume = {9},
-        Year = {2007},
-        Abstract = {Matplotlib is a 2D graphics package used for Python for application
-                    development, interactive scripting, and publication-quality image
-                    generation across user interfaces and operating systems.},
-        Bdsk-Url-1 = {http://gateway.isiknowledge.com/gateway/Gateway.cgi?GWVersion=2&amp;SrcAuth=Alerting&amp;SrcApp=Alerting&amp;DestApp=WOS&amp;DestLinkType=FullRecord;KeyUT=000245668100019}}
-</pre></div>
-</div>
+<div class="section" id="work-with-threads">
+<span id="how-to-threads"></span><h2>Work with threads<a class="headerlink" href="#work-with-threads" title="Permalink to this headline">¶</a></h2>
+<p>Matplotlib is not thread-safe: in fact, there are known race conditions
+that affect certain artists.  Hence, if you work with threads, it is your
+responsibility to set up the proper locks to serialize access to Matplotlib
+artists.</p>
+<p>You may be able to work on separate figures from separate threads.  However,
+you must in that case use a <em>non-interactive backend</em> (typically Agg), because
+most GUI backends <em>require</em> being run from the main thread as well.</p>
 </div>
 </div>
 
 
-          </div>
-        </div>
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="installing_faq.html" title="previous page">Installation</a>
+    <a class='right-next' id="next-link" href="troubleshooting_faq.html" title="next page">Troubleshooting</a>
+
+              </div>
+              
+          </main>
+          
+
       </div>
-
-      <div class="clearer"></div>
     </div>
-    <div class="footer">
-        &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
-      Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2021 The Matplotlib development team.<br/>
+</p>
     </div>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-55954603-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</body>
-<footer>
-  <!--Flipcause Integration v3.0// Flipcause Integration Instructions:
-Install the following code block once in the website Header (after <head> tag) -->
-
-<style>
-
-.fc-black_overlay{
-display:none; position: fixed; z-index:1000001; top: 0%;left: 0%;width: 100%;height: 100%;
-background-color: black; filter: alpha(opacity=50); cursor:pointer; opacity:0.5;
-}
-
-.fc-white_content {
-opacity:1; display:none; margin-top: -320px; margin-left: -485px; width:970px; height:640px;
-position:fixed; top:50%; left:50%; border: none;z-index:1000002;overflow: auto;
-}
-
-.fc-main-box{
-opacity:1; display:none; margin:15px auto 0 auto; width:930px; position:relative; z-index:1000003;
-}
-
-.fc-widget_close{
-opacity:1; content:url(http://i1338.photobucket.com/albums/o691/WeCause/X_zpse4a7e538.png);
-position:absolute; z-index=1000004; right:-16px; top:-16px; display:block; cursor:pointer;
-}
-
-.floating_button{
-display: block; margin-top: 0px; margin-left: 0px; width:auto ; height: auto;
-position:fixed; z-index:999999; overflow: auto;
-}
-
-@keyframes backfadesin {
-   from { opacity:0; }
-   to {opacity:.5;}
-}
-
-@-moz-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@-webkit-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@-o-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-
-@-ms-keyframes backfadesin {
-    from { opacity:0; }
-    to {opacity:.5;}
-}
-
-@keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; transform: translateY(20px);}
-   100% {opacity: 1; transform: translateY(0);}
-}
-
-@-moz-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -moz-transform: translateY(20px);}
-   100% {opacity: 1; -moz-transform: translateY(0);}
-}
-
-@-webkit-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -webkit-transform: translateY(20px);}
-   100% {opacity: 1; -webkit-transform: translateY(0);}
-}
-
-@-o-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -o-transform: translateY(20px);}
-   100% {opacity: 1; -o-transform: translateY(0);}
-}
-
-@-ms-keyframes fadesin {
-   0%{ opacity:0; }
-   50%{ opacity:0; }
-   75% {opacity: 0; -ms-transform: translateY(20px);}
-   100% {opacity: 1; -ms-transform: translateY(0);}
-}
-
-</style>
-
-<script>
-
-function open_window(cause_id) {
-var  protocol=String(document.location.protocol);
-var new_url;
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-new_url="https://www.flipcause.com/widget/"+cause_id
-window.open(new_url);
-}
-
-else {
-document.getElementById("fc-fade").style.display = "block";
-document.getElementById("fc-fade").style.webkitAnimation = "backfadesin 1s";
-document.getElementById("fc-fade").style.animation = "backfadesin 1s";
-document.getElementById("fc-fade").style.mozAnimation = "backfadesin 1s";
-document.getElementById("fc-light").style.display = "block";
-document.getElementById("fc-light").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-light").style.animation = "fadesin 1.5s";
-document.getElementById("fc-light").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-main").style.display = "block";
-document.getElementById("fc-main").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-main").style.animation = "fadesin 1.5s";
-document.getElementById("fc-main").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-close").style.display = "block";
-document.getElementById("fc-close").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-close").style.animation = "fadesin 1.5s";
-document.getElementById("fc-close").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.display = "block";
-document.getElementById("fc-myFrame").style.webkitAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.animation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").style.mozAnimation = "fadesin 1.5s";
-document.getElementById("fc-myFrame").src="https://www.flipcause.com/widget/"+cause_id;
-}
-}
-
-
-function close_window() {
-document.getElementById("fc-fade").style.display="none";
-document.getElementById("fc-light").style.display="none";
-document.getElementById("fc-main").style.display="none";
-document.getElementById("fc-close").style.display="none";
-document.getElementById("fc-myFrame").style.display="none";
-}
-
-</script>
-
-<div id="fc-fade" class="fc-black_overlay" onclick="close_window()"></div>
-<div id="fc-light" class="fc-white_content">
-<div id="fc-main" class="fc-main-box">
-<div id="fc-close" class="fc-widget_close" onclick="close_window()">
-</div><iframe id="fc-myFrame" iframe height="580" width="925" style="border: 0;
-border-radius:5px 5px 5px 5px; box-shadow:0 0 8px rgba(0, 0, 0, 0.5);" scrolling="no" src=""></iframe></div>
-</div>
-
-<!--END Flipcause Main Integration Code-->
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
 </footer>
+  </body>
 </html>

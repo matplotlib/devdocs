@@ -1,0 +1,10 @@
+<map id="inheritanced42bccc26f" name="inheritanced42bccc26f">
+<area shape="rect" id="node1" href="artist_api.html#matplotlib.artist.Artist" target="_top" title="Abstract base class for objects that render into a FigureCanvas." alt="" coords="5,87,240,119"/>
+<area shape="rect" id="node2" href="#matplotlib.axis.Axis" target="_top" title="Base class for `.XAxis` and `.YAxis`." alt="" coords="284,59,495,92"/>
+<area shape="rect" id="node3" href="#matplotlib.axis.Tick" target="_top" title="Abstract base class for the axis ticks, grid lines and labels." alt="" coords="284,114,495,146"/>
+<area shape="rect" id="node5" href="#matplotlib.axis.XAxis" target="_top" title="matplotlib.axis.XAxis" alt="" coords="539,5,763,37"/>
+<area shape="rect" id="node7" href="#matplotlib.axis.YAxis" target="_top" title="matplotlib.axis.YAxis" alt="" coords="540,59,762,92"/>
+<area shape="rect" id="node6" href="#matplotlib.axis.XTick" target="_top" title="Contains all the Artists needed to make an x tick &#45; the tick line," alt="" coords="540,114,762,146"/>
+<area shape="rect" id="node8" href="#matplotlib.axis.YTick" target="_top" title="Contains all the Artists needed to make a Y tick &#45; the tick line," alt="" coords="540,168,762,200"/>
+<area shape="rect" id="node4" href="#matplotlib.axis.Ticker" target="_top" title="A container for the objects defining tick position and format." alt="" coords="8,32,237,64"/>
+</map>

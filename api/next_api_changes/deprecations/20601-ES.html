@@ -1,0 +1,1073 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selector widget state internals &#8212; Matplotlib 3.4.2.post1414+g246a489ce6 documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mpl.css?v3.4.2-1414-g246a489ce6" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Matplotlib 3.4.2.post1414+g246a489ce6 documentation"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="FixedAxisArtistHelper.change_tick_coord" href="20638-AL.html" />
+    <link rel="prev" title="Unification of Selector API" href="20585-EP.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo2.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../users/installing.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../plot_types/index.html">
+  Plot types
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../gallery/index.html">
+  Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../index.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../users/index.html">
+  User's guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../devel/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference external nav-link" href="https://matplotlib.org/mpl-third-party/">
+  Third-party packages
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://gitter.im/matplotlib" rel="noopener" target="_blank" title="gitter">
+            <span><i class="fab fa-gitter"></i></span>
+            <label class="sr-only">gitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discourse.matplotlib.org" rel="noopener" target="_blank" title="discourse">
+            <span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">discourse</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/matplotlib/matplotlib" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/matplotlib/" rel="noopener" target="_blank" title="twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/00001-ABC.html">
+   Behavior Change template
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/14913-AL.html">
+   The output of
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NonUniformImage
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     PcolorImage
+    </span>
+   </code>
+   has changed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/18216-ES.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Axes
+    </span>
+   </code>
+   children are no longer separated by type
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/19375-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Figure.suppressComposite
+    </span>
+   </code>
+   now also controls compositing of Axes images
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/20012-AL.html">
+   Default theta tick locations for non-full-circle polar plots have changed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/20027-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     axvspan
+    </span>
+   </code>
+   now plots full wedges in polar plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/20046-BB.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     MatplotlibDeprecationWarning
+    </span>
+   </code>
+   now subclasses
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     DeprecationWarning
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/20054-JMK.html">
+   Colorbar lines no longer clipped
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/20064-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     AxesDivider
+    </span>
+   </code>
+   now defaults to rcParams-specified pads
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/20077-TH.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Artist.set
+    </span>
+   </code>
+   applies artist properties in the order in which they are given
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/20150-TAC.html">
+   Rename fist arg to subplot_mosaic
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/20199-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Line2D.set_markeredgecolor(None)
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Line2D.set_markerfacecolor(None)
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/20268-JMK.html">
+   pcolor(mesh) shading defaults to auto
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/20367-AG.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Text
+    </span>
+   </code>
+   allows a boolean
+   <em>
+    parse_math
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behavior/20405-JMK.html">
+   Make norm from scale now public
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00001-ABC.html">
+   Template for deprecations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13860-AL.html">
+   Locator and Formatter wrapper methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15604-AL.html">
+   Auto-removal of grids by
+   <code class="xref py py-obj docutils literal notranslate">
+    <span class="pre">
+     pcolor
+    </span>
+   </code>
+   and
+   <code class="xref py py-obj docutils literal notranslate">
+    <span class="pre">
+     pcolormesh
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18216-ES.html">
+   Modification of
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Axes
+    </span>
+   </code>
+   children sublists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18346-TH.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     plot_date
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19401-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mpl_toolkits.axisartist.clip_path
+    </span>
+   </code>
+   is deprecated
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19441-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cursord
+    </span>
+   </code>
+   in GTK, Qt, and wx backends
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19483-JMK.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     epoch2num
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     num2epoch
+    </span>
+   </code>
+   are deprecated
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19487-AL.html">
+   Unused positional parameters to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     print_&lt;fmt&gt;
+    </span>
+   </code>
+   methods are deprecated
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19517-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     is_url
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     URL_REGEX
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19558-AL.html">
+   The
+   <em>
+    format
+   </em>
+   parameter of
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dviread.find_tex_file
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19575-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Text.get_prop_tup
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19585-AL.html">
+   matplotlib.style.core deprecations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19655-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Tick.apply_tickdir
+    </span>
+   </code>
+   is deprecated
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19795-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Dvi.baseline
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19858-AL.html">
+   "units finalize" signal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="19934-DS.html">
+   <em>
+    drawtype
+   </em>
+   argument to RectangleSelector
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20063-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Divider.get_vsize_hsize
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Grid.get_vsize_hsize
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20065-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     AxesDivider.append_axes(...,
+    </span>
+    <span class="pre">
+     add_to_figure=False)
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20091-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tight_layout.auto_adjust_subplotpars
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20108-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ContourLabeler.get_label_width
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20109-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     plot_directive
+    </span>
+   </code>
+   internals deprecations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20113-EP.html">
+   SpanSelector
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20126-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     font_manager
+    </span>
+   </code>
+   helpers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20170-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SubplotParams.validate
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20173-AL.html">
+   The first parameter of
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Axes.grid
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Axis.grid
+    </span>
+   </code>
+   has been renamed to
+   <em>
+    visible
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20193-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ParasiteAxesBase.get_images_artists
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20206-AL.html">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     grid_info
+    </span>
+   </code>
+   attribute of
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     axisartist
+    </span>
+   </code>
+   classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20208-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib.blocking_input
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20209-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cbook.report_memory
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20237-TH.html">
+   QuadMesh signature
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20278-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TexManager
+    </span>
+   </code>
+   attributes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20302-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     QuadMesh.convert_mesh_to_paths
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     QuadMesh.convert_mesh_to_triangles
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20311-AL.html">
+   rcParams will no longer cast inputs to str
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20334-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ConversionInterface.convert
+    </span>
+   </code>
+   no longer needs to accept unitless values
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20428-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     FancyArrowPatch.get_path_in_displaycoord
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ConnectionPath.get_path_in_displaycoord
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20466-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     backend_pgf.LatexManager.str_cache
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20474-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dviread.PsfontsMap
+    </span>
+   </code>
+   now raises LookupError instead of KeyError for missing fonts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20540-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     :encoding:
+    </span>
+   </code>
+   option to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ..
+    </span>
+    <span class="pre">
+     plot
+    </span>
+   </code>
+   directive
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20543-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     @pytest.mark.style
+    </span>
+   </code>
+   is deprecated
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20585-EP.html">
+   Unification of Selector API
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Selector widget state internals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20638-AL.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     FixedAxisArtistHelper.change_tick_coord
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/00001-ABC.html">
+   Development Change template
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/20003-ES.html">
+   Increase to minimum supported versions of dependencies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/00001-ABC.html">
+   Removal Change template
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/19033-AL.html">
+   The private
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib.axes._subplots._subplot_classes
+    </span>
+   </code>
+   dict has been removed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/19348-OE.html">
+   Removed
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dates.YearLocator.replaced
+    </span>
+   </code>
+   attribute
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/19552-GL.html">
+   ScalarMappable update checkers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/19795-AL.html">
+   usetex-related removals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/19796-AL.html">
+   Keymaps toggling
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Axes.get_navigate
+    </span>
+   </code>
+   have been removed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/19801-AL.html">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mathtext.fallback_to_cm
+    </span>
+   </code>
+   rcParams
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/19810-AL.html">
+   jpeg-related keywords and rcParams
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/19894-ES.html">
+   Qt4-based backends
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/19898-ES.html">
+   NavigationToolbar2._init_toolbar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/19900-ES.html">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TTFPATH
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     AFMPATH
+    </span>
+   </code>
+   environment variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/19901-ES.html">
+   Deprecated rcParams validators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/19922-ES.html">
+   Removed modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/20051-AL.html">
+   Removal of deprecated
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     offsetbox
+    </span>
+   </code>
+   APIs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/20052-AL.html">
+   Removal of
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     axes_grid
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     axisartist
+    </span>
+   </code>
+   APIs deprecated in Matplotlib 3.3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/20095-ES.html">
+   Axis and Locator
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pan
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     zoom
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/20188-ES.html">
+   Removal of
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cbook
+    </span>
+   </code>
+   deprecations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/20245-GL.html">
+   Collection's offset_position has been removed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/20314-GL.html">
+   Colorbar related removals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/20331-ES.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Axes.pie
+    </span>
+   </code>
+   <em>
+    radius
+   </em>
+   ,
+   <em>
+    startangle
+   </em>
+   , and
+   <em>
+    normalize
+   </em>
+   parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/20447-ES.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     figure.add_axes()
+    </span>
+   </code>
+   without arguments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/20465-ES.html">
+   Case-insensitive properties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../removals/20563-TH.html">
+   MaxNLocator passing
+   <em>
+    nbins
+   </em>
+   in two ways
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="selector-widget-state-internals">
+<h1>Selector widget state internals<a class="headerlink" href="#selector-widget-state-internals" title="Permalink to this headline">¶</a></h1>
+<p>Several <a class="reference internal" href="../../widgets_api.html#matplotlib.widgets.EllipseSelector" title="matplotlib.widgets.EllipseSelector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EllipseSelector</span></code></a>,
+<a class="reference internal" href="../../widgets_api.html#matplotlib.widgets.RectangleSelector" title="matplotlib.widgets.RectangleSelector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RectangleSelector</span></code></a> and <a class="reference internal" href="../../widgets_api.html#matplotlib.widgets.SpanSelector" title="matplotlib.widgets.SpanSelector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpanSelector</span></code></a>
+class internals have been privatized and deprecated:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eventpress</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">eventrelease</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">state</span></code></p></li>
+</ul>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="20585-EP.html" title="previous page">Unification of Selector API</a>
+    <a class='right-next' id="next-link" href="20638-AL.html" title="next page"><code class="docutils literal notranslate"><span class="pre">FixedAxisArtistHelper.change_tick_coord</span></code></a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2021 The Matplotlib development team.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

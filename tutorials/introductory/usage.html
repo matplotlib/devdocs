@@ -1,0 +1,1443 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usage Guide &#8212; Matplotlib 3.4.2.post1414+g246a489ce6 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mpl.css?v3.4.2-1414-g246a489ce6" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Matplotlib 3.4.2.post1414+g246a489ce6 documentation"
+          href="../../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Pyplot tutorial" href="pyplot.html" />
+    <link rel="prev" title="Tutorials" href="../index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo2.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../users/installing.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../plot_types/index.html">
+  Plot types
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../gallery/index.html">
+  Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api/index.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../users/index.html">
+  User's guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../devel/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference external nav-link" href="https://matplotlib.org/mpl-third-party/">
+  Third-party packages
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://gitter.im/matplotlib" rel="noopener" target="_blank" title="gitter">
+            <span><i class="fab fa-gitter"></i></span>
+            <label class="sr-only">gitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discourse.matplotlib.org" rel="noopener" target="_blank" title="discourse">
+            <span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">discourse</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/matplotlib/matplotlib" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/matplotlib/" rel="noopener" target="_blank" title="twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Usage Guide
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pyplot.html">
+   Pyplot tutorial
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="sample_plots.html">
+   Sample plots in Matplotlib
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="images.html">
+   Image tutorial
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lifecycle.html">
+   The Lifecycle of a Plot
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="customizing.html">
+   Customizing Matplotlib with style sheets and rcParams
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/artists.html">
+   Artist tutorial
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/legend_guide.html">
+   Legend guide
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/color_cycle.html">
+   Styling with cycler
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/gridspec.html">
+   Customizing Figure Layouts Using GridSpec and Other Functions
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/constrainedlayout_guide.html">
+   Constrained Layout Guide
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/tight_layout_guide.html">
+   Tight Layout guide
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/autoscale.html">
+   Autoscaling
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/imshow_extent.html">
+   <em>
+    origin
+   </em>
+   and
+   <em>
+    extent
+   </em>
+   in
+   <code class="xref py py-obj docutils literal notranslate">
+    <span class="pre">
+     imshow
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../advanced/blitting.html">
+   Faster rendering by using blitting
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../advanced/path_tutorial.html">
+   Path Tutorial
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../advanced/patheffects_guide.html">
+   Path effects guide
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../advanced/transforms_tutorial.html">
+   Transformations Tutorial
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../colors/colors.html">
+   Specifying Colors
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../colors/colorbar_only.html">
+   Customized Colorbars Tutorial
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../colors/colormap-manipulation.html">
+   Creating Colormaps in Matplotlib
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../colors/colormapnorms.html">
+   Colormap Normalization
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../colors/colormaps.html">
+   Choosing Colormaps in Matplotlib
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../provisional/mosaic.html">
+   Complex and semantic figure composition
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../text/text_intro.html">
+   Text in Matplotlib Plots
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../text/text_props.html">
+   Text properties and layout
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../text/annotations.html">
+   Annotations
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../text/mathtext.html">
+   Writing mathematical expressions
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../text/pgf.html">
+   Typesetting with XeLaTeX/LuaLaTeX
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../text/usetex.html">
+   Text rendering with LaTeX
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../toolkits/axes_grid.html">
+   Overview of
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     mpl_toolkits.axes_grid1
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../toolkits/axisartist.html">
+   Overview of axisartist toolkit
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../toolkits/mplot3d.html">
+   The mplot3d Toolkit
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-simple-example">
+   A simple example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parts-of-a-figure">
+   Parts of a Figure
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figure">
+     <code class="xref py py-class docutils literal notranslate">
+      <span class="pre">
+       Figure
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#axes">
+     <code class="xref py py-class docutils literal notranslate">
+      <span class="pre">
+       Axes
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#axis">
+     <code class="xref py py-class docutils literal notranslate">
+      <span class="pre">
+       Axis
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#artist">
+     <code class="xref py py-class docutils literal notranslate">
+      <span class="pre">
+       Artist
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-inputs-to-plotting-functions">
+   Types of inputs to plotting functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-object-oriented-interface-and-the-pyplot-interface">
+   The object-oriented interface and the pyplot interface
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#backends">
+   Backends
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-backend">
+     What is a backend?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selecting-a-backend">
+     Selecting a backend
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-builtin-backends">
+     The builtin backends
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ipympl">
+       ipympl
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-do-i-select-pyqt5-or-pyside2">
+       How do I select PyQt5 or PySide2?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-non-builtin-backends">
+     Using non-builtin backends
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-interactive-mode">
+   What is interactive mode?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactive-example">
+     Interactive example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-interactive-example">
+     Non-interactive example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performance">
+   Performance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#line-segment-simplification">
+     Line segment simplification
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#marker-simplification">
+     Marker simplification
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#splitting-lines-into-smaller-chunks">
+     Splitting lines into smaller chunks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#legends">
+     Legends
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-fast-style">
+     Using the
+     <em>
+      fast
+     </em>
+     style
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-introductory-usage-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="usage-guide">
+<span id="sphx-glr-tutorials-introductory-usage-py"></span><h1>Usage Guide<a class="headerlink" href="#usage-guide" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial covers some basic usage patterns and best practices to
+help you get started with Matplotlib.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<div class="section" id="a-simple-example">
+<h2>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline">¶</a></h2>
+<p>Matplotlib graphs your data on <a class="reference internal" href="../../api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Figure</span></code></a>s (e.g., windows, Jupyter
+widgets, etc.), each of which can contain one or more <a class="reference internal" href="../../api/axes_api.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, an
+area where points can be specified in terms of x-y coordinates, or theta-r
+in a polar plot, x-y-z in a 3D plot, etc.  The simplest way of
+creating a figure with an axes is using <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pyplot.subplots</span></code></a>. We can then use
+<a class="reference internal" href="../../api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes.plot</span></code></a> to draw some data on the axes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">()</span>  <span class="c1"># Create a figure containing a single axes.</span>
+<a href="../../api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax</span><span class="o">.</span><span class="n">plot</span></a><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># Plot some data on the axes.</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_usage_001.png" srcset="../../_images/sphx_glr_usage_001.png, ../../_images/sphx_glr_usage_001_2_0x.png 2.0x" alt="usage" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D object at 0x7fc6ed08efd0&gt;]
+</pre></div>
+</div>
+<p>Many other plotting libraries or languages do not require you to explicitly
+create an axes.  For example, in MATLAB, one can just do</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w">  </span><span class="c">% MATLAB plot.</span><span class="w"></span>
+</pre></div>
+</div>
+<p>and get the desired graph.</p>
+<p>In fact, you can do the same in Matplotlib: for each <a class="reference internal" href="../../api/axes_api.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> graphing
+method, there is a corresponding function in the <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><code class="xref py py-mod docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code></a>
+module that performs that plot on the &quot;current&quot; axes, creating that axes (and
+its parent figure) if they don't exist yet.  So, the previous example can be
+written more shortly as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># Matplotlib plot.</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_usage_002.png" srcset="../../_images/sphx_glr_usage_002.png, ../../_images/sphx_glr_usage_002_2_0x.png 2.0x" alt="usage" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D object at 0x7fc70072c9a0&gt;]
+</pre></div>
+</div>
+</div>
+<div class="section" id="parts-of-a-figure">
+<span id="figure-parts"></span><h2>Parts of a Figure<a class="headerlink" href="#parts-of-a-figure" title="Permalink to this headline">¶</a></h2>
+<p>Here is a more detailed layout of the components of a Matplotlib figure.</p>
+<img alt="../../_images/anatomy.png" src="../../_images/anatomy.png" />
+<div class="section" id="figure">
+<h3><a class="reference internal" href="../../api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Figure</span></code></a><a class="headerlink" href="#figure" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>whole</strong> figure.  The figure keeps
+track of all the child <a class="reference internal" href="../../api/axes_api.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><code class="xref py py-class docutils literal notranslate"><span class="pre">Axes</span></code></a>, a group of
+'special' artists (titles, figure legends, etc), and the <strong>canvas</strong>.
+(The canvas is not the primary focus. It is crucial as it is the
+object that actually does the drawing to get you your plot, but as
+the user, it is mostly invisible to you).  A figure can contain any
+number of <a class="reference internal" href="../../api/axes_api.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><code class="xref py py-class docutils literal notranslate"><span class="pre">Axes</span></code></a>, but will typically have
+at least one.</p>
+<p>The easiest way to create a new figure is with pyplot:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>  <span class="c1"># an empty figure with no Axes</span>
+<a href="../../api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">()</span>  <span class="c1"># a figure with a single Axes</span>
+<a href="../../api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># a figure with a 2x2 grid of Axes</span>
+</pre></div>
+</div>
+<p>It's convenient to create the axes together with the figure, but you can
+also add axes later on, allowing for more complex axes layouts.</p>
+</div>
+<div class="section" id="axes">
+<h3><a class="reference internal" href="../../api/axes_api.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><code class="xref py py-class docutils literal notranslate"><span class="pre">Axes</span></code></a><a class="headerlink" href="#axes" title="Permalink to this headline">¶</a></h3>
+<p>This is what you think of as 'a plot'. It is the region of the image
+with the data space. A given figure
+can contain many Axes, but a given <a class="reference internal" href="../../api/axes_api.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><code class="xref py py-class docutils literal notranslate"><span class="pre">Axes</span></code></a>
+object can only be in one <a class="reference internal" href="../../api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Figure</span></code></a>.  The
+Axes contains two (or three in the case of 3D)
+<a class="reference internal" href="../../api/axis_api.html#matplotlib.axis.Axis" title="matplotlib.axis.Axis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Axis</span></code></a> objects (be aware of the difference
+between <strong>Axes</strong> and <strong>Axis</strong>) which take care of the data limits (the
+data limits can also be controlled via the <a class="reference internal" href="../../api/_as_gen/matplotlib.axes.Axes.set_xlim.html#matplotlib.axes.Axes.set_xlim" title="matplotlib.axes.Axes.set_xlim"><code class="xref py py-meth docutils literal notranslate"><span class="pre">axes.Axes.set_xlim()</span></code></a> and
+<a class="reference internal" href="../../api/_as_gen/matplotlib.axes.Axes.set_ylim.html#matplotlib.axes.Axes.set_ylim" title="matplotlib.axes.Axes.set_ylim"><code class="xref py py-meth docutils literal notranslate"><span class="pre">axes.Axes.set_ylim()</span></code></a> methods).  Each <a class="reference internal" href="../../api/axes_api.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><code class="xref py py-class docutils literal notranslate"><span class="pre">Axes</span></code></a> has a title
+(set via <a class="reference internal" href="../../api/_as_gen/matplotlib.axes.Axes.set_title.html#matplotlib.axes.Axes.set_title" title="matplotlib.axes.Axes.set_title"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_title()</span></code></a>), an x-label (set via
+<a class="reference internal" href="../../api/_as_gen/matplotlib.axes.Axes.set_xlabel.html#matplotlib.axes.Axes.set_xlabel" title="matplotlib.axes.Axes.set_xlabel"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_xlabel()</span></code></a>), and a y-label set via
+<a class="reference internal" href="../../api/_as_gen/matplotlib.axes.Axes.set_ylabel.html#matplotlib.axes.Axes.set_ylabel" title="matplotlib.axes.Axes.set_ylabel"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_ylabel()</span></code></a>).</p>
+<p>The <a class="reference internal" href="../../api/axes_api.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><code class="xref py py-class docutils literal notranslate"><span class="pre">Axes</span></code></a> class and its member functions are the primary entry
+point to working with the OO interface.</p>
+</div>
+<div class="section" id="axis">
+<h3><a class="reference internal" href="../../api/axis_api.html#matplotlib.axis.Axis" title="matplotlib.axis.Axis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Axis</span></code></a><a class="headerlink" href="#axis" title="Permalink to this headline">¶</a></h3>
+<p>These are the objects most similar to a number line.
+They set graph limits and generate ticks (the marks
+on the axis) and ticklabels (strings labeling the ticks).  The location of
+the ticks is determined by a <a class="reference internal" href="../../api/ticker_api.html#matplotlib.ticker.Locator" title="matplotlib.ticker.Locator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Locator</span></code></a> object and the
+ticklabel strings are formatted by a <a class="reference internal" href="../../api/ticker_api.html#matplotlib.ticker.Formatter" title="matplotlib.ticker.Formatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Formatter</span></code></a>.  The
+combination of the correct <a class="reference internal" href="../../api/ticker_api.html#matplotlib.ticker.Locator" title="matplotlib.ticker.Locator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Locator</span></code></a> and <a class="reference internal" href="../../api/ticker_api.html#matplotlib.ticker.Formatter" title="matplotlib.ticker.Formatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Formatter</span></code></a> gives very fine
+control over the tick locations and labels.</p>
+</div>
+<div class="section" id="artist">
+<h3><a class="reference internal" href="../../api/artist_api.html#matplotlib.artist.Artist" title="matplotlib.artist.Artist"><code class="xref py py-class docutils literal notranslate"><span class="pre">Artist</span></code></a><a class="headerlink" href="#artist" title="Permalink to this headline">¶</a></h3>
+<p>Basically, everything visible on the figure is an artist (even
+<a class="reference internal" href="../../api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Figure</span></code></a>, <a class="reference internal" href="../../api/axes_api.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, and <a class="reference internal" href="../../api/axis_api.html#matplotlib.axis.Axis" title="matplotlib.axis.Axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axis</span></code></a> objects).  This includes
+<a class="reference internal" href="../../api/text_api.html#matplotlib.text.Text" title="matplotlib.text.Text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Text</span></code></a> objects, <a class="reference internal" href="../../api/_as_gen/matplotlib.lines.Line2D.html#matplotlib.lines.Line2D" title="matplotlib.lines.Line2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Line2D</span></code></a> objects, <a class="reference internal" href="../../api/collections_api.html#module-matplotlib.collections" title="matplotlib.collections"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code></a> objects, <a class="reference internal" href="../../api/_as_gen/matplotlib.patches.Patch.html#matplotlib.patches.Patch" title="matplotlib.patches.Patch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Patch</span></code></a>
+objects, etc... When the figure is rendered, all of the
+artists are drawn to the <strong>canvas</strong>.  Most Artists are tied to an Axes; such
+an Artist cannot be shared by multiple Axes, or moved from one to another.</p>
+</div>
+</div>
+<div class="section" id="types-of-inputs-to-plotting-functions">
+<span id="input-types"></span><h2>Types of inputs to plotting functions<a class="headerlink" href="#types-of-inputs-to-plotting-functions" title="Permalink to this headline">¶</a></h2>
+<p>All of plotting functions expect <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.21)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.array</span></code></a> or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ma.masked_array.html#numpy.ma.masked_array" title="(in NumPy v1.21)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ma.masked_array</span></code></a> as
+input.  Classes that are similar to arrays ('array-like') such as <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/index.html#module-pandas" title="(in pandas v1.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas</span></code></a>
+data objects and <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.matrix.html#numpy.matrix" title="(in NumPy v1.21)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.matrix</span></code></a> may not work as intended.  Common convention
+is to convert these to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.21)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.array</span></code></a> objects prior to plotting.</p>
+<p>For example, to convert a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">))</span>
+<span class="n">a_asarray</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+<p>and to convert a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.matrix.html#numpy.matrix" title="(in NumPy v1.21)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.matrix</span></code></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">b_asarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-object-oriented-interface-and-the-pyplot-interface">
+<span id="coding-styles"></span><h2>The object-oriented interface and the pyplot interface<a class="headerlink" href="#the-object-oriented-interface-and-the-pyplot-interface" title="Permalink to this headline">¶</a></h2>
+<p>As noted above, there are essentially two ways to use Matplotlib:</p>
+<ul class="simple">
+<li><p>Explicitly create figures and axes, and call methods on them (the
+&quot;object-oriented (OO) style&quot;).</p></li>
+<li><p>Rely on pyplot to automatically create and manage the figures and axes, and
+use pyplot functions for plotting.</p></li>
+</ul>
+<p>So one can do (OO-style)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Sample data.</span>
+
+<span class="c1"># Note that even in the OO-style, we use `.pyplot.figure` to create the figure.</span>
+<a href="../../api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">()</span>  <span class="c1"># Create a figure and an axes.</span>
+<a href="../../api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>  <span class="c1"># Plot some data on the axes.</span>
+<a href="../../api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>  <span class="c1"># Plot more data on the axes...</span>
+<a href="../../api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cubic&#39;</span><span class="p">)</span>  <span class="c1"># ... and some more.</span>
+<a href="../../api/_as_gen/matplotlib.axes.Axes.set_xlabel.html#matplotlib.axes.Axes.set_xlabel" title="matplotlib.axes.Axes.set_xlabel" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span></a><span class="p">(</span><span class="s1">&#39;x label&#39;</span><span class="p">)</span>  <span class="c1"># Add an x-label to the axes.</span>
+<a href="../../api/_as_gen/matplotlib.axes.Axes.set_ylabel.html#matplotlib.axes.Axes.set_ylabel" title="matplotlib.axes.Axes.set_ylabel" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span></a><span class="p">(</span><span class="s1">&#39;y label&#39;</span><span class="p">)</span>  <span class="c1"># Add a y-label to the axes.</span>
+<a href="../../api/_as_gen/matplotlib.axes.Axes.set_title.html#matplotlib.axes.Axes.set_title" title="matplotlib.axes.Axes.set_title" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span></a><span class="p">(</span><span class="s2">&quot;Simple Plot&quot;</span><span class="p">)</span>  <span class="c1"># Add a title to the axes.</span>
+<a href="../../api/_as_gen/matplotlib.axes.Axes.legend.html#matplotlib.axes.Axes.legend" title="matplotlib.axes.Axes.legend" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax</span><span class="o">.</span><span class="n">legend</span></a><span class="p">()</span>  <span class="c1"># Add a legend.</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_usage_003.png" srcset="../../_images/sphx_glr_usage_003.png, ../../_images/sphx_glr_usage_003_2_0x.png 2.0x" alt="Simple Plot" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fc7000e6730&gt;
+</pre></div>
+</div>
+<p>or (pyplot-style)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Sample data.</span>
+
+<a href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>  <span class="c1"># Plot some data on the (implicit) axes.</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;quadratic&#39;</span><span class="p">)</span>  <span class="c1"># etc.</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cubic&#39;</span><span class="p">)</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="s1">&#39;x label&#39;</span><span class="p">)</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a><span class="p">(</span><span class="s1">&#39;y label&#39;</span><span class="p">)</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s2">&quot;Simple Plot&quot;</span><span class="p">)</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_usage_004.png" srcset="../../_images/sphx_glr_usage_004.png, ../../_images/sphx_glr_usage_004_2_0x.png 2.0x" alt="Simple Plot" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fc6ed028e80&gt;
+</pre></div>
+</div>
+<p>In addition, there is a third approach, for the case when embedding
+Matplotlib in a GUI application, which completely drops pyplot, even for
+figure creation.  We won't discuss it here; see the corresponding section in
+the gallery for more info (<a class="reference internal" href="../../gallery/index.html#user-interfaces"><span class="std std-ref">Embedding Matplotlib in graphical user interfaces</span></a>).</p>
+<p>Matplotlib's documentation and examples use both the OO and the pyplot
+approaches (which are equally powerful), and you should feel free to use
+either (however, it is preferable pick one of them and stick to it, instead
+of mixing them).  In general, we suggest to restrict pyplot to interactive
+plotting (e.g., in a Jupyter notebook), and to prefer the OO-style for
+non-interactive plotting (in functions and scripts that are intended to be
+reused as part of a larger project).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In older examples, you may find examples that instead used the so-called
+<code class="docutils literal notranslate"><span class="pre">pylab</span></code> interface, via <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pylab</span> <span class="pre">import</span> <span class="pre">*</span></code>. This star-import
+imports everything both from pyplot and from <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="(in NumPy v1.21)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy</span></code></a>, so that one
+could do</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>for an even more MATLAB-like style.  This approach is strongly discouraged
+nowadays and deprecated. It is only mentioned here because you may still
+encounter it in the wild.</p>
+</div>
+<p>If you need to make the same plots over and over
+again with different data sets, use the recommended signature function below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_plotter</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data1</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data2</span></a><span class="p">,</span> <span class="n">param_dict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A helper function to make a graph</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ax : Axes</span>
+<span class="sd">        The axes to draw to</span>
+
+<span class="sd">    data1 : array</span>
+<span class="sd">       The x data</span>
+
+<span class="sd">    data2 : array</span>
+<span class="sd">       The y data</span>
+
+<span class="sd">    param_dict : dict</span>
+<span class="sd">       Dictionary of keyword arguments to pass to ax.plot</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : list</span>
+<span class="sd">        list of artists added</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">out</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data1</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data2</span></a><span class="p">,</span> <span class="o">**</span><span class="n">param_dict</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+<p>which you would then use as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data1</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data2</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data3</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data4</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html#numpy.random.randn" title="numpy.random.randn" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span></a><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<a href="../../api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">my_plotter</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data1</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data2</span></a><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;marker&#39;</span><span class="p">:</span> <span class="s1">&#39;x&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_usage_005.png" srcset="../../_images/sphx_glr_usage_005.png, ../../_images/sphx_glr_usage_005_2_0x.png 2.0x" alt="usage" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D object at 0x7fc6fda91820&gt;]
+</pre></div>
+</div>
+<p>or if you wanted to have two sub-plots:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">my_plotter</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data1</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data2</span></a><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;marker&#39;</span><span class="p">:</span> <span class="s1">&#39;x&#39;</span><span class="p">})</span>
+<span class="n">my_plotter</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data3</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data4</span></a><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;marker&#39;</span><span class="p">:</span> <span class="s1">&#39;o&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_usage_006.png" srcset="../../_images/sphx_glr_usage_006.png, ../../_images/sphx_glr_usage_006_2_0x.png 2.0x" alt="usage" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D object at 0x7fc6fdda4a60&gt;]
+</pre></div>
+</div>
+<p>These examples provide convenience for more complex graphs.</p>
+</div>
+<div class="section" id="backends">
+<span id="id1"></span><h2>Backends<a class="headerlink" href="#backends" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-a-backend">
+<span id="id2"></span><h3>What is a backend?<a class="headerlink" href="#what-is-a-backend" title="Permalink to this headline">¶</a></h3>
+<p>A lot of documentation on the website and in the mailing lists refers
+to the &quot;backend&quot; and many new users are confused by this term.
+Matplotlib targets many different use cases and output formats.  Some
+people use Matplotlib interactively from the Python shell and have
+plotting windows pop up when they type commands.  Some people run
+<a class="reference external" href="https://jupyter.org">Jupyter</a> notebooks and draw inline plots for
+quick data analysis. Others embed Matplotlib into graphical user
+interfaces like PyQt or PyGObject to build rich applications.  Some
+people use Matplotlib in batch scripts to generate postscript images
+from numerical simulations, and still others run web application
+servers to dynamically serve up graphs.</p>
+<p>To support all of these use cases, Matplotlib can target different
+outputs, and each of these capabilities is called a backend; the
+&quot;frontend&quot; is the user facing code, i.e., the plotting code, whereas the
+&quot;backend&quot; does all the hard work behind-the-scenes to make the figure.
+There are two types of backends: user interface backends (for use in
+PyQt/PySide, PyGObject, Tkinter, wxPython, or macOS/Cocoa); also referred to
+as &quot;interactive backends&quot;) and hardcopy backends to make image files
+(PNG, SVG, PDF, PS; also referred to as &quot;non-interactive backends&quot;).</p>
+</div>
+<div class="section" id="selecting-a-backend">
+<h3>Selecting a backend<a class="headerlink" href="#selecting-a-backend" title="Permalink to this headline">¶</a></h3>
+<p>There are three ways to configure your backend:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><a class="reference external" href="../../tutorials/introductory/customizing.html?highlight=backend#a-sample-matplotlibrc-file"><span class="pre">rcParams[&quot;backend&quot;]</span></a></code> parameter in your <code class="file docutils literal notranslate"><span class="pre">matplotlibrc</span></code> file</p></li>
+<li><p>The <span class="target" id="index-0"></span><a class="reference internal" href="../../faq/environment_variables_faq.html#envvar-MPLBACKEND"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">MPLBACKEND</span></code></a> environment variable</p></li>
+<li><p>The function <a class="reference internal" href="../../api/matplotlib_configuration_api.html#matplotlib.use" title="matplotlib.use"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.use()</span></code></a></p></li>
+</ul>
+<p>Below is a more detailed description.</p>
+<p>If there is more than one configuration present, the last one from the
+list takes precedence; e.g. calling <a class="reference internal" href="../../api/matplotlib_configuration_api.html#matplotlib.use" title="matplotlib.use"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.use()</span></code></a> will override
+the setting in your <code class="file docutils literal notranslate"><span class="pre">matplotlibrc</span></code>.</p>
+<p>Without a backend explicitly set, Matplotlib automatically detects a usable
+backend based on what is available on your system and on whether a GUI event
+loop is already running.  The first usable backend in the following list is
+selected: MacOSX, Qt5Agg, Gtk3Agg, TkAgg, WxAgg, Agg.  The last, Agg, is a
+non-interactive backend that can only write to files.  It is used on Linux,
+if Matplotlib cannot connect to either an X display or a Wayland display.</p>
+<p>Here is a detailed description of the configuration methods:</p>
+<ol class="arabic">
+<li><p>Setting <code class="docutils literal notranslate"><a class="reference external" href="../../tutorials/introductory/customizing.html?highlight=backend#a-sample-matplotlibrc-file"><span class="pre">rcParams[&quot;backend&quot;]</span></a></code> in your <code class="file docutils literal notranslate"><span class="pre">matplotlibrc</span></code> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">backend</span> <span class="p">:</span> <span class="n">qt5agg</span>   <span class="c1"># use pyqt5 with antigrain (agg) rendering</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="customizing.html"><span class="doc">Customizing Matplotlib with style sheets and rcParams</span></a>.</p>
+</li>
+<li><p>Setting the <span class="target" id="index-1"></span><a class="reference internal" href="../../faq/environment_variables_faq.html#envvar-MPLBACKEND"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">MPLBACKEND</span></code></a> environment variable:</p>
+<p>You can set the environment variable either for your current shell or for
+a single script.</p>
+<p>On Unix:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">export</span> <span class="n">MPLBACKEND</span><span class="o">=</span><span class="n">qt5agg</span>
+<span class="o">&gt;</span> <span class="n">python</span> <span class="n">simple_plot</span><span class="o">.</span><span class="n">py</span>
+
+<span class="o">&gt;</span> <span class="n">MPLBACKEND</span><span class="o">=</span><span class="n">qt5agg</span> <span class="n">python</span> <span class="n">simple_plot</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>On Windows, only the former is possible:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nb">set</span> <span class="n">MPLBACKEND</span><span class="o">=</span><span class="n">qt5agg</span>
+<span class="o">&gt;</span> <span class="n">python</span> <span class="n">simple_plot</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Setting this environment variable will override the <code class="docutils literal notranslate"><span class="pre">backend</span></code> parameter
+in <em>any</em> <code class="file docutils literal notranslate"><span class="pre">matplotlibrc</span></code>, even if there is a <code class="file docutils literal notranslate"><span class="pre">matplotlibrc</span></code> in
+your current working directory. Therefore, setting <span class="target" id="index-2"></span><a class="reference internal" href="../../faq/environment_variables_faq.html#envvar-MPLBACKEND"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">MPLBACKEND</span></code></a>
+globally, e.g. in your <code class="file docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="file docutils literal notranslate"><span class="pre">.profile</span></code>, is discouraged
+as it might lead to counter-intuitive behavior.</p>
+</li>
+<li><p>If your script depends on a specific backend you can use the function
+<a class="reference internal" href="../../api/matplotlib_configuration_api.html#matplotlib.use" title="matplotlib.use"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.use()</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
+<a href="../../api/matplotlib_configuration_api.html#matplotlib.use" title="matplotlib.use" class="sphx-glr-backref-module-matplotlib sphx-glr-backref-type-py-function"><span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span></a><span class="p">(</span><span class="s1">&#39;qt5agg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This should be done before any figure is created, otherwise Matplotlib may
+fail to switch the backend and raise an ImportError.</p>
+<p>Using <a class="reference internal" href="../../api/matplotlib_configuration_api.html#matplotlib.use" title="matplotlib.use"><code class="xref py py-obj docutils literal notranslate"><span class="pre">use</span></code></a> will require changes in your code if users want to
+use a different backend.  Therefore, you should avoid explicitly calling
+<a class="reference internal" href="../../api/matplotlib_configuration_api.html#matplotlib.use" title="matplotlib.use"><code class="xref py py-obj docutils literal notranslate"><span class="pre">use</span></code></a> unless absolutely necessary.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="the-builtin-backends">
+<span id="id3"></span><h3>The builtin backends<a class="headerlink" href="#the-builtin-backends" title="Permalink to this headline">¶</a></h3>
+<p>By default, Matplotlib should automatically select a default backend which
+allows both interactive work and plotting from scripts, with output to the
+screen and/or to a file, so at least initially, you will not need to worry
+about the backend.  The most common exception is if your Python distribution
+comes without <a class="reference external" href="https://docs.python.org/3/library/tkinter.html#module-tkinter" title="(in Python v3.9)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter</span></code></a> and you have no other GUI toolkit installed.
+This happens on certain Linux distributions, where you need to install a
+Linux package named <code class="docutils literal notranslate"><span class="pre">python-tk</span></code> (or similar).</p>
+<p>If, however, you want to write graphical user interfaces, or a web
+application server
+(<a class="reference internal" href="../../gallery/user_interfaces/web_application_server_sgskip.html"><span class="doc">Embedding in a web application server (Flask)</span></a>), or need a
+better understanding of what is going on, read on. To make things more easily
+customizable for graphical user interfaces, Matplotlib separates the concept
+of the renderer (the thing that actually does the drawing) from the canvas
+(the place where the drawing goes). The canonical renderer for user
+interfaces is <code class="docutils literal notranslate"><span class="pre">Agg</span></code> which uses the <a class="reference external" href="http://antigrain.com/">Anti-Grain Geometry</a> C++ library to
+make a raster (pixel) image of the figure; it is used by the <code class="docutils literal notranslate"><span class="pre">Qt5Agg</span></code>,
+<code class="docutils literal notranslate"><span class="pre">GTK3Agg</span></code>, <code class="docutils literal notranslate"><span class="pre">wxAgg</span></code>, <code class="docutils literal notranslate"><span class="pre">TkAgg</span></code>, and <code class="docutils literal notranslate"><span class="pre">macosx</span></code> backends.  An alternative
+renderer is based on the Cairo library, used by <code class="docutils literal notranslate"><span class="pre">Qt5Cairo</span></code>, etc.</p>
+<p>For the rendering engines, users can also distinguish between <a class="reference external" href="https://en.wikipedia.org/wiki/Vector_graphics">vector</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Raster_graphics">raster</a> renderers.  Vector
+graphics languages issue drawing commands like &quot;draw a line from this
+point to this point&quot; and hence are scale free. Raster backends
+generate a pixel representation of the line whose accuracy depends on a
+DPI setting.</p>
+<p>Here is a summary of the Matplotlib renderers (there is an eponymous
+backend for each; these are <em>non-interactive backends</em>, capable of
+writing to a file):</p>
+<table class="table">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 13%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Renderer</p></th>
+<th class="head"><p>Filetypes</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AGG</p></td>
+<td><p>png</p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Raster_graphics">raster</a> graphics -- high quality images using the
+<a class="reference external" href="http://antigrain.com/">Anti-Grain Geometry</a> engine</p></td>
+</tr>
+<tr class="row-odd"><td><p>PDF</p></td>
+<td><p>pdf</p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Vector_graphics">vector</a> graphics -- <a class="reference external" href="https://en.wikipedia.org/wiki/Portable_Document_Format">Portable Document Format</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PS</p></td>
+<td><p>ps, eps</p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Vector_graphics">vector</a> graphics -- <a class="reference external" href="https://en.wikipedia.org/wiki/PostScript">Postscript</a> output</p></td>
+</tr>
+<tr class="row-odd"><td><p>SVG</p></td>
+<td><p>svg</p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Vector_graphics">vector</a> graphics -- <a class="reference external" href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics">Scalable Vector Graphics</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PGF</p></td>
+<td><p>pgf, pdf</p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Vector_graphics">vector</a> graphics -- using the <a class="reference external" href="https://ctan.org/pkg/pgf">pgf</a> package</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cairo</p></td>
+<td><p>png, ps,
+pdf, svg</p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Raster_graphics">raster</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Vector_graphics">vector</a> graphics -- using the <a class="reference external" href="https://www.cairographics.org">Cairo</a> library</p></td>
+</tr>
+</tbody>
+</table>
+<p>To save plots using the non-interactive backends, use the
+<code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.savefig('filename')</span></code> method.</p>
+<p>These are the user interfaces and renderer combinations supported;
+these are <em>interactive backends</em>, capable of displaying to the screen
+and using appropriate renderers from the table above to write to
+a file:</p>
+<table class="table">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 88%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Backend</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Qt5Agg</p></td>
+<td><p>Agg rendering in a <a class="reference external" href="https://doc.qt.io/qt-5/index.html">Qt5</a> canvas (requires <a class="reference external" href="https://riverbankcomputing.com/software/pyqt/intro">PyQt5</a>).  This
+backend can be activated in IPython with <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">qt5</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ipympl</p></td>
+<td><p>Agg rendering embedded in a Jupyter widget.  (requires ipympl).
+This backend can be enabled in a Jupyter notebook with
+<code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">ipympl</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>GTK3Agg</p></td>
+<td><p>Agg rendering to a <a class="reference external" href="https://www.gtk.org/">GTK</a> 3.x canvas (requires <a class="reference external" href="https://wiki.gnome.org/action/show/Projects/PyGObject">PyGObject</a>,
+and <a class="reference external" href="https://www.cairographics.org/pycairo/">pycairo</a> or <a class="reference external" href="https://pythonhosted.org/cairocffi/">cairocffi</a>).  This backend can be activated in
+IPython with <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">gtk3</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>macosx</p></td>
+<td><p>Agg rendering into a Cocoa canvas in OSX.  This backend can be
+activated in IPython with <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">osx</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>TkAgg</p></td>
+<td><p>Agg rendering to a <a class="reference external" href="https://www.tcl.tk/">Tk</a> canvas (requires <a class="reference external" href="https://docs.python.org/3/library/tk.html">TkInter</a>). This
+backend can be activated in IPython with <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">tk</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>nbAgg</p></td>
+<td><p>Embed an interactive figure in a Jupyter classic notebook.  This
+backend can be enabled in Jupyter notebooks via
+<code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>WebAgg</p></td>
+<td><p>On <code class="docutils literal notranslate"><span class="pre">show()</span></code> will start a tornado server with an interactive
+figure.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GTK3Cairo</p></td>
+<td><p>Cairo rendering to a <a class="reference external" href="https://www.gtk.org/">GTK</a> 3.x canvas (requires <a class="reference external" href="https://wiki.gnome.org/action/show/Projects/PyGObject">PyGObject</a>,
+and <a class="reference external" href="https://www.cairographics.org/pycairo/">pycairo</a> or <a class="reference external" href="https://pythonhosted.org/cairocffi/">cairocffi</a>).</p></td>
+</tr>
+<tr class="row-even"><td><p>wxAgg</p></td>
+<td><p>Agg rendering to a <a class="reference external" href="https://www.wxwidgets.org/">wxWidgets</a> canvas (requires <a class="reference external" href="https://www.wxpython.org/">wxPython</a> 4).
+This backend can be activated in IPython with <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">wx</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The names of builtin backends are case-insensitive. For example, 'Qt5Agg'
+and 'qt5agg' are equivalent.</p>
+</div>
+<div class="section" id="ipympl">
+<h4>ipympl<a class="headerlink" href="#ipympl" title="Permalink to this headline">¶</a></h4>
+<p>The Jupyter widget ecosystem is moving too fast to support directly in
+Matplotlib.  To install ipympl:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install ipympl
+jupyter nbextension <span class="nb">enable</span> --py --sys-prefix ipympl
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install ipympl -c conda-forge
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://github.com/matplotlib/jupyter-matplotlib">jupyter-matplotlib</a>
+for more details.</p>
+</div>
+<div class="section" id="how-do-i-select-pyqt5-or-pyside2">
+<span id="qt-api-usage"></span><h4>How do I select PyQt5 or PySide2?<a class="headerlink" href="#how-do-i-select-pyqt5-or-pyside2" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="target" id="index-3"></span><a class="reference internal" href="../../faq/environment_variables_faq.html#envvar-QT_API"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">QT_API</span></code></a> environment variable can be set to either <code class="docutils literal notranslate"><span class="pre">pyqt5</span></code> or
+<code class="docutils literal notranslate"><span class="pre">pyside2</span></code> to use <code class="docutils literal notranslate"><span class="pre">PyQt5</span></code> or <code class="docutils literal notranslate"><span class="pre">PySide2</span></code>, respectively.</p>
+<p>Since the default value for the bindings to be used is <code class="docutils literal notranslate"><span class="pre">PyQt5</span></code>, Matplotlib
+first tries to import it. If the import fails, it tries to import
+<code class="docutils literal notranslate"><span class="pre">PySide2</span></code>.</p>
+</div>
+</div>
+<div class="section" id="using-non-builtin-backends">
+<h3>Using non-builtin backends<a class="headerlink" href="#using-non-builtin-backends" title="Permalink to this headline">¶</a></h3>
+<p>More generally, any importable backend can be selected by using any of the
+methods above. If <code class="docutils literal notranslate"><span class="pre">name.of.the.backend</span></code> is the module containing the
+backend, use <code class="docutils literal notranslate"><span class="pre">module://name.of.the.backend</span></code> as the backend name, e.g.
+<code class="docutils literal notranslate"><span class="pre">matplotlib.use('module://name.of.the.backend')</span></code>.</p>
+</div>
+</div>
+<div class="section" id="what-is-interactive-mode">
+<span id="interactive-mode"></span><h2>What is interactive mode?<a class="headerlink" href="#what-is-interactive-mode" title="Permalink to this headline">¶</a></h2>
+<p>Use of an interactive backend (see <a class="reference internal" href="#what-is-a-backend"><span class="std std-ref">What is a backend?</span></a>)
+permits--but does not by itself require or ensure--plotting
+to the screen.  Whether and when plotting to the screen occurs,
+and whether a script or shell session continues after a plot
+is drawn on the screen, depends on the functions and methods
+that are called, and on a state variable that determines whether
+Matplotlib is in &quot;interactive mode.&quot;  The default Boolean value is set
+by the <code class="file docutils literal notranslate"><span class="pre">matplotlibrc</span></code> file, and may be customized like any other
+configuration parameter (see <a class="reference internal" href="customizing.html"><span class="doc">Customizing Matplotlib with style sheets and rcParams</span></a>).  It
+may also be set via <a class="reference internal" href="../../api/matplotlib_configuration_api.html#matplotlib.interactive" title="matplotlib.interactive"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.interactive()</span></code></a>, and its
+value may be queried via <a class="reference internal" href="../../api/matplotlib_configuration_api.html#matplotlib.is_interactive" title="matplotlib.is_interactive"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.is_interactive()</span></code></a>.  Turning
+interactive mode on and off in the middle of a stream of plotting
+commands, whether in a script or in a shell, is rarely needed
+and potentially confusing. In the following, we will assume all
+plotting is done with interactive mode either on or off.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Major changes related to interactivity, and in particular the
+role and behavior of <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><code class="xref py py-func docutils literal notranslate"><span class="pre">show()</span></code></a>, were made in the
+transition to Matplotlib version 1.0, and bugs were fixed in
+1.0.1.  Here we describe the version 1.0.1 behavior for the
+primary interactive backends, with the partial exception of
+<em>macosx</em>.</p>
+</div>
+<p>Interactive mode may also be turned on via <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.ion.html#matplotlib.pyplot.ion" title="matplotlib.pyplot.ion"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.ion()</span></code></a>,
+and turned off via <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.ioff.html#matplotlib.pyplot.ioff" title="matplotlib.pyplot.ioff"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.ioff()</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Interactive mode works with suitable backends in ipython and in
+the ordinary Python shell, but it does <em>not</em> work in the IDLE IDE.
+If the default backend does not support interactivity, an interactive
+backend can be explicitly activated using any of the methods discussed
+in <a class="reference internal" href="#id2">What is a backend?</a>.</p>
+</div>
+<div class="section" id="interactive-example">
+<h3>Interactive example<a class="headerlink" href="#interactive-example" title="Permalink to this headline">¶</a></h3>
+<p>From an ordinary Python prompt, or after invoking ipython with no options,
+try this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">([</span><span class="mf">1.6</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>This will pop up a plot window. Your terminal prompt will remain active, so
+that you can type additional commands such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s2">&quot;interactive test&quot;</span><span class="p">)</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On most interactive backends, the figure window will also be updated if you
+change it via the object-oriented interface. That is, get a reference to the
+<a class="reference internal" href="../../api/axes_api.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> instance, and call a method of that instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<a href="../../api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax</span><span class="o">.</span><span class="n">plot</span></a><span class="p">([</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>If you are using certain backends (like <code class="docutils literal notranslate"><span class="pre">macosx</span></code>), or an older version
+of Matplotlib, you may not see the new line added to the plot immediately.
+In this case, you need to explicitly call <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.draw.html#matplotlib.pyplot.draw" title="matplotlib.pyplot.draw"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw()</span></code></a>
+in order to update the plot:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="non-interactive-example">
+<h3>Non-interactive example<a class="headerlink" href="#non-interactive-example" title="Permalink to this headline">¶</a></h3>
+<p>Start a new session as per the previous example, but now
+turn interactive mode off:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ioff</span><span class="p">()</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">([</span><span class="mf">1.6</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Nothing happened--or at least nothing has shown up on the
+screen (unless you are using <em>macosx</em> backend, which is
+anomalous).  To make the plot appear, you need to do this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now you see the plot, but your terminal command line is
+unresponsive; <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pyplot.show()</span></code></a> <em>blocks</em> the input
+of additional commands until you manually close the plot
+window.</p>
+<p>Using a blocking function has benefits to users. Suppose a user
+needs a script that plots the contents of a file to the screen.
+The user may want to look at that plot, and then end the script.
+Without a blocking command such as <code class="docutils literal notranslate"><span class="pre">show()</span></code>, the script would
+flash up the plot and then end immediately, leaving nothing on
+the screen.</p>
+<p>In addition, non-interactive mode delays all drawing until
+<code class="docutils literal notranslate"><span class="pre">show()</span></code> is called. This is more efficient than redrawing
+the plot each time a line in the script adds a new feature.</p>
+<p>Prior to version 1.0, <code class="docutils literal notranslate"><span class="pre">show()</span></code> generally could not be called
+more than once in a single script (although sometimes one
+could get away with it). For version 1.0.1 and above, this
+restriction is lifted, so one can write a script like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ioff</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <a href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This makes three plots, one at a time. That is, the second plot will show up
+once the first plot is closed.</p>
+</div>
+<div class="section" id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>In interactive mode, pyplot functions automatically draw
+to the screen.</p>
+<p>When plotting interactively, if using
+object method calls in addition to pyplot functions, then
+call <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.draw.html#matplotlib.pyplot.draw" title="matplotlib.pyplot.draw"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw()</span></code></a> whenever you want to
+refresh the plot.</p>
+<p>Use non-interactive mode in scripts in which you want to
+generate one or more figures and display them before ending
+or generating a new set of figures.  In that case, use
+<a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><code class="xref py py-func docutils literal notranslate"><span class="pre">show()</span></code></a> to display the figure(s) and
+to block execution until you have manually destroyed them.</p>
+</div>
+</div>
+<div class="section" id="performance">
+<span id="id4"></span><h2>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>
+<p>Whether exploring data in interactive mode or programmatically
+saving lots of plots, rendering performance can be a challenging
+bottleneck in your pipeline. Matplotlib provides multiple
+ways to greatly reduce rendering time at the cost of a slight
+change (to a settable tolerance) in your plot's appearance.
+The methods available to reduce rendering time depend on the
+type of plot that is being created.</p>
+<div class="section" id="line-segment-simplification">
+<h3>Line segment simplification<a class="headerlink" href="#line-segment-simplification" title="Permalink to this headline">¶</a></h3>
+<p>For plots that have line segments (e.g. typical line plots, outlines
+of polygons, etc.), rendering performance can be controlled by
+<code class="docutils literal notranslate"><a class="reference external" href="../../tutorials/introductory/customizing.html?highlight=path.simplify#a-sample-matplotlibrc-file"><span class="pre">rcParams[&quot;path.simplify&quot;]</span></a></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) and <code class="docutils literal notranslate"><a class="reference external" href="../../tutorials/introductory/customizing.html?highlight=path.simplify_threshold#a-sample-matplotlibrc-file"><span class="pre">rcParams[&quot;path.simplify_threshold&quot;]</span></a></code> (default: <code class="docutils literal notranslate"><span class="pre">0.111111111111</span></code>), which
+can be defined e.g. in the <code class="file docutils literal notranslate"><span class="pre">matplotlibrc</span></code> file (see
+<a class="reference internal" href="customizing.html"><span class="doc">Customizing Matplotlib with style sheets and rcParams</span></a> for more information about
+the <code class="file docutils literal notranslate"><span class="pre">matplotlibrc</span></code> file). <code class="docutils literal notranslate"><a class="reference external" href="../../tutorials/introductory/customizing.html?highlight=path.simplify#a-sample-matplotlibrc-file"><span class="pre">rcParams[&quot;path.simplify&quot;]</span></a></code> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) is a Boolean
+indicating whether or not line segments are simplified at all.
+<code class="docutils literal notranslate"><a class="reference external" href="../../tutorials/introductory/customizing.html?highlight=path.simplify_threshold#a-sample-matplotlibrc-file"><span class="pre">rcParams[&quot;path.simplify_threshold&quot;]</span></a></code> (default: <code class="docutils literal notranslate"><span class="pre">0.111111111111</span></code>) controls how much line segments are simplified;
+higher thresholds result in quicker rendering.</p>
+<p>The following script will first display the data without any
+simplification, and then display the same data with simplification.
+Try interacting with both of them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+
+<span class="c1"># Setup, and create the data to plot</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">50000</span><span class="p">:]</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="n">y</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">geomspace</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;path.simplify&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;path.simplify_threshold&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;path.simplify_threshold&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Matplotlib currently defaults to a conservative simplification
+threshold of <code class="docutils literal notranslate"><span class="pre">1/9</span></code>. To change default settings to use a different
+value, change the <code class="file docutils literal notranslate"><span class="pre">matplotlibrc</span></code> file. Alternatively, users
+can create a new style for interactive plotting (with maximal
+simplification) and another style for publication quality plotting
+(with minimal simplification) and activate them as necessary. See
+<a class="reference internal" href="customizing.html"><span class="doc">Customizing Matplotlib with style sheets and rcParams</span></a> for instructions on
+how to perform these actions.</p>
+<p>The simplification works by iteratively merging line segments
+into a single vector until the next line segment's perpendicular
+distance to the vector (measured in display-coordinate space)
+is greater than the <code class="docutils literal notranslate"><span class="pre">path.simplify_threshold</span></code> parameter.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Changes related to how line segments are simplified were made
+in version 2.1. Rendering time will still be improved by these
+parameters prior to 2.1, but rendering time for some kinds of
+data will be vastly improved in versions 2.1 and greater.</p>
+</div>
+</div>
+<div class="section" id="marker-simplification">
+<h3>Marker simplification<a class="headerlink" href="#marker-simplification" title="Permalink to this headline">¶</a></h3>
+<p>Markers can also be simplified, albeit less robustly than
+line segments. Marker simplification is only available
+to <a class="reference internal" href="../../api/_as_gen/matplotlib.lines.Line2D.html#matplotlib.lines.Line2D" title="matplotlib.lines.Line2D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Line2D</span></code></a> objects (through the
+<code class="docutils literal notranslate"><span class="pre">markevery</span></code> property). Wherever
+<a class="reference internal" href="../../api/_as_gen/matplotlib.lines.Line2D.html#matplotlib.lines.Line2D" title="matplotlib.lines.Line2D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Line2D</span></code></a> construction parameters
+are passed through, such as
+<a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot()</span></code></a> and
+<a class="reference internal" href="../../api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">matplotlib.axes.Axes.plot()</span></code></a>, the <code class="docutils literal notranslate"><span class="pre">markevery</span></code>
+parameter can be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">x</span></a><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">markevery</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">markevery</span></code> argument allows for naive subsampling, or an
+attempt at evenly spaced (along the <em>x</em> axis) sampling. See the
+<a class="reference internal" href="../../gallery/lines_bars_and_markers/markevery_demo.html"><span class="doc">Markevery Demo</span></a>
+for more information.</p>
+</div>
+<div class="section" id="splitting-lines-into-smaller-chunks">
+<h3>Splitting lines into smaller chunks<a class="headerlink" href="#splitting-lines-into-smaller-chunks" title="Permalink to this headline">¶</a></h3>
+<p>If you are using the Agg backend (see <a class="reference internal" href="#what-is-a-backend"><span class="std std-ref">What is a backend?</span></a>),
+then you can make use of <code class="docutils literal notranslate"><a class="reference external" href="../../tutorials/introductory/customizing.html?highlight=agg.path.chunksize#a-sample-matplotlibrc-file"><span class="pre">rcParams[&quot;agg.path.chunksize&quot;]</span></a></code> (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>)
+This allows users to specify a chunk size, and any lines with
+greater than that many vertices will be split into multiple
+lines, each of which has no more than <code class="docutils literal notranslate"><span class="pre">agg.path.chunksize</span></code>
+many vertices. (Unless <code class="docutils literal notranslate"><span class="pre">agg.path.chunksize</span></code> is zero, in
+which case there is no chunking.) For some kind of data,
+chunking the line up into reasonable sizes can greatly
+decrease rendering time.</p>
+<p>The following script will first display the data without any
+chunk size restriction, and then display the same data with
+a chunk size of 10,000. The difference can best be seen when
+the figures are large, try maximizing the GUI and then
+interacting with them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;path.simplify_threshold&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="c1"># Setup, and create the data to plot</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">50000</span><span class="p">:]</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="n">y</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">geomspace</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;path.simplify&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;agg.path.chunksize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;agg.path.chunksize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10000</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="legends">
+<h3>Legends<a class="headerlink" href="#legends" title="Permalink to this headline">¶</a></h3>
+<p>The default legend behavior for axes attempts to find the location
+that covers the fewest data points (<code class="docutils literal notranslate"><span class="pre">loc='best'</span></code>). This can be a
+very expensive computation if there are lots of data points. In
+this case, you may want to provide a specific location.</p>
+</div>
+<div class="section" id="using-the-fast-style">
+<h3>Using the <em>fast</em> style<a class="headerlink" href="#using-the-fast-style" title="Permalink to this headline">¶</a></h3>
+<p>The <em>fast</em> style can be used to automatically set
+simplification and chunking parameters to reasonable
+settings to speed up plotting large amounts of data.
+The following code runs it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.style</span> <span class="k">as</span> <span class="nn">mplstyle</span>
+<span class="n">mplstyle</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fast&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is very lightweight, so it works well with other
+styles. Be sure the fast style is applied last
+so that other styles do not overwrite the settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mplstyle</span><span class="o">.</span><span class="n">use</span><span class="p">([</span><span class="s1">&#39;dark_background&#39;</span><span class="p">,</span> <span class="s1">&#39;ggplot&#39;</span><span class="p">,</span> <span class="s1">&#39;fast&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.576 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-introductory-usage-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/13b7d80b1bb64b045c82435ce9688fe8/usage.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">usage.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/8f0209c86400ad70577572a0f7b68104/usage.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">usage.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature">Keywords: matplotlib code example, codex, python plot, pyplot
+<a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">Tutorials</a>
+    <a class='right-next' id="next-link" href="pyplot.html" title="next page">Pyplot tutorial</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2021 The Matplotlib development team.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

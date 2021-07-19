@@ -1,0 +1,669 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>matplotlib.backend_managers &#8212; Matplotlib 3.4.2.post1414+g246a489ce6 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mpl.css?v3.4.2-1414-g246a489ce6" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Matplotlib 3.4.2.post1414+g246a489ce6 documentation"
+          href="../../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo2.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../users/installing.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../plot_types/index.html">
+  Plot types
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../gallery/index.html">
+  Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api/index.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../users/index.html">
+  User's guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../devel/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference external nav-link" href="https://matplotlib.org/mpl-third-party/">
+  Third-party packages
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://gitter.im/matplotlib" rel="noopener" target="_blank" title="gitter">
+            <span><i class="fab fa-gitter"></i></span>
+            <label class="sr-only">gitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discourse.matplotlib.org" rel="noopener" target="_blank" title="discourse">
+            <span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">discourse</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/matplotlib/matplotlib" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/matplotlib/" rel="noopener" target="_blank" title="twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for matplotlib.backend_managers</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">cbook</span><span class="p">,</span> <span class="n">widgets</span>
+<span class="kn">import</span> <span class="nn">matplotlib.backend_tools</span> <span class="k">as</span> <span class="nn">tools</span>
+
+
+<div class="viewcode-block" id="ToolEvent"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolEvent">[docs]</a><span class="k">class</span> <span class="nc">ToolEvent</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Event for tool manipulation (add/remove).&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">tool</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sender</span> <span class="o">=</span> <span class="n">sender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tool</span> <span class="o">=</span> <span class="n">tool</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="ToolTriggerEvent"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolTriggerEvent">[docs]</a><span class="k">class</span> <span class="nc">ToolTriggerEvent</span><span class="p">(</span><span class="n">ToolEvent</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Event to inform that a tool has been triggered.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">tool</span><span class="p">,</span> <span class="n">canvasevent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">tool</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvasevent</span> <span class="o">=</span> <span class="n">canvasevent</span></div>
+
+
+<div class="viewcode-block" id="ToolManagerMessageEvent"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolManagerMessageEvent">[docs]</a><span class="k">class</span> <span class="nc">ToolManagerMessageEvent</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Event carrying messages from toolmanager.</span>
+
+<span class="sd">    Messages usually get displayed to the user by the toolbar.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sender</span> <span class="o">=</span> <span class="n">sender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span></div>
+
+
+<div class="viewcode-block" id="ToolManager"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolManager">[docs]</a><span class="k">class</span> <span class="nc">ToolManager</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Manager for actions triggered by user interactions (key press, toolbar</span>
+<span class="sd">    clicks, ...) on a Figure.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    figure : `.Figure`</span>
+<span class="sd">    keypresslock : `~matplotlib.widgets.LockDraw`</span>
+<span class="sd">        `.LockDraw` object to know if the `canvas` key_press_event is locked.</span>
+<span class="sd">    messagelock : `~matplotlib.widgets.LockDraw`</span>
+<span class="sd">        `.LockDraw` object to know if the message is available to write.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_key_press_handler_id</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_keys</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_toggled</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_callbacks</span> <span class="o">=</span> <span class="n">cbook</span><span class="o">.</span><span class="n">CallbackRegistry</span><span class="p">()</span>
+
+        <span class="c1"># to process keypress event</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keypresslock</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">LockDraw</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">messagelock</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">LockDraw</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_figure</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_figure</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">canvas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Canvas managed by FigureManager.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_figure</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_figure</span><span class="o">.</span><span class="n">canvas</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">figure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Figure that holds the canvas.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_figure</span>
+
+    <span class="nd">@figure</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">figure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">figure</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_figure</span><span class="p">(</span><span class="n">figure</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ToolManager.set_figure"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolManager.set_figure">[docs]</a>    <span class="k">def</span> <span class="nf">set_figure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">figure</span><span class="p">,</span> <span class="n">update_tools</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Bind the given figure to the tools.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        figure : `.Figure`</span>
+<span class="sd">        update_tools : bool, default: True</span>
+<span class="sd">            Force tools to update figure.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_press_handler_id</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">mpl_disconnect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_key_press_handler_id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_figure</span> <span class="o">=</span> <span class="n">figure</span>
+        <span class="k">if</span> <span class="n">figure</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_key_press_handler_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">mpl_connect</span><span class="p">(</span>
+                <span class="s1">&#39;key_press_event&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_press</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">update_tools</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                <span class="n">tool</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="n">figure</span></div>
+
+<div class="viewcode-block" id="ToolManager.toolmanager_connect"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolManager.toolmanager_connect">[docs]</a>    <span class="k">def</span> <span class="nf">toolmanager_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Connect event with string *s* to *func*.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        s : str</span>
+<span class="sd">            The name of the event. The following events are recognized:</span>
+
+<span class="sd">            - &#39;tool_message_event&#39;</span>
+<span class="sd">            - &#39;tool_removed_event&#39;</span>
+<span class="sd">            - &#39;tool_added_event&#39;</span>
+
+<span class="sd">            For every tool added a new event is created</span>
+
+<span class="sd">            - &#39;tool_trigger_TOOLNAME&#39;, where TOOLNAME is the id of the tool.</span>
+
+<span class="sd">        func : callable</span>
+<span class="sd">            Callback function for the toolmanager event with signature::</span>
+
+<span class="sd">                def func(event: ToolEvent) -&gt; Any</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        cid</span>
+<span class="sd">            The callback id for the connection. This can be used in</span>
+<span class="sd">            `.toolmanager_disconnect`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_callbacks</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ToolManager.toolmanager_disconnect"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolManager.toolmanager_disconnect">[docs]</a>    <span class="k">def</span> <span class="nf">toolmanager_disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Disconnect callback id *cid*.</span>
+
+<span class="sd">        Example usage::</span>
+
+<span class="sd">            cid = toolmanager.toolmanager_connect(&#39;tool_trigger_zoom&#39;, onpress)</span>
+<span class="sd">            #...later</span>
+<span class="sd">            toolmanager.toolmanager_disconnect(cid)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_callbacks</span><span class="o">.</span><span class="n">disconnect</span><span class="p">(</span><span class="n">cid</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ToolManager.message_event"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolManager.message_event">[docs]</a>    <span class="k">def</span> <span class="nf">message_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">sender</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Emit a `ToolManagerMessageEvent`.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">sender</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sender</span> <span class="o">=</span> <span class="bp">self</span>
+
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;tool_message_event&#39;</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="n">ToolManagerMessageEvent</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_callbacks</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">active_toggle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Currently toggled tools.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toggled</span>
+
+<div class="viewcode-block" id="ToolManager.get_tool_keymap"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolManager.get_tool_keymap">[docs]</a>    <span class="k">def</span> <span class="nf">get_tool_keymap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the keymap associated with the specified tool.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str</span>
+<span class="sd">            Name of the Tool.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        list of str</span>
+<span class="sd">            List of keys associated with the tool.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_keys</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">name</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">keys</span></div>
+
+    <span class="k">def</span> <span class="nf">_remove_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_tool_keymap</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_keys</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+<div class="viewcode-block" id="ToolManager.update_keymap"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolManager.update_keymap">[docs]</a>    <span class="k">def</span> <span class="nf">update_keymap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the keymap to associate with the specified tool.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str</span>
+<span class="sd">            Name of the Tool.</span>
+<span class="sd">        key : str or list of str</span>
+<span class="sd">            Keys to associate with the tool.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> not in Tools&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_remove_keys</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_keys</span><span class="p">:</span>
+                <span class="n">_api</span><span class="o">.</span><span class="n">warn_external</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s1">&#39;Key </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1"> changed from </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_keys</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_keys</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span></div>
+
+<div class="viewcode-block" id="ToolManager.remove_tool"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolManager.remove_tool">[docs]</a>    <span class="k">def</span> <span class="nf">remove_tool</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove tool named *name*.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str</span>
+<span class="sd">            Name of the tool.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">tool</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_tool</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">tool</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+
+        <span class="c1"># If it&#39;s a toggle tool and toggled, untoggle</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">tool</span><span class="p">,</span> <span class="s1">&#39;toggled&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">trigger_tool</span><span class="p">(</span><span class="n">tool</span><span class="p">,</span> <span class="s1">&#39;toolmanager&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_remove_keys</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;tool_removed_event&#39;</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="n">ToolEvent</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">tool</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_callbacks</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span>
+
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span><span class="p">[</span><span class="n">name</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="ToolManager.add_tool"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolManager.add_tool">[docs]</a>    <span class="k">def</span> <span class="nf">add_tool</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tool</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add *tool* to `ToolManager`.</span>
+
+<span class="sd">        If successful, adds a new event ``tool_trigger_{name}`` where</span>
+<span class="sd">        ``{name}`` is the *name* of the tool; the event is fired every time the</span>
+<span class="sd">        tool is triggered.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str</span>
+<span class="sd">            Name of the tool, treated as the ID, has to be unique.</span>
+<span class="sd">        tool : class_like, i.e. str or type</span>
+<span class="sd">            Reference to find the class of the Tool to added.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        args and kwargs get passed directly to the tools constructor.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        matplotlib.backend_tools.ToolBase : The base class for tools.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">tool_cls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cls_to_instantiate</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">tool_cls</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Impossible to find class for </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">tool</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span><span class="p">:</span>
+            <span class="n">_api</span><span class="o">.</span><span class="n">warn_external</span><span class="p">(</span><span class="s1">&#39;A &quot;Tool class&quot; with the same name already &#39;</span>
+                               <span class="s1">&#39;exists, not added&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+        <span class="n">tool_obj</span> <span class="o">=</span> <span class="n">tool_cls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">tool_obj</span>
+
+        <span class="k">if</span> <span class="n">tool_cls</span><span class="o">.</span><span class="n">default_keymap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_keymap</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">tool_cls</span><span class="o">.</span><span class="n">default_keymap</span><span class="p">)</span>
+
+        <span class="c1"># For toggle tools init the radio_group in self._toggled</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tool_obj</span><span class="p">,</span> <span class="n">tools</span><span class="o">.</span><span class="n">ToolToggleBase</span><span class="p">):</span>
+            <span class="c1"># None group is not mutually exclusive, a set is used to keep track</span>
+            <span class="c1"># of all toggled tools in this group</span>
+            <span class="k">if</span> <span class="n">tool_obj</span><span class="o">.</span><span class="n">radio_group</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_toggled</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="nb">set</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_toggled</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">tool_obj</span><span class="o">.</span><span class="n">radio_group</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="c1"># If initially toggled</span>
+            <span class="k">if</span> <span class="n">tool_obj</span><span class="o">.</span><span class="n">toggled</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_handle_toggle</span><span class="p">(</span><span class="n">tool_obj</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">tool_obj</span><span class="o">.</span><span class="n">set_figure</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tool_added_event</span><span class="p">(</span><span class="n">tool_obj</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">tool_obj</span></div>
+
+    <span class="k">def</span> <span class="nf">_tool_added_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tool</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;tool_added_event&#39;</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="n">ToolEvent</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">tool</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_callbacks</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_handle_toggle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tool</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">canvasevent</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Toggle tools, need to untoggle prior to using other Toggle tool.</span>
+<span class="sd">        Called from trigger_tool.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        tool : `.ToolBase`</span>
+<span class="sd">        sender : object</span>
+<span class="sd">            Object that wishes to trigger the tool.</span>
+<span class="sd">        canvasevent : Event</span>
+<span class="sd">            Original Canvas event or None.</span>
+<span class="sd">        data : object</span>
+<span class="sd">            Extra data to pass to the tool when triggering.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">radio_group</span> <span class="o">=</span> <span class="n">tool</span><span class="o">.</span><span class="n">radio_group</span>
+        <span class="c1"># radio_group None is not mutually exclusive</span>
+        <span class="c1"># just keep track of toggled tools in this group</span>
+        <span class="k">if</span> <span class="n">radio_group</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">tool</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toggled</span><span class="p">[</span><span class="kc">None</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_toggled</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">tool</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_toggled</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tool</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># If the tool already has a toggled state, untoggle it</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toggled</span><span class="p">[</span><span class="n">radio_group</span><span class="p">]</span> <span class="o">==</span> <span class="n">tool</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+            <span class="n">toggled</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># If no tool was toggled in the radio_group</span>
+        <span class="c1"># toggle it</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toggled</span><span class="p">[</span><span class="n">radio_group</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">toggled</span> <span class="o">=</span> <span class="n">tool</span><span class="o">.</span><span class="n">name</span>
+        <span class="c1"># Other tool in the radio_group is toggled</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Untoggle previously toggled tool</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">trigger_tool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_toggled</span><span class="p">[</span><span class="n">radio_group</span><span class="p">],</span>
+                              <span class="bp">self</span><span class="p">,</span>
+                              <span class="n">canvasevent</span><span class="p">,</span>
+                              <span class="n">data</span><span class="p">)</span>
+            <span class="n">toggled</span> <span class="o">=</span> <span class="n">tool</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="c1"># Keep track of the toggled tool in the radio_group</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_toggled</span><span class="p">[</span><span class="n">radio_group</span><span class="p">]</span> <span class="o">=</span> <span class="n">toggled</span>
+
+    <span class="k">def</span> <span class="nf">_get_cls_to_instantiate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback_class</span><span class="p">):</span>
+        <span class="c1"># Find the class that corresponds to the tool</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">callback_class</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="c1"># FIXME: make more complete searching structure</span>
+            <span class="k">if</span> <span class="n">callback_class</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
+                <span class="n">callback_class</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">callback_class</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">mod</span> <span class="o">=</span> <span class="s1">&#39;backend_tools&#39;</span>
+                <span class="n">current_module</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span>
+                                            <span class="nb">globals</span><span class="p">(),</span> <span class="nb">locals</span><span class="p">(),</span> <span class="p">[</span><span class="n">mod</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+
+                <span class="n">callback_class</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">current_module</span><span class="p">,</span> <span class="n">callback_class</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">callback_class</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">callback_class</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="ToolManager.trigger_tool"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolManager.trigger_tool">[docs]</a>    <span class="k">def</span> <span class="nf">trigger_tool</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sender</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">canvasevent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Trigger a tool and emit the ``tool_trigger_{name}`` event.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str</span>
+<span class="sd">            Name of the tool.</span>
+<span class="sd">        sender : object</span>
+<span class="sd">            Object that wishes to trigger the tool.</span>
+<span class="sd">        canvasevent : Event</span>
+<span class="sd">            Original Canvas event or None.</span>
+<span class="sd">        data : object</span>
+<span class="sd">            Extra data to pass to the tool when triggering.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">tool</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_tool</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">tool</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="n">sender</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sender</span> <span class="o">=</span> <span class="bp">self</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_tool</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">canvasevent</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;tool_trigger_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">name</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="n">ToolTriggerEvent</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">tool</span><span class="p">,</span> <span class="n">canvasevent</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_callbacks</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_trigger_tool</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sender</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">canvasevent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Actually trigger a tool.&quot;&quot;&quot;</span>
+        <span class="n">tool</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_tool</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tool</span><span class="p">,</span> <span class="n">tools</span><span class="o">.</span><span class="n">ToolToggleBase</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_handle_toggle</span><span class="p">(</span><span class="n">tool</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">canvasevent</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+        <span class="c1"># Important!!!</span>
+        <span class="c1"># This is where the Tool object gets triggered</span>
+        <span class="n">tool</span><span class="o">.</span><span class="n">trigger</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">canvasevent</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_key_press</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">keypresslock</span><span class="o">.</span><span class="n">locked</span><span class="p">():</span>
+            <span class="k">return</span>
+
+        <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_keys</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trigger_tool</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">canvasevent</span><span class="o">=</span><span class="n">event</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">tools</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;A dict mapping tool name -&gt; controlled tool.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span>
+
+<div class="viewcode-block" id="ToolManager.get_tool"><a class="viewcode-back" href="../../api/backend_managers_api.html#matplotlib.backend_managers.ToolManager.get_tool">[docs]</a>    <span class="k">def</span> <span class="nf">get_tool</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the tool object with the given name.</span>
+
+<span class="sd">        For convenience, this passes tool objects through.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str or `.ToolBase`</span>
+<span class="sd">            Name of the tool, or the tool itself.</span>
+<span class="sd">        warn : bool, default: True</span>
+<span class="sd">            Whether a warning should be emitted it no tool with the given name</span>
+<span class="sd">            exists.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        `.ToolBase` or None</span>
+<span class="sd">            The tool or None if no tool with the given name exists.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">tools</span><span class="o">.</span><span class="n">ToolBase</span><span class="p">)</span> <span class="ow">and</span> <span class="n">name</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">name</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">warn</span><span class="p">:</span>
+                <span class="n">_api</span><span class="o">.</span><span class="n">warn_external</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ToolManager does not control tool </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span><span class="p">[</span><span class="n">name</span><span class="p">]</span></div></div>
+</pre></div>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2021 The Matplotlib development team.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,363 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>matplotlib.backends.backend_mixed &#8212; Matplotlib 3.4.2.post1414+g246a489ce6 documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mpl.css?v3.4.2-1414-g246a489ce6" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Matplotlib 3.4.2.post1414+g246a489ce6 documentation"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo2.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../users/installing.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../plot_types/index.html">
+  Plot types
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../gallery/index.html">
+  Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../api/index.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../users/index.html">
+  User's guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../devel/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference external nav-link" href="https://matplotlib.org/mpl-third-party/">
+  Third-party packages
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://gitter.im/matplotlib" rel="noopener" target="_blank" title="gitter">
+            <span><i class="fab fa-gitter"></i></span>
+            <label class="sr-only">gitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discourse.matplotlib.org" rel="noopener" target="_blank" title="discourse">
+            <span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">discourse</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/matplotlib/matplotlib" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/matplotlib/" rel="noopener" target="_blank" title="twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for matplotlib.backends.backend_mixed</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cbook</span>
+<span class="kn">from</span> <span class="nn">matplotlib.backends.backend_agg</span> <span class="kn">import</span> <span class="n">RendererAgg</span>
+<span class="kn">from</span> <span class="nn">matplotlib.tight_bbox</span> <span class="kn">import</span> <span class="n">process_figure_for_rasterizing</span>
+
+
+<div class="viewcode-block" id="MixedModeRenderer"><a class="viewcode-back" href="../../../api/backend_mixed_api.html#matplotlib.backends.backend_mixed.MixedModeRenderer">[docs]</a><span class="k">class</span> <span class="nc">MixedModeRenderer</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A helper class to implement a renderer that switches between</span>
+<span class="sd">    vector and raster drawing.  An example may be a PDF writer, where</span>
+<span class="sd">    most things are drawn with PDF vector commands, but some very</span>
+<span class="sd">    complex objects, such as quad meshes, are rasterised and then</span>
+<span class="sd">    output as images.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">figure</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">dpi</span><span class="p">,</span> <span class="n">vector_renderer</span><span class="p">,</span>
+                 <span class="n">raster_renderer_class</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">bbox_inches_restore</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        figure : `matplotlib.figure.Figure`</span>
+<span class="sd">            The figure instance.</span>
+<span class="sd">        width : scalar</span>
+<span class="sd">            The width of the canvas in logical units</span>
+<span class="sd">        height : scalar</span>
+<span class="sd">            The height of the canvas in logical units</span>
+<span class="sd">        dpi : float</span>
+<span class="sd">            The dpi of the canvas</span>
+<span class="sd">        vector_renderer : `matplotlib.backend_bases.RendererBase`</span>
+<span class="sd">            An instance of a subclass of</span>
+<span class="sd">            `~matplotlib.backend_bases.RendererBase` that will be used for the</span>
+<span class="sd">            vector drawing.</span>
+<span class="sd">        raster_renderer_class : `matplotlib.backend_bases.RendererBase`</span>
+<span class="sd">            The renderer class to use for the raster drawing.  If not provided,</span>
+<span class="sd">            this will use the Agg backend (which is currently the only viable</span>
+<span class="sd">            option anyway.)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">raster_renderer_class</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">raster_renderer_class</span> <span class="o">=</span> <span class="n">RendererAgg</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_raster_renderer_class</span> <span class="o">=</span> <span class="n">raster_renderer_class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dpi</span> <span class="o">=</span> <span class="n">dpi</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_vector_renderer</span> <span class="o">=</span> <span class="n">vector_renderer</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_raster_renderer</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># A reference to the figure is needed as we need to change</span>
+        <span class="c1"># the figure dpi before and after the rasterization. Although</span>
+        <span class="c1"># this looks ugly, I couldn&#39;t find a better solution. -JJL</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="n">figure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_figdpi</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">get_dpi</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bbox_inches_restore</span> <span class="o">=</span> <span class="n">bbox_inches_restore</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_renderer</span> <span class="o">=</span> <span class="n">vector_renderer</span>
+
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+        <span class="c1"># Proxy everything that hasn&#39;t been overridden to the base</span>
+        <span class="c1"># renderer. Things that *are* overridden can call methods</span>
+        <span class="c1"># on self._renderer directly, but must not cache/store</span>
+        <span class="c1"># methods (because things like RendererAgg change their</span>
+        <span class="c1"># methods on the fly in order to optimise proxying down</span>
+        <span class="c1"># to the underlying C implementation).</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_renderer</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+
+<div class="viewcode-block" id="MixedModeRenderer.start_rasterizing"><a class="viewcode-back" href="../../../api/backend_mixed_api.html#matplotlib.backends.backend_mixed.MixedModeRenderer.start_rasterizing">[docs]</a>    <span class="k">def</span> <span class="nf">start_rasterizing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Enter &quot;raster&quot; mode.  All subsequent drawing commands (until</span>
+<span class="sd">        `stop_rasterizing` is called) will be drawn with the raster backend.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># change the dpi of the figure temporarily.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">set_dpi</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dpi</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bbox_inches_restore</span><span class="p">:</span>  <span class="c1"># when tight bbox is used</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">process_figure_for_rasterizing</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span>
+                                               <span class="bp">self</span><span class="o">.</span><span class="n">_bbox_inches_restore</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_bbox_inches_restore</span> <span class="o">=</span> <span class="n">r</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_raster_renderer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raster_renderer_class</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_width</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">dpi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">dpi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dpi</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_renderer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raster_renderer</span></div>
+
+<div class="viewcode-block" id="MixedModeRenderer.stop_rasterizing"><a class="viewcode-back" href="../../../api/backend_mixed_api.html#matplotlib.backends.backend_mixed.MixedModeRenderer.stop_rasterizing">[docs]</a>    <span class="k">def</span> <span class="nf">stop_rasterizing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exit &quot;raster&quot; mode.  All of the drawing that was done since</span>
+<span class="sd">        the last `start_rasterizing` call will be copied to the</span>
+<span class="sd">        vector backend by calling draw_image.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_renderer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vector_renderer</span>
+
+        <span class="n">height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_height</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dpi</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_raster_renderer</span><span class="o">.</span><span class="n">buffer_rgba</span><span class="p">())</span>
+        <span class="n">slice_y</span><span class="p">,</span> <span class="n">slice_x</span> <span class="o">=</span> <span class="n">cbook</span><span class="o">.</span><span class="n">_get_nonzero_slices</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="n">cropped_img</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="n">slice_y</span><span class="p">,</span> <span class="n">slice_x</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">cropped_img</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+            <span class="n">gc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_renderer</span><span class="o">.</span><span class="n">new_gc</span><span class="p">()</span>
+            <span class="c1"># TODO: If the mixedmode resolution differs from the figure&#39;s</span>
+            <span class="c1">#       dpi, the image must be scaled (dpi-&gt;_figdpi). Not all</span>
+            <span class="c1">#       backends support this.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_renderer</span><span class="o">.</span><span class="n">draw_image</span><span class="p">(</span>
+                <span class="n">gc</span><span class="p">,</span>
+                <span class="n">slice_x</span><span class="o">.</span><span class="n">start</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_figdpi</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">dpi</span><span class="p">,</span>
+                <span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="n">slice_y</span><span class="o">.</span><span class="n">stop</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_figdpi</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">dpi</span><span class="p">,</span>
+                <span class="n">cropped_img</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_raster_renderer</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># restore the figure dpi.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">set_dpi</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_figdpi</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bbox_inches_restore</span><span class="p">:</span>  <span class="c1"># when tight bbox is used</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">process_figure_for_rasterizing</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span>
+                                               <span class="bp">self</span><span class="o">.</span><span class="n">_bbox_inches_restore</span><span class="p">,</span>
+                                               <span class="bp">self</span><span class="o">.</span><span class="n">_figdpi</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_bbox_inches_restore</span> <span class="o">=</span> <span class="n">r</span></div></div>
+</pre></div>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2021 The Matplotlib development team.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

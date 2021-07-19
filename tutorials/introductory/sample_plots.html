@@ -1,0 +1,912 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample plots in Matplotlib &#8212; Matplotlib 3.4.2.post1414+g246a489ce6 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mpl.css?v3.4.2-1414-g246a489ce6" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Matplotlib 3.4.2.post1414+g246a489ce6 documentation"
+          href="../../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Image tutorial" href="images.html" />
+    <link rel="prev" title="Pyplot tutorial" href="pyplot.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo2.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../users/installing.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../plot_types/index.html">
+  Plot types
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../gallery/index.html">
+  Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api/index.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../users/index.html">
+  User's guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../devel/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference external nav-link" href="https://matplotlib.org/mpl-third-party/">
+  Third-party packages
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://gitter.im/matplotlib" rel="noopener" target="_blank" title="gitter">
+            <span><i class="fab fa-gitter"></i></span>
+            <label class="sr-only">gitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discourse.matplotlib.org" rel="noopener" target="_blank" title="discourse">
+            <span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">discourse</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/matplotlib/matplotlib" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/matplotlib/" rel="noopener" target="_blank" title="twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="usage.html">
+   Usage Guide
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pyplot.html">
+   Pyplot tutorial
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Sample plots in Matplotlib
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="images.html">
+   Image tutorial
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lifecycle.html">
+   The Lifecycle of a Plot
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="customizing.html">
+   Customizing Matplotlib with style sheets and rcParams
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/artists.html">
+   Artist tutorial
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/legend_guide.html">
+   Legend guide
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/color_cycle.html">
+   Styling with cycler
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/gridspec.html">
+   Customizing Figure Layouts Using GridSpec and Other Functions
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/constrainedlayout_guide.html">
+   Constrained Layout Guide
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/tight_layout_guide.html">
+   Tight Layout guide
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/autoscale.html">
+   Autoscaling
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intermediate/imshow_extent.html">
+   <em>
+    origin
+   </em>
+   and
+   <em>
+    extent
+   </em>
+   in
+   <code class="xref py py-obj docutils literal notranslate">
+    <span class="pre">
+     imshow
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../advanced/blitting.html">
+   Faster rendering by using blitting
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../advanced/path_tutorial.html">
+   Path Tutorial
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../advanced/patheffects_guide.html">
+   Path effects guide
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../advanced/transforms_tutorial.html">
+   Transformations Tutorial
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../colors/colors.html">
+   Specifying Colors
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../colors/colorbar_only.html">
+   Customized Colorbars Tutorial
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../colors/colormap-manipulation.html">
+   Creating Colormaps in Matplotlib
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../colors/colormapnorms.html">
+   Colormap Normalization
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../colors/colormaps.html">
+   Choosing Colormaps in Matplotlib
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../provisional/mosaic.html">
+   Complex and semantic figure composition
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../text/text_intro.html">
+   Text in Matplotlib Plots
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../text/text_props.html">
+   Text properties and layout
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../text/annotations.html">
+   Annotations
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../text/mathtext.html">
+   Writing mathematical expressions
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../text/pgf.html">
+   Typesetting with XeLaTeX/LuaLaTeX
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../text/usetex.html">
+   Text rendering with LaTeX
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../toolkits/axes_grid.html">
+   Overview of
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     mpl_toolkits.axes_grid1
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../toolkits/axisartist.html">
+   Overview of axisartist toolkit
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../toolkits/mplot3d.html">
+   The mplot3d Toolkit
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#line-plot">
+   Line Plot
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-subplots-in-one-figure">
+   Multiple subplots in one figure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#images">
+   Images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contouring-and-pseudocolor">
+   Contouring and pseudocolor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#histograms">
+   Histograms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#paths">
+   Paths
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#three-dimensional-plotting">
+   Three-dimensional plotting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#streamplot">
+   Streamplot
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ellipses">
+   Ellipses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bar-charts">
+   Bar charts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pie-charts">
+   Pie charts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tables">
+   Tables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scatter-plots">
+   Scatter plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gui-widgets">
+   GUI widgets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filled-curves">
+   Filled curves
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#date-handling">
+   Date handling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#log-plots">
+   Log plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#polar-plots">
+   Polar plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#legends">
+   Legends
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tex-notation-for-text-objects">
+   TeX-notation for text objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#native-tex-rendering">
+   Native TeX rendering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eeg-gui">
+   EEG GUI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xkcd-style-sketch-plots">
+   XKCD-style sketch plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subplot-example">
+   Subplot example
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-introductory-sample-plots-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="sample-plots-in-matplotlib">
+<span id="sphx-glr-tutorials-introductory-sample-plots-py"></span><h1>Sample plots in Matplotlib<a class="headerlink" href="#sample-plots-in-matplotlib" title="Permalink to this headline">¶</a></h1>
+<p>Here you'll find a host of example plots with the code that
+generated them.</p>
+<div class="section" id="line-plot">
+<span id="matplotlibscreenshots"></span><h2>Line Plot<a class="headerlink" href="#line-plot" title="Permalink to this headline">¶</a></h2>
+<p>Here's how to create a line plot with text labels using
+<a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot()</span></code></a>.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/lines_bars_and_markers/simple_plot.html"><img alt="../../_images/sphx_glr_simple_plot_001.png" src="../../_images/sphx_glr_simple_plot_001.png" /></a>
+</div>
+</div>
+<div class="section" id="multiple-subplots-in-one-figure">
+<span id="screenshots-subplot-demo"></span><h2>Multiple subplots in one figure<a class="headerlink" href="#multiple-subplots-in-one-figure" title="Permalink to this headline">¶</a></h2>
+<p>Multiple axes (i.e. subplots) are created with the
+<a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" title="matplotlib.pyplot.subplot"><code class="xref py py-func docutils literal notranslate"><span class="pre">subplot()</span></code></a> function:</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/subplots_axes_and_figures/subplot.html"><img alt="../../_images/sphx_glr_subplot_001.png" src="../../_images/sphx_glr_subplot_001.png" /></a>
+</div>
+</div>
+<div class="section" id="images">
+<span id="screenshots-images-demo"></span><h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
+<p>Matplotlib can display images (assuming equally spaced
+horizontal dimensions) using the <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="matplotlib.pyplot.imshow"><code class="xref py py-func docutils literal notranslate"><span class="pre">imshow()</span></code></a> function.</p>
+<div class="figure align-center" id="id1">
+<a class="reference external image-reference" href="../../gallery/images_contours_and_fields/image_demo.html"><img alt="../../_images/sphx_glr_image_demo_003.png" src="../../_images/sphx_glr_image_demo_003.png" /></a>
+<p class="caption"><span class="caption-text">Example of using <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="matplotlib.pyplot.imshow"><code class="xref py py-func docutils literal notranslate"><span class="pre">imshow()</span></code></a> to display a CT scan</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="contouring-and-pseudocolor">
+<span id="screenshots-pcolormesh-demo"></span><h2>Contouring and pseudocolor<a class="headerlink" href="#contouring-and-pseudocolor" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.pcolormesh.html#matplotlib.pyplot.pcolormesh" title="matplotlib.pyplot.pcolormesh"><code class="xref py py-func docutils literal notranslate"><span class="pre">pcolormesh()</span></code></a> function can make a colored
+representation of a two-dimensional array, even if the horizontal dimensions
+are unevenly spaced.  The
+<a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.contour.html#matplotlib.pyplot.contour" title="matplotlib.pyplot.contour"><code class="xref py py-func docutils literal notranslate"><span class="pre">contour()</span></code></a> function is another way to represent
+the same data:</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/images_contours_and_fields/pcolormesh_levels.html"><img alt="../../_images/sphx_glr_pcolormesh_levels_001.png" src="../../_images/sphx_glr_pcolormesh_levels_001.png" /></a>
+</div>
+</div>
+<div class="section" id="histograms">
+<span id="screenshots-histogram-demo"></span><h2>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.hist.html#matplotlib.pyplot.hist" title="matplotlib.pyplot.hist"><code class="xref py py-func docutils literal notranslate"><span class="pre">hist()</span></code></a> function automatically generates
+histograms and returns the bin counts or probabilities:</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/statistics/histogram_features.html"><img alt="../../_images/sphx_glr_histogram_features_001.png" src="../../_images/sphx_glr_histogram_features_001.png" /></a>
+</div>
+</div>
+<div class="section" id="paths">
+<span id="screenshots-path-demo"></span><h2>Paths<a class="headerlink" href="#paths" title="Permalink to this headline">¶</a></h2>
+<p>You can add arbitrary paths in Matplotlib using the
+<a class="reference internal" href="../../api/path_api.html#module-matplotlib.path" title="matplotlib.path"><code class="xref py py-mod docutils literal notranslate"><span class="pre">matplotlib.path</span></code></a> module:</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/shapes_and_collections/path_patch.html"><img alt="../../_images/sphx_glr_path_patch_001.png" src="../../_images/sphx_glr_path_patch_001.png" /></a>
+</div>
+</div>
+<div class="section" id="three-dimensional-plotting">
+<span id="screenshots-mplot3d-surface"></span><h2>Three-dimensional plotting<a class="headerlink" href="#three-dimensional-plotting" title="Permalink to this headline">¶</a></h2>
+<p>The mplot3d toolkit (see <a class="reference internal" href="../toolkits/mplot3d.html"><span class="doc">The mplot3d Toolkit</span></a> and
+<a class="reference internal" href="../../gallery/index.html#mplot3d-examples-index"><span class="std std-ref">3D plotting</span></a>) has support for simple 3D graphs
+including surface, wireframe, scatter, and bar charts.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/mplot3d/surface3d.html"><img alt="../../_images/sphx_glr_surface3d_001.png" src="../../_images/sphx_glr_surface3d_001.png" /></a>
+</div>
+<p>Thanks to John Porter, Jonathon Taylor, Reinier Heeres, and Ben Root for
+the <a class="reference internal" href="../../api/toolkits/mplot3d.html#module-mpl_toolkits.mplot3d" title="mpl_toolkits.mplot3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mplot3d</span></code></a> toolkit. This toolkit is included with all standard Matplotlib
+installs.</p>
+</div>
+<div class="section" id="streamplot">
+<span id="screenshots-ellipse-demo"></span><h2>Streamplot<a class="headerlink" href="#streamplot" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.streamplot.html#matplotlib.pyplot.streamplot" title="matplotlib.pyplot.streamplot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">streamplot()</span></code></a> function plots the streamlines of
+a vector field. In addition to simply plotting the streamlines, it allows you
+to map the colors and/or line widths of streamlines to a separate parameter,
+such as the speed or local intensity of the vector field.</p>
+<div class="figure align-center" id="id2">
+<a class="reference external image-reference" href="../../gallery/images_contours_and_fields/plot_streamplot.html"><img alt="../../_images/sphx_glr_plot_streamplot_001.png" src="../../_images/sphx_glr_plot_streamplot_001.png" /></a>
+<p class="caption"><span class="caption-text">Streamplot with various plotting options.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>This feature complements the <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.quiver.html#matplotlib.pyplot.quiver" title="matplotlib.pyplot.quiver"><code class="xref py py-meth docutils literal notranslate"><span class="pre">quiver()</span></code></a> function for
+plotting vector fields. Thanks to Tom Flannaghan and Tony Yu for adding the
+streamplot function.</p>
+</div>
+<div class="section" id="ellipses">
+<h2>Ellipses<a class="headerlink" href="#ellipses" title="Permalink to this headline">¶</a></h2>
+<p>In support of the <a class="reference external" href="https://www.jpl.nasa.gov/news/phoenix/main.php">Phoenix</a>
+mission to Mars (which used Matplotlib to display ground tracking of
+spacecraft), Michael Droettboom built on work by Charlie Moad to provide
+an extremely accurate 8-spline approximation to elliptical arcs (see
+<a class="reference internal" href="../../api/_as_gen/matplotlib.patches.Arc.html#matplotlib.patches.Arc" title="matplotlib.patches.Arc"><code class="xref py py-class docutils literal notranslate"><span class="pre">Arc</span></code></a>), which are insensitive to zoom level.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/shapes_and_collections/ellipse_demo.html"><img alt="../../_images/sphx_glr_ellipse_demo_001.png" src="../../_images/sphx_glr_ellipse_demo_001.png" /></a>
+</div>
+</div>
+<div class="section" id="bar-charts">
+<span id="screenshots-barchart-demo"></span><h2>Bar charts<a class="headerlink" href="#bar-charts" title="Permalink to this headline">¶</a></h2>
+<p>Use the <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.bar.html#matplotlib.pyplot.bar" title="matplotlib.pyplot.bar"><code class="xref py py-func docutils literal notranslate"><span class="pre">bar()</span></code></a> function to make bar charts, which
+includes customizations such as error bars:</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/statistics/barchart_demo.html"><img alt="../../_images/sphx_glr_barchart_demo_001.png" src="../../_images/sphx_glr_barchart_demo_001.png" /></a>
+</div>
+<p>You can also create stacked bars
+(<a class="reference external" href="../../gallery/lines_bars_and_markers/bar_stacked.html">bar_stacked.py</a>),
+or horizontal bar charts
+(<a class="reference external" href="../../gallery/lines_bars_and_markers/barh.html">barh.py</a>).</p>
+</div>
+<div class="section" id="pie-charts">
+<span id="screenshots-pie-demo"></span><h2>Pie charts<a class="headerlink" href="#pie-charts" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.pie.html#matplotlib.pyplot.pie" title="matplotlib.pyplot.pie"><code class="xref py py-func docutils literal notranslate"><span class="pre">pie()</span></code></a> function allows you to create pie
+charts.  Optional features include auto-labeling the percentage of area,
+exploding one or more wedges from the center of the pie, and a shadow effect.
+Take a close look at the attached code, which generates this figure in just
+a few lines of code.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/pie_and_polar_charts/pie_features.html"><img alt="../../_images/sphx_glr_pie_features_001.png" src="../../_images/sphx_glr_pie_features_001.png" /></a>
+</div>
+</div>
+<div class="section" id="tables">
+<span id="screenshots-table-demo"></span><h2>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.table.html#matplotlib.pyplot.table" title="matplotlib.pyplot.table"><code class="xref py py-func docutils literal notranslate"><span class="pre">table()</span></code></a> function adds a text table
+to an axes.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/misc/table_demo.html"><img alt="../../_images/sphx_glr_table_demo_001.png" src="../../_images/sphx_glr_table_demo_001.png" /></a>
+</div>
+</div>
+<div class="section" id="scatter-plots">
+<span id="screenshots-scatter-demo"></span><h2>Scatter plots<a class="headerlink" href="#scatter-plots" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter" title="matplotlib.pyplot.scatter"><code class="xref py py-func docutils literal notranslate"><span class="pre">scatter()</span></code></a> function makes a scatter plot
+with (optional) size and color arguments. This example plots changes
+in Google's stock price, with marker sizes reflecting the
+trading volume and colors varying with time. Here, the
+alpha attribute is used to make semitransparent circle markers.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/lines_bars_and_markers/scatter_demo2.html"><img alt="../../_images/sphx_glr_scatter_demo2_001.png" src="../../_images/sphx_glr_scatter_demo2_001.png" /></a>
+</div>
+</div>
+<div class="section" id="gui-widgets">
+<span id="screenshots-slider-demo"></span><h2>GUI widgets<a class="headerlink" href="#gui-widgets" title="Permalink to this headline">¶</a></h2>
+<p>Matplotlib has basic GUI widgets that are independent of the graphical
+user interface you are using, allowing you to write cross GUI figures
+and widgets.  See <a class="reference internal" href="../../api/widgets_api.html#module-matplotlib.widgets" title="matplotlib.widgets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">matplotlib.widgets</span></code></a> and the
+<a class="reference external" href="../../gallery/index.html#widgets">widget examples</a>.</p>
+<div class="figure align-center" id="id3">
+<a class="reference external image-reference" href="../../gallery/widgets/slider_demo.html"><img alt="../../_images/sphx_glr_slider_demo_001.png" src="../../_images/sphx_glr_slider_demo_001.png" /></a>
+<p class="caption"><span class="caption-text">Slider and radio-button GUI.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="filled-curves">
+<span id="screenshots-fill-demo"></span><h2>Filled curves<a class="headerlink" href="#filled-curves" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.fill.html#matplotlib.pyplot.fill" title="matplotlib.pyplot.fill"><code class="xref py py-func docutils literal notranslate"><span class="pre">fill()</span></code></a> function lets you
+plot filled curves and polygons:</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/lines_bars_and_markers/fill.html"><img alt="../../_images/sphx_glr_fill_001.png" src="../../_images/sphx_glr_fill_001.png" /></a>
+</div>
+<p>Thanks to Andrew Straw for adding this function.</p>
+</div>
+<div class="section" id="date-handling">
+<span id="screenshots-date-demo"></span><h2>Date handling<a class="headerlink" href="#date-handling" title="Permalink to this headline">¶</a></h2>
+<p>You can plot timeseries data with major and minor ticks and custom
+tick formatters for both.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/text_labels_and_annotations/date.html"><img alt="../../_images/sphx_glr_date_001.png" src="../../_images/sphx_glr_date_001.png" /></a>
+</div>
+<p>See <a class="reference internal" href="../../api/ticker_api.html#module-matplotlib.ticker" title="matplotlib.ticker"><code class="xref py py-mod docutils literal notranslate"><span class="pre">matplotlib.ticker</span></code></a> and <a class="reference internal" href="../../api/dates_api.html#module-matplotlib.dates" title="matplotlib.dates"><code class="xref py py-mod docutils literal notranslate"><span class="pre">matplotlib.dates</span></code></a> for details and usage.</p>
+</div>
+<div class="section" id="log-plots">
+<span id="screenshots-log-demo"></span><h2>Log plots<a class="headerlink" href="#log-plots" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.semilogx.html#matplotlib.pyplot.semilogx" title="matplotlib.pyplot.semilogx"><code class="xref py py-func docutils literal notranslate"><span class="pre">semilogx()</span></code></a>,
+<a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.semilogy.html#matplotlib.pyplot.semilogy" title="matplotlib.pyplot.semilogy"><code class="xref py py-func docutils literal notranslate"><span class="pre">semilogy()</span></code></a> and
+<a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.loglog.html#matplotlib.pyplot.loglog" title="matplotlib.pyplot.loglog"><code class="xref py py-func docutils literal notranslate"><span class="pre">loglog()</span></code></a> functions simplify the creation of
+logarithmic plots.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/scales/log_demo.html"><img alt="../../_images/sphx_glr_log_demo_001.png" src="../../_images/sphx_glr_log_demo_001.png" /></a>
+</div>
+<p>Thanks to Andrew Straw, Darren Dale and Gregory Lielens for contributions
+log-scaling infrastructure.</p>
+</div>
+<div class="section" id="polar-plots">
+<span id="screenshots-polar-demo"></span><h2>Polar plots<a class="headerlink" href="#polar-plots" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.polar.html#matplotlib.pyplot.polar" title="matplotlib.pyplot.polar"><code class="xref py py-func docutils literal notranslate"><span class="pre">polar()</span></code></a> function generates polar plots.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/pie_and_polar_charts/polar_demo.html"><img alt="../../_images/sphx_glr_polar_demo_001.png" src="../../_images/sphx_glr_polar_demo_001.png" /></a>
+</div>
+</div>
+<div class="section" id="legends">
+<span id="screenshots-legend-demo"></span><h2>Legends<a class="headerlink" href="#legends" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend"><code class="xref py py-func docutils literal notranslate"><span class="pre">legend()</span></code></a> function automatically
+generates figure legends, with MATLAB-compatible legend-placement
+functions.</p>
+<div class="figure align-center" id="id4">
+<a class="reference external image-reference" href="../../gallery/text_labels_and_annotations/legend.html"><img alt="../../_images/sphx_glr_legend_001.png" src="../../_images/sphx_glr_legend_001.png" /></a>
+<p class="caption"><span class="caption-text">Legend</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Thanks to Charles Twardy for input on the legend function.</p>
+</div>
+<div class="section" id="tex-notation-for-text-objects">
+<span id="screenshots-mathtext-examples-demo"></span><h2>TeX-notation for text objects<a class="headerlink" href="#tex-notation-for-text-objects" title="Permalink to this headline">¶</a></h2>
+<p>Below is a sampling of the many TeX expressions now supported by Matplotlib's
+internal mathtext engine.  The mathtext module provides TeX style mathematical
+expressions using <a class="reference external" href="https://www.freetype.org/">FreeType</a>
+and the DejaVu, BaKoMa computer modern, or <a class="reference external" href="http://www.stixfonts.org">STIX</a>
+fonts.  See the <a class="reference internal" href="../../api/mathtext_api.html#module-matplotlib.mathtext" title="matplotlib.mathtext"><code class="xref py py-mod docutils literal notranslate"><span class="pre">matplotlib.mathtext</span></code></a> module for additional details.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/text_labels_and_annotations/mathtext_examples.html"><img alt="../../_images/sphx_glr_mathtext_examples_001.png" src="../../_images/sphx_glr_mathtext_examples_001.png" /></a>
+</div>
+<p>Matplotlib's mathtext infrastructure is an independent implementation and
+does not require TeX or any external packages installed on your computer. See
+the tutorial at <a class="reference internal" href="../text/mathtext.html"><span class="doc">Writing mathematical expressions</span></a>.</p>
+</div>
+<div class="section" id="native-tex-rendering">
+<span id="screenshots-tex-demo"></span><h2>Native TeX rendering<a class="headerlink" href="#native-tex-rendering" title="Permalink to this headline">¶</a></h2>
+<p>Although Matplotlib's internal math rendering engine is quite
+powerful, sometimes you need TeX. Matplotlib supports external TeX
+rendering of strings with the <em>usetex</em> option.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/text_labels_and_annotations/tex_demo.html"><img alt="../../_images/sphx_glr_tex_demo_001.png" src="../../_images/sphx_glr_tex_demo_001.png" /></a>
+</div>
+</div>
+<div class="section" id="eeg-gui">
+<span id="screenshots-eeg-demo"></span><h2>EEG GUI<a class="headerlink" href="#eeg-gui" title="Permalink to this headline">¶</a></h2>
+<p>You can embed Matplotlib into Qt, GTK, Tk, or wxWidgets applications.
+Here is a screenshot of an EEG viewer called <a class="reference external" href="https://github.com/nipy/pbrain">pbrain</a>.</p>
+<img alt="../../_images/eeg_small.png" class="align-center" src="../../_images/eeg_small.png" />
+<p>The lower axes uses <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.specgram.html#matplotlib.pyplot.specgram" title="matplotlib.pyplot.specgram"><code class="xref py py-func docutils literal notranslate"><span class="pre">specgram()</span></code></a>
+to plot the spectrogram of one of the EEG channels.</p>
+<p>For examples of how to embed Matplotlib in different toolkits, see:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="../../gallery/user_interfaces/embedding_in_gtk3_sgskip.html"><span class="doc">Embedding in GTK3</span></a></p></li>
+<li><p><a class="reference internal" href="../../gallery/user_interfaces/embedding_in_wx2_sgskip.html"><span class="doc">Embedding in wx #2</span></a></p></li>
+<li><p><a class="reference internal" href="../../gallery/user_interfaces/mpl_with_glade3_sgskip.html"><span class="doc">Matplotlib With Glade 3</span></a></p></li>
+<li><p><a class="reference internal" href="../../gallery/user_interfaces/embedding_in_qt_sgskip.html"><span class="doc">Embedding in Qt</span></a></p></li>
+<li><p><a class="reference internal" href="../../gallery/user_interfaces/embedding_in_tk_sgskip.html"><span class="doc">Embedding in Tk</span></a></p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="xkcd-style-sketch-plots">
+<h2>XKCD-style sketch plots<a class="headerlink" href="#xkcd-style-sketch-plots" title="Permalink to this headline">¶</a></h2>
+<p>Just for fun, Matplotlib supports plotting in the style of <a class="reference external" href="https://xkcd.com/">xkcd</a>.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../../gallery/showcase/xkcd.html"><img alt="../../_images/sphx_glr_xkcd_001.png" src="../../_images/sphx_glr_xkcd_001.png" /></a>
+</div>
+</div>
+<div class="section" id="subplot-example">
+<h2>Subplot example<a class="headerlink" href="#subplot-example" title="Permalink to this headline">¶</a></h2>
+<p>Many plot types can be combined in one figure to create
+powerful and flexible representations of data.</p>
+<img src="../../_images/sphx_glr_sample_plots_001.png" srcset="../../_images/sphx_glr_sample_plots_001.png, ../../_images/sphx_glr_sample_plots_001_2_0x.png 2.0x" alt="sample plots" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.seed.html#numpy.random.seed" title="numpy.random.seed" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span></a><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html#numpy.random.randn" title="numpy.random.randn" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span></a><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<a href="../../api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axs</span></a> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axs</span></a><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axs</span></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axs</span></a><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axs</span></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist2d</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<a href="../../api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-introductory-sample-plots-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/55a714c8a6e4dde456b09326202fe492/sample_plots.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">sample_plots.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/003118d8eb1e7df55671bcdf18bfac3c/sample_plots.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">sample_plots.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature">Keywords: matplotlib code example, codex, python plot, pyplot
+<a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="pyplot.html" title="previous page">Pyplot tutorial</a>
+    <a class='right-next' id="next-link" href="images.html" title="next page">Image tutorial</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2021 The Matplotlib development team.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

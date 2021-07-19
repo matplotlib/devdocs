@@ -1,0 +1,564 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>matplotlib.texmanager &#8212; Matplotlib 3.4.2.post1414+g246a489ce6 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mpl.css?v3.4.2-1414-g246a489ce6" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Matplotlib 3.4.2.post1414+g246a489ce6 documentation"
+          href="../../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo2.svg" class="logo" alt="logo">
+</a>      
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../users/installing.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../plot_types/index.html">
+  Plot types
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../gallery/index.html">
+  Gallery
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api/index.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../users/index.html">
+  User's guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../devel/index.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference external nav-link" href="https://matplotlib.org/mpl-third-party/">
+  Third-party packages
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://gitter.im/matplotlib" rel="noopener" target="_blank" title="gitter">
+            <span><i class="fab fa-gitter"></i></span>
+            <label class="sr-only">gitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discourse.matplotlib.org" rel="noopener" target="_blank" title="discourse">
+            <span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">discourse</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/matplotlib/matplotlib" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/matplotlib/" rel="noopener" target="_blank" title="twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for matplotlib.texmanager</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Support for embedded TeX expressions in Matplotlib.</span>
+
+<span class="sd">Requirements:</span>
+
+<span class="sd">* LaTeX.</span>
+<span class="sd">* \*Agg backends: dvipng&gt;=1.6.</span>
+<span class="sd">* PS backend: PSfrag, dvips, and Ghostscript&gt;=9.0.</span>
+<span class="sd">* PDF and SVG backends: if LuaTeX is present, it will be used to speed up some</span>
+<span class="sd">  post-processing steps, but note that it is not used to parse the TeX string</span>
+<span class="sd">  itself (only LaTeX is supported).</span>
+
+<span class="sd">To enable TeX rendering of all text in your Matplotlib figure, set</span>
+<span class="sd">:rc:`text.usetex` to True.</span>
+
+<span class="sd">TeX and dvipng/dvips processing results are cached</span>
+<span class="sd">in ~/.matplotlib/tex.cache for reuse between sessions.</span>
+
+<span class="sd">`TexManager.get_rgba` can also be used to directly obtain raster output as RGBA</span>
+<span class="sd">NumPy arrays.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">TemporaryDirectory</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">packaging.version</span> <span class="kn">import</span> <span class="n">parse</span> <span class="k">as</span> <span class="n">parse_version</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">cbook</span><span class="p">,</span> <span class="n">dviread</span><span class="p">,</span> <span class="n">rcParams</span>
+
+<span class="n">_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="TexManager"><a class="viewcode-back" href="../../api/texmanager_api.html#matplotlib.texmanager.TexManager">[docs]</a><span class="k">class</span> <span class="nc">TexManager</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert strings to dvi files using TeX, caching the results to a directory.</span>
+
+<span class="sd">    Repeated calls to this constructor always return the same instance.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">texcache</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">get_cachedir</span><span class="p">(),</span> <span class="s1">&#39;tex.cache&#39;</span><span class="p">)</span>
+
+    <span class="n">_grey_arrayd</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">_font_family</span> <span class="o">=</span> <span class="s1">&#39;serif&#39;</span>
+    <span class="n">_font_families</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;serif&#39;</span><span class="p">,</span> <span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span> <span class="s1">&#39;cursive&#39;</span><span class="p">,</span> <span class="s1">&#39;monospace&#39;</span><span class="p">)</span>
+    <span class="n">_font_info</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;new century schoolbook&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;pnc&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\renewcommand{\rmdefault}</span><span class="si">{pnc}</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;bookman&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;pbk&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\renewcommand{\rmdefault}</span><span class="si">{pbk}</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;times&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;ptm&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{mathptmx}</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;palatino&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;ppl&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{mathpazo}</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;zapf chancery&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;pzc&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{chancery}</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;cursive&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;pzc&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{chancery}</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;charter&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;pch&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{charter}</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;serif&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;cmr&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;sans-serif&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;cmss&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;helvetica&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;phv&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{helvet}</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;avant garde&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;pag&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{avant}</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;courier&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;pcr&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{courier}</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="c1"># Loading the type1ec package ensures that cm-super is installed, which</span>
+        <span class="c1"># is necessary for unicode computer modern.  (It also allows the use of</span>
+        <span class="c1"># computer modern at arbitrary sizes, but that&#39;s just a side effect.)</span>
+        <span class="s1">&#39;monospace&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;cmtt&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{type1ec}</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;computer modern roman&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;cmr&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{type1ec}</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;computer modern sans serif&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;cmss&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{type1ec}</span><span class="s1">&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;computer modern typewriter&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;cmtt&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{type1ec}</span><span class="s1">&#39;</span><span class="p">)}</span>
+    <span class="n">_font_types</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;new century schoolbook&#39;</span><span class="p">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span> <span class="s1">&#39;bookman&#39;</span><span class="p">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;times&#39;</span><span class="p">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span> <span class="s1">&#39;palatino&#39;</span><span class="p">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span> <span class="s1">&#39;charter&#39;</span><span class="p">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;computer modern roman&#39;</span><span class="p">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span> <span class="s1">&#39;zapf chancery&#39;</span><span class="p">:</span> <span class="s1">&#39;cursive&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;helvetica&#39;</span><span class="p">:</span> <span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span> <span class="s1">&#39;avant garde&#39;</span><span class="p">:</span> <span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;computer modern sans serif&#39;</span><span class="p">:</span> <span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;courier&#39;</span><span class="p">:</span> <span class="s1">&#39;monospace&#39;</span><span class="p">,</span> <span class="s1">&#39;computer modern typewriter&#39;</span><span class="p">:</span> <span class="s1">&#39;monospace&#39;</span><span class="p">}</span>
+
+    <span class="n">grey_arrayd</span> <span class="o">=</span> <span class="n">_api</span><span class="o">.</span><span class="n">deprecate_privatize_attribute</span><span class="p">(</span><span class="s2">&quot;3.5&quot;</span><span class="p">)</span>
+    <span class="n">font_family</span> <span class="o">=</span> <span class="n">_api</span><span class="o">.</span><span class="n">deprecate_privatize_attribute</span><span class="p">(</span><span class="s2">&quot;3.5&quot;</span><span class="p">)</span>
+    <span class="n">font_families</span> <span class="o">=</span> <span class="n">_api</span><span class="o">.</span><span class="n">deprecate_privatize_attribute</span><span class="p">(</span><span class="s2">&quot;3.5&quot;</span><span class="p">)</span>
+    <span class="n">font_info</span> <span class="o">=</span> <span class="n">_api</span><span class="o">.</span><span class="n">deprecate_privatize_attribute</span><span class="p">(</span><span class="s2">&quot;3.5&quot;</span><span class="p">)</span>
+
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">lru_cache</span><span class="p">()</span>  <span class="c1"># Always return the same instance.</span>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="n">Path</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">texcache</span><span class="p">)</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TexManager.get_font_config"><a class="viewcode-back" href="../../api/texmanager_api.html#matplotlib.texmanager.TexManager.get_font_config">[docs]</a>    <span class="k">def</span> <span class="nf">get_font_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ff</span> <span class="o">=</span> <span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span>
+        <span class="n">ff_val</span> <span class="o">=</span> <span class="n">ff</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ff</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">reduced_notation</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ff</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">ff_val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_families</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_font_family</span> <span class="o">=</span> <span class="n">ff_val</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">ff</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">ff_val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_info</span><span class="p">:</span>
+            <span class="n">reduced_notation</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_font_family</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_types</span><span class="p">[</span><span class="n">ff_val</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;font.family must be one of (</span><span class="si">%s</span><span class="s1">) when text.usetex is &#39;</span>
+                      <span class="s1">&#39;True. serif will be used by default.&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_font_families</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_font_family</span> <span class="o">=</span> <span class="s1">&#39;serif&#39;</span>
+
+        <span class="n">fontconfig</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_font_family</span><span class="p">]</span>
+        <span class="n">fonts</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">font_family</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_families</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">reduced_notation</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_family</span> <span class="o">==</span> <span class="n">font_family</span><span class="p">:</span>
+                <span class="n">fonts</span><span class="p">[</span><span class="n">font_family</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_info</span><span class="p">[</span><span class="n">ff_val</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">font</span> <span class="ow">in</span> <span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.&#39;</span> <span class="o">+</span> <span class="n">font_family</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="n">font</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_info</span><span class="p">:</span>
+                        <span class="n">fonts</span><span class="p">[</span><span class="n">font_family</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_info</span><span class="p">[</span><span class="n">font</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+                        <span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                            <span class="s1">&#39;family: </span><span class="si">%s</span><span class="s1">, font: </span><span class="si">%s</span><span class="s1">, info: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
+                            <span class="n">font_family</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_info</span><span class="p">[</span><span class="n">font</span><span class="o">.</span><span class="n">lower</span><span class="p">()])</span>
+                        <span class="k">break</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> font is not compatible with usetex.&#39;</span><span class="p">,</span>
+                                   <span class="n">font</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">_log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;No LaTeX-compatible font found for the </span><span class="si">%s</span><span class="s1"> font&#39;</span>
+                              <span class="s1">&#39;family in rcParams. Using default.&#39;</span><span class="p">,</span>
+                              <span class="n">font_family</span><span class="p">)</span>
+                    <span class="n">fonts</span><span class="p">[</span><span class="n">font_family</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_info</span><span class="p">[</span><span class="n">font_family</span><span class="p">]</span>
+            <span class="n">fontconfig</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fonts</span><span class="p">[</span><span class="n">font_family</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="c1"># Add a hash of the latex preamble to fontconfig so that the</span>
+        <span class="c1"># correct png is selected for strings rendered with same font and dpi</span>
+        <span class="c1"># even if the latex preamble changes within the session</span>
+        <span class="n">preamble_bytes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_custom_preamble</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="n">fontconfig</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">preamble_bytes</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+
+        <span class="c1"># The following packages and commands need to be included in the latex</span>
+        <span class="c1"># file&#39;s preamble:</span>
+        <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span><span class="n">fonts</span><span class="p">[</span><span class="n">family</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+               <span class="k">for</span> <span class="n">family</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;serif&#39;</span><span class="p">,</span> <span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span> <span class="s1">&#39;monospace&#39;</span><span class="p">]}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_family</span> <span class="o">==</span> <span class="s1">&#39;cursive&#39;</span><span class="p">:</span>
+            <span class="n">cmd</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">fonts</span><span class="p">[</span><span class="s1">&#39;cursive&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">cmd</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{type1cm}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_font_preamble</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fontconfig</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TexManager.get_basefile"><a class="viewcode-back" href="../../api/texmanager_api.html#matplotlib.texmanager.TexManager.get_basefile">[docs]</a>    <span class="k">def</span> <span class="nf">get_basefile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a filename based on a hash of the string, fontsize, and dpi.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">tex</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_font_config</span><span class="p">(),</span> <span class="s1">&#39;</span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">fontsize</span><span class="p">,</span>
+                     <span class="bp">self</span><span class="o">.</span><span class="n">get_custom_preamble</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="n">dpi</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span><span class="p">)])</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">texcache</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="TexManager.get_font_preamble"><a class="viewcode-back" href="../../api/texmanager_api.html#matplotlib.texmanager.TexManager.get_font_preamble">[docs]</a>    <span class="k">def</span> <span class="nf">get_font_preamble</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a string containing font configuration for the tex preamble.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_preamble</span></div>
+
+<div class="viewcode-block" id="TexManager.get_custom_preamble"><a class="viewcode-back" href="../../api/texmanager_api.html#matplotlib.texmanager.TexManager.get_custom_preamble">[docs]</a>    <span class="k">def</span> <span class="nf">get_custom_preamble</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a string containing user additions to the tex preamble.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.latex.preamble&#39;</span><span class="p">]</span></div>
+
+    <span class="k">def</span> <span class="nf">_get_preamble</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+            <span class="sa">r</span><span class="s2">&quot;\documentclass</span><span class="si">{article}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="c1"># Pass-through \mathdefault, which is used in non-usetex mode to</span>
+            <span class="c1"># use the default text font but was historically suppressed in</span>
+            <span class="c1"># usetex mode.</span>
+            <span class="sa">r</span><span class="s2">&quot;\newcommand{\mathdefault}[1]{#1}&quot;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_font_preamble</span><span class="p">,</span>
+            <span class="sa">r</span><span class="s2">&quot;\usepackage[utf8]</span><span class="si">{inputenc}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="sa">r</span><span class="s2">&quot;\DeclareUnicodeCharacter</span><span class="si">{2212}</span><span class="s2">{\ensuremath{-}}&quot;</span><span class="p">,</span>
+            <span class="c1"># geometry is loaded before the custom preamble as convert_psfrags</span>
+            <span class="c1"># relies on a custom preamble to change the geometry.</span>
+            <span class="sa">r</span><span class="s2">&quot;\usepackage[papersize=72in, margin=1in]</span><span class="si">{geometry}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">get_custom_preamble</span><span class="p">(),</span>
+            <span class="c1"># textcomp is loaded last (if not already loaded by the custom</span>
+            <span class="c1"># preamble) in order not to clash with custom packages (e.g.</span>
+            <span class="c1"># newtxtext) which load it with different options.</span>
+            <span class="sa">r</span><span class="s2">&quot;\makeatletter&quot;</span>
+            <span class="sa">r</span><span class="s2">&quot;\@ifpackageloaded</span><span class="si">{textcomp}{}</span><span class="s2">{\usepackage</span><span class="si">{textcomp}</span><span class="s2">}&quot;</span>
+            <span class="sa">r</span><span class="s2">&quot;\makeatother&quot;</span><span class="p">,</span>
+        <span class="p">])</span>
+
+<div class="viewcode-block" id="TexManager.make_tex"><a class="viewcode-back" href="../../api/texmanager_api.html#matplotlib.texmanager.TexManager.make_tex">[docs]</a>    <span class="k">def</span> <span class="nf">make_tex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a tex file to render the tex string at a specific font size.</span>
+
+<span class="sd">        Return the file name.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">basefile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_basefile</span><span class="p">(</span><span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">)</span>
+        <span class="n">texfile</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">.tex&#39;</span> <span class="o">%</span> <span class="n">basefile</span>
+        <span class="n">fontcmd</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sans-serif&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;{\sffamily </span><span class="si">%s</span><span class="s1">}&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;monospace&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;{\ttfamily </span><span class="si">%s</span><span class="s1">}&#39;</span><span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_font_family</span><span class="p">,</span>
+                                                       <span class="sa">r</span><span class="s1">&#39;{\rmfamily </span><span class="si">%s</span><span class="s1">}&#39;</span><span class="p">)</span>
+
+        <span class="n">Path</span><span class="p">(</span><span class="n">texfile</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span>
+            <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">%s</span>
+<span class="sd">\pagestyle{empty}</span>
+<span class="sd">\begin{document}</span>
+<span class="sd">%% The empty hbox ensures that a page is printed even for empty inputs, except</span>
+<span class="sd">%% when using psfrag which gets confused by it.</span>
+<span class="sd">\fontsize{%f}{%f}%%</span>
+<span class="sd">\ifdefined\psfrag\else\hbox{}\fi%%</span>
+<span class="sd">%s</span>
+<span class="sd">\end{document}</span>
+<span class="sd">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_preamble</span><span class="p">(),</span> <span class="n">fontsize</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">*</span> <span class="mf">1.25</span><span class="p">,</span> <span class="n">fontcmd</span> <span class="o">%</span> <span class="n">tex</span><span class="p">),</span>
+            <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">texfile</span></div>
+
+    <span class="k">def</span> <span class="nf">_run_checked_subprocess</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">tex</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">cbook</span><span class="o">.</span><span class="n">_pformat_subprocess</span><span class="p">(</span><span class="n">command</span><span class="p">))</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">report</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span>
+                <span class="n">command</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">cwd</span> <span class="k">if</span> <span class="n">cwd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">texcache</span><span class="p">,</span>
+                <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">STDOUT</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s1">&#39;Failed to process string with tex because </span><span class="si">{}</span><span class="s1"> could not be &#39;</span>
+                <span class="s1">&#39;found&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">command</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="kn">from</span> <span class="nn">exc</span>
+        <span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CalledProcessError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s1">&#39;</span><span class="si">{prog}</span><span class="s1"> was not able to process the following string:</span><span class="se">\n</span><span class="s1">&#39;</span>
+                <span class="s1">&#39;</span><span class="si">{tex!r}</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+                <span class="s1">&#39;Here is the full report generated by </span><span class="si">{prog}</span><span class="s1">:</span><span class="se">\n</span><span class="s1">&#39;</span>
+                <span class="s1">&#39;</span><span class="si">{exc}</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">prog</span><span class="o">=</span><span class="n">command</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">tex</span><span class="o">=</span><span class="n">tex</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;unicode_escape&#39;</span><span class="p">),</span>
+                    <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)))</span> <span class="kn">from</span> <span class="nn">exc</span>
+        <span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">report</span>
+
+<div class="viewcode-block" id="TexManager.make_dvi"><a class="viewcode-back" href="../../api/texmanager_api.html#matplotlib.texmanager.TexManager.make_dvi">[docs]</a>    <span class="k">def</span> <span class="nf">make_dvi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a dvi file containing latex&#39;s layout of tex string.</span>
+
+<span class="sd">        Return the file name.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">basefile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_basefile</span><span class="p">(</span><span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">)</span>
+        <span class="n">dvifile</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">.dvi&#39;</span> <span class="o">%</span> <span class="n">basefile</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">dvifile</span><span class="p">):</span>
+            <span class="n">texfile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_tex</span><span class="p">(</span><span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">)</span>
+            <span class="c1"># Generate the dvi in a temporary directory to avoid race</span>
+            <span class="c1"># conditions e.g. if multiple processes try to process the same tex</span>
+            <span class="c1"># string at the same time.  Having tmpdir be a subdirectory of the</span>
+            <span class="c1"># final output dir ensures that they are on the same filesystem,</span>
+            <span class="c1"># and thus replace() works atomically.</span>
+            <span class="k">with</span> <span class="n">TemporaryDirectory</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="n">dvifile</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span> <span class="k">as</span> <span class="n">tmpdir</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_run_checked_subprocess</span><span class="p">(</span>
+                    <span class="p">[</span><span class="s2">&quot;latex&quot;</span><span class="p">,</span> <span class="s2">&quot;-interaction=nonstopmode&quot;</span><span class="p">,</span> <span class="s2">&quot;--halt-on-error&quot;</span><span class="p">,</span>
+                     <span class="n">texfile</span><span class="p">],</span> <span class="n">tex</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">tmpdir</span><span class="p">)</span>
+                <span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">)</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">dvifile</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">dvifile</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dvifile</span></div>
+
+<div class="viewcode-block" id="TexManager.make_png"><a class="viewcode-back" href="../../api/texmanager_api.html#matplotlib.texmanager.TexManager.make_png">[docs]</a>    <span class="k">def</span> <span class="nf">make_png</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">,</span> <span class="n">dpi</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a png file containing latex&#39;s rendering of tex string.</span>
+
+<span class="sd">        Return the file name.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">basefile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_basefile</span><span class="p">(</span><span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">,</span> <span class="n">dpi</span><span class="p">)</span>
+        <span class="n">pngfile</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">.png&#39;</span> <span class="o">%</span> <span class="n">basefile</span>
+        <span class="c1"># see get_rgba for a discussion of the background</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">pngfile</span><span class="p">):</span>
+            <span class="n">dvifile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_dvi</span><span class="p">(</span><span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">)</span>
+            <span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;dvipng&quot;</span><span class="p">,</span> <span class="s2">&quot;-bg&quot;</span><span class="p">,</span> <span class="s2">&quot;Transparent&quot;</span><span class="p">,</span> <span class="s2">&quot;-D&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">dpi</span><span class="p">),</span>
+                   <span class="s2">&quot;-T&quot;</span><span class="p">,</span> <span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="n">pngfile</span><span class="p">,</span> <span class="n">dvifile</span><span class="p">]</span>
+            <span class="c1"># When testing, disable FreeType rendering for reproducibility; but</span>
+            <span class="c1"># dvipng 1.16 has a bug (fixed in f3ff241) that breaks --freetype0</span>
+            <span class="c1"># mode, so for it we keep FreeType enabled; the image will be</span>
+            <span class="c1"># slightly off.</span>
+            <span class="n">bad_ver</span> <span class="o">=</span> <span class="n">parse_version</span><span class="p">(</span><span class="s2">&quot;1.16&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">mpl</span><span class="p">,</span> <span class="s2">&quot;_called_from_pytest&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+                    <span class="ow">and</span> <span class="n">mpl</span><span class="o">.</span><span class="n">_get_executable_info</span><span class="p">(</span><span class="s2">&quot;dvipng&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">version</span> <span class="o">!=</span> <span class="n">bad_ver</span><span class="p">):</span>
+                <span class="n">cmd</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;--freetype0&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_run_checked_subprocess</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">tex</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pngfile</span></div>
+
+<div class="viewcode-block" id="TexManager.get_grey"><a class="viewcode-back" href="../../api/texmanager_api.html#matplotlib.texmanager.TexManager.get_grey">[docs]</a>    <span class="k">def</span> <span class="nf">get_grey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the alpha channel.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">fontsize</span><span class="p">:</span>
+            <span class="n">fontsize</span> <span class="o">=</span> <span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dpi</span><span class="p">:</span>
+            <span class="n">dpi</span> <span class="o">=</span> <span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;savefig.dpi&#39;</span><span class="p">]</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">tex</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_font_config</span><span class="p">(),</span> <span class="n">fontsize</span><span class="p">,</span> <span class="n">dpi</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_grey_arrayd</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">alpha</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">pngfile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_png</span><span class="p">(</span><span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">,</span> <span class="n">dpi</span><span class="p">)</span>
+            <span class="n">rgba</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">texcache</span><span class="p">,</span> <span class="n">pngfile</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_grey_arrayd</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">rgba</span><span class="p">[:,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">alpha</span></div>
+
+<div class="viewcode-block" id="TexManager.get_rgba"><a class="viewcode-back" href="../../api/texmanager_api.html#matplotlib.texmanager.TexManager.get_rgba">[docs]</a>    <span class="k">def</span> <span class="nf">get_rgba</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return latex&#39;s rendering of the tex string as an rgba array.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; texmanager = TexManager()</span>
+<span class="sd">        &gt;&gt;&gt; s = r&quot;\TeX\ is $\displaystyle\sum_n\frac{-e^{i\pi}}{2^n}$!&quot;</span>
+<span class="sd">        &gt;&gt;&gt; Z = texmanager.get_rgba(s, fontsize=12, dpi=80, rgb=(1, 0, 0))</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_grey</span><span class="p">(</span><span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">,</span> <span class="n">dpi</span><span class="p">)</span>
+        <span class="n">rgba</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="o">*</span><span class="n">alpha</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+        <span class="n">rgba</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">to_rgb</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
+        <span class="n">rgba</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span>
+        <span class="k">return</span> <span class="n">rgba</span></div>
+
+<div class="viewcode-block" id="TexManager.get_text_width_height_descent"><a class="viewcode-back" href="../../api/texmanager_api.html#matplotlib.texmanager.TexManager.get_text_width_height_descent">[docs]</a>    <span class="k">def</span> <span class="nf">get_text_width_height_descent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">,</span> <span class="n">renderer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return width, height and descent of the text.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">tex</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="n">dvifile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_dvi</span><span class="p">(</span><span class="n">tex</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">)</span>
+        <span class="n">dpi_fraction</span> <span class="o">=</span> <span class="n">renderer</span><span class="o">.</span><span class="n">points_to_pixels</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span> <span class="k">if</span> <span class="n">renderer</span> <span class="k">else</span> <span class="mi">1</span>
+        <span class="k">with</span> <span class="n">dviread</span><span class="o">.</span><span class="n">Dvi</span><span class="p">(</span><span class="n">dvifile</span><span class="p">,</span> <span class="mi">72</span> <span class="o">*</span> <span class="n">dpi_fraction</span><span class="p">)</span> <span class="k">as</span> <span class="n">dvi</span><span class="p">:</span>
+            <span class="n">page</span><span class="p">,</span> <span class="o">=</span> <span class="n">dvi</span>
+        <span class="c1"># A total height (including the descent) needs to be returned.</span>
+        <span class="k">return</span> <span class="n">page</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">page</span><span class="o">.</span><span class="n">height</span> <span class="o">+</span> <span class="n">page</span><span class="o">.</span><span class="n">descent</span><span class="p">,</span> <span class="n">page</span><span class="o">.</span><span class="n">descent</span></div></div>
+</pre></div>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2021 The Matplotlib development team.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
