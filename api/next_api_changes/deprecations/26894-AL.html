@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>interval parameter of TimerBase.start &#8212; Matplotlib 3.9.0.dev1426+g0afc5d6ca4 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/style.css?v=86e00652" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mpl.css?v=369bd9d1" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=4aebf5fa"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=ccdb6887"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script data-domain="matplotlib.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/next_api_changes/deprecations/26894-AL';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://matplotlib.org/devdocs/_static/switcher.json?v3.8.3-1426-g0afc5d6ca4';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'devdocs';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="canonical" href="https://matplotlib.org/stable/api/next_api_changes/deprecations/26894-AL.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Matplotlib 3.9.0.dev1426+g0afc5d6ca4 documentation"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ContourLabeler.add_label_clabeltext" href="26917-AL.html" />
+    <link rel="prev" title="Applying theta transforms in PolarTransform" href="24834-DS.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Feb 15, 2024"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+   
+
+<a class="navbar-brand logo" href="https://matplotlib.org/stable/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo_light.svg" class="logo__image only-light" alt="Matplotlib 3.9.0.dev1426+g0afc5d6ca4 documentation - Home"/>
+    <script>document.write(`<img src="../../../_static/logo_dark.svg" class="logo__image only-dark" alt="Matplotlib 3.9.0.dev1426+g0afc5d6ca4 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><ul id="navbar-main-elements" class="navbar-nav">
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../../plot_types/index.html">Plot types</a>
+  </li>
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../../users/index.html">User guide</a>
+  </li>
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../../tutorials/index.html">Tutorials</a>
+  </li>
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../../gallery/index.html">Examples</a>
+  </li>
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../index.html">Reference</a>
+  </li>
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../../devel/index.html">Contribute</a>
+  </li>
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../../users/release_notes.html">Releases</a>
+  </li>
+</ul></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://gitter.im/matplotlib/matplotlib" title="Gitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-gitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Gitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discourse.matplotlib.org" title="Discourse" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-discourse fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matplotlib/matplotlib" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/matplotlib/" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><ul id="navbar-main-elements" class="navbar-nav">
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../../plot_types/index.html">Plot types</a>
+  </li>
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../../users/index.html">User guide</a>
+  </li>
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../../tutorials/index.html">Tutorials</a>
+  </li>
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../../gallery/index.html">Examples</a>
+  </li>
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../index.html">Reference</a>
+  </li>
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../../devel/index.html">Contribute</a>
+  </li>
+  <li class="nav-item">
+    <a class="reference internal nav-link" href="../../../users/release_notes.html">Releases</a>
+  </li>
+</ul></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://gitter.im/matplotlib/matplotlib" title="Gitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-gitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Gitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discourse.matplotlib.org" title="Discourse" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-discourse fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matplotlib/matplotlib" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/matplotlib/" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../behavior/00001-ABC.html">Behavior change template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/22347-RQ.html">Correctly treat pan/zoom events of overlapping Axes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/26634-TH.html"><code class="docutils literal notranslate"><span class="pre">SubplotParams</span></code> has been moved from <code class="docutils literal notranslate"><span class="pre">matplotlib.figure</span></code> to <code class="docutils literal notranslate"><span class="pre">matplotlib.gridspec</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/26696-SR.html"><em>loc</em> parameter of <code class="docutils literal notranslate"><span class="pre">Cell</span></code> doesn't accept <code class="docutils literal notranslate"><span class="pre">None</span></code> anymore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/26788-AL.html"><code class="docutils literal notranslate"><span class="pre">axvspan</span></code> and <code class="docutils literal notranslate"><span class="pre">axhspan</span></code> now return <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>s, not <code class="docutils literal notranslate"><span class="pre">Polygons</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/26902-RP.html"><code class="docutils literal notranslate"><span class="pre">Line2D</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/26917-AL.html"><code class="docutils literal notranslate"><span class="pre">ContourLabeler.add_label</span></code> now respects <em>use_clabeltext</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/27179-KS.html">Default behavior of <code class="docutils literal notranslate"><span class="pre">hexbin</span></code> with <em>C</em> provided requires at least 1 point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/27347-GL.html">ScalarMappables auto-scale their norm when an array is set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/27469-AL.html"><code class="docutils literal notranslate"><span class="pre">loc='best'</span></code> for <code class="docutils literal notranslate"><span class="pre">legend</span></code> now considers <code class="docutils literal notranslate"><span class="pre">Text</span></code> and <code class="docutils literal notranslate"><span class="pre">PolyCollections</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/27492-AL.html">Image path semantics of toolmanager-based tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/27514-OG.html">Exception when not passing a Bbox to BboxTransform*-classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/27589-DS.html">PowerNorm no longer clips values below vmin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/27605-DS.html">Boxplots now ignore masked data points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/27767-REC.html">Legend labels for <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behavior/27943-AL.html">plot() shorthand format interprets "Cn" (n&gt;9) as a color-cycle color</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00001-ABC.html">Template for deprecations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24834-DS.html">Applying theta transforms in <code class="docutils literal notranslate"><span class="pre">PolarTransform</span></code></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><em>interval</em> parameter of <code class="docutils literal notranslate"><span class="pre">TimerBase.start</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="26917-AL.html"><code class="docutils literal notranslate"><span class="pre">ContourLabeler.add_label_clabeltext</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="26960-AL.html"><code class="docutils literal notranslate"><span class="pre">backend_ps.get_bbox_header</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="27088-JK.html">Deprecations removed in <code class="docutils literal notranslate"><span class="pre">contour</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="27095-AL.html"><em>nth_coord</em> parameter to axisartist helpers for fixed axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27175-AL.html">Mixing positional and keyword arguments for <code class="docutils literal notranslate"><span class="pre">legend</span></code> handles and labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27300-AL.html"><code class="docutils literal notranslate"><span class="pre">GridHelperCurveLinear.get_tick_iterator</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="27513-OG.html"><code class="docutils literal notranslate"><span class="pre">BboxTransformToMaxOnly</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="27514-OG.html"><code class="docutils literal notranslate"><span class="pre">TransformNode.is_bbox</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="27719-IT.html"><code class="docutils literal notranslate"><span class="pre">rcsetup.interactive_bk</span></code>, <code class="docutils literal notranslate"><span class="pre">rcsetup.non_interactive_bk</span></code> and <code class="docutils literal notranslate"><span class="pre">rcsetup.all_backends</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="27767-REC.html">Legend labels for <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="27850-REC.html"><code class="docutils literal notranslate"><span class="pre">plot_date</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="27901-TS.html"><code class="docutils literal notranslate"><span class="pre">boxplot</span></code> tick labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/00001-ABC.html">Development change template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/26621-ES.html">Build system ported to Meson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/26800-OG.html">Increase to minimum supported versions of dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/26849-KS.html">Minimum version of setuptools bumped to 64</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/27012-ES.html">Extensions require C++17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/27676-ES.html">Windows on ARM64 support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/00001-ABC.html">Removal change template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/26797-OG.html"><code class="docutils literal notranslate"><span class="pre">draw_gouraud_triangle</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/26798-OG.html"><code class="docutils literal notranslate"><span class="pre">unit_cube</span></code>, <code class="docutils literal notranslate"><span class="pre">tunit_cube</span></code>, and <code class="docutils literal notranslate"><span class="pre">tunit_edges</span></code></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../removals/26852-OG.html"><code class="docutils literal notranslate"><span class="pre">num2julian</span></code>, <code class="docutils literal notranslate"><span class="pre">julian2num</span></code> and <code class="docutils literal notranslate"><span class="pre">JULIAN_OFFSET</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/26853-OG.html">Most arguments to widgets have been made keyword-only</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../removals/26871-AG.html"><code class="docutils literal notranslate"><span class="pre">matplotlib.axis.Axis.set_ticklabels</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/26872-AD.html"><code class="docutils literal notranslate"><span class="pre">Animation</span></code> attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/26874-AG.html"><code class="docutils literal notranslate"><span class="pre">collections.PolyCollection.span_where</span></code> and <code class="docutils literal notranslate"><span class="pre">collections.BrokenBarHCollection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/26884-JS.html"><code class="docutils literal notranslate"><span class="pre">parse_fontconfig_pattern</span></code> raises on unknown constant names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/26885-AD.html"><code class="docutils literal notranslate"><span class="pre">raw</span></code> parameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/26889-GC.html">Removing Deprecated API SimpleEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/26900-jf.html"><code class="docutils literal notranslate"><span class="pre">passthru_pt</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/26907-DCH.html"><code class="docutils literal notranslate"><span class="pre">contour.ClabelText</span></code> and <code class="docutils literal notranslate"><span class="pre">ContourLabeler.set_label_props</span></code></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../removals/26909-VV.html"><code class="docutils literal notranslate"><span class="pre">matplotlib.tri</span></code> submodules are removed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/26910-JP.html"><code class="docutils literal notranslate"><span class="pre">offsetbox.bbox_artist</span></code></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../removals/26918-EW.html"><code class="docutils literal notranslate"><span class="pre">Quiver.quiver_doc</span></code> and <code class="docutils literal notranslate"><span class="pre">Barbs.barbs_doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/26962-IA.html">Deprecated Classes Removed</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../removals/26965-ER.html">Removal of top-level cmap registration and access functions in <code class="docutils literal notranslate"><span class="pre">mpl.cm</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/27095-AL.html">Inconsistent <em>nth_coord</em> and <em>loc</em> passed to <code class="docutils literal notranslate"><span class="pre">_FixedAxisArtistHelperBase</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../removals/27968-ES.html"><code class="docutils literal notranslate"><span class="pre">legend.legendHandles</span></code></a></li>
+
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../users/release_notes.html" class="nav-link">Release notes</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../next_api_changes.html" class="nav-link">Next API changes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><em>interval...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="interval-parameter-of-timerbase-start">
+<h1><em>interval</em> parameter of <code class="docutils literal notranslate"><span class="pre">TimerBase.start</span></code><a class="headerlink" href="#interval-parameter-of-timerbase-start" title="Link to this heading">#</a></h1>
+<p>Setting the timer <em>interval</em> while starting it is deprecated.  The interval can
+be specified instead in the timer constructor, or by setting the
+<code class="docutils literal notranslate"><span class="pre">timer.interval</span></code> attribute.</p>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2002–2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012–2024 The Matplotlib development team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Built from v3.8.3-1426-g0afc5d6ca4.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

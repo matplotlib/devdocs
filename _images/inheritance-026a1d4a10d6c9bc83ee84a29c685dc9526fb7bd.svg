@@ -1,0 +1,275 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="905pt" height="304pt" viewBox="0.00 0.00 905.00 304.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 300)">
+<ns0:title>inheritance829eaf436e</ns0:title>
+
+<ns0:g id="node1" class="node">
+<ns0:title>artist.Artist</ns0:title>
+<ns0:g id="a_node1"><ns0:a ns1:href="../api/artist_api.html#matplotlib.artist.Artist" ns1:title="Abstract base class for objects that render into a FigureCanvas." target="_top">
+<ns0:polygon fill="white" stroke="black" points="84,-148 21,-148 21,-129 84,-129 84,-148" />
+<ns0:text text-anchor="middle" x="52.5" y="-136" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">artist.Artist</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>collections.Collection</ns0:title>
+<ns0:g id="a_node7"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.Collection" ns1:title="Base class for Collections. Must be subclassed to be usable." target="_top">
+<ns0:polygon fill="white" stroke="black" points="257,-130 144,-130 144,-111 257,-111 257,-130" />
+<ns0:text text-anchor="middle" x="200.5" y="-118" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.Collection</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>artist.Artist-&gt;collections.Collection</ns0:title>
+<ns0:path fill="none" stroke="black" d="M84.11,-134.73C99.93,-132.78 119.81,-130.32 138.6,-128.01" />
+<ns0:polygon fill="black" stroke="black" points="139.12,-129.71 143.87,-127.36 138.69,-126.23 139.12,-129.71" />
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>cm.ScalarMappable</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:href="../api/cm_api.html#matplotlib.cm.ScalarMappable" ns1:title="A mixin class to map scalar data to RGBA." target="_top">
+<ns0:polygon fill="white" stroke="black" points="105,-111 0,-111 0,-92 105,-92 105,-111" />
+<ns0:text text-anchor="middle" x="52.5" y="-99" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">cm.ScalarMappable</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>cm.ScalarMappable-&gt;collections.Collection</ns0:title>
+<ns0:path fill="none" stroke="black" d="M105.39,-108.25C116.19,-109.66 127.67,-111.15 138.76,-112.6" />
+<ns0:polygon fill="black" stroke="black" points="138.64,-114.34 143.82,-113.25 139.09,-110.87 138.64,-114.34" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>collections.AsteriskPolygonCollection</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.AsteriskPolygonCollection" ns1:title="Draw a collection of regular asterisks with *numsides* points." target="_top">
+<ns0:polygon fill="white" stroke="black" points="897,-296 705,-296 705,-277 897,-277 897,-296" />
+<ns0:text text-anchor="middle" x="801" y="-284" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.AsteriskPolygonCollection</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>collections.RegularPolyCollection</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.RegularPolyCollection" ns1:title="A collection of n-sided regular polygons." target="_top">
+<ns0:polygon fill="white" stroke="black" points="669,-278 498,-278 498,-259 669,-259 669,-278" />
+<ns0:text text-anchor="middle" x="583.5" y="-266" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.RegularPolyCollection</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>collections.RegularPolyCollection-&gt;collections.AsteriskPolygonCollection</ns0:title>
+<ns0:path fill="none" stroke="black" d="M669.05,-275.56C679.19,-276.41 689.61,-277.28 699.93,-278.14" />
+<ns0:polygon fill="black" stroke="black" points="699.87,-279.89 704.99,-278.56 700.16,-276.4 699.87,-279.89" />
+</ns0:g>
+
+<ns0:g id="node17" class="node">
+<ns0:title>collections.StarPolygonCollection</ns0:title>
+<ns0:g id="a_node17"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.StarPolygonCollection" ns1:title="Draw a collection of regular stars with *numsides* points." target="_top">
+<ns0:polygon fill="white" stroke="black" points="886.5,-259 715.5,-259 715.5,-240 886.5,-240 886.5,-259" />
+<ns0:text text-anchor="middle" x="801" y="-247" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.StarPolygonCollection</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge16" class="edge">
+<ns0:title>collections.RegularPolyCollection-&gt;collections.StarPolygonCollection</ns0:title>
+<ns0:path fill="none" stroke="black" d="M669.05,-261.05C682.6,-259.85 696.66,-258.61 710.32,-257.41" />
+<ns0:polygon fill="black" stroke="black" points="710.51,-259.15 715.34,-256.96 710.2,-255.66 710.51,-259.15" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>collections.CircleCollection</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.CircleCollection" ns1:title="A collection of circles, drawn using splines." target="_top">
+<ns0:polygon fill="white" stroke="black" points="654,-241 513,-241 513,-222 654,-222 654,-241" />
+<ns0:text text-anchor="middle" x="583.5" y="-229" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.CircleCollection</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>collections._CollectionWithSizes</ns0:title>
+<ns0:g id="a_node6"><ns0:a ns1:title="Base class for collections that have an array of sizes.">
+<ns0:polygon fill="white" stroke="black" points="462,-223 296,-223 296,-204 462,-204 462,-223" />
+<ns0:text text-anchor="middle" x="379" y="-211" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections._CollectionWithSizes</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge15" class="edge">
+<ns0:title>collections._CollectionWithSizes-&gt;collections.RegularPolyCollection</ns0:title>
+<ns0:path fill="none" stroke="black" d="M410.39,-223.03C445.35,-233.99 498,-250.5 498,-250.5 498,-250.5 514.3,-253.97 532.58,-257.87" />
+<ns0:polygon fill="black" stroke="black" points="532.52,-259.64 537.78,-258.97 533.25,-256.22 532.52,-259.64" />
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>collections._CollectionWithSizes-&gt;collections.CircleCollection</ns0:title>
+<ns0:path fill="none" stroke="black" d="M462.07,-220.8C477.24,-222.14 493.01,-223.55 507.94,-224.87" />
+<ns0:polygon fill="black" stroke="black" points="507.83,-226.62 512.97,-225.32 508.14,-223.13 507.83,-226.62" />
+</ns0:g>
+
+<ns0:g id="node12" class="node">
+<ns0:title>collections.PathCollection</ns0:title>
+<ns0:g id="a_node12"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.PathCollection" ns1:title="A collection of `~.path.Path`s, as created by e.g. `~.Axes.scatter`." target="_top">
+<ns0:polygon fill="white" stroke="black" points="650.5,-204 516.5,-204 516.5,-185 650.5,-185 650.5,-204" />
+<ns0:text text-anchor="middle" x="583.5" y="-192" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.PathCollection</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge9" class="edge">
+<ns0:title>collections._CollectionWithSizes-&gt;collections.PathCollection</ns0:title>
+<ns0:path fill="none" stroke="black" d="M462.07,-205.8C478.32,-204.27 495.26,-202.69 511.12,-201.2" />
+<ns0:polygon fill="black" stroke="black" points="511.64,-202.91 516.46,-200.7 511.32,-199.42 511.64,-202.91" />
+</ns0:g>
+
+<ns0:g id="node13" class="node">
+<ns0:title>collections.PolyCollection</ns0:title>
+<ns0:g id="a_node13"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.PolyCollection" ns1:title="collections.PolyCollection" target="_top">
+<ns0:polygon fill="white" stroke="black" points="650.5,-167 516.5,-167 516.5,-148 650.5,-148 650.5,-167" />
+<ns0:text text-anchor="middle" x="583.5" y="-155" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.PolyCollection</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge10" class="edge">
+<ns0:title>collections._CollectionWithSizes-&gt;collections.PolyCollection</ns0:title>
+<ns0:path fill="none" stroke="black" d="M423.4,-203.97C443.07,-199.66 462,-195.5 462,-195.5 462,-195.5 498,-176.5 498,-176.5 498,-176.5 515.67,-172.53 534.86,-168.21" />
+<ns0:polygon fill="black" stroke="black" points="535.26,-169.92 539.75,-167.11 534.49,-166.5 535.26,-169.92" />
+</ns0:g>
+
+<ns0:g id="edge18" class="edge">
+<ns0:title>collections.Collection-&gt;collections._CollectionWithSizes</ns0:title>
+<ns0:path fill="none" stroke="black" d="M213.85,-130.3C239.47,-150.63 296,-195.5 296,-195.5 296,-195.5 311.82,-198.97 329.56,-202.87" />
+<ns0:polygon fill="black" stroke="black" points="329.34,-204.61 334.6,-203.97 330.09,-201.19 329.34,-204.61" />
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>collections.EllipseCollection</ns0:title>
+<ns0:g id="a_node8"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.EllipseCollection" ns1:title="A collection of ellipses, drawn using splines." target="_top">
+<ns0:polygon fill="white" stroke="black" points="451.5,-186 306.5,-186 306.5,-167 451.5,-167 451.5,-186" />
+<ns0:text text-anchor="middle" x="379" y="-174" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.EllipseCollection</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>collections.Collection-&gt;collections.EllipseCollection</ns0:title>
+<ns0:path fill="none" stroke="black" d="M225.35,-130.09C253.34,-141.35 296,-158.5 296,-158.5 296,-158.5 311.82,-161.97 329.56,-165.87" />
+<ns0:polygon fill="black" stroke="black" points="329.34,-167.61 334.6,-166.97 330.09,-164.19 329.34,-167.61" />
+</ns0:g>
+
+<ns0:g id="node10" class="node">
+<ns0:title>collections.LineCollection</ns0:title>
+<ns0:g id="a_node10"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.LineCollection" ns1:title="Represents a sequence of `.Line2D`s that should be drawn together." target="_top">
+<ns0:polygon fill="white" stroke="black" points="445.5,-149 312.5,-149 312.5,-130 445.5,-130 445.5,-149" />
+<ns0:text text-anchor="middle" x="379" y="-137" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.LineCollection</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>collections.Collection-&gt;collections.LineCollection</ns0:title>
+<ns0:path fill="none" stroke="black" d="M257.35,-126.51C273.18,-128.22 290.63,-130.09 307.22,-131.88" />
+<ns0:polygon fill="black" stroke="black" points="307.18,-133.64 312.34,-132.43 307.56,-130.16 307.18,-133.64" />
+</ns0:g>
+
+<ns0:g id="node11" class="node">
+<ns0:title>collections.PatchCollection</ns0:title>
+<ns0:g id="a_node11"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.PatchCollection" ns1:title="A generic collection of patches." target="_top">
+<ns0:polygon fill="white" stroke="black" points="448.5,-112 309.5,-112 309.5,-93 448.5,-93 448.5,-112" />
+<ns0:text text-anchor="middle" x="379" y="-100" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.PatchCollection</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge8" class="edge">
+<ns0:title>collections.Collection-&gt;collections.PatchCollection</ns0:title>
+<ns0:path fill="none" stroke="black" d="M257.35,-114.8C272.14,-113.3 288.34,-111.64 303.93,-110.05" />
+<ns0:polygon fill="black" stroke="black" points="304.4,-111.77 309.19,-109.52 304.04,-108.28 304.4,-111.77" />
+</ns0:g>
+
+<ns0:g id="node16" class="node">
+<ns0:title>collections.QuadMesh</ns0:title>
+<ns0:g id="a_node16"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.QuadMesh" ns1:title="Class for the efficient drawing of a quadrilateral mesh." target="_top">
+<ns0:polygon fill="white" stroke="black" points="437,-38 321,-38 321,-19 437,-19 437,-38" />
+<ns0:text text-anchor="middle" x="379" y="-26" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.QuadMesh</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge14" class="edge">
+<ns0:title>collections.Collection-&gt;collections.QuadMesh</ns0:title>
+<ns0:path fill="none" stroke="black" d="M213.85,-110.83C239.47,-90.77 296,-46.5 296,-46.5 296,-46.5 311.82,-43.03 329.56,-39.13" />
+<ns0:polygon fill="black" stroke="black" points="330.09,-40.81 334.6,-38.03 329.34,-37.39 330.09,-40.81" />
+</ns0:g>
+
+<ns0:g id="node18" class="node">
+<ns0:title>collections.TriMesh</ns0:title>
+<ns0:g id="a_node18"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.TriMesh" ns1:title="Class for the efficient drawing of a triangular mesh using Gouraud shading." target="_top">
+<ns0:polygon fill="white" stroke="black" points="430,-75 328,-75 328,-56 430,-56 430,-75" />
+<ns0:text text-anchor="middle" x="379" y="-63" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.TriMesh</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge17" class="edge">
+<ns0:title>collections.Collection-&gt;collections.TriMesh</ns0:title>
+<ns0:path fill="none" stroke="black" d="M225.84,-110.97C253.84,-100.01 296,-83.5 296,-83.5 296,-83.5 311.82,-80.03 329.56,-76.13" />
+<ns0:polygon fill="black" stroke="black" points="330.09,-77.81 334.6,-75.03 329.34,-74.39 330.09,-77.81" />
+</ns0:g>
+
+<ns0:g id="node9" class="node">
+<ns0:title>collections.EventCollection</ns0:title>
+<ns0:g id="a_node9"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.EventCollection" ns1:title="A collection of locations along a single axis at which an &quot;event&quot; occurred." target="_top">
+<ns0:polygon fill="white" stroke="black" points="654,-130 513,-130 513,-111 654,-111 654,-130" />
+<ns0:text text-anchor="middle" x="583.5" y="-118" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.EventCollection</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>collections.LineCollection-&gt;collections.EventCollection</ns0:title>
+<ns0:path fill="none" stroke="black" d="M445.75,-133.33C465.55,-131.47 487.42,-129.42 507.77,-127.51" />
+<ns0:polygon fill="black" stroke="black" points="508.09,-129.24 512.9,-127.03 507.76,-125.76 508.09,-129.24" />
+</ns0:g>
+
+<ns0:g id="node14" class="node">
+<ns0:title>collections.PolyQuadMesh</ns0:title>
+<ns0:g id="a_node14"><ns0:a ns1:href="../api/collections_api.html#matplotlib.collections.PolyQuadMesh" ns1:title="Class for drawing a quadrilateral mesh as individual Polygons." target="_top">
+<ns0:polygon fill="white" stroke="black" points="869.5,-93 732.5,-93 732.5,-74 869.5,-74 869.5,-93" />
+<ns0:text text-anchor="middle" x="801" y="-81" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections.PolyQuadMesh</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge12" class="edge">
+<ns0:title>collections.PolyCollection-&gt;collections.PolyQuadMesh</ns0:title>
+<ns0:path fill="none" stroke="black" d="M629.22,-147.97C649.49,-143.66 669,-139.5 669,-139.5 669,-139.5 734.05,-111.69 772.47,-95.27" />
+<ns0:polygon fill="black" stroke="black" points="773.57,-96.7 777.48,-93.13 772.19,-93.48 773.57,-96.7" />
+</ns0:g>
+
+<ns0:g id="node15" class="node">
+<ns0:title>collections._MeshData</ns0:title>
+<ns0:g id="a_node15"><ns0:a ns1:title="Class for managing the two dimensional coordinates of Quadrilateral meshes">
+<ns0:polygon fill="white" stroke="black" points="260,-19 141,-19 141,0 260,0 260,-19" />
+<ns0:text text-anchor="middle" x="200.5" y="-7" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">collections._MeshData</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge11" class="edge">
+<ns0:title>collections._MeshData-&gt;collections.PolyQuadMesh</ns0:title>
+<ns0:path fill="none" stroke="black" d="M260.29,-9.5C337.12,-9.5 462,-9.5 462,-9.5 462,-9.5 658.13,-52.44 751.59,-72.9" />
+<ns0:polygon fill="black" stroke="black" points="751.25,-74.62 756.5,-73.98 751.99,-71.2 751.25,-74.62" />
+</ns0:g>
+
+<ns0:g id="edge13" class="edge">
+<ns0:title>collections._MeshData-&gt;collections.QuadMesh</ns0:title>
+<ns0:path fill="none" stroke="black" d="M260.27,-15.83C278.15,-17.75 297.84,-19.87 315.93,-21.82" />
+<ns0:polygon fill="black" stroke="black" points="315.82,-23.57 320.98,-22.36 316.2,-20.09 315.82,-23.57" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>
