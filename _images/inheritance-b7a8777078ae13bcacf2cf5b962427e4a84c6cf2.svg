@@ -1,0 +1,419 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="644pt" height="730pt" viewBox="0.00 0.00 644.00 730.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 726)">
+<ns0:title>inheritance796647343e</ns0:title>
+
+<ns0:g id="node1" class="node">
+<ns0:title>AsinhLocator</ns0:title>
+<ns0:g id="a_node1"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.AsinhLocator" ns1:title="Place ticks spaced evenly on an inverse-sinh scale." target="_top">
+<ns0:polygon fill="white" stroke="black" points="288,-722 216,-722 216,-703 288,-703 288,-722" />
+<ns0:text text-anchor="middle" x="252" y="-710" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">AsinhLocator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>Locator</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.Locator" ns1:title="Determine tick locations." target="_top">
+<ns0:polygon fill="white" stroke="black" points="148,-537 103,-537 103,-518 148,-518 148,-537" />
+<ns0:text text-anchor="middle" x="125.5" y="-525" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">Locator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>Locator-&gt;AsinhLocator</ns0:title>
+<ns0:path fill="none" stroke="black" d="M130.28,-537.45C143.95,-573.4 190,-694.5 190,-694.5 190,-694.5 200.97,-697.74 213.61,-701.47" />
+<ns0:polygon fill="black" stroke="black" points="213.42,-703.24 218.71,-702.97 214.41,-699.88 213.42,-703.24" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>MaxNLocator</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.MaxNLocator" ns1:title="Place evenly spaced ticks, with a cap on the total number of ticks." target="_top">
+<ns0:polygon fill="white" stroke="black" points="288.5,-685 215.5,-685 215.5,-666 288.5,-666 288.5,-685" />
+<ns0:text text-anchor="middle" x="252" y="-673" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">MaxNLocator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge20" class="edge">
+<ns0:title>Locator-&gt;MaxNLocator</ns0:title>
+<ns0:path fill="none" stroke="black" d="M131.27,-537.27C146.04,-567.5 190,-657.5 190,-657.5 190,-657.5 200.97,-660.74 213.61,-664.47" />
+<ns0:polygon fill="black" stroke="black" points="213.42,-666.24 218.71,-665.97 214.41,-662.88 213.42,-666.24" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>AutoMinorLocator</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.AutoMinorLocator" ns1:title="Place evenly spaced minor ticks, with the step size and maximum number of ticks" target="_top">
+<ns0:polygon fill="white" stroke="black" points="299.5,-648 204.5,-648 204.5,-629 299.5,-629 299.5,-648" />
+<ns0:text text-anchor="middle" x="252" y="-636" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">AutoMinorLocator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>Locator-&gt;AutoMinorLocator</ns0:title>
+<ns0:path fill="none" stroke="black" d="M133.06,-537.1C149.28,-560.86 190,-620.5 190,-620.5 190,-620.5 200.97,-623.74 213.61,-627.47" />
+<ns0:polygon fill="black" stroke="black" points="213.42,-629.24 218.71,-628.97 214.41,-625.88 213.42,-629.24" />
+</ns0:g>
+
+<ns0:g id="node9" class="node">
+<ns0:title>FixedLocator</ns0:title>
+<ns0:g id="a_node9"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.FixedLocator" ns1:title="Place ticks at a set of fixed values." target="_top">
+<ns0:polygon fill="white" stroke="black" points="287,-611 217,-611 217,-592 287,-592 287,-611" />
+<ns0:text text-anchor="middle" x="252" y="-599" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">FixedLocator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>Locator-&gt;FixedLocator</ns0:title>
+<ns0:path fill="none" stroke="black" d="M137.56,-537.25C155.75,-553.3 190,-583.5 190,-583.5 190,-583.5 200.97,-586.74 213.61,-590.47" />
+<ns0:polygon fill="black" stroke="black" points="213.42,-592.24 218.71,-591.97 214.41,-588.88 213.42,-592.24" />
+</ns0:g>
+
+<ns0:g id="node13" class="node">
+<ns0:title>IndexLocator</ns0:title>
+<ns0:g id="a_node13"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.IndexLocator" ns1:title="Place ticks at every nth point plotted." target="_top">
+<ns0:polygon fill="white" stroke="black" points="288,-574 216,-574 216,-555 288,-555 288,-574" />
+<ns0:text text-anchor="middle" x="252" y="-562" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">IndexLocator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge10" class="edge">
+<ns0:title>Locator-&gt;IndexLocator</ns0:title>
+<ns0:path fill="none" stroke="black" d="M148.35,-534.04C166.72,-539.53 190,-546.5 190,-546.5 190,-546.5 200.97,-549.74 213.61,-553.47" />
+<ns0:polygon fill="black" stroke="black" points="213.42,-555.24 218.71,-554.97 214.41,-551.88 213.42,-555.24" />
+</ns0:g>
+
+<ns0:g id="node14" class="node">
+<ns0:title>LinearLocator</ns0:title>
+<ns0:g id="a_node14"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.LinearLocator" ns1:title="Place ticks at evenly spaced values." target="_top">
+<ns0:polygon fill="white" stroke="black" points="289.5,-537 214.5,-537 214.5,-518 289.5,-518 289.5,-537" />
+<ns0:text text-anchor="middle" x="252" y="-525" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">LinearLocator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge11" class="edge">
+<ns0:title>Locator-&gt;LinearLocator</ns0:title>
+<ns0:path fill="none" stroke="black" d="M148.19,-527.5C165.01,-527.5 188.84,-527.5 209.33,-527.5" />
+<ns0:polygon fill="black" stroke="black" points="209.46,-529.25 214.46,-527.5 209.46,-525.75 209.46,-529.25" />
+</ns0:g>
+
+<ns0:g id="node19" class="node">
+<ns0:title>LogLocator</ns0:title>
+<ns0:g id="a_node19"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.LogLocator" ns1:title="Place logarithmically spaced ticks." target="_top">
+<ns0:polygon fill="white" stroke="black" points="283,-500 221,-500 221,-481 283,-481 283,-500" />
+<ns0:text text-anchor="middle" x="252" y="-488" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">LogLocator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge17" class="edge">
+<ns0:title>Locator-&gt;LogLocator</ns0:title>
+<ns0:path fill="none" stroke="black" d="M148.19,-521.06C166.84,-515.51 194.1,-507.41 215.87,-500.94" />
+<ns0:polygon fill="black" stroke="black" points="216.41,-502.61 220.7,-499.5 215.41,-499.25 216.41,-502.61" />
+</ns0:g>
+
+<ns0:g id="node22" class="node">
+<ns0:title>MultipleLocator</ns0:title>
+<ns0:g id="a_node22"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.MultipleLocator" ns1:title="Place ticks at every integer multiple of a base plus an offset." target="_top">
+<ns0:polygon fill="white" stroke="black" points="294,-463 210,-463 210,-444 294,-444 294,-463" />
+<ns0:text text-anchor="middle" x="252" y="-451" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">MultipleLocator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge21" class="edge">
+<ns0:title>Locator-&gt;MultipleLocator</ns0:title>
+<ns0:path fill="none" stroke="black" d="M137.56,-517.92C155.75,-502.16 190,-472.5 190,-472.5 190,-472.5 201.91,-468.79 215.2,-464.65" />
+<ns0:polygon fill="black" stroke="black" points="215.89,-466.27 220.14,-463.11 214.85,-462.93 215.89,-466.27" />
+</ns0:g>
+
+<ns0:g id="node24" class="node">
+<ns0:title>NullLocator</ns0:title>
+<ns0:g id="a_node24"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.NullLocator" ns1:title="No ticks" target="_top">
+<ns0:polygon fill="white" stroke="black" points="284,-426 220,-426 220,-407 284,-407 284,-426" />
+<ns0:text text-anchor="middle" x="252" y="-414" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">NullLocator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge23" class="edge">
+<ns0:title>Locator-&gt;NullLocator</ns0:title>
+<ns0:path fill="none" stroke="black" d="M133.3,-517.65C149.68,-493.92 190,-435.5 190,-435.5 190,-435.5 201.91,-431.79 215.2,-427.65" />
+<ns0:polygon fill="black" stroke="black" points="215.89,-429.27 220.14,-426.11 214.85,-425.93 215.89,-429.27" />
+</ns0:g>
+
+<ns0:g id="node28" class="node">
+<ns0:title>SymmetricalLogLocator</ns0:title>
+<ns0:g id="a_node28"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.SymmetricalLogLocator" ns1:title="Place ticks spaced linearly near zero and spaced logarithmically beyond a threshold." target="_top">
+<ns0:polygon fill="white" stroke="black" points="314,-389 190,-389 190,-370 314,-370 314,-389" />
+<ns0:text text-anchor="middle" x="252" y="-377" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">SymmetricalLogLocator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge27" class="edge">
+<ns0:title>Locator-&gt;SymmetricalLogLocator</ns0:title>
+<ns0:path fill="none" stroke="black" d="M131.27,-517.8C146.04,-487.8 190,-398.5 190,-398.5 190,-398.5 201.91,-394.79 215.2,-390.65" />
+<ns0:polygon fill="black" stroke="black" points="215.89,-392.27 220.14,-389.11 214.85,-388.93 215.89,-392.27" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>AutoLocator</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.AutoLocator" ns1:title="Place evenly spaced ticks, with the step size and maximum number of ticks chosen" target="_top">
+<ns0:polygon fill="white" stroke="black" points="443.5,-703 376.5,-703 376.5,-684 443.5,-684 443.5,-703" />
+<ns0:text text-anchor="middle" x="410" y="-691" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">AutoLocator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>MaxNLocator-&gt;AutoLocator</ns0:title>
+<ns0:path fill="none" stroke="black" d="M288.79,-679.63C313.4,-682.47 346.02,-686.23 371.08,-689.12" />
+<ns0:polygon fill="black" stroke="black" points="371.13,-690.89 376.3,-689.73 371.53,-687.42 371.13,-690.89" />
+</ns0:g>
+
+<ns0:g id="node21" class="node">
+<ns0:title>LogitLocator</ns0:title>
+<ns0:g id="a_node21"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.LogitLocator" ns1:title="Place ticks spaced evenly on a logit scale." target="_top">
+<ns0:polygon fill="white" stroke="black" points="444.5,-666 375.5,-666 375.5,-647 444.5,-647 444.5,-666" />
+<ns0:text text-anchor="middle" x="410" y="-654" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">LogitLocator</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge19" class="edge">
+<ns0:title>MaxNLocator-&gt;LogitLocator</ns0:title>
+<ns0:path fill="none" stroke="black" d="M288.79,-671.14C313.06,-668.19 345.13,-664.28 370.05,-661.24" />
+<ns0:polygon fill="black" stroke="black" points="370.5,-662.95 375.25,-660.61 370.07,-659.48 370.5,-662.95" />
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>EngFormatter</ns0:title>
+<ns0:g id="a_node6"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.EngFormatter" ns1:title="Format axis values using engineering prefixes to represent powers" target="_top">
+<ns0:polygon fill="white" stroke="black" points="289.5,-352 214.5,-352 214.5,-333 289.5,-333 289.5,-352" />
+<ns0:text text-anchor="middle" x="252" y="-340" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">EngFormatter</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>Formatter</ns0:title>
+<ns0:g id="a_node7"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.Formatter" ns1:title="Create a string based on a tick value and location." target="_top">
+<ns0:polygon fill="white" stroke="black" points="154,-204 97,-204 97,-185 154,-185 154,-204" />
+<ns0:text text-anchor="middle" x="125.5" y="-192" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">Formatter</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>Formatter-&gt;EngFormatter</ns0:title>
+<ns0:path fill="none" stroke="black" d="M131.27,-204.27C146.04,-234.5 190,-324.5 190,-324.5 190,-324.5 200.97,-327.74 213.61,-331.47" />
+<ns0:polygon fill="black" stroke="black" points="213.42,-333.24 218.71,-332.97 214.41,-329.88 213.42,-333.24" />
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>FixedFormatter</ns0:title>
+<ns0:g id="a_node8"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.FixedFormatter" ns1:title="Return fixed strings for tick labels based only on position, not value." target="_top">
+<ns0:polygon fill="white" stroke="black" points="293,-315 211,-315 211,-296 293,-296 293,-315" />
+<ns0:text text-anchor="middle" x="252" y="-303" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">FixedFormatter</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>Formatter-&gt;FixedFormatter</ns0:title>
+<ns0:path fill="none" stroke="black" d="M133.06,-204.1C149.28,-227.86 190,-287.5 190,-287.5 190,-287.5 200.97,-290.74 213.61,-294.47" />
+<ns0:polygon fill="black" stroke="black" points="213.42,-296.24 218.71,-295.97 214.41,-292.88 213.42,-296.24" />
+</ns0:g>
+
+<ns0:g id="node10" class="node">
+<ns0:title>FormatStrFormatter</ns0:title>
+<ns0:g id="a_node10"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.FormatStrFormatter" ns1:title="Use an old-style ('%' operator) format string to format the tick." target="_top">
+<ns0:polygon fill="white" stroke="black" points="304.5,-278 199.5,-278 199.5,-259 304.5,-259 304.5,-278" />
+<ns0:text text-anchor="middle" x="252" y="-266" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">FormatStrFormatter</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>Formatter-&gt;FormatStrFormatter</ns0:title>
+<ns0:path fill="none" stroke="black" d="M137.56,-204.25C155.75,-220.3 190,-250.5 190,-250.5 190,-250.5 200.97,-253.74 213.61,-257.47" />
+<ns0:polygon fill="black" stroke="black" points="213.42,-259.24 218.71,-258.97 214.41,-255.88 213.42,-259.24" />
+</ns0:g>
+
+<ns0:g id="node12" class="node">
+<ns0:title>FuncFormatter</ns0:title>
+<ns0:g id="a_node12"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.FuncFormatter" ns1:title="Use a user-defined function for formatting." target="_top">
+<ns0:polygon fill="white" stroke="black" points="291.5,-241 212.5,-241 212.5,-222 291.5,-222 291.5,-241" />
+<ns0:text text-anchor="middle" x="252" y="-229" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">FuncFormatter</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge9" class="edge">
+<ns0:title>Formatter-&gt;FuncFormatter</ns0:title>
+<ns0:path fill="none" stroke="black" d="M154.17,-202.78C171.28,-207.9 190,-213.5 190,-213.5 190,-213.5 200.97,-216.74 213.61,-220.47" />
+<ns0:polygon fill="black" stroke="black" points="213.42,-222.24 218.71,-221.97 214.41,-218.88 213.42,-222.24" />
+</ns0:g>
+
+<ns0:g id="node15" class="node">
+<ns0:title>LogFormatter</ns0:title>
+<ns0:g id="a_node15"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.LogFormatter" ns1:title="Base class for formatting ticks on a log or symlog scale." target="_top">
+<ns0:polygon fill="white" stroke="black" points="289,-204 215,-204 215,-185 289,-185 289,-204" />
+<ns0:text text-anchor="middle" x="252" y="-192" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">LogFormatter</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge13" class="edge">
+<ns0:title>Formatter-&gt;LogFormatter</ns0:title>
+<ns0:path fill="none" stroke="black" d="M154.13,-194.5C170.5,-194.5 191.56,-194.5 209.85,-194.5" />
+<ns0:polygon fill="black" stroke="black" points="209.93,-196.25 214.93,-194.5 209.93,-192.75 209.93,-196.25" />
+</ns0:g>
+
+<ns0:g id="node20" class="node">
+<ns0:title>LogitFormatter</ns0:title>
+<ns0:g id="a_node20"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.LogitFormatter" ns1:title="Probability formatter (using Math text)." target="_top">
+<ns0:polygon fill="white" stroke="black" points="292.5,-167 211.5,-167 211.5,-148 292.5,-148 292.5,-167" />
+<ns0:text text-anchor="middle" x="252" y="-155" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">LogitFormatter</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge18" class="edge">
+<ns0:title>Formatter-&gt;LogitFormatter</ns0:title>
+<ns0:path fill="none" stroke="black" d="M154.13,-186.29C171.55,-181.11 194.27,-174.36 213.33,-168.7" />
+<ns0:polygon fill="black" stroke="black" points="214.3,-170.23 218.6,-167.13 213.31,-166.88 214.3,-170.23" />
+</ns0:g>
+
+<ns0:g id="node23" class="node">
+<ns0:title>NullFormatter</ns0:title>
+<ns0:g id="a_node23"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.NullFormatter" ns1:title="Always return the empty string." target="_top">
+<ns0:polygon fill="white" stroke="black" points="290,-130 214,-130 214,-111 290,-111 290,-130" />
+<ns0:text text-anchor="middle" x="252" y="-118" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">NullFormatter</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge22" class="edge">
+<ns0:title>Formatter-&gt;NullFormatter</ns0:title>
+<ns0:path fill="none" stroke="black" d="M137.56,-184.92C155.75,-169.16 190,-139.5 190,-139.5 190,-139.5 201.91,-135.79 215.2,-131.65" />
+<ns0:polygon fill="black" stroke="black" points="215.89,-133.27 220.14,-130.11 214.85,-129.93 215.89,-133.27" />
+</ns0:g>
+
+<ns0:g id="node25" class="node">
+<ns0:title>PercentFormatter</ns0:title>
+<ns0:g id="a_node25"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.PercentFormatter" ns1:title="Format numbers as a percentage." target="_top">
+<ns0:polygon fill="white" stroke="black" points="298.5,-93 205.5,-93 205.5,-74 298.5,-74 298.5,-93" />
+<ns0:text text-anchor="middle" x="252" y="-81" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">PercentFormatter</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge24" class="edge">
+<ns0:title>Formatter-&gt;PercentFormatter</ns0:title>
+<ns0:path fill="none" stroke="black" d="M133.3,-184.65C149.68,-160.92 190,-102.5 190,-102.5 190,-102.5 201.91,-98.79 215.2,-94.65" />
+<ns0:polygon fill="black" stroke="black" points="215.89,-96.27 220.14,-93.11 214.85,-92.93 215.89,-96.27" />
+</ns0:g>
+
+<ns0:g id="node26" class="node">
+<ns0:title>ScalarFormatter</ns0:title>
+<ns0:g id="a_node26"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.ScalarFormatter" ns1:title="Format tick values as a number." target="_top">
+<ns0:polygon fill="white" stroke="black" points="295.5,-56 208.5,-56 208.5,-37 295.5,-37 295.5,-56" />
+<ns0:text text-anchor="middle" x="252" y="-44" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">ScalarFormatter</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge25" class="edge">
+<ns0:title>Formatter-&gt;ScalarFormatter</ns0:title>
+<ns0:path fill="none" stroke="black" d="M131.27,-184.8C146.04,-154.8 190,-65.5 190,-65.5 190,-65.5 201.91,-61.79 215.2,-57.65" />
+<ns0:polygon fill="black" stroke="black" points="215.89,-59.27 220.14,-56.11 214.85,-55.93 215.89,-59.27" />
+</ns0:g>
+
+<ns0:g id="node27" class="node">
+<ns0:title>StrMethodFormatter</ns0:title>
+<ns0:g id="a_node27"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.StrMethodFormatter" ns1:title="Use a new-style format string (as used by `str.format`) to format the tick." target="_top">
+<ns0:polygon fill="white" stroke="black" points="305.5,-19 198.5,-19 198.5,0 305.5,0 305.5,-19" />
+<ns0:text text-anchor="middle" x="252" y="-7" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">StrMethodFormatter</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge26" class="edge">
+<ns0:title>Formatter-&gt;StrMethodFormatter</ns0:title>
+<ns0:path fill="none" stroke="black" d="M130.28,-184.55C143.95,-148.6 190,-27.5 190,-27.5 190,-27.5 200.97,-24.26 213.61,-20.53" />
+<ns0:polygon fill="black" stroke="black" points="214.41,-22.12 218.71,-19.03 213.42,-18.76 214.41,-22.12" />
+</ns0:g>
+
+<ns0:g id="node11" class="node">
+<ns0:title>TickHelper</ns0:title>
+<ns0:g id="a_node11"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.TickHelper" ns1:title="TickHelper" target="_top">
+<ns0:polygon fill="white" stroke="black" points="61,-370 0,-370 0,-351 61,-351 61,-370" />
+<ns0:text text-anchor="middle" x="30.5" y="-358" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">TickHelper</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge12" class="edge">
+<ns0:title>TickHelper-&gt;Locator</ns0:title>
+<ns0:path fill="none" stroke="black" d="M37.04,-370.45C52.84,-398.82 98.19,-480.25 116.59,-513.3" />
+<ns0:polygon fill="black" stroke="black" points="115.14,-514.3 119.11,-517.81 118.2,-512.6 115.14,-514.3" />
+</ns0:g>
+
+<ns0:g id="edge8" class="edge">
+<ns0:title>TickHelper-&gt;Formatter</ns0:title>
+<ns0:path fill="none" stroke="black" d="M37.04,-350.61C52.84,-322.41 98.19,-241.47 116.59,-208.61" />
+<ns0:polygon fill="black" stroke="black" points="118.19,-209.34 119.11,-204.13 115.14,-207.63 118.19,-209.34" />
+</ns0:g>
+
+<ns0:g id="node16" class="node">
+<ns0:title>LogFormatterExponent</ns0:title>
+<ns0:g id="a_node16"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.LogFormatterExponent" ns1:title="Format values for log axis using ``exponent = log_base(value)``." target="_top">
+<ns0:polygon fill="white" stroke="black" points="470,-223 350,-223 350,-204 470,-204 470,-223" />
+<ns0:text text-anchor="middle" x="410" y="-211" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">LogFormatterExponent</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge14" class="edge">
+<ns0:title>LogFormatter-&gt;LogFormatterExponent</ns0:title>
+<ns0:path fill="none" stroke="black" d="M289.18,-198.91C305.64,-200.91 325.62,-203.34 344.51,-205.64" />
+<ns0:polygon fill="black" stroke="black" points="344.63,-207.42 349.8,-206.29 345.05,-203.95 344.63,-207.42" />
+</ns0:g>
+
+<ns0:g id="node17" class="node">
+<ns0:title>LogFormatterMathtext</ns0:title>
+<ns0:g id="a_node17"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.LogFormatterMathtext" ns1:title="Format values for log axis using ``exponent = log_base(value)``." target="_top">
+<ns0:polygon fill="white" stroke="black" points="469,-186 351,-186 351,-167 469,-167 469,-186" />
+<ns0:text text-anchor="middle" x="410" y="-174" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">LogFormatterMathtext</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge15" class="edge">
+<ns0:title>LogFormatter-&gt;LogFormatterMathtext</ns0:title>
+<ns0:path fill="none" stroke="black" d="M289.18,-190.33C305.88,-188.4 326.22,-186.05 345.35,-183.84" />
+<ns0:polygon fill="black" stroke="black" points="345.95,-185.54 350.72,-183.22 345.55,-182.06 345.95,-185.54" />
+</ns0:g>
+
+<ns0:g id="node18" class="node">
+<ns0:title>LogFormatterSciNotation</ns0:title>
+<ns0:g id="a_node18"><ns0:a ns1:href="../api/ticker_api.html#matplotlib.ticker.LogFormatterSciNotation" ns1:title="Format values following scientific notation in a logarithmic axis." target="_top">
+<ns0:polygon fill="white" stroke="black" points="636,-186 506,-186 506,-167 636,-167 636,-186" />
+<ns0:text text-anchor="middle" x="571" y="-174" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">LogFormatterSciNotation</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge16" class="edge">
+<ns0:title>LogFormatterMathtext-&gt;LogFormatterSciNotation</ns0:title>
+<ns0:path fill="none" stroke="black" d="M469.3,-176.5C479.51,-176.5 490.22,-176.5 500.69,-176.5" />
+<ns0:polygon fill="black" stroke="black" points="500.8,-178.25 505.8,-176.5 500.8,-174.75 500.8,-178.25" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

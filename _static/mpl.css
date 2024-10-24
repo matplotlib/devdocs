@@ -1,836 +1,209 @@
-/*
- * Alternate Sphinx design
- * Originally created by Armin Ronacher for Werkzeug, adapted by Georg Brandl.
- */
-
-body {
-    font-family: "Helvetica Neue", Helvetica, 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
-    font-size: 14px;
-    line-height: 150%;
-    text-align: center;
-    background-color: #BFD1D4;
-    color: black;
-    padding: 0;
-    border: 1px solid #aaa;
-    color: #333;
-    margin: auto;
-    min-width: 740px;
-    max-width: 1200px;
+:root {
+    --pst-color-link: var(--pst-color-primary);
+    --pst-color-link-hover: var(--pst-color-secondary);
+    --sd-color-primary: var(--pst-color-primary);
+    --sd-color-primary-text: var(--pst-color-text-base);
+    --sd-color-secondary: #ee9040;
+    --sd-color-success: #28a745;
+    --sd-color-dark: #323232;
+    --sd-color-danger: #dc3545;
+    --sd-color-light: #c9c9c9;
 }
 
-a {
-    color: #CA7900;
-    text-decoration: none;
+.simple li>p {
+    margin: 0;
 }
 
-div.highlight-python a {
-    color: #CA7900;
+/* multi column TOC */
+.contents ul {
+    list-style-type: none;
+    padding-left: 2em;
 }
 
-div.highlight-python a:hover {
-    color: #2491CF;
+.contents > ul {
+    padding-left: 0;
 }
 
-strong {
-  font-weight: strong;
+.multicol-toc > ul {
+    column-width: 250px;
+    column-gap: 60px;
+    -webkit-column-width: 250px;
+    -moz-column-width: 250px;
+    column-rule: 1px solid #ccc;
 }
 
-a:hover {
-    color: #2491CF;
+.multicol-toc > li {
+       /* break inside is not yet broadly supported, but we just try */
+    break-inside: avoid-column;
+    -moz-break-inside: avoid-column;
+    -webkit-break-inside: avoid-column;
 }
 
-pre {
-    font-family:  Monaco, Menlo, Consolas, 'Courier New', monospace;
-    font-size: 0.90em;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    letter-spacing: 0.015em;
-    padding: 1em;
-    border: 1px solid #ccc;
-    background-color: #f8f8f8;
-    line-height: 140%;
-    overflow-x: auto;
+.contents > ul > li > a {
+    font-size: 1.0em;
 }
 
-td.linenos pre {
-    padding: 0.5em 0;
-    border: 0;
-    background-color: transparent;
-    color: #aaa;
-}
+/* Hide red ¶ between the thumbnail and caption in gallery
 
-table.highlighttable {
-    margin-left: 0.5em;
-}
-
-table.highlighttable td {
-    padding: 0 0.5em 0 0.5em;
-}
-
-cite, code, tt {
-    font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
-    font-size: 0.95em;
-    letter-spacing: 0.01em;
-}
-
-hr {
-    border: 1px solid #abc;
-    margin: 2em;
-}
-
-tt {
-    background-color: #f2f2f2;
-    border-bottom: 1px solid #ddd;
-    color: #333;
-}
-
-tt.descname {
-    background-color: transparent;
-    font-weight: bold;
-    font-size: 1.2em;
-    border: 0;
-}
-
-tt.descclassname {
-    background-color: transparent;
-    border: 0;
-}
-
-tt.xref {
-    background-color: transparent;
-    font-weight: bold;
-    border: 0;
-}
-
-a tt {
-    background-color: transparent;
-    font-weight: bold;
-    border: 0;
-    color: #CA7900;
-}
-
-a tt:hover {
-    color: #2491CF;
-}
-
-dl {
-    margin-bottom: 15px;
-}
-
-dd p {
-    margin-top: 1px;
-}
-
-dd ul, dd table {
-    margin-bottom: 10px;
-}
-
-dd {
-    margin-top: 3px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-}
-
-.refcount {
-    color: #060;
-}
-
-dt:target,
-.highlight {
-    background-color: #ffffee;
-}
-
-dl.method, dl.attribute {
-    border-top: 1px solid #aaa;
-}
-
-dl.glossary dt {
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-pre a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.first {
-    margin-top: 0 !important;
-}
-
-div.document {
-    background-color: white;
-    text-align: left;
-    background-image: url(contents.png);
-    background-repeat: repeat-x;
-}
-
-/*
-div.documentwrapper {
-    width: 100%;
-}
+Due the way that sphinx-gallery floats its captions the perma-link
+does not float with it.
 */
-
-div.clearer {
-    clear: both;
-}
-
-div.related h3 {
-    display: none;
-}
-
-div.related ul {
-    background-image: url(navigation.png);
-    height: 2em;
-    list-style: none;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    margin: 0;
-    padding-left: 10px;
-}
-
-div.related ul li {
-    margin: 0;
-    padding: 0;
-    height: 2em;
-    float: left;
-}
-
-div.related ul li.right {
-    float: right;
-    margin-right: 5px;
-}
-
-div.related ul li a {
-    margin: 0;
-    padding: 0 5px 0 5px;
-    line-height: 1.75em;
-    color: #EE9816;
-}
-
-div.related ul li a:hover {
-    color: #3CA8E7;
-}
-
-div.body {
-    margin: 0;
-    padding: 0.5em 20px 20px 20px;
-}
-
-div.bodywrapper {
-    margin: 0 240px 0 0;
-    border-right: 1px solid #ccc;
-}
-
-div.sphinxsidebar {
-    margin: 0;
-    padding: 0.5em 15px 15px 0;
-    width: 210px;
-    float: right;
-    text-align: left;
-/*    margin-left: -100%; */
-}
-div.sphinxsidebarwrapper {
-    padding-top: 28px
-}
-
-div.sphinxsidebar h4, div.sphinxsidebar h3 {
-    margin: 1em 0 0.5em 0;
-    font-size: 0.9em;
-    padding: 0.1em 0 0.1em 0.5em;
-    color: white;
-    border: 1px solid #86989B;
-    background-color: #AFC1C4;
-}
-
-div.sphinxsidebar ul {
-    padding-left: 1.5em;
-    margin-top: 7px;
-    list-style: none;
-    padding: 0;
-    line-height: 130%;
-}
-
-div.sphinxsidebar ul ul {
-    list-style: square;
-    margin-left: 20px;
-}
-
-p {
-    margin: 0.8em 0 0.8em 0;
-}
-
-p.rubric {
-    font-weight: bold;
-}
-
-h1 {
-    margin: 0.5em 0em;
-    padding-top: 0.5em;
-    font-size: 2em;
-    color: #11557C;
-}
-
-h2 {
-    margin: 0.5em 0 0.2em 0;
-    padding-top: 0.5em;
-    font-size: 1.7em;
-    padding: 0;
-}
-
-h3 {
-    margin: 0.2em 0 0.1em 0;
-    font-size: 1.2em;
-}
-
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-    color: black!important;
-}
-
-h1 a.anchor, h2 a.anchor, h3 a.anchor, h4 a.anchor, h5 a.anchor, h6 a.anchor {
-    display: none;
-    margin: 0 0 0 0.3em;
-    padding: 0 0.2em 0 0.2em;
-    color: #aaa!important;
-}
-
-h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor,
-h5:hover a.anchor, h6:hover a.anchor {
-    display: inline;
-}
-
-h1 a.anchor:hover, h2 a.anchor:hover, h3 a.anchor:hover, h4 a.anchor:hover,
-h5 a.anchor:hover, h6 a.anchor:hover {
-    color: #777;
-    background-color: #eee;
-}
-
-table {
-    border-collapse: collapse;
-    margin: 0 -0.5em 0 -0.5em;
-}
-
-table td, table th {
-    padding: 0.2em 0.5em 0.2em 0.5em;
-}
-
-div.footer {
-    background-color: #E3EFF1;
-    color: #86989B;
-    padding: 3px 8px 3px 0;
-    clear: both;
-    font-size: 0.8em;
-    text-align: right;
-}
-
-div.footer a {
-    color: #86989B;
-    text-decoration: underline;
-}
-
-div.pagination {
-    margin-top: 2em;
-    padding-top: 0.5em;
-    border-top: 1px solid black;
-    text-align: center;
-}
-
-div.sphinxsidebar ul.toc {
-    margin: 1em 0 1em 0;
-    padding: 0 0 0 0.5em;
-    list-style: none;
-}
-
-div.sphinxsidebar ul.toc li {
-    margin: 0.5em 0 0.5em 0;
-    font-size: 0.9em;
-    line-height: 130%;
-}
-
-div.sphinxsidebar ul.toc li p {
-    margin: 0;
-    padding: 0;
-}
-
-div.sphinxsidebar ul.toc ul {
-    margin: 0.2em 0 0.2em 0;
-    padding: 0 0 0 1.8em;
-}
-
-div.sphinxsidebar ul.toc ul li {
-    padding: 0;
-}
-
-div.admonition, div.warning {
-    font-size: 0.9em;
-}
-
-div.warning {
-    color: #b94a48;
-    background-color: #F3E5E5;
-    border: 1px solid #eed3d7;
-}
-
-div.green {
-    color: #468847;
-    background-color: #dff0d8;
-    border: 1px solid #d6e9c6;
-}
-
-
-div.admonition p, div.warning p {
-    margin: 0.5em 1em 0.5em 1em;
-    padding: 0;
-}
-
-div.admonition pre, div.warning pre {
-    margin: 0.4em 1em 0.4em 1em;
-}
-
-div.admonition p.admonition-title + p {
-    display: inline;
-}
-
-
-div.admonition p.admonition-title,
-div.warning p.admonition-title {
-    margin: 0;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-div.admonition {
-    margin-bottom: 10px;
-    margin-top: 10px;
-    padding: 7px;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-  }
-
-
-div.note {
-    background-color: #eee;
-    border: 1px solid #ccc;
-}
-
-div.topic {
-    background-color: #eee;
-    border: 1px solid #CCC;
-    margin: 10px 0px;
-    padding: 7px 7px 0px;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-}
-
-p.topic-title {
-    font-size: 1.1em;
-    font-weight: bold;
-}
-
-div.seealso {
-    background-color: #FFFBE8;
-    border: 1px solid #fbeed5;
-    color: #AF8A4B;
-  }
-
-div.warning {
-    border: 1px solid #940000;
-}
-
-div.warning p.admonition-title {
-    border-bottom-color: #940000;
-}
-
-div.admonition ul, div.admonition ol,
-div.warning ul, div.warning ol {
-    margin: 0.1em 0.5em 0.5em 3em;
-    padding: 0;
-}
-
-div.versioninfo {
-    margin: 1em 0 0 0;
-    border: 1px solid #ccc;
-    background-color: #DDEAF0;
-    padding: 8px;
-    line-height: 1.3em;
-    font-size: 0.9em;
-}
-
-
-a.headerlink {
-    color: #c60f0f!important;
-    font-size: 1em;
-    margin-left: 6px;
-    padding: 0 4px 0 4px;
-    text-decoration: none!important;
+.sphx-glr-thumbcontainer p.caption:hover > a.headerlink{
     visibility: hidden;
 }
 
-h1:hover > a.headerlink,
-h2:hover > a.headerlink,
-h3:hover > a.headerlink,
-h4:hover > a.headerlink,
-h5:hover > a.headerlink,
-h6:hover > a.headerlink,
-dt:hover > a.headerlink {
-    visibility: visible;
-}
-
-a.headerlink:hover {
-    background-color: #ccc;
-    color: white!important;
-}
-
-table.indextable td {
-    text-align: left;
-    vertical-align: top;
-}
-
-table.indextable dl, table.indextable dd {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-table.indextable tr.pcap {
-    height: 10px;
-}
-
-table.indextable tr.cap {
-    margin-top: 10px;
-    background-color: #f2f2f2;
-}
-
-img.toggler {
-    margin-right: 3px;
-    margin-top: 3px;
-    cursor: pointer;
-}
-
-img.inheritance {
-    border: 0px
-}
-
-form.pfform {
-    margin: 10px 0 20px 0;
-}
-
-table.contentstable {
-    width: 90%;
-}
-
-table.contentstable p.biglink {
-    line-height: 150%;
-}
-
-a.biglink {
-    font-size: 1.3em;
-}
-
-span.linkdescr {
-    font-style: italic;
-    padding-top: 5px;
-    font-size: 90%;
-}
-
-ul.search {
-    margin: 10px 0 0 20px;
-    padding: 0;
-}
-
-ul.search li {
-    padding: 5px 0 5px 20px;
-    background-image: url(file.png);
-    background-repeat: no-repeat;
-    background-position: 0 7px;
-}
-
-ul.search li a {
-    font-weight: bold;
-}
-
-ul.search li div.context {
-    color: #888;
-    margin: 2px 0 0 30px;
-    text-align: left;
-}
-
-ul.keywordmatches li.goodmatch a {
-    font-weight: bold;
-}
-
-table.docutils {
-    border-spacing: 2px;
-    border-collapse: collapse;
-    border-top-width: 1px;
-    border-right-width: 0px;
-    border-bottom-width: 1px;
-    border-left-width: 0px;
-}
-
-/* module summary table */
-.longtable.docutils {
-    font-size: 12px;
-    margin-bottom: 30px;
-}
-.longtable.docutils, .longtable.docutils td {
-    border-color: #ccc;
-}
-
-.longtable.docutils tr.row-even{
-    background-color: #eff3f4;
-}
-
-/* function and class description */
-.descclassname {
-    color: #aaa;
-    font-weight: normal;
-    font-family: monospace;
-}
-.descname {
-    font-family: monospace;
-}
-
-
-table.docutils th {
-    padding: 1px 8px 1px 5px;
-    background-color: #eee;
-    width: 100px;
-}
-
-table.docutils td {
-    border-width: 1px 0 1px 0;
-}
-
-
-dl.class em, dl.function em, dl.class big, dl.function big {
-    font-weight: normal;
-    font-family: monospace;
-}
-
-dl.class dd, dl.function dd {
-    padding: 10px;
-}
-
-/* function and class description */
-dl.function, dl.method, dl.attribute {
-    border-top: 1px solid #ccc;
-    padding-top: 6px;
-}
-
-dl.function {
-    border-top: 1px solid #888;
-    margin-top: 15px;
-}
-
-dl.class {
-    padding-top: 6px;
-    margin-top: 15px;
-}
-
-.descclassname {
-    color: #aaa;
-    font-weight: normal;
-    font-family: monospace;
-}
-.descname {
-    font-family: monospace;
-}
-
-
-.docutils.field-list th {
-    background-color: #eee;
-    padding: 10px;
-    text-align: left;
-    vertical-align: top;
-    width: 120px;
-}
-.docutils.field-list td {
-    padding: 10px 10px 10px 20px;
-    text-align: left;
-    vertical-align: top;
-}
-.docutils.field-list td blockquote p {
-    font-size: 13px;
-    line-height: 18px;
-}
-p.rubric {
-    font-weight: bold;
-    font-size: 19px;
-    margin: 15px 0 10px 0;
-}
-p.admonition-title {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-
-#matplotlib-examples ul li{
-  font-size: large;
-}
-
-#matplotlib-examples ul li ul{
-  margin-bottom:20px;
-  overflow:hidden;
-  border-top:1px solid #ccc;
-}
-
-#matplotlib-examples ul li ul li {
-  font-size: small;
-  line-height:1.75em;
-  display:inline;
-  float: left;
-  width: 22em;
-}
-
-#overview ul li ul{
-  margin-bottom:20px;
-  overflow:hidden;
-  border-top:1px solid #ccc;
-}
-
-#overview ul li ul li {
-  display:inline;
-  float: left;
-  width: 30em;
-}
-
-figure {
-  margin: 1em;
-  display: inline-block;
-}
-
-figure img {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-figcaption {
-  text-align: center;
-}
-
-
-.donate_button {
-    background:#11557C;
-    font-weight:normal;
-    border:solid 1px #fff;
-    outline: solid 1px #11557C;
-    clear: both;
-    display: block;
-    width:200px;
-    line-height:2.8;
-    font-size: 16px;
-    text-align: center;
-    cursor:pointer;
-    color:#fff;
-    text-decoration: none;
-    margin: 30px auto 0;
-    z-index:1;
-    transition: background .25s ease;
-}
-
-.donate_button:last-of-type {
-    margin: 15px auto 30px;
-
-
-}
-
-.donate_button:hover, .donate_button:active, .donate_button:focus {
-    background: #003c63;
-    outline-color: #003c63;
-}
-
-
-div.responsive_screenshots {
-    /* Horizontally centered */
-    display: block;
-    margin: auto;
-
-    /* Do not go beyond 1:1 scale (and ensure a 1x4 tight layout) */
-    max-width: 640px;  /* at most 4 x 1:1 subfig width  */
-    max-height: 120px; /* at most 1 x 1:1 subfig height */
-}
-
-/* To avoid subfigure parts outside of the responsive_screenshots  */
-/* element (see: https://stackoverflow.com/questions/2062258/      */
-/* floating-stuff-within-a-div-floats-outside-of-div-why)          */
-span.clear_screenshots { clear: left; display: block; }
-
-div.responsive_subfig{
-    float: left;
-    width: 25%;  /* we want 4 subfigs in a row */
-
-    /* Include content, padding and border in width. This should */
-    /* avoid having to use tricks like "width: 24.9999%"         */
-    box-sizing: border-box;
-}
-
-div.responsive_subfig img {
-    /* Horizontally centered */
-    display: block;
-    margin: auto;
-
-    /* Possible downscaling */
-    max-width: 162px;  /* at most 1 x 1:1 subfig width  */
-    max-height: 139px; /* at most 1 x 1:1 subfig height */
-
-    width: 100%;
-}
-
-@media only screen and (max-width: 1000px){
-    /* The value of 1000px was handcrafted to provide a more or less */
-    /* smooth transition between the 1x4 and the 2x2 layouts. It is  */
-    /* NB: it is slightly below 1024px: so one should still have a   */
-    /* row in a 1024x768 window                                      */
-
-    div.responsive_screenshots {
-        /* Do not go beyond 1:1 scale (and ensure a 2x2 tight layout) */
-        max-width: 324px;  /* at most 2 x 1:1 subfig width  */
-        max-height: 278px; /* at most 2 x 1:1 subfig height */
-    }
-
-    div.responsive_subfig {
-        width: 50%;  /* we want 2 subfigs in a row */
-    }
-}
-
-/* Sphinx gallery display */
-
-div.align-center {
-    margin: auto;
-    text-align: center;
-}
-
-p.caption {
-    font-weight: bold;
-}
-
-div#gallery.section, div#tutorials.section {
-    overflow: hidden;
-}
-
+/* slightly reduce horizontal margin compared to gallery.css to
+ * get four columns of thumbnails in the pydata-sphinx-theme. */
 .sphx-glr-thumbcontainer {
-    border: solid #d6d6d6 1px !important;
-    text-align: center !important;
-    font-size: 1.2em !important;
+    margin: 5px 2px;
 }
 
-div.sphx-glr-download {
-    width: auto !important;
+html[data-theme="dark"] .sphx-glr-thumbcontainer {
+    background-color: rgb(63, 63, 63);
 }
 
+/* Set a fixed height so that lazy loading does not change heights. Without a fixed
+ * height lazy loading of images interferes with anchor links: Clicking a link goes to
+ * a certain position, but then the loaded images add content and move the anchor to a
+ * different position.
+ */
+.sphx-glr-thumbcontainer img {
+    height: 112px;
+}
+
+/* hide download buttons in example headers
+ * https://sphinx-gallery.github.io/stable/advanced.html#hide-the-download-buttons-in-the-example-headers
+ */
+div.sphx-glr-download-link-note {
+    display: none;
+}
+
+/* re-style the download button */
 div.sphx-glr-download a {
-   background-color: #d9edf7 !important;
-   border: 1px solid #bce8f1 !important;
-   background-image: none !important;
+    background-color: #E3F0F6;
+    background-image: none;
+    color: #11557c;
+    border: 0;
 }
 
-p.sphx-glr-signature a.reference.external {
-   display: none !important;
+div.sphx-glr-download a:hover {
+    background-color: #BCD4DF;
 }
 
-.sphx-glr-thumbcontainer a.internal {
-    font-weight: 400;
+/* Do not fold multiple figures in examples into two column layout. */
+img.sphx-glr-multi-img {
+    max-width: 100%;
 }
 
+table.property-table th,
+table.property-table td {
+    padding: 4px 10px;
+}
+
+/* Fix selection of parameter names; remove when fixed in the theme
+ * https://github.com/sphinx-doc/sphinx/pull/9763
+ */
+.classifier:before {
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+/* Make the code examples in the API reference index the same height. */
+.api-interface-example pre {
+    min-height: 6.5rem;
+}
+
+/* Make inheritance images have a scroll bar if necessary. */
+div.graphviz {
+    border: 1px solid lightgrey;
+    max-height: 50em;
+    overflow: auto;
+}
+img.graphviz.inheritance {
+    max-width: none;
+}
+
+/* Make tables in notes horizontally scrollable if too large. */
+div.wide-table {
+    overflow-x: auto;
+}
+
+div.wide-table table th.stub {
+    background-color: var(--pst-color-background);
+    background-clip: padding-box;
+    left: 0;
+    position: sticky;
+}
+
+.imrot-img {
+    display: flex;
+    margin: auto;
+    max-width:15em;
+    align-self: center;
+  }
+
+  .imrot-cap {
+    text-align: center;
+    font-style: italic;
+    font-size:  large;
+  }
+
+
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.checklist li {
+    margin-left: 24px;
+    padding-left: 23px;
+    margin-right: 6px;
+}
+.checklist li:before {
+    content: "\2610\2001";
+    margin-left: -24px;
+}
+.checklist li p {
+    display: inline;
+}
+
+/* sdd is a custom class that strips out styling from dropdowns
+ * Example usage:
+ *
+ * .. dropdown::
+ *   :class-container: sdd
+ *
+ */
+
+.sdd.sd-dropdown {
+    box-shadow: none!important;
+}
+
+.sdd.sd-dropdown.sd-card{
+    border-style: solid !important;
+    border-color: var(--pst-color-border) !important;
+    border-width: thin !important;
+    border-radius: .05
+}
+
+.sdd.sd-dropdown .sd-card-header{
+    --pst-sd-dropdown-color: none;
+}
+
+.sdd.sd-dropdown .sd-card-header +.sd-card-body{
+    --pst-sd-dropdown-color: none;
+}
+
+/* section-toc is a custom class that removes the page title from a toctree listing
+ * Example usage:
+ *
+ * .. rst-class:: section-toc
+ * .. toctree::
+ *
+ */
+.section-toc.toctree-wrapper .toctree-l1>a{
+    display: none;
+}
+.section-toc.toctree-wrapper li>ul{
+    padding-inline-start:0;
+}
