@@ -1,0 +1,299 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="527pt" height="286pt" viewBox="0.00 0.00 527.00 286.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 282)">
+<ns0:title>inheritancee317ce7e2e</ns0:title>
+
+<ns0:g id="node1" class="node">
+<ns0:title>AxesWidget</ns0:title>
+<ns0:g id="a_node1"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.AxesWidget.html#matplotlib.widgets.AxesWidget" ns1:title="Widget connected to a single `~matplotlib.axes.Axes`." target="_top">
+<ns0:polygon fill="white" stroke="black" points="145,-167 79,-167 79,-148 145,-148 145,-167" />
+<ns0:text text-anchor="middle" x="112" y="-155" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">AxesWidget</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>Button</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.Button.html#matplotlib.widgets.Button" ns1:title="A GUI neutral button." target="_top">
+<ns0:polygon fill="white" stroke="black" points="245.5,-278 204.5,-278 204.5,-259 245.5,-259 245.5,-278" />
+<ns0:text text-anchor="middle" x="225" y="-266" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">Button</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>AxesWidget-&gt;Button</ns0:title>
+<ns0:path fill="none" stroke="black" d="M120.28,-167.35C137.82,-191.08 181,-249.5 181,-249.5 181,-249.5 189.83,-253.4 199.49,-257.67" />
+<ns0:polygon fill="black" stroke="black" points="198.98,-259.36 204.26,-259.78 200.4,-256.16 198.98,-259.36" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>_Buttons</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets._Buttons.html#matplotlib.widgets._Buttons" ns1:title="The base class for `CheckButtons` and `RadioButtons`." target="_top">
+<ns0:polygon fill="white" stroke="black" points="250.5,-241 199.5,-241 199.5,-222 250.5,-222 250.5,-241" />
+<ns0:text text-anchor="middle" x="225" y="-229" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">_Buttons</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge18" class="edge">
+<ns0:title>AxesWidget-&gt;_Buttons</ns0:title>
+<ns0:path fill="none" stroke="black" d="M124.84,-167.08C144.33,-182.84 181,-212.5 181,-212.5 181,-212.5 188.53,-215.83 197.29,-219.7" />
+<ns0:polygon fill="black" stroke="black" points="196.97,-221.47 202.25,-221.89 198.38,-218.27 196.97,-221.47" />
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>Cursor</ns0:title>
+<ns0:g id="a_node6"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.Cursor.html#matplotlib.widgets.Cursor" ns1:title="A crosshair cursor that spans the Axes and moves with mouse cursor." target="_top">
+<ns0:polygon fill="white" stroke="black" points="245,-204 205,-204 205,-185 245,-185 245,-204" />
+<ns0:text text-anchor="middle" x="225" y="-192" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">Cursor</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>AxesWidget-&gt;Cursor</ns0:title>
+<ns0:path fill="none" stroke="black" d="M141.59,-167.03C159.63,-173.04 182.69,-180.73 199.82,-186.44" />
+<ns0:polygon fill="black" stroke="black" points="199.64,-188.22 204.94,-188.15 200.75,-184.9 199.64,-188.22" />
+</ns0:g>
+
+<ns0:g id="node9" class="node">
+<ns0:title>Lasso</ns0:title>
+<ns0:g id="a_node9"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.Lasso.html#matplotlib.widgets.Lasso" ns1:title="Selection curve of an arbitrary shape." target="_top">
+<ns0:polygon fill="white" stroke="black" points="243,-167 207,-167 207,-148 243,-148 243,-167" />
+<ns0:text text-anchor="middle" x="225" y="-155" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">Lasso</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>AxesWidget-&gt;Lasso</ns0:title>
+<ns0:path fill="none" stroke="black" d="M145.11,-157.5C163.17,-157.5 185.28,-157.5 201.49,-157.5" />
+<ns0:polygon fill="black" stroke="black" points="201.75,-159.25 206.75,-157.5 201.75,-155.75 201.75,-159.25" />
+</ns0:g>
+
+<ns0:g id="node11" class="node">
+<ns0:title>_SelectorWidget</ns0:title>
+<ns0:g id="a_node11"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets._SelectorWidget.html#matplotlib.widgets._SelectorWidget" ns1:title="The base class for selector widgets." target="_top">
+<ns0:polygon fill="white" stroke="black" points="269,-130 181,-130 181,-111 269,-111 269,-130" />
+<ns0:text text-anchor="middle" x="225" y="-118" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">_SelectorWidget</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge19" class="edge">
+<ns0:title>AxesWidget-&gt;_SelectorWidget</ns0:title>
+<ns0:path fill="none" stroke="black" d="M141.59,-147.97C156.36,-143.05 174.49,-137 189.98,-131.84" />
+<ns0:polygon fill="black" stroke="black" points="190.94,-133.37 195.13,-130.12 189.83,-130.05 190.94,-133.37" />
+</ns0:g>
+
+<ns0:g id="node16" class="node">
+<ns0:title>SliderBase</ns0:title>
+<ns0:g id="a_node16"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.SliderBase.html#matplotlib.widgets.SliderBase" ns1:title="The base class for constructing Slider widgets. Not intended for direct" target="_top">
+<ns0:polygon fill="white" stroke="black" points="255,-74 195,-74 195,-55 255,-55 255,-74" />
+<ns0:text text-anchor="middle" x="225" y="-62" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">SliderBase</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge14" class="edge">
+<ns0:title>AxesWidget-&gt;SliderBase</ns0:title>
+<ns0:path fill="none" stroke="black" d="M129.37,-147.78C137.25,-143.1 145,-138.5 145,-138.5 145,-138.5 181,-101.5 181,-101.5 181,-101.5 196.31,-88.33 208.65,-77.7" />
+<ns0:polygon fill="black" stroke="black" points="210.05,-78.81 212.7,-74.22 207.77,-76.16 210.05,-78.81" />
+</ns0:g>
+
+<ns0:g id="node20" class="node">
+<ns0:title>TextBox</ns0:title>
+<ns0:g id="a_node20"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.TextBox.html#matplotlib.widgets.TextBox" ns1:title="A GUI neutral text input box." target="_top">
+<ns0:polygon fill="white" stroke="black" points="249,-37 201,-37 201,-18 249,-18 249,-37" />
+<ns0:text text-anchor="middle" x="225" y="-25" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">TextBox</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge17" class="edge">
+<ns0:title>AxesWidget-&gt;TextBox</ns0:title>
+<ns0:path fill="none" stroke="black" d="M129.37,-147.78C137.25,-143.1 145,-138.5 145,-138.5 145,-138.5 181,-45.5 181,-45.5 181,-45.5 188.07,-42.54 196.47,-39.02" />
+<ns0:polygon fill="black" stroke="black" points="197.3,-40.57 201.24,-37.03 195.95,-37.34 197.3,-40.57" />
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>Widget</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.Widget.html#matplotlib.widgets.Widget" ns1:title="Abstract base class for GUI neutral widgets." target="_top">
+<ns0:polygon fill="white" stroke="black" points="43,-130 0,-130 0,-111 43,-111 43,-130" />
+<ns0:text text-anchor="middle" x="21.5" y="-118" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">Widget</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>Widget-&gt;AxesWidget</ns0:title>
+<ns0:path fill="none" stroke="black" d="M43.03,-129.08C55.03,-134.1 70.35,-140.5 83.4,-145.96" />
+<ns0:polygon fill="black" stroke="black" points="82.81,-147.61 88.09,-147.92 84.16,-144.38 82.81,-147.61" />
+</ns0:g>
+
+<ns0:g id="node12" class="node">
+<ns0:title>MultiCursor</ns0:title>
+<ns0:g id="a_node12"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.MultiCursor.html#matplotlib.widgets.MultiCursor" ns1:title="Provide a vertical (default) and/or horizontal line cursor shared between" target="_top">
+<ns0:polygon fill="white" stroke="black" points="144.5,-130 79.5,-130 79.5,-111 144.5,-111 144.5,-130" />
+<ns0:text text-anchor="middle" x="112" y="-118" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">MultiCursor</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge8" class="edge">
+<ns0:title>Widget-&gt;MultiCursor</ns0:title>
+<ns0:path fill="none" stroke="black" d="M43.03,-120.5C52.33,-120.5 63.62,-120.5 74.3,-120.5" />
+<ns0:polygon fill="black" stroke="black" points="74.49,-122.25 79.49,-120.5 74.49,-118.75 74.49,-122.25" />
+</ns0:g>
+
+<ns0:g id="node19" class="node">
+<ns0:title>SubplotTool</ns0:title>
+<ns0:g id="a_node19"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.SubplotTool.html#matplotlib.widgets.SubplotTool" ns1:title="A tool to adjust the subplot params of a `.Figure`." target="_top">
+<ns0:polygon fill="white" stroke="black" points="144.5,-93 79.5,-93 79.5,-74 144.5,-74 144.5,-93" />
+<ns0:text text-anchor="middle" x="112" y="-81" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">SubplotTool</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge16" class="edge">
+<ns0:title>Widget-&gt;SubplotTool</ns0:title>
+<ns0:path fill="none" stroke="black" d="M43.03,-111.92C55.03,-106.9 70.35,-100.5 83.4,-95.04" />
+<ns0:polygon fill="black" stroke="black" points="84.16,-96.62 88.09,-93.08 82.81,-93.39 84.16,-96.62" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>CheckButtons</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.CheckButtons.html#matplotlib.widgets.CheckButtons" ns1:title="A GUI neutral set of check buttons." target="_top">
+<ns0:polygon fill="white" stroke="black" points="391.5,-278 315.5,-278 315.5,-259 391.5,-259 391.5,-278" />
+<ns0:text text-anchor="middle" x="353.5" y="-266" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">CheckButtons</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>_Buttons-&gt;CheckButtons</ns0:title>
+<ns0:path fill="none" stroke="black" d="M250.69,-238.72C268.93,-244.06 294.09,-251.41 314.83,-257.48" />
+<ns0:polygon fill="black" stroke="black" points="314.44,-259.19 319.73,-258.91 315.42,-255.83 314.44,-259.19" />
+</ns0:g>
+
+<ns0:g id="node14" class="node">
+<ns0:title>RadioButtons</ns0:title>
+<ns0:g id="a_node14"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.RadioButtons.html#matplotlib.widgets.RadioButtons" ns1:title="A GUI neutral radio button." target="_top">
+<ns0:polygon fill="white" stroke="black" points="390.5,-241 316.5,-241 316.5,-222 390.5,-222 390.5,-241" />
+<ns0:text text-anchor="middle" x="353.5" y="-229" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">RadioButtons</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge10" class="edge">
+<ns0:title>_Buttons-&gt;RadioButtons</ns0:title>
+<ns0:path fill="none" stroke="black" d="M250.69,-231.5C267.92,-231.5 291.33,-231.5 311.36,-231.5" />
+<ns0:polygon fill="black" stroke="black" points="311.37,-233.25 316.37,-231.5 311.37,-229.75 311.37,-233.25" />
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>EllipseSelector</ns0:title>
+<ns0:g id="a_node7"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.EllipseSelector.html#matplotlib.widgets.EllipseSelector" ns1:title="Select an elliptical region of an Axes." target="_top">
+<ns0:polygon fill="white" stroke="black" points="519,-204 438,-204 438,-185 519,-185 519,-204" />
+<ns0:text text-anchor="middle" x="478.5" y="-192" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">EllipseSelector</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>RectangleSelector</ns0:title>
+<ns0:g id="a_node8"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.RectangleSelector.html#matplotlib.widgets.RectangleSelector" ns1:title="Select a rectangular region of an Axes." target="_top">
+<ns0:polygon fill="white" stroke="black" points="402,-204 305,-204 305,-185 402,-185 402,-204" />
+<ns0:text text-anchor="middle" x="353.5" y="-192" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">RectangleSelector</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>RectangleSelector-&gt;EllipseSelector</ns0:title>
+<ns0:path fill="none" stroke="black" d="M402.06,-194.5C412.07,-194.5 422.61,-194.5 432.53,-194.5" />
+<ns0:polygon fill="black" stroke="black" points="432.65,-196.25 437.65,-194.5 432.65,-192.75 432.65,-196.25" />
+</ns0:g>
+
+<ns0:g id="node10" class="node">
+<ns0:title>LassoSelector</ns0:title>
+<ns0:g id="a_node10"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.LassoSelector.html#matplotlib.widgets.LassoSelector" ns1:title="Selection curve of an arbitrary shape." target="_top">
+<ns0:polygon fill="white" stroke="black" points="391.5,-167 315.5,-167 315.5,-148 391.5,-148 391.5,-167" />
+<ns0:text text-anchor="middle" x="353.5" y="-155" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">LassoSelector</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge12" class="edge">
+<ns0:title>_SelectorWidget-&gt;RectangleSelector</ns0:title>
+<ns0:path fill="none" stroke="black" d="M248.76,-130.03C259.07,-134.34 269,-138.5 269,-138.5 269,-138.5 305,-175.5 305,-175.5 305,-175.5 313.79,-179.02 323.81,-183.02" />
+<ns0:polygon fill="black" stroke="black" points="323.18,-184.66 328.47,-184.89 324.48,-181.41 323.18,-184.66" />
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>_SelectorWidget-&gt;LassoSelector</ns0:title>
+<ns0:path fill="none" stroke="black" d="M258.58,-130.03C275.71,-135.04 296.8,-141.21 314.65,-146.43" />
+<ns0:polygon fill="black" stroke="black" points="314.3,-148.15 319.59,-147.88 315.29,-144.79 314.3,-148.15" />
+</ns0:g>
+
+<ns0:g id="node13" class="node">
+<ns0:title>PolygonSelector</ns0:title>
+<ns0:g id="a_node13"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.PolygonSelector.html#matplotlib.widgets.PolygonSelector" ns1:title="Select a polygon region of an Axes." target="_top">
+<ns0:polygon fill="white" stroke="black" points="397,-130 310,-130 310,-111 397,-111 397,-130" />
+<ns0:text text-anchor="middle" x="353.5" y="-118" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">PolygonSelector</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge9" class="edge">
+<ns0:title>_SelectorWidget-&gt;PolygonSelector</ns0:title>
+<ns0:path fill="none" stroke="black" d="M269.18,-120.5C280.6,-120.5 293,-120.5 304.65,-120.5" />
+<ns0:polygon fill="black" stroke="black" points="304.94,-122.25 309.94,-120.5 304.94,-118.75 304.94,-122.25" />
+</ns0:g>
+
+<ns0:g id="node18" class="node">
+<ns0:title>SpanSelector</ns0:title>
+<ns0:g id="a_node18"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.SpanSelector.html#matplotlib.widgets.SpanSelector" ns1:title="Visually select a min/max range on a single axis and call a function with" target="_top">
+<ns0:polygon fill="white" stroke="black" points="389.5,-93 317.5,-93 317.5,-74 389.5,-74 389.5,-93" />
+<ns0:text text-anchor="middle" x="353.5" y="-81" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">SpanSelector</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge15" class="edge">
+<ns0:title>_SelectorWidget-&gt;SpanSelector</ns0:title>
+<ns0:path fill="none" stroke="black" d="M258.58,-110.97C275.71,-105.96 296.8,-99.79 314.65,-94.57" />
+<ns0:polygon fill="black" stroke="black" points="315.29,-96.21 319.59,-93.12 314.3,-92.85 315.29,-96.21" />
+</ns0:g>
+
+<ns0:g id="node15" class="node">
+<ns0:title>RangeSlider</ns0:title>
+<ns0:g id="a_node15"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.RangeSlider.html#matplotlib.widgets.RangeSlider" ns1:title="A slider representing a range of floating point values. Defines the min and" target="_top">
+<ns0:polygon fill="white" stroke="black" points="387,-56 320,-56 320,-37 387,-37 387,-56" />
+<ns0:text text-anchor="middle" x="353.5" y="-44" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">RangeSlider</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge11" class="edge">
+<ns0:title>SliderBase-&gt;RangeSlider</ns0:title>
+<ns0:path fill="none" stroke="black" d="M255.02,-60.37C272.62,-57.87 295.29,-54.64 314.33,-51.93" />
+<ns0:polygon fill="black" stroke="black" points="314.9,-53.62 319.6,-51.18 314.4,-50.15 314.9,-53.62" />
+</ns0:g>
+
+<ns0:g id="node17" class="node">
+<ns0:title>Slider</ns0:title>
+<ns0:g id="a_node17"><ns0:a ns1:href="../api/_as_gen/matplotlib.widgets.Slider.html#matplotlib.widgets.Slider" ns1:title="A slider representing a floating point range." target="_top">
+<ns0:polygon fill="white" stroke="black" points="371.5,-19 335.5,-19 335.5,0 371.5,0 371.5,-19" />
+<ns0:text text-anchor="middle" x="353.5" y="-7" font-family="Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans" font-size="10.00">Slider</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge13" class="edge">
+<ns0:title>SliderBase-&gt;Slider</ns0:title>
+<ns0:path fill="none" stroke="black" d="M247.75,-54.89C258.42,-50.18 269,-45.5 269,-45.5 269,-45.5 305,-27.5 305,-27.5 305,-27.5 318.05,-22.55 330.47,-17.85" />
+<ns0:polygon fill="black" stroke="black" points="331.3,-19.41 335.35,-16 330.06,-16.13 331.3,-19.41" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>
